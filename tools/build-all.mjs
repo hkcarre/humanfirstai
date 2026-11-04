@@ -9,6 +9,7 @@ const STEPS = [
   ['social', 'LinkedIn, newsletter, Instagram, WhatsApp, X, slides, email'],
   ['photos', 'responsive photo sets, arch crops, photo cards, alt text'],
   ['skill-metrics', 'font metrics for the skill card generator'],
+  ['site', 'GitHub Pages site and article template'],
 ];
 const t0 = Date.now();
 for (const [name, what] of STEPS) {

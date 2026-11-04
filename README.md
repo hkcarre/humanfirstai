@@ -86,6 +86,18 @@ npm run contrast     # prints the measured WCAG matrix
 | `tools/build/graphics.mjs` | Open Threshold device, construction and misuse diagrams |
 | `tools/build/social.mjs` | 28 templates across LinkedIn, newsletter, IG, WhatsApp, X, slides |
 | `tools/build/photos.mjs` | Responsive photo sets, arch crops, photo cards, alt text |
+| `tools/build/site.mjs` | The published site and the long-form article template |
+
+## The published site
+
+[**hkcarre.github.io/humanfirstai**](https://hkcarre.github.io/humanfirstai/) — long-form
+articles built from the same tokens, type scale and accessibility floor as everything else.
+It is the system's own proof: if an article cannot be set well with these rules, the rules are
+wrong.
+
+Write a new piece as markdown in `site/content/`, run `npm run build` in `tools/`, and push.
+The generator produces the page, the social preview card and the index entry. GitHub Actions
+deploys it.
 
 ## The brand studio app
 
