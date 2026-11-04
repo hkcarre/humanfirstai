@@ -1,0 +1,23 @@
+{
+  "name": "humanfirstai-brand-tools",
+  "private": true,
+  "type": "module",
+  "version": "2.0.0",
+  "description": "Generates every asset in brand/ from one definition of the mark and one palette.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build-all.mjs",
+    "contrast": "node ../skill/human-first-ai-brand/scripts/check-contrast.mjs --palette",
+    "logo": "node build/logo.mjs",
+    "color": "node build/color.mjs",
+    "type": "node build/type.mjs",
+    "icons": "node build/icons.mjs",
+    "graphics": "node build/graphics.mjs",
+    "social": "node build/social.mjs",
+    "photos": "node build/photos.mjs"
+  },
+  "devDependencies": {
+    "opentype.js": "^1.3.4",
+    "sharp": "^0.34.2"
+  }
+}

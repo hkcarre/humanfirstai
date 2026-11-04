@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 1430" width="1480" height="1430">
+  <rect width="1480" height="1430" fill="#FFF6EC"/>
+  <text x="56" y="88" font-family="Plus Jakarta Sans" font-size="32" font-weight="800" fill="#1F2A44">Human First AI — colour</text>
+  <text x="56" y="118" font-family="Plus Jakarta Sans" font-size="16" fill="#68728A">Every figure here is measured from the hex value, not estimated. See contrast-matrix.md for the full WCAG 2.2 table.</text>
+  <rect x="56" y="142" width="196" height="96" rx="8" fill="#FFF6EC"/>
+  <text x="72" y="178" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#1F2A44">Warm Cream</text>
+  <text x="72" y="202" font-family="Plus Jakarta Sans" font-size="15" fill="#1F2A44">#FFF6EC</text>
+  <text x="278" y="168" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Primary canvas  ·  60% of a layout</text>
+  <text x="278" y="194" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 255 246 236   ·   CMYK 0 / 3 / 7 / 0   ·   nearest PANTONE 9226 C — proof before press</text>
+  <text x="278" y="218" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">Uncoated-paper warmth. The default canvas for everything we make.</text>
+  <rect x="56" y="254" width="196" height="96" rx="8" fill="#1F2A44"/>
+  <text x="72" y="290" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#FFF6EC">Deep Ink</text>
+  <text x="72" y="314" font-family="Plus Jakarta Sans" font-size="15" fill="#FFF6EC">#1F2A44</text>
+  <text x="278" y="280" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Structure &amp; text  ·  25% of a layout</text>
+  <text x="278" y="306" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 31 42 68   ·   CMYK 88 / 76 / 42 / 38   ·   nearest PANTONE 533 C — proof before press</text>
+  <text x="278" y="330" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">Editorial ink blue. All body copy, the logo, and every structural rule.</text>
+  <rect x="56" y="366" width="196" height="96" rx="8" fill="#FF8A3D"/>
+  <text x="72" y="402" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#1F2A44">Sunrise</text>
+  <text x="72" y="426" font-family="Plus Jakarta Sans" font-size="15" fill="#1F2A44">#FF8A3D</text>
+  <text x="278" y="392" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Accent fill only  ·  8% of a layout</text>
+  <text x="278" y="418" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 255 138 61   ·   CMYK 0 / 56 / 79 / 0   ·   nearest PANTONE 1575 C — proof before press</text>
+  <text x="278" y="442" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">FILL ONLY. 2.19:1 on cream, so it never carries type or a hairline on a light surface.</text>
+  <rect x="56" y="478" width="196" height="96" rx="8" fill="#C24D00"/>
+  <text x="72" y="514" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#FFF6EC">Sunrise Deep</text>
+  <text x="72" y="538" font-family="Plus Jakarta Sans" font-size="15" fill="#FFF6EC">#C24D00</text>
+  <text x="278" y="504" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Accent text &amp; icons on light</text>
+  <text x="278" y="530" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 194 77 0   ·   CMYK 0 / 73 / 100 / 15   ·   nearest PANTONE 1605 C — proof before press</text>
+  <text x="278" y="554" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">The typographic orange. Use it wherever Sunrise would have been text, an icon or a line on light.</text>
+  <rect x="56" y="590" width="196" height="96" rx="8" fill="#187F72"/>
+  <text x="72" y="626" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#FFF6EC">Community Teal</text>
+  <text x="72" y="650" font-family="Plus Jakarta Sans" font-size="15" fill="#FFF6EC">#187F72</text>
+  <text x="278" y="616" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Growth, secondary actions  ·  5% of a layout</text>
+  <text x="278" y="642" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 24 127 114   ·   CMYK 84 / 26 / 57 / 10   ·   nearest PANTONE 7723 C — proof before press</text>
+  <text x="278" y="666" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">Growth and stewardship. Passes both as text on cream and as a fill under white text.</text>
+  <rect x="56" y="702" width="196" height="96" rx="8" fill="#7CC4F2"/>
+  <text x="72" y="738" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#1F2A44">Sky</text>
+  <text x="72" y="762" font-family="Plus Jakarta Sans" font-size="15" fill="#1F2A44">#7CC4F2</text>
+  <text x="278" y="728" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Illustration &amp; surface tint  ·  2% of a layout</text>
+  <text x="278" y="754" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 124 196 242   ·   CMYK 48 / 12 / 0 / 0   ·   nearest PANTONE 2915 C — proof before press</text>
+  <text x="278" y="778" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">FILL ONLY. Illustration, chart bands and quiet surfaces. Never type.</text>
+  <rect x="56" y="814" width="196" height="96" rx="8" fill="#1277B7"/>
+  <text x="72" y="850" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#FFF6EC">Sky Deep</text>
+  <text x="72" y="874" font-family="Plus Jakarta Sans" font-size="15" fill="#FFF6EC">#1277B7</text>
+  <text x="278" y="840" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Links &amp; data on light</text>
+  <text x="278" y="866" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 18 119 183   ·   CMYK 88 / 48 / 5 / 0   ·   nearest PANTONE 2935 C — proof before press</text>
+  <text x="278" y="890" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">Links, data labels and anything blue that has to be read.</text>
+  <rect x="56" y="926" width="196" height="96" rx="8" fill="#68728A"/>
+  <text x="72" y="962" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#FFF6EC">Ink Muted</text>
+  <text x="72" y="986" font-family="Plus Jakarta Sans" font-size="15" fill="#FFF6EC">#68728A</text>
+  <text x="278" y="952" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Secondary text</text>
+  <text x="278" y="978" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 104 114 138   ·   CMYK 72 / 55 / 32 / 12   ·   tint of Deep Ink</text>
+  <text x="278" y="1002" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">Captions and metadata. A real colour, so it survives flattening — never Deep Ink at 60% opacity.</text>
+  <rect x="56" y="1038" width="196" height="96" rx="8" fill="#CE3E22"/>
+  <text x="72" y="1074" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#FFF6EC">Clay</text>
+  <text x="72" y="1098" font-family="Plus Jakarta Sans" font-size="15" fill="#FFF6EC">#CE3E22</text>
+  <text x="278" y="1064" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Alerts and errors</text>
+  <text x="278" y="1090" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 206 62 34   ·   CMYK 12 / 88 / 90 / 4   ·   nearest PANTONE 1795 C — proof before press</text>
+  <text x="278" y="1114" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">The only alert colour. Always paired with a word, never used alone to carry meaning.</text>
+  <rect x="56" y="1150" width="196" height="96" rx="8" fill="#FFFFFF" stroke="#68728A" stroke-width="1"/>
+  <text x="72" y="1186" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#1F2A44">Paper White</text>
+  <text x="72" y="1210" font-family="Plus Jakarta Sans" font-size="15" fill="#1F2A44">#FFFFFF</text>
+  <text x="278" y="1176" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">Print &amp; high-contrast canvas</text>
+  <text x="278" y="1202" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 255 255 255   ·   CMYK 0 / 0 / 0 / 0   ·   unprinted stock</text>
+  <text x="278" y="1226" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">Print, certificates and maximum-contrast surfaces.</text>
+  <rect x="56" y="1262" width="196" height="96" rx="8" fill="#000000"/>
+  <text x="72" y="1298" font-family="Plus Jakarta Sans" font-size="19" font-weight="700" fill="#FFF6EC">Press Black</text>
+  <text x="72" y="1322" font-family="Plus Jakarta Sans" font-size="15" fill="#FFF6EC">#000000</text>
+  <text x="278" y="1288" font-family="Plus Jakarta Sans" font-size="17" font-weight="700" fill="#1F2A44">1-colour print only</text>
+  <text x="278" y="1314" font-family="Plus Jakarta Sans" font-size="14" fill="#68728A">RGB 0 0 0   ·   CMYK 0 / 0 / 0 / 100   ·   Process Black</text>
+  <text x="278" y="1338" font-family="Plus Jakarta Sans" font-size="14" fill="#1F2A44">One-colour print and the photocopy test only.</text>
+</svg>

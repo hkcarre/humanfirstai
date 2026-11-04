@@ -1,0 +1,92 @@
+{
+  "brand": "Human First AI",
+  "version": "2.0",
+  "ratio": 1.26,
+  "base": 17,
+  "steps": [
+    {
+      "name": "Display",
+      "px": 54,
+      "min": 36,
+      "lh": 1.08,
+      "track": "-0.03em",
+      "weight": 800,
+      "font": "brand",
+      "role": "Posters, campaign headers, the one line on a slide",
+      "sample": "The future belongs to all of us.",
+      "rules": "Two lines maximum. Balance the wraps by hand. Never set in capitals."
+    },
+    {
+      "name": "Headline",
+      "px": 34,
+      "min": 27,
+      "lh": 1.2,
+      "track": "-0.02em",
+      "weight": 700,
+      "font": "brand",
+      "role": "Section titles, booklet covers, slide openers",
+      "sample": "Make AI feel like an open door, not a locked lab.",
+      "rules": "Deep Ink. Optical kerning on. Leave at least 32px of air above it."
+    },
+    {
+      "name": "Title",
+      "px": 27,
+      "min": 23,
+      "lh": 1.3,
+      "track": "-0.015em",
+      "weight": 600,
+      "font": "brand",
+      "role": "Card titles, question headings, workshop agenda items",
+      "sample": "What will I actually learn on Saturday?",
+      "rules": "Use sentence case. A title that needs a colon is usually two titles."
+    },
+    {
+      "name": "Subhead",
+      "px": 21,
+      "min": 19,
+      "lh": 1.45,
+      "track": "-0.01em",
+      "weight": 500,
+      "font": "brand",
+      "role": "Standfirsts, key takeaways, pull quotes",
+      "sample": "Free workshops in your neighbourhood, taught in your language.",
+      "rules": "One sentence. If it runs past two lines it belongs in body copy."
+    },
+    {
+      "name": "Body",
+      "px": 17,
+      "min": 17,
+      "lh": 1.65,
+      "track": "0",
+      "weight": 400,
+      "font": "readable",
+      "role": "Curriculum, handouts, articles, letters",
+      "sample": "Artificial intelligence should be as ordinary and dependable as electricity. You do not need a computer science degree to use it to run a market stall, protect a crop from drought, or help a child with homework.",
+      "rules": "Atkinson Hyperlegible. 60–70 characters a line. Never justify. Never below 17px on screen or 11pt in print."
+    },
+    {
+      "name": "Small",
+      "px": 15,
+      "min": 15,
+      "lh": 1.6,
+      "track": "0",
+      "weight": 400,
+      "font": "readable",
+      "role": "Form help text, footnotes, table cells",
+      "sample": "Bring a friend. We provide the tablets, the notebooks and the tea.",
+      "rules": "The smallest size any sentence may be set in."
+    },
+    {
+      "name": "Caption",
+      "px": 14,
+      "min": 14,
+      "lh": 1.45,
+      "track": "0.01em",
+      "weight": 600,
+      "font": "brand",
+      "role": "Photo credits, timestamps, table headers, chapter tags",
+      "sample": "Kibera Community Centre · Nairobi Chapter · 14 March 2026",
+      "rules": "Separate with middots. Never put it in a pill. Never go below 14px — v1 allowed 13px, which fails for low-vision readers."
+    }
+  ]
+}

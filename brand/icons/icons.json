@@ -1,0 +1,74 @@
+[
+  {
+    "id": "open-access",
+    "name": "Open Access",
+    "replaces": "API / platform / gateway",
+    "meaning": "A threshold anyone may cross. No paywall, no credential, no gatekeeper."
+  },
+  {
+    "id": "plain-language",
+    "name": "Plain Language",
+    "replaces": "NLP / LLM / prompt",
+    "meaning": "Words a twelve-year-old can read on the first pass."
+  },
+  {
+    "id": "learning-circle",
+    "name": "Learning Circle",
+    "replaces": "neural network / training",
+    "meaning": "People teaching each other around an open centre, not a lecture from above."
+  },
+  {
+    "id": "human-compass",
+    "name": "Human Compass",
+    "replaces": "optimisation / alignment",
+    "meaning": "Human judgement sets the direction. The technology follows."
+  },
+  {
+    "id": "shared-tool",
+    "name": "Shared Tool",
+    "replaces": "machine-learning pipeline",
+    "meaning": "AI is a tool you pick up, like a pen or a spade. It is not a mind."
+  },
+  {
+    "id": "everyday-growth",
+    "name": "Everyday Growth",
+    "replaces": "scale / exponential curve",
+    "meaning": "Real progress for one family, one stall, one classroom at a time."
+  },
+  {
+    "id": "community-voice",
+    "name": "Community Voice",
+    "replaces": "user feedback / telemetry",
+    "meaning": "The people in the room decide. Not a head office somewhere else."
+  },
+  {
+    "id": "safe-guardrails",
+    "name": "Safe Guardrails",
+    "replaces": "security / compliance",
+    "meaning": "Privacy, honesty about limits, and a way to say no."
+  },
+  {
+    "id": "no-cost",
+    "name": "No Cost",
+    "replaces": "pricing / tier / upgrade",
+    "meaning": "Nothing we teach has ever had a price on it."
+  },
+  {
+    "id": "your-language",
+    "name": "Your Language",
+    "replaces": "localisation / i18n",
+    "meaning": "Taught in the language people actually think in."
+  },
+  {
+    "id": "hands-on",
+    "name": "Hands On",
+    "replaces": "onboarding / tutorial",
+    "meaning": "People learn by doing it once with someone beside them."
+  },
+  {
+    "id": "open-door-small",
+    "name": "Open Door",
+    "replaces": "the mark, in running text",
+    "meaning": "The movement itself. Use only where the full mark will not fit."
+  }
+]

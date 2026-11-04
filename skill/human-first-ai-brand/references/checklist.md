@@ -1,0 +1,55 @@
+# Review checklist
+
+Run this before anything goes out. All of it, not the convenient parts.
+
+## Voice
+
+- [ ] Sounds like a patient teacher, not a tech company
+- [ ] A twelve-year-old could read the main message and act on it
+- [ ] No banned words (`AI-powered`, `unlock`, `seamless`, `revolutionise`, `leverage`, `empower`…)
+- [ ] AI described by what it helps someone *do*, never as a mind or as magic
+- [ ] The limit is stated — what it does not do, in the same breath
+- [ ] Any person named has consent on file
+- [ ] Any number stated has a source. If estimated, it says "about".
+
+## Identity
+
+- [ ] "Human First AI" — unhyphenated, correct order, not translated
+- [ ] "AI" is smaller and quieter than "Human", and not in Sunrise
+- [ ] Correct logo build for the background (full / reversed / mono / micro)
+- [ ] Clear space of one cap-height "H" on all four sides
+- [ ] At or above minimum size; micro build used at 24px and below
+- [ ] No rotation, stretch, gradient, shadow, pill or recolour
+
+## Colour and type
+
+- [ ] Every text/background pair clears 4.5:1 — checked, not assumed
+- [ ] Icons, logo parts and input borders clear 3:1
+- [ ] No white text on Sunrise anywhere
+- [ ] No Sunrise or Sky used as type or a hairline on a light surface
+- [ ] Muted text is `#68728A`, not an opacity
+- [ ] Nothing below 14px; body copy 17px or above
+- [ ] Body copy is Atkinson Hyperlegible, ragged right, 60–70 characters a line
+- [ ] No all-caps headings
+
+## Images
+
+- [ ] Real people in real light — no robots, circuits, brains, glow
+- [ ] Provenance and consent recorded in `credits.json`
+- [ ] **Not an AI-generated image of a person** — never approved for public material
+- [ ] Scrim behind any type on a photograph, measured not eyeballed
+- [ ] Alt text written to the formula: who + what they are doing + where and how it feels
+- [ ] Decorative images carry `alt=""`
+
+## Reach
+
+- [ ] Passes the photocopy test if it will ever be printed
+- [ ] Readable at 200% zoom with no clipping or horizontal scroll
+- [ ] Still makes sense in greyscale
+- [ ] Keyboard reachable with a visible focus ring, if interactive
+- [ ] Captions on video, transcripts on audio
+
+## Then
+
+Anything you could not do inside these rules is a gap in the system, not a licence to
+improvise. Open an issue at github.com/hkcarre/humanfirstai.

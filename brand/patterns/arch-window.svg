@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" width="600" height="760">
+  <defs><clipPath id="hf-arch"><path d="M0,760 L0,300 A300,300 0 0 1 600,300 L600,760 Z"/></clipPath></defs>
+  <!-- Put any <image> or <g> inside this group to crop it to the threshold. -->
+  <g clip-path="url(#hf-arch)">
+    <rect width="600" height="760" fill="#7CC4F2"/>
+    <text x="300" y="400" font-family="Plus Jakarta Sans" font-size="22" font-weight="500" fill="#1F2A44" text-anchor="middle">your photograph here</text>
+  </g>
+</svg>

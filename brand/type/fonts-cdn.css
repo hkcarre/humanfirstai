@@ -1,0 +1,6 @@
+/* Human First AI — hosted fonts, for prototypes and quick decks.
+   Prefer fonts.css in production: it is faster on a 3G connection and sets no third-party cookies.
+
+   Noto Sans JP is included here. v1 referenced it in its Japanese specimen but never
+   loaded it, so the sample silently fell back to a system font. */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap');

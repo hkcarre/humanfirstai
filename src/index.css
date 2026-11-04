@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* The palette lives in brand/color/tokens.css, which is generated.
+   Do not redeclare colours here — import the source of truth. */
+@import "../brand/color/tokens.css";
+@import "../brand/type/type.css";
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #1F2A44;
+  background-color: #FFF6EC;
+}
+
+.font-hyperlegible {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.font-brand {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-arabic {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+.font-devanagari {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.font-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Simulation filters for accessibility checks */
+.filter-protanopia {
+  filter: url('#protanopia-filter');
+}
+.filter-deuteranopia {
+  filter: url('#deuteranopia-filter');
+}
+.filter-tritanopia {
+  filter: url('#tritanopia-filter');
+}
+.filter-achromatopsia {
+  filter: grayscale(100%);
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: #1F2A44 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+}

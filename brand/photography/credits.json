@@ -1,0 +1,74 @@
+{
+  "note": "Every photograph published under this brand needs a complete row here. Incomplete rows are not cleared for use. See docs/07-photography.md.",
+  "requiredFields": [
+    "slug",
+    "photographer",
+    "origin",
+    "consent",
+    "licence",
+    "dateTaken",
+    "location"
+  ],
+  "photos": [
+    {
+      "slug": "artisan-block-printing-tablet",
+      "file": "full/artisan-block-printing-tablet.jpg",
+      "alt": "An older woman in a deep red bandhani sari points at a tablet screen showing a block-print motif while a younger woman in blue leans in beside her, both laughing, in a sunlit textile workshop stacked with bolts of fabric.",
+      "caption": "Learning to photograph and catalogue block-print designs.",
+      "where": "Textile workshop · South Asia",
+      "goodFor": "Small business, craft, livelihoods, intergenerational teaching.",
+      "photographer": "UNKNOWN — inherited with the v1 package",
+      "origin": "UNVERIFIED — confirm whether this is a commissioned photograph, a licensed library image, or synthetic",
+      "consent": "NOT ON FILE",
+      "licence": "NOT ON FILE",
+      "dateTaken": null,
+      "location": null,
+      "clearedForPublication": false
+    },
+    {
+      "slug": "community-hall-session",
+      "file": "full/community-hall-session.jpg",
+      "alt": "Around twenty people of mixed ages sit at long tables in a bright community centre, tablets and printed worksheets between them, a facilitator in a green lanyard talking with one group while a child raises a hand nearby.",
+      "caption": "A full room, tablets shared two to a table.",
+      "where": "Community cultural centre · South-East Asia",
+      "goodFor": "Scale, turnout, the shape of a real session. Good for event promotion.",
+      "photographer": "UNKNOWN — inherited with the v1 package",
+      "origin": "UNVERIFIED — confirm whether this is a commissioned photograph, a licensed library image, or synthetic",
+      "consent": "NOT ON FILE",
+      "licence": "NOT ON FILE",
+      "dateTaken": null,
+      "location": null,
+      "clearedForPublication": false
+    },
+    {
+      "slug": "library-first-laptop",
+      "file": "full/library-first-laptop.jpg",
+      "alt": "A woman with grey hair and glasses sits at a laptop in a brick-walled hall with arched windows while a young volunteer in a navy jumper leans in, pointing at the screen; both are smiling, with other learners at tables behind them.",
+      "caption": "First time writing a letter with help from a tool.",
+      "where": "Community library hall",
+      "goodFor": "One-to-one teaching, first-time learners, volunteer recruitment.",
+      "photographer": "UNKNOWN — inherited with the v1 package",
+      "origin": "UNVERIFIED — confirm whether this is a commissioned photograph, a licensed library image, or synthetic",
+      "consent": "NOT ON FILE",
+      "licence": "NOT ON FILE",
+      "dateTaken": null,
+      "location": null,
+      "clearedForPublication": false
+    },
+    {
+      "slug": "highland-farmer-frost-forecast",
+      "file": "full/highland-farmer-frost-forecast.jpg",
+      "alt": "A farmer in a knitted chullo hat holds a tablet showing a weather reading while an agricultural advisor with a notebook listens, standing between rows of potato plants on a terraced highland slope with mountains behind.",
+      "caption": "Checking a frost forecast against what the field is doing.",
+      "where": "Terraced highland farm · Andes",
+      "goodFor": "Agriculture, rural reach, practical daily value.",
+      "photographer": "UNKNOWN — inherited with the v1 package",
+      "origin": "UNVERIFIED — confirm whether this is a commissioned photograph, a licensed library image, or synthetic",
+      "consent": "NOT ON FILE",
+      "licence": "NOT ON FILE",
+      "dateTaken": null,
+      "location": null,
+      "clearedForPublication": false
+    }
+  ]
+}

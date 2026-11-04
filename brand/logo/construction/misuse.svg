@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1410 1036" width="1410" height="1036">
+  <rect width="100%" height="100%" fill="#FFF6EC"/>
+  <text x="60" y="70" font-family="Plus Jakarta Sans" font-size="32" font-weight="800" fill="#1F2A44">Nine ways to get it wrong</text>
+  <text x="60" y="100" font-family="Plus Jakarta Sans" font-size="16" font-weight="500" fill="#68728A">If a layout does any of these, it is not our mark any more. Send it back.</text>
+  <g transform="translate(60,150)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><g transform="translate(78,78) rotate(-18) translate(-78,-78) scale(2.4)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="50" y="346" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not rotate or mirror it</text>
+    <text x="50" y="366" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">A door is architecture. Tilt it and it stops being one.</text>
+  <g transform="translate(490,150)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><g transform="scale(3.1,1.9)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="480" y="346" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not stretch it</text>
+    <text x="480" y="366" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">Scale both axes by the same number, always.</text>
+  <g transform="translate(920,150)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><defs><linearGradient id="bad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7B2FF7"/><stop offset="1" stop-color="#00E0FF"/></linearGradient></defs><g transform="scale(2.4)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#00E0FF"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="url(#bad)" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="url(#bad)"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#00E0FF"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="url(#bad)"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="910" y="346" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not add a gradient or a glow</text>
+    <text x="910" y="366" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">No sci-fi sheen. We are warm, flat and printed.</text>
+  <g transform="translate(60,422)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><g transform="scale(2.4)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#C6FF00"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#8B00FF" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#8B00FF"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#C6FF00"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#8B00FF"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="50" y="618" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not recolour it</text>
+    <text x="50" y="638" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">Only the approved colourways. No neon, no corporate blue.</text>
+  <g transform="translate(490,422)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><rect x="-18" y="6" width="200" height="150" rx="75" fill="#E6DED1"/><g transform="translate(3,3) scale(2.4)" opacity="0.3"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#000"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#000" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#000"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#000"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#000"/></g><g transform="scale(2.4)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="480" y="618" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not put it in a pill or add a shadow</text>
+    <text x="480" y="638" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">The mark breathes on an open surface.</text>
+  <g transform="translate(920,422)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><g transform="scale(2.4)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></g><text x="95" y="106" font-family="Plus Jakarta Sans" font-size="30" font-weight="800" fill="#1F2A44" text-anchor="middle">AI</text></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="910" y="618" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not set type inside the doorway</text>
+    <text x="910" y="638" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">The opening stays empty in every language.</text>
+  <g transform="translate(60,694)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><text x="10" y="90" font-family="Plus Jakarta Sans" font-size="26" font-weight="800" fill="#1F2A44">AI First Human</text><g transform="translate(200,20) scale(1.0)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="50" y="890" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not reorder the lockup</text>
+    <text x="50" y="910" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">Human leads. It is the whole argument.</text>
+  <g transform="translate(490,694)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><g transform="scale(2.4)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/><path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#FF8A3D" stroke-width="5"/><path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#FF8A3D"/><circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/><rect x="3" y="51.5" width="58" height="3.5" fill="#FF8A3D"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="480" y="890" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not use Sunrise as an outline on light</text>
+    <text x="480" y="910" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">It is 2.19:1 on cream. It disappears.</text>
+  <g transform="translate(920,694)">
+    <rect x="-10" y="-10" width="210" height="180" fill="#FFFFFF" stroke="#68728A" stroke-width="1" opacity="0.6"/>
+    <svg x="0" y="0" width="190" height="160" viewBox="0 0 190 160" overflow="hidden"><rect width="190" height="160" fill="#8A7A66"/><g opacity="0.55"><circle cx="0" cy="0" r="22" fill="#C9B79A"/><circle cx="37" cy="53" r="22" fill="#6E5A43"/><circle cx="74" cy="106" r="22" fill="#A89070"/><circle cx="111" cy="159" r="22" fill="#C9B79A"/><circle cx="148" cy="52" r="22" fill="#6E5A43"/><circle cx="185" cy="105" r="22" fill="#A89070"/><circle cx="32" cy="158" r="22" fill="#C9B79A"/><circle cx="69" cy="51" r="22" fill="#6E5A43"/><circle cx="106" cy="104" r="22" fill="#A89070"/><circle cx="143" cy="157" r="22" fill="#C9B79A"/><circle cx="180" cy="50" r="22" fill="#6E5A43"/><circle cx="27" cy="103" r="22" fill="#A89070"/><circle cx="64" cy="156" r="22" fill="#C9B79A"/><circle cx="101" cy="49" r="22" fill="#6E5A43"/><circle cx="138" cy="102" r="22" fill="#A89070"/><circle cx="175" cy="155" r="22" fill="#C9B79A"/><circle cx="22" cy="48" r="22" fill="#6E5A43"/><circle cx="59" cy="101" r="22" fill="#A89070"/><circle cx="96" cy="154" r="22" fill="#C9B79A"/><circle cx="133" cy="47" r="22" fill="#6E5A43"/><circle cx="170" cy="100" r="22" fill="#A89070"/><circle cx="17" cy="153" r="22" fill="#C9B79A"/><circle cx="54" cy="46" r="22" fill="#6E5A43"/><circle cx="91" cy="99" r="22" fill="#A89070"/><circle cx="128" cy="152" r="22" fill="#C9B79A"/><circle cx="165" cy="45" r="22" fill="#6E5A43"/></g><g transform="scale(2.4)"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></g></svg>
+    <g stroke="#CE3E22" stroke-width="5" stroke-linecap="round"><line x1="152" y1="128" x2="186" y2="162"/><line x1="186" y1="128" x2="152" y2="162"/></g>
+    </g>
+    <text x="910" y="890" font-family="Plus Jakarta Sans" font-size="15" font-weight="700" fill="#CE3E22">Do not drop it on a busy photo</text>
+    <text x="910" y="910" font-family="Plus Jakarta Sans" font-size="13" font-weight="500" fill="#68728A">Use the reversed build over a scrim, or move it.</text>
+</svg>
