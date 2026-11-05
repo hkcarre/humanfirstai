@@ -15,3 +15,7 @@ photos/
 
 # Pasted article drafts awaiting a run. Runs themselves are committed.
 editorial/inbox/
+
+# Run artifacts live on the review branch the pull request opens, not on main.
+# "node tools/editorial/run.mjs pr <run>" adds them there with -f.
+editorial/runs/
