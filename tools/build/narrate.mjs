@@ -14,7 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync
 //
 //      npm run narrate            every article that has no audio yet
 //      npm run narrate -- --force  rebuild all of them
-//      npm run narrate -- --voice bf_emma
+//      npm run narrate -- --voice af_heart
 //
 //  Policy for what this voice may and may not say: docs/07-photography.md,
 //  "Synthetic voice". The short version — it reads our own prose, labelled.
@@ -22,7 +22,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync
 // ---------------------------------------------------------------------------
 const VOICE = (() => {
   const i = process.argv.indexOf('--voice');
-  return i > -1 ? process.argv[i + 1] : 'af_heart';
+  return i > -1 ? process.argv[i + 1] : 'bf_emma';
 })();
 const FORCE = process.argv.includes('--force');
 const SRC = '../site/content';
@@ -142,9 +142,12 @@ for (const file of todo) {
   writeFileSync(`${dir}/list.txt`, parts.map(p => `file '${p.split('/').pop()}'`).join('\n'));
   mkdirSync(OUT, { recursive: true });
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', `${dir}/list.txt`,
-    '-ac', '1', '-ar', '24000', '-b:a', '64k', '-af', 'loudnorm=I=-18:TP=-2:LRA=11', `${OUT}/${slug}.mp3`]);
+    '-ac', '1', '-ar', '24000', '-b:a', '64k', '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', `${OUT}/${slug}.mp3`]);
 
   const kb = statSync(`${OUT}/${slug}.mp3`).size / 1024;
+  // measure the finished file rather than trusting the running total
+  elapsed = +execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
+    '-of', 'default=nw=1:nk=1', `${OUT}/${slug}.mp3`]).toString().trim();
   writeFileSync(`${OUT}/${slug}.audio.json`, JSON.stringify({
     voice: VOICE, grade, model: 'hexgrad/Kokoro-82M v1.0 (Apache-2.0)',
     synthetic: true, generated: new Date().toISOString().slice(0, 10),

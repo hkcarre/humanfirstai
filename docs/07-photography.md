@@ -119,12 +119,14 @@ has every candidate reading the same three lines. Anything the model's author gr
 below is out — if we are asking people to trust what we say, it has to be comfortable to
 listen to.
 
-Current narrator: **af_heart**, graded A, American English.
+Current narrator: **bf_emma**, graded B−, British English. Chosen by ear over the
+higher-graded American voices — a grade measures how cleanly a model renders a voice, not
+whether it sounds like a patient teacher.
 
 ```bash
 cd tools
 npm run voices                              # rebuild the picker page
-npm run narrate -- --voice bf_emma --force  # change the narrator
+npm run narrate -- --voice af_heart --force # change the narrator
 ```
 
 ### Other languages

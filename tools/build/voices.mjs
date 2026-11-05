@@ -25,6 +25,7 @@ const SAMPLE = 'Make AI feel like an open door, not a locked lab. '
 
 // The shortlist. Anything graded D or F is not a candidate for a brand that
 // asks people to trust what it says.
+const CURRENT = 'bf_emma';
 const SHORTLIST = [
   ['af_heart',   'Warm, unhurried, American. The only A in the set.'],
   ['af_bella',   'American, a little more energy and edge.'],
@@ -72,7 +73,7 @@ const mark = way => {
 const rows = SHORTLIST.map(([v, note]) => {
   const [name, lang, gender] = META[v];
   return `      <tr>
-        <td class="n"><strong>${name}</strong><span class="id">${v}</span></td>
+        <td class="n"><strong>${name}</strong><span class="id">${v}</span>${v === CURRENT ? '<span class="live">in use</span>' : ''}</td>
         <td class="g"><span class="grade${GRADES[v].startsWith('A') ? ' top' : ''}">${GRADES[v]}</span></td>
         <td class="d">${lang} · ${gender}<span class="note">${note}</span></td>
         <td class="p"><audio controls preload="none" src="voice/${v}.mp3" aria-label="Sample of the ${name} voice"></audio></td>
@@ -99,6 +100,8 @@ const html = `<!doctype html>
   .id{font-family:ui-monospace,monospace;font-size:.75rem;color:var(--hf-text-muted)}
   .grade{font-family:var(--hf-font-brand);font-weight:800;font-size:1.0625rem;color:var(--hf-text-muted)}
   .grade.top{color:var(--hf-text-accent)}
+  .live{display:inline-block;margin-top:.3rem;font-family:var(--hf-font-brand);font-weight:800;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--hf-ink);background:var(--hf-sunrise);padding:.15rem .45rem;border-radius:4px}
+  tr:has(.live){background:rgba(255,138,61,.07)}
   td.d{font-size:.9375rem;line-height:1.45}
   .note{display:block;color:var(--hf-text-muted);font-size:.875rem}
   td.p{width:260px}
@@ -155,7 +158,7 @@ ${rows}
     <p>One flag. The narration is regenerated locally and committed — nothing is called at
       runtime, and no reader's text is ever sent anywhere.</p>
     <pre style="background:var(--hf-surface-raised);border:1px solid var(--hf-border);border-radius:10px;padding:1rem;overflow:auto;font-size:.875rem"><code>cd tools
-npm run narrate -- --voice bf_emma --force</code></pre>
+npm run narrate -- --voice af_heart --force</code></pre>
     <p class="tags"><span>Kokoro-82M v1.0</span><span>Apache-2.0</span><span>Runs locally</span><span>No API</span></p>
   </div>
 </article>
