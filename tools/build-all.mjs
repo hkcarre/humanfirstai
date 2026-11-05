@@ -9,7 +9,9 @@ const STEPS = [
   ['social', 'LinkedIn, newsletter, Instagram, WhatsApp, X, slides, email'],
   ['photos', 'responsive photo sets, arch crops, photo cards, alt text'],
   ['skill-metrics', 'font metrics for the skill card generator'],
+  ['geo', 'land data for the chapter globe'],
   ['site', 'GitHub Pages site and article template'],
+  ['showcase', 'the spatial and craft showcase page'],
 ];
 const t0 = Date.now();
 for (const [name, what] of STEPS) {

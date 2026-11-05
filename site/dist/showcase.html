@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An open door, in three dimensions — Human First AI</title>
+<meta name="description" content="Make AI feel like an open door, not a locked lab. The Human First AI identity as depth, place and material.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#1F2A44">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="An open door, in three dimensions">
+<meta property="og:description" content="Make AI feel like an open door, not a locked lab.">
+<meta property="og:image" content="https://hkcarre.github.io/humanfirstai/showcase-og.png">
+<style>
+@import url("assets/tokens.css");
+@import url("assets/fonts.css");
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--hf-cream);color:var(--hf-ink);
+  font-family:var(--hf-font-readable);font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
+}
+h1,h2,h3,.brandtype{font-family:var(--hf-font-brand)}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--hf-ink);color:var(--hf-cream);padding:12px 20px;font-family:var(--hf-font-brand);font-weight:700}
+.skip:focus{left:0}
+.wrap{width:min(100% - 2.5rem,64rem);margin-inline:auto}
+.narrow{width:min(100% - 2.5rem,38rem);margin-inline:auto}
+.kicker{font-family:var(--hf-font-brand);font-weight:700;font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;color:var(--hf-sunrise-deep);margin:0 0 1rem}
+
+/* Paper grain. The canvas is meant to feel like uncoated stock, not glass. */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.055;mix-blend-mode:multiply}
+
+/* ---------------- masthead ---------------- */
+.masthead{position:relative;z-index:60}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.15rem 0}
+.masthead svg{height:30px;width:auto;display:block}
+.masthead a{text-decoration:none;display:inline-flex}
+.masthead .lnk{font-family:var(--hf-font-brand);font-weight:600;font-size:.875rem;color:var(--hf-ink-muted)}
+.masthead .lnk:hover{color:var(--hf-sunrise-deep)}
+
+/* ================= ACT I — the threshold ================= */
+.act1{height:300vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--hf-ink)}
+.plate{
+  position:absolute;left:50%;bottom:9vmin;
+  width:var(--w);height:calc(var(--w) * 1.3);
+  margin-left:calc(var(--w) / -2);
+  background:var(--tone);
+  border-radius:50% 50% 2% 2% / 62% 62% 2% 2%;
+  transform-origin:50% 100%;
+  z-index:calc(var(--i) + 1);
+  will-change:transform,opacity;
+}
+.plate:last-child{box-shadow:0 0 14vmin 2vmin rgba(255,138,61,.28)}
+.act1 .copy{position:absolute;inset:0;z-index:40;display:grid;place-items:center;text-align:center;pointer-events:none;padding:0 1.25rem}
+.act1 h1{
+  font-weight:800;font-size:clamp(1.9rem,5.2vw,3.9rem);line-height:1.05;letter-spacing:-.03em;
+  margin:0;color:var(--hf-cream);text-wrap:balance;text-shadow:0 2px 28px rgba(31,42,68,.8);
+}
+.act1 .l2{color:var(--hf-sunrise)}
+.act1 .hint{font-family:var(--hf-font-brand);font-weight:600;font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;color:#C3CCDD;margin:1.75rem 0 0;text-shadow:0 1px 10px rgba(31,42,68,.9)}
+.act1 .hint span{display:inline-block;animation:nudge 2.4s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.act1 .outro{
+  position:absolute;inset:0;z-index:41;display:grid;place-items:center;opacity:0;pointer-events:none;padding:0 1.25rem;
+  font-family:var(--hf-font-brand);font-weight:800;font-size:clamp(1.5rem,4vw,2.8rem);
+  letter-spacing:-.025em;color:var(--hf-ink);text-align:center;text-wrap:balance;margin:0;
+}
+
+/* ================= ACT II — the globe ================= */
+.act2{background:var(--hf-ink);color:var(--hf-cream);padding:clamp(4rem,9vw,7rem) 0}
+.act2 h2{font-weight:800;font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 1.1rem;text-wrap:balance}
+.act2 .lede{color:#C3CCDD;max-width:42ch;margin:0 0 1rem}
+.act2 .kicker{color:var(--hf-sunrise)}
+.globe-grid{display:grid;grid-template-columns:minmax(0,1fr) min(42%,400px);gap:clamp(2rem,4vw,3.5rem);align-items:center;margin-top:2.5rem}
+@media (max-width:62rem){.globe-grid{grid-template-columns:1fr}.globe-wrap{max-width:520px}}
+.globe-wrap{position:relative;aspect-ratio:1;width:100%;max-width:640px;margin-inline:auto;touch-action:pan-y}
+#globe{width:100%;height:100%;display:block;cursor:grab}
+#globe:active{cursor:grabbing}
+.readout{
+  position:absolute;left:0;right:0;bottom:-.25rem;text-align:center;
+  font-family:var(--hf-font-brand);font-weight:700;font-size:1.05rem;color:var(--hf-sunrise);
+  min-height:1.6em;pointer-events:none;
+}
+.readout small{display:block;font-weight:500;font-size:.8125rem;color:#A8B3C9;letter-spacing:.02em}
+.chapter-list{min-width:0;max-height:min(66vh,600px);overflow:auto;padding-right:.5rem}
+.chapter-list ul{list-style:none;margin:0;padding:0;columns:2;column-gap:1.25rem}
+@media (max-width:30rem){.chapter-list ul{columns:1}}
+.chapter-list button{
+  display:block;width:100%;text-align:left;background:none;border:0;padding:.42rem .55rem;
+  font:inherit;font-family:var(--hf-font-brand);font-weight:600;font-size:.9375rem;
+  color:#C3CCDD;cursor:pointer;border-radius:8px;break-inside:avoid;
+}
+.chapter-list button:hover,.chapter-list button[aria-current="true"]{background:#2A3754;color:var(--hf-cream)}
+.chapter-list button .r{display:block;font-weight:500;font-size:.75rem;color:#8E9BB5}
+.act2 .foot{margin-top:2.5rem;color:#8E9BB5;font-size:.875rem;max-width:52ch}
+
+/* ================= ACT III — craft ================= */
+.act3{padding:clamp(4rem,9vw,7rem) 0}
+.act3 h2{font-weight:800;font-size:clamp(1.9rem,4.6vw,3.1rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 1rem;text-wrap:balance}
+.act3 .lede{color:var(--hf-ink-muted);max-width:44ch;margin:0 0 3rem}
+.specimens{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1.75rem}
+.spec{margin:0}
+.tile{border-radius:14px;overflow:hidden;position:relative;aspect-ratio:4/3;display:grid;place-items:center}
+.tile svg{width:52%;height:auto}
+.spec figcaption{margin-top:.8rem;font-family:var(--hf-font-brand);font-weight:600;font-size:.8125rem;line-height:1.45;color:var(--hf-ink-muted)}
+
+/* letterpress: deboss into warm stock */
+.tile.letterpress{background:#F6EADA;box-shadow:inset 0 1px 0 #FFF,0 1px 2px rgba(31,42,68,.14)}
+.tile.letterpress svg{filter:drop-shadow(0 1px 0 rgba(255,255,255,.95)) drop-shadow(0 -1px 1px rgba(31,42,68,.28))}
+/* enamel pin: ink plate, polished metal edge */
+.tile.enamel{background:var(--hf-ink);box-shadow:inset 0 0 0 2px #46536F,inset 0 2px 6px rgba(255,255,255,.14),0 6px 16px rgba(31,42,68,.3)}
+.tile.enamel svg{filter:drop-shadow(0 1px 0 rgba(255,255,255,.22))}
+/* embroidery: thread on cotton */
+.tile.patch{background:#2A3754;box-shadow:inset 0 0 0 5px var(--hf-sunrise),0 4px 12px rgba(31,42,68,.26)}
+.tile.patch svg{filter:drop-shadow(.5px .5px 0 rgba(0,0,0,.35))}
+/* risograph: one-colour flyer, slight misregistration */
+.tile.riso{background:#FFFBF4;box-shadow:inset 0 0 0 1px rgba(31,42,68,.14)}
+.tile.riso .a,.tile.riso .b{position:absolute;width:52%;left:24%;top:18%}
+.tile.riso .b{mix-blend-mode:multiply;transform:translate(3px,2px)}
+
+/* ================= closing ================= */
+.closing{background:var(--hf-ink);color:var(--hf-cream);padding:clamp(3.5rem,7vw,5.5rem) 0}
+.closing p.line{font-family:var(--hf-font-brand);font-weight:800;font-size:clamp(1.6rem,3.8vw,2.4rem);line-height:1.18;letter-spacing:-.025em;margin:0 0 1rem;text-wrap:balance}
+.closing p.sub{color:#A8B3C9;max-width:48ch;margin:0 0 2rem}
+.cta{display:inline-block;background:var(--hf-sunrise);color:var(--hf-ink);font-family:var(--hf-font-brand);font-weight:800;padding:.85rem 1.5rem;border-radius:12px;text-decoration:none}
+.cta:hover{filter:brightness(1.06)}
+.closing svg{height:34px;width:auto;display:block;margin-top:2.5rem}
+footer{padding:2.25rem 0 3.5rem;font-size:.875rem;color:var(--hf-ink-muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between}
+footer a{color:var(--hf-ink-muted)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---- motion, honoured ---- */
+@media (prefers-reduced-motion:reduce){
+  .act1{height:auto}
+  .stage{position:relative;height:min(84vh,720px)}
+  .tunnel{transform:translateZ(1500px)!important}
+  .act1 .hint span{animation:none}
+  .plate{transition:none}
+}
+@media print{.act1,.grain{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#chapters">Skip to the chapter list</a>
+<svg class="grain" aria-hidden="true" focusable="false"><filter id="g">
+  <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="3" stitchTiles="stitch"/>
+  <feColorMatrix type="saturate" values="0"/>
+</filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+
+<header class="masthead">
+  <div class="wrap">
+    <a href="index.html" aria-label="Human First AI — home"><svg class="" viewBox="0 0 1154.2 172" aria-hidden="true" focusable="false">
+  <g transform="translate(-11.217,-33.652) scale(3.73913)">
+    <path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/>
+  </g>
+  <path d="M295.675 172L274.870 172L274.870 72L295.675 72L295.675 115.221L334.601 115.221L334.601 72L355.406 72L355.406 172L334.601 172L334.601 133.342L295.675 133.342L295.675 172Z M395.272 173.611L395.272 173.611Q386.413 173.611 380.172 169.785Q373.930 165.960 370.708 159.114Q367.487 152.268 367.487 143.141L367.487 143.141L367.487 98.711L387.621 98.711L387.621 141.530Q387.621 145.691 389.299 148.846Q390.977 152 394.064 153.745Q397.151 155.490 401.044 155.490L401.044 155.490Q405.071 155.490 408.091 153.745Q411.111 152 412.789 148.846Q414.467 145.691 414.467 141.530L414.467 141.530L414.467 98.711L434.601 98.711L434.601 172L415.809 172L415.809 157.503L416.883 160.725Q414.333 167.302 408.628 170.456Q402.923 173.611 395.272 173.611Z M466.816 172L446.682 172L446.682 98.711L465.474 98.711L465.474 116.564L463.460 113.611Q465.071 105.154 471.245 101.128Q477.420 97.101 486.011 97.101L486.011 97.101Q495.138 97.101 502.051 101.732Q508.964 106.362 510.708 114.148L510.708 114.148L504.937 114.685Q508.561 105.691 515.272 101.396Q521.984 97.101 530.977 97.101L530.977 97.101Q538.896 97.101 545.004 100.591Q551.111 104.081 554.601 110.322Q558.091 116.564 558.091 124.886L558.091 124.886L558.091 172L537.957 172L537.957 129.181Q537.957 124.886 536.413 121.799Q534.870 118.711 532.051 116.966Q529.232 115.221 525.205 115.221L525.205 115.221Q521.313 115.221 518.427 116.966Q515.541 118.711 513.997 121.799Q512.453 124.886 512.453 129.181L512.453 129.181L512.453 172L492.319 172L492.319 129.181Q492.319 124.886 490.776 121.799Q489.232 118.711 486.413 116.966Q483.594 115.221 479.568 115.221L479.568 115.221Q475.675 115.221 472.789 116.966Q469.903 118.711 468.359 121.799Q466.816 124.886 466.816 129.181L466.816 129.181L466.816 172Z M591.380 173.611L591.380 173.611Q583.460 173.611 577.688 171.060Q571.917 168.510 568.829 163.745Q565.742 158.980 565.742 152.403L565.742 152.403Q565.742 146.228 568.561 141.463Q571.380 136.698 577.219 133.477Q583.057 130.255 591.782 128.913L591.782 128.913L614.198 125.289L614.198 140.054L595.406 143.409Q591.111 144.215 588.829 146.161Q586.547 148.107 586.547 151.732L586.547 151.732Q586.547 155.087 589.098 156.966Q591.648 158.846 595.406 158.846L595.406 158.846Q600.373 158.846 604.131 156.698Q607.890 154.550 609.970 150.859Q612.051 147.168 612.051 142.738L612.051 142.738L612.051 123.678Q612.051 119.517 608.762 116.698Q605.474 113.879 599.836 113.879L599.836 113.879Q594.467 113.879 590.373 116.832Q586.279 119.785 584.400 124.617L584.400 124.617L568.292 116.966Q570.440 110.792 575.138 106.362Q579.836 101.933 586.413 99.517Q592.990 97.101 600.776 97.101L600.776 97.101Q610.037 97.101 617.151 100.456Q624.266 103.812 628.225 109.785Q632.185 115.758 632.185 123.678L632.185 123.678L632.185 172L613.393 172L613.393 160.188L617.957 159.383Q614.735 164.215 610.843 167.369Q606.950 170.523 602.118 172.067Q597.286 173.611 591.380 173.611Z M664.400 172L644.266 172L644.266 98.711L663.057 98.711L663.057 113.208L661.984 109.987Q664.534 103.409 670.239 100.255Q675.943 97.101 683.594 97.101L683.594 97.101Q691.917 97.101 698.158 100.591Q704.400 104.081 707.890 110.322Q711.380 116.564 711.380 124.886L711.380 124.886L711.380 172L691.245 172L691.245 129.181Q691.245 124.886 689.568 121.799Q687.890 118.711 684.870 116.966Q681.849 115.221 677.823 115.221L677.823 115.221Q673.930 115.221 670.843 116.966Q667.755 118.711 666.078 121.799Q664.400 124.886 664.400 129.181L664.400 129.181L664.400 172Z M768.427 172L755.272 172L755.272 72L818.628 72L818.628 84.081L768.427 84.081L768.427 116.430L813.930 116.430L813.930 128.510L768.427 128.510L768.427 172Z M841.849 172L829.366 172L829.366 99.651L841.849 99.651L841.849 172ZM841.849 88.107L829.366 88.107L829.366 72L841.849 72L841.849 88.107Z M870.977 172L858.494 172L858.494 99.651L870.708 99.651L870.708 112.940L869.366 111.060Q871.917 104.886 877.151 101.866Q882.386 98.846 889.903 98.846L889.903 98.846L894.333 98.846L894.333 110.658L888.024 110.658Q880.373 110.658 875.675 115.423Q870.977 120.188 870.977 128.913L870.977 128.913L870.977 172Z M928.695 173.611L928.695 173.611Q917.823 173.611 909.769 168.242Q901.715 162.872 898.359 153.745L898.359 153.745L908.292 148.913Q911.380 155.356 916.749 159.114Q922.118 162.872 928.695 162.872L928.695 162.872Q934.601 162.872 938.494 160.054Q942.386 157.235 942.386 152.671L942.386 152.671Q942.386 149.450 940.574 147.503Q938.762 145.557 936.212 144.416Q933.662 143.275 931.514 142.738L931.514 142.738L920.641 139.651Q910.843 136.832 906.346 131.597Q901.849 126.362 901.849 119.383L901.849 119.383Q901.849 112.940 905.138 108.174Q908.427 103.409 914.131 100.725Q919.836 98.040 926.950 98.040L926.950 98.040Q936.480 98.040 944.064 102.872Q951.648 107.705 954.870 116.430L954.870 116.430L944.668 121.128Q942.252 115.490 937.420 112.201Q932.588 108.913 926.547 108.913L926.547 108.913Q921.044 108.913 917.823 111.664Q914.601 114.416 914.601 118.577L914.601 118.577Q914.601 121.664 916.212 123.611Q917.823 125.557 920.104 126.564Q922.386 127.570 924.534 128.242L924.534 128.242L936.346 131.732Q945.205 134.282 950.104 139.651Q955.004 145.020 955.004 152.537L955.004 152.537Q955.004 158.577 951.648 163.409Q948.292 168.242 942.386 170.926Q936.480 173.611 928.695 173.611Z M998.091 172.805L998.091 172.805Q987.487 172.805 981.782 166.765Q976.078 160.725 976.078 149.718L976.078 149.718L976.078 111.597L962.923 111.597L962.923 99.651L965.608 99.651Q970.440 99.651 973.259 96.698Q976.078 93.745 976.078 88.913L976.078 88.913L976.078 83.007L988.561 83.007L988.561 99.651L1004.802 99.651L1004.802 111.597L988.561 111.597L988.561 149.315Q988.561 152.940 989.702 155.624Q990.843 158.309 993.527 159.852Q996.212 161.396 1000.641 161.396L1000.641 161.396Q1001.581 161.396 1002.990 161.262Q1004.400 161.128 1005.608 160.993L1005.608 160.993L1005.608 172Q1003.863 172.403 1001.715 172.604Q999.568 172.805 998.091 172.805Z M1064.899 172L1048.325 172L1077.302 88L1097.146 88L1126.123 172L1109.436 172L1103.460 153.960L1070.988 153.960L1064.899 172ZM1089.366 98.599L1075.385 140.430L1099.063 140.430L1085.082 98.599L1089.366 98.599Z M1154.198 172L1138.864 172L1138.864 88L1154.198 88L1154.198 172Z" fill="#1F2A44"/>
+</svg></a>
+    <a class="lnk" href="https://github.com/hkcarre/humanfirstai">Brand system &rarr;</a>
+  </div>
+</header>
+
+<!-- ============ ACT I ============ -->
+<section class="act1" aria-label="Walking through the open door">
+  <div class="stage">
+    <div class="light" aria-hidden="true"></div>
+      <div class="plate" style="--i:0;--w:95.0vmin;--tone:#1f2a44"></div>
+      <div class="plate" style="--i:1;--w:75.0vmin;--tone:#3e465b"></div>
+      <div class="plate" style="--i:2;--w:59.3vmin;--tone:#5c6272"></div>
+      <div class="plate" style="--i:3;--w:46.8vmin;--tone:#7b7e89"></div>
+      <div class="plate" style="--i:4;--w:37.0vmin;--tone:#999aa0"></div>
+      <div class="plate" style="--i:5;--w:29.2vmin;--tone:#b8b5b7"></div>
+      <div class="plate" style="--i:6;--w:23.1vmin;--tone:#d7d1ce"></div>
+      <div class="plate" style="--i:7;--w:18.2vmin;--tone:#FF8A3D"></div>
+    <div class="copy">
+      <div>
+        <h1 id="a1h">Make AI feel like an open door,<br><span class="l2">not a locked lab.</span></h1>
+        <p class="hint" id="a1hint"><span>Keep scrolling &mdash; walk through it</span></p>
+      </div>
+    </div>
+    <p class="outro" id="a1out">You are through. So is everyone else.</p>
+  </div>
+</section>
+
+<!-- ============ ACT II ============ -->
+<section class="act2" id="chapters">
+  <div class="wrap">
+    <p class="kicker">Thirty-eight chapters</p>
+    <h2>Thirty-eight doors. None of them locked.</h2>
+    <p class="lede">Plenty of people are building a god's-eye view of the world &mdash; everything
+      watched, from orbit, by somebody else.</p>
+    <p class="lede">This is the opposite picture. Not looking down at people. Standing at street
+      level with the door held open, in their language, for free.</p>
+
+    <div class="globe-grid">
+      <div class="globe-wrap">
+        <canvas id="globe" role="img"
+          aria-label="A rotating globe. Thirty-eight lit points mark the cities where Human First AI runs workshops. Every chapter is listed beside it."></canvas>
+        <p class="readout" id="readout" aria-hidden="true">&nbsp;</p>
+      </div>
+      <div class="chapter-list">
+        <p class="sr" id="clabel">Chapters. Choosing one turns the globe to it.</p>
+        <ul aria-labelledby="clabel">
+          <li><button type="button">Nairobi<span class="r">Kenya</span></button></li>
+          <li><button type="button">Lagos<span class="r">Nigeria</span></button></li>
+          <li><button type="button">Accra<span class="r">Ghana</span></button></li>
+          <li><button type="button">Kampala<span class="r">Uganda</span></button></li>
+          <li><button type="button">Dakar<span class="r">Senegal</span></button></li>
+          <li><button type="button">Addis Ababa<span class="r">Ethiopia</span></button></li>
+          <li><button type="button">Cape Town<span class="r">South Africa</span></button></li>
+          <li><button type="button">Casablanca<span class="r">Morocco</span></button></li>
+          <li><button type="button">Lima<span class="r">Peru</span></button></li>
+          <li><button type="button">Cusco<span class="r">Peru</span></button></li>
+          <li><button type="button">Oaxaca<span class="r">Mexico</span></button></li>
+          <li><button type="button">Bogotá<span class="r">Colombia</span></button></li>
+          <li><button type="button">São Paulo<span class="r">Brazil</span></button></li>
+          <li><button type="button">Recife<span class="r">Brazil</span></button></li>
+          <li><button type="button">Buenos Aires<span class="r">Argentina</span></button></li>
+          <li><button type="button">Detroit<span class="r">United States</span></button></li>
+          <li><button type="button">El Paso<span class="r">United States</span></button></li>
+          <li><button type="button">Jackson<span class="r">United States</span></button></li>
+          <li><button type="button">Montréal<span class="r">Canada</span></button></li>
+          <li><button type="button">Jakarta<span class="r">Indonesia</span></button></li>
+          <li><button type="button">Hanoi<span class="r">Viet Nam</span></button></li>
+          <li><button type="button">Manila<span class="r">Philippines</span></button></li>
+          <li><button type="button">Dhaka<span class="r">Bangladesh</span></button></li>
+          <li><button type="button">Jaipur<span class="r">India</span></button></li>
+          <li><button type="button">Chennai<span class="r">India</span></button></li>
+          <li><button type="button">Kathmandu<span class="r">Nepal</span></button></li>
+          <li><button type="button">Lahore<span class="r">Pakistan</span></button></li>
+          <li><button type="button">Colombo<span class="r">Sri Lanka</span></button></li>
+          <li><button type="button">Ulaanbaatar<span class="r">Mongolia</span></button></li>
+          <li><button type="button">Amman<span class="r">Jordan</span></button></li>
+          <li><button type="button">Beirut<span class="r">Lebanon</span></button></li>
+          <li><button type="button">Tbilisi<span class="r">Georgia</span></button></li>
+          <li><button type="button">Athens<span class="r">Greece</span></button></li>
+          <li><button type="button">Lisbon<span class="r">Portugal</span></button></li>
+          <li><button type="button">Kraków<span class="r">Poland</span></button></li>
+          <li><button type="button">Glasgow<span class="r">Scotland</span></button></li>
+          <li><button type="button">Suva<span class="r">Fiji</span></button></li>
+          <li><button type="button">Darwin<span class="r">Australia</span></button></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot">Drag the globe, or tab through the list. The land is Natural Earth 110m,
+      drawn as halftone rather than as a map &mdash; it is a motif, not an instrument.
+      Chapter locations here are illustrative placeholders.</p>
+  </div>
+</section>
+
+<!-- ============ ACT III ============ -->
+<section class="act3">
+  <div class="wrap">
+    <p class="kicker">Paper, thread, ink</p>
+    <h2>A brand you can hold.</h2>
+    <p class="lede">Most of this identity ends its life as a physical object in somebody's hands:
+      a flyer off a tired photocopier, a patch on a volunteer's sleeve. It is built to survive
+      that, which is why the mark is flat, heavy and made of one shape.</p>
+
+    <div class="specimens">
+      <figure class="spec">
+        <div class="tile letterpress"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#F6EADA"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#F6EADA"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></svg></div>
+        <figcaption>Letterpress &middot; 600gsm cotton</figcaption>
+      </figure>
+      <figure class="spec">
+        <div class="tile enamel"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#FFF6EC" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#FFF6EC"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#FFF6EC"/></svg></div>
+        <figcaption>Hard enamel pin &middot; 22mm</figcaption>
+      </figure>
+      <figure class="spec">
+        <div class="tile patch"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#FFF6EC" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#FFF6EC"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#FFF6EC"/></svg></div>
+        <figcaption>Embroidered patch &middot; sleeve</figcaption>
+      </figure>
+      <figure class="spec">
+        <div class="tile riso">
+          <div class="a"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FFF9F0"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#1F2A44" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#1F2A44"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FFF9F0"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#1F2A44"/></svg></div>
+          <div class="b"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FFF9F0"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#FF8A3D" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#FF8A3D"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FFF9F0"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#FF8A3D"/></svg></div>
+        </div>
+        <figcaption>Risograph &middot; two passes, one off-register</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <p class="line">The future belongs to all of us.</p>
+    <p class="sub">Every asset on this page is generated from one definition of the mark and one
+      palette. Nothing here was drawn by hand twice.</p>
+    <p><a class="cta" href="https://github.com/hkcarre/humanfirstai">Take the brand system</a></p>
+    <svg class="" viewBox="0 0 1154.2 172" aria-hidden="true" focusable="false">
+  <g transform="translate(-11.217,-33.652) scale(3.73913)">
+    <path d="M27,51.5 L27,30 A12.5,12.5 0 0 1 52,30 L52,51.5 Z" fill="#FF8A3D"/>
+  <path d="M24.5,51.5 L24.5,30 A15,15 0 0 1 54.5,30 L54.5,51.5" fill="none" stroke="#FFF6EC" stroke-width="5"/>
+  <path d="M20,51.5 L20,16.5 L7,9 L7,51.5 Z" fill="#FFF6EC"/>
+  <circle cx="10.5" cy="34" r="2.4" fill="#FF8A3D"/>
+  <rect x="3" y="51.5" width="58" height="3.5" fill="#FFF6EC"/>
+  </g>
+  <path d="M295.675 172L274.870 172L274.870 72L295.675 72L295.675 115.221L334.601 115.221L334.601 72L355.406 72L355.406 172L334.601 172L334.601 133.342L295.675 133.342L295.675 172Z M395.272 173.611L395.272 173.611Q386.413 173.611 380.172 169.785Q373.930 165.960 370.708 159.114Q367.487 152.268 367.487 143.141L367.487 143.141L367.487 98.711L387.621 98.711L387.621 141.530Q387.621 145.691 389.299 148.846Q390.977 152 394.064 153.745Q397.151 155.490 401.044 155.490L401.044 155.490Q405.071 155.490 408.091 153.745Q411.111 152 412.789 148.846Q414.467 145.691 414.467 141.530L414.467 141.530L414.467 98.711L434.601 98.711L434.601 172L415.809 172L415.809 157.503L416.883 160.725Q414.333 167.302 408.628 170.456Q402.923 173.611 395.272 173.611Z M466.816 172L446.682 172L446.682 98.711L465.474 98.711L465.474 116.564L463.460 113.611Q465.071 105.154 471.245 101.128Q477.420 97.101 486.011 97.101L486.011 97.101Q495.138 97.101 502.051 101.732Q508.964 106.362 510.708 114.148L510.708 114.148L504.937 114.685Q508.561 105.691 515.272 101.396Q521.984 97.101 530.977 97.101L530.977 97.101Q538.896 97.101 545.004 100.591Q551.111 104.081 554.601 110.322Q558.091 116.564 558.091 124.886L558.091 124.886L558.091 172L537.957 172L537.957 129.181Q537.957 124.886 536.413 121.799Q534.870 118.711 532.051 116.966Q529.232 115.221 525.205 115.221L525.205 115.221Q521.313 115.221 518.427 116.966Q515.541 118.711 513.997 121.799Q512.453 124.886 512.453 129.181L512.453 129.181L512.453 172L492.319 172L492.319 129.181Q492.319 124.886 490.776 121.799Q489.232 118.711 486.413 116.966Q483.594 115.221 479.568 115.221L479.568 115.221Q475.675 115.221 472.789 116.966Q469.903 118.711 468.359 121.799Q466.816 124.886 466.816 129.181L466.816 129.181L466.816 172Z M591.380 173.611L591.380 173.611Q583.460 173.611 577.688 171.060Q571.917 168.510 568.829 163.745Q565.742 158.980 565.742 152.403L565.742 152.403Q565.742 146.228 568.561 141.463Q571.380 136.698 577.219 133.477Q583.057 130.255 591.782 128.913L591.782 128.913L614.198 125.289L614.198 140.054L595.406 143.409Q591.111 144.215 588.829 146.161Q586.547 148.107 586.547 151.732L586.547 151.732Q586.547 155.087 589.098 156.966Q591.648 158.846 595.406 158.846L595.406 158.846Q600.373 158.846 604.131 156.698Q607.890 154.550 609.970 150.859Q612.051 147.168 612.051 142.738L612.051 142.738L612.051 123.678Q612.051 119.517 608.762 116.698Q605.474 113.879 599.836 113.879L599.836 113.879Q594.467 113.879 590.373 116.832Q586.279 119.785 584.400 124.617L584.400 124.617L568.292 116.966Q570.440 110.792 575.138 106.362Q579.836 101.933 586.413 99.517Q592.990 97.101 600.776 97.101L600.776 97.101Q610.037 97.101 617.151 100.456Q624.266 103.812 628.225 109.785Q632.185 115.758 632.185 123.678L632.185 123.678L632.185 172L613.393 172L613.393 160.188L617.957 159.383Q614.735 164.215 610.843 167.369Q606.950 170.523 602.118 172.067Q597.286 173.611 591.380 173.611Z M664.400 172L644.266 172L644.266 98.711L663.057 98.711L663.057 113.208L661.984 109.987Q664.534 103.409 670.239 100.255Q675.943 97.101 683.594 97.101L683.594 97.101Q691.917 97.101 698.158 100.591Q704.400 104.081 707.890 110.322Q711.380 116.564 711.380 124.886L711.380 124.886L711.380 172L691.245 172L691.245 129.181Q691.245 124.886 689.568 121.799Q687.890 118.711 684.870 116.966Q681.849 115.221 677.823 115.221L677.823 115.221Q673.930 115.221 670.843 116.966Q667.755 118.711 666.078 121.799Q664.400 124.886 664.400 129.181L664.400 129.181L664.400 172Z M768.427 172L755.272 172L755.272 72L818.628 72L818.628 84.081L768.427 84.081L768.427 116.430L813.930 116.430L813.930 128.510L768.427 128.510L768.427 172Z M841.849 172L829.366 172L829.366 99.651L841.849 99.651L841.849 172ZM841.849 88.107L829.366 88.107L829.366 72L841.849 72L841.849 88.107Z M870.977 172L858.494 172L858.494 99.651L870.708 99.651L870.708 112.940L869.366 111.060Q871.917 104.886 877.151 101.866Q882.386 98.846 889.903 98.846L889.903 98.846L894.333 98.846L894.333 110.658L888.024 110.658Q880.373 110.658 875.675 115.423Q870.977 120.188 870.977 128.913L870.977 128.913L870.977 172Z M928.695 173.611L928.695 173.611Q917.823 173.611 909.769 168.242Q901.715 162.872 898.359 153.745L898.359 153.745L908.292 148.913Q911.380 155.356 916.749 159.114Q922.118 162.872 928.695 162.872L928.695 162.872Q934.601 162.872 938.494 160.054Q942.386 157.235 942.386 152.671L942.386 152.671Q942.386 149.450 940.574 147.503Q938.762 145.557 936.212 144.416Q933.662 143.275 931.514 142.738L931.514 142.738L920.641 139.651Q910.843 136.832 906.346 131.597Q901.849 126.362 901.849 119.383L901.849 119.383Q901.849 112.940 905.138 108.174Q908.427 103.409 914.131 100.725Q919.836 98.040 926.950 98.040L926.950 98.040Q936.480 98.040 944.064 102.872Q951.648 107.705 954.870 116.430L954.870 116.430L944.668 121.128Q942.252 115.490 937.420 112.201Q932.588 108.913 926.547 108.913L926.547 108.913Q921.044 108.913 917.823 111.664Q914.601 114.416 914.601 118.577L914.601 118.577Q914.601 121.664 916.212 123.611Q917.823 125.557 920.104 126.564Q922.386 127.570 924.534 128.242L924.534 128.242L936.346 131.732Q945.205 134.282 950.104 139.651Q955.004 145.020 955.004 152.537L955.004 152.537Q955.004 158.577 951.648 163.409Q948.292 168.242 942.386 170.926Q936.480 173.611 928.695 173.611Z M998.091 172.805L998.091 172.805Q987.487 172.805 981.782 166.765Q976.078 160.725 976.078 149.718L976.078 149.718L976.078 111.597L962.923 111.597L962.923 99.651L965.608 99.651Q970.440 99.651 973.259 96.698Q976.078 93.745 976.078 88.913L976.078 88.913L976.078 83.007L988.561 83.007L988.561 99.651L1004.802 99.651L1004.802 111.597L988.561 111.597L988.561 149.315Q988.561 152.940 989.702 155.624Q990.843 158.309 993.527 159.852Q996.212 161.396 1000.641 161.396L1000.641 161.396Q1001.581 161.396 1002.990 161.262Q1004.400 161.128 1005.608 160.993L1005.608 160.993L1005.608 172Q1003.863 172.403 1001.715 172.604Q999.568 172.805 998.091 172.805Z M1064.899 172L1048.325 172L1077.302 88L1097.146 88L1126.123 172L1109.436 172L1103.460 153.960L1070.988 153.960L1064.899 172ZM1089.366 98.599L1075.385 140.430L1099.063 140.430L1085.082 98.599L1089.366 98.599Z M1154.198 172L1138.864 172L1138.864 88L1154.198 88L1154.198 172Z" fill="#FFF6EC"/>
+</svg>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Human First AI &middot; CC BY-NC 4.0 &middot; A brand demonstration, not the live service</span>
+    <span><a href="https://github.com/hkcarre/humanfirstai">github.com/hkcarre/humanfirstai</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var LAND = {"q":10,"step":2.1,"source":"Natural Earth 110m land, public domain. A motif, not a map — do not measure anything with it.","dots":[-1450,-840,-1333,-840,-1217,-840,-1100,-840,-983,-840,-867,-840,-750,-840,-633,-840,-517,-840,-400,-840,-283,-840,-167,-840,-50,-840,67,-840,183,-840,300,-840,417,-840,533,-840,650,-840,767,-840,883,-840,1000,-840,1117,-840,1233,-840,1350,-840,1467,-840,1583,-840,1700,-840,-1450,-819,-1333,-819,-1217,-819,-1100,-819,-983,-819,-867,-819,-750,-819,-633,-819,-400,-819,-283,-819,-167,-819,-50,-819,67,-819,183,-819,300,-819,417,-819,533,-819,650,-819,767,-819,883,-819,1000,-819,1117,-819,1233,-819,1350,-819,1467,-819,1583,-819,-1450,-798,-1333,-798,-1217,-798,-1100,-798,-983,-798,-867,-798,-283,-798,-167,-798,-50,-798,67,-798,183,-798,300,-798,417,-798,533,-798,650,-798,767,-798,883,-798,1000,-798,1117,-798,1233,-798,1350,-798,1467,-798,1583,-798,-1504,-777,-1406,-777,-1307,-777,-1209,-777,-1110,-777,-1011,-777,-913,-777,-814,-777,-321,-777,-223,-777,-124,-777,-26,-777,73,-777,172,-777,270,-777,369,-777,467,-777,566,-777,664,-777,763,-777,862,-777,960,-777,1059,-777,1157,-777,1256,-777,1354,-777,1453,-777,1552,-777,-1462,-756,-1378,-756,-1293,-756,-1209,-756,-1124,-756,-1040,-756,-956,-756,-871,-756,-787,-756,-702,-756,-196,-756,-111,-756,-27,-756,58,-756,142,-756,227,-756,311,-756,396,-756,480,-756,564,-756,649,-756,733,-756,818,-756,902,-756,987,-756,1071,-756,1155,-756,1240,-756,1324,-756,1409,-756,1493,-756,1578,-756,-987,-735,-913,-735,-691,-735,-617,-735,-99,-735,-25,-735,48,-735,122,-735,196,-735,270,-735,344,-735,418,-735,492,-735,566,-735,640,-735,714,-735,788,-735,862,-735,936,-735,1010,-735,1084,-735,1158,-735,1232,-735,1305,-735,1379,-735,1453,-735,1527,-735,1601,-735,1675,-735,-615,-714,-22,-714,43,-714,109,-714,175,-714,241,-714,307,-714,373,-714,439,-714,504,-714,570,-714,636,-714,768,-714,834,-714,899,-714,965,-714,1031,-714,1097,-714,1163,-714,1229,-714,1294,-714,1360,-714,1426,-714,1492,-714,1558,-714,1624,-714,1689,-714,-671,-693,339,-693,458,-693,517,-693,576,-693,636,-693,695,-693,814,-693,873,-693,933,-693,992,-693,1052,-693,1111,-693,1171,-693,1230,-693,1289,-693,1349,-693,1408,-693,1468,-693,1527,-693,-662,-672,530,-672,584,-672,855,-672,910,-672,1018,-672,1072,-672,1126,-672,1181,-672,1235,-672,1289,-672,1343,-672,1397,-672,1451,-672,-712,-546,-676,-546,-731,-525,-746,-504,-713,-504,-727,-483,-695,-483,-664,-483,-738,-462,-708,-462,-677,-462,1689,-462,-718,-441,-689,-441,-660,-441,1709,-441,-726,-420,-698,-420,-670,-420,1478,-420,1732,-420,-732,-399,-705,-399,-678,-399,-650,-399,-623,-399,1759,-399,-710,-378,-684,-378,-657,-378,-631,-378,-604,-378,-577,-378,1416,-378,1442,-378,1469,-378,1761,-378,-714,-357,-688,-357,-662,-357,-636,-357,-610,-357,-585,-357,1407,-357,1432,-357,1458,-357,1484,-357,1743,-357,-716,-336,-691,-336,-665,-336,-640,-336,-615,-336,-590,-336,-565,-336,-539,-336,192,-336,217,-336,242,-336,1175,-336,1200,-336,1225,-336,1352,-336,1402,-336,1427,-336,1452,-336,1478,-336,1503,-336,-692,-315,-667,-315,-642,-315,-618,-315,-593,-315,-569,-315,-544,-315,-519,-315,195,-315,220,-315,244,-315,269,-315,293,-315,1180,-315,1205,-315,1229,-315,1254,-315,1279,-315,1303,-315,1328,-315,1353,-315,1377,-315,1402,-315,1426,-315,1451,-315,1476,-315,1500,-315,1525,-315,-691,-294,-667,-294,-643,-294,-619,-294,-595,-294,-571,-294,-547,-294,-522,-294,-498,-294,177,-294,201,-294,225,-294,249,-294,273,-294,297,-294,1165,-294,1189,-294,1213,-294,1237,-294,1261,-294,1285,-294,1309,-294,1334,-294,1358,-294,1382,-294,1406,-294,1430,-294,1454,-294,1478,-294,1502,-294,1526,-294,-689,-273,-666,-273,-642,-273,-618,-273,-595,-273,-571,-273,-547,-273,-524,-273,-500,-273,161,-273,185,-273,209,-273,232,-273,256,-273,280,-273,303,-273,1154,-273,1178,-273,1201,-273,1225,-273,1249,-273,1272,-273,1296,-273,1319,-273,1343,-273,1367,-273,1390,-273,1414,-273,1438,-273,1461,-273,1485,-273,1509,-273,-686,-252,-663,-252,-640,-252,-616,-252,-593,-252,-570,-252,-547,-252,-524,-252,-500,-252,150,-252,173,-252,196,-252,219,-252,242,-252,266,-252,289,-252,312,-252,451,-252,1148,-252,1171,-252,1194,-252,1217,-252,1240,-252,1264,-252,1287,-252,1310,-252,1333,-252,1356,-252,1380,-252,1403,-252,1426,-252,1449,-252,1472,-252,1496,-252,1519,-252,-681,-231,-658,-231,-636,-231,-613,-231,-590,-231,-567,-231,-544,-231,-521,-231,-499,-231,-476,-231,-453,-231,163,-231,186,-231,209,-231,232,-231,255,-231,278,-231,300,-231,323,-231,346,-231,437,-231,460,-231,1145,-231,1168,-231,1191,-231,1214,-231,1236,-231,1259,-231,1282,-231,1305,-231,1328,-231,1351,-231,1373,-231,1396,-231,1419,-231,1442,-231,1465,-231,1488,-231,-698,-210,-675,-210,-653,-210,-630,-210,-608,-210,-585,-210,-563,-210,-540,-210,-518,-210,-495,-210,-473,-210,-450,-210,-428,-210,134,-210,157,-210,179,-210,202,-210,224,-210,247,-210,269,-210,292,-210,314,-210,337,-210,449,-210,472,-210,1169,-210,1192,-210,1214,-210,1237,-210,1259,-210,1282,-210,1304,-210,1327,-210,1349,-210,1372,-210,1394,-210,1417,-210,1439,-210,1462,-210,1484,-210,-690,-189,-668,-189,-646,-189,-624,-189,-601,-189,-579,-189,-557,-189,-535,-189,-513,-189,-490,-189,-468,-189,-446,-189,-424,-189,-402,-189,131,-189,153,-189,176,-189,198,-189,220,-189,242,-189,264,-189,286,-189,309,-189,331,-189,353,-189,464,-189,486,-189,1219,-189,1241,-189,1263,-189,1285,-189,1308,-189,1330,-189,1352,-189,1374,-189,1396,-189,1419,-189,1441,-189,1463,-189,-725,-168,-703,-168,-681,-168,-659,-168,-637,-168,-615,-168,-594,-168,-572,-168,-550,-168,-528,-168,-506,-168,-484,-168,-462,-168,-440,-168,-418,-168,-396,-168,130,-168,152,-168,174,-168,196,-168,218,-168,240,-168,262,-168,284,-168,306,-168,328,-168,350,-168,372,-168,459,-168,481,-168,1227,-168,1249,-168,1271,-168,1293,-168,1315,-168,1337,-168,1359,-168,1381,-168,1425,-168,1447,-168,-758,-147,-736,-147,-714,-147,-693,-147,-671,-147,-649,-147,-628,-147,-606,-147,-584,-147,-562,-147,-541,-147,-519,-147,-497,-147,-476,-147,-454,-147,-432,-147,-411,-147,132,-147,154,-147,176,-147,197,-147,219,-147,241,-147,263,-147,284,-147,306,-147,328,-147,349,-147,371,-147,393,-147,480,-147,501,-147,1261,-147,1305,-147,1326,-147,1348,-147,1435,-147,-767,-126,-746,-126,-724,-126,-703,-126,-681,-126,-660,-126,-638,-126,-616,-126,-595,-126,-573,-126,-552,-126,-530,-126,-509,-126,-487,-126,-466,-126,-444,-126,-423,-126,-401,-126,137,-126,158,-126,180,-126,201,-126,223,-126,244,-126,266,-126,287,-126,309,-126,330,-126,352,-126,373,-126,395,-126,1320,-126,1342,-126,1363,-126,1428,-126,-775,-105,-753,-105,-732,-105,-711,-105,-689,-105,-668,-105,-647,-105,-625,-105,-604,-105,-583,-105,-561,-105,-540,-105,-519,-105,-497,-105,-476,-105,-454,-105,-433,-105,-412,-105,-390,-105,-369,-105,144,-105,165,-105,186,-105,208,-105,229,-105,250,-105,272,-105,293,-105,314,-105,336,-105,357,-105,378,-105,400,-105,1617,-105,-781,-84,-760,-84,-739,-84,-717,-84,-696,-84,-675,-84,-654,-84,-632,-84,-611,-84,-590,-84,-569,-84,-548,-84,-526,-84,-505,-84,-484,-84,-463,-84,-441,-84,-420,-84,-399,-84,-378,-84,-357,-84,153,-84,174,-84,195,-84,217,-84,238,-84,259,-84,280,-84,302,-84,323,-84,344,-84,365,-84,386,-84,1151,-84,1405,-84,1427,-84,1469,-84,-807,-63,-786,-63,-765,-63,-744,-63,-722,-63,-701,-63,-680,-63,-659,-63,-638,-63,-617,-63,-596,-63,-575,-63,-553,-63,-532,-63,-511,-63,-490,-63,-469,-63,-448,-63,-427,-63,-406,-63,-384,-63,-363,-63,123,-63,144,-63,165,-63,186,-63,207,-63,228,-63,249,-63,271,-63,292,-63,313,-63,334,-63,355,-63,376,-63,1073,-63,1390,-63,1411,-63,1433,-63,1454,-63,1475,-63,-810,-42,-789,-42,-768,-42,-747,-42,-726,-42,-705,-42,-684,-42,-663,-42,-642,-42,-621,-42,-600,-42,-579,-42,-558,-42,-537,-42,-516,-42,-494,-42,-473,-42,-452,-42,-431,-42,-410,-42,-389,-42,116,-42,137,-42,158,-42,179,-42,200,-42,221,-42,242,-42,264,-42,285,-42,306,-42,327,-42,348,-42,369,-42,390,-42,1043,-42,1358,-42,1380,-42,1401,-42,1422,-42,1443,-42,1527,-42,-791,-21,-770,-21,-749,-21,-728,-21,-707,-21,-686,-21,-665,-21,-644,-21,-623,-21,-602,-21,-581,-21,-560,-21,-539,-21,-518,-21,-497,-21,-476,-21,-455,-21,112,-21,133,-21,154,-21,175,-21,196,-21,217,-21,238,-21,259,-21,280,-21,301,-21,322,-21,343,-21,364,-21,385,-21,406,-21,1016,-21,1037,-21,1121,-21,1142,-21,1163,-21,1205,-21,1331,-21,1373,-21,-792,0,-771,0,-750,0,-729,0,-708,0,-687,0,-666,0,-645,0,-624,0,-603,0,-582,0,-561,0,-540,0,-519,0,111,0,132,0,153,0,174,0,195,0,216,0,237,0,258,0,279,0,300,0,321,0,342,0,363,0,384,0,405,0,426,0,1014,0,1035,0,1098,0,1119,0,1140,0,1161,0,-770,21,-749,21,-728,21,-707,21,-686,21,-665,21,-644,21,-623,21,-602,21,-581,21,-560,21,-539,21,-518,21,112,21,133,21,154,21,175,21,196,21,217,21,238,21,259,21,280,21,301,21,322,21,343,21,364,21,385,21,406,21,427,21,449,21,995,21,1037,21,1121,21,1142,21,1163,21,-768,42,-747,42,-726,42,-705,42,-684,42,-663,42,-642,42,-621,42,-600,42,-579,42,-558,42,-537,42,95,42,116,42,137,42,158,42,179,42,200,42,221,42,242,42,264,42,285,42,306,42,327,42,348,42,369,42,390,42,411,42,432,42,453,42,474,42,979,42,1022,42,1148,42,1169,42,-765,63,-744,63,-722,63,-701,63,-680,63,-659,63,-638,63,-617,63,-596,63,-89,63,-68,63,-46,63,-25,63,-4,63,17,63,38,63,59,63,80,63,101,63,123,63,144,63,165,63,186,63,207,63,228,63,249,63,271,63,292,63,313,63,334,63,355,63,376,63,397,63,418,63,440,63,461,63,482,63,1010,63,1242,63,-824,84,-802,84,-781,84,-760,84,-739,84,-717,84,-696,84,-675,84,-654,84,-632,84,-611,84,-123,84,-102,84,-81,84,-59,84,-38,84,-17,84,4,84,26,84,47,84,68,84,89,84,110,84,132,84,153,84,174,84,195,84,217,84,238,84,259,84,280,84,302,84,323,84,344,84,365,84,386,84,408,84,429,84,450,84,471,84,493,84,811,84,1002,84,1236,84,1257,84,-839,105,-753,105,-732,105,-711,105,-689,105,-668,105,-625,105,-134,105,-113,105,-91,105,-70,105,-49,105,-27,105,-6,105,15,105,37,105,58,105,79,105,101,105,122,105,144,105,165,105,186,105,208,105,229,105,250,105,272,105,293,105,314,105,336,105,357,105,378,105,400,105,421,105,464,105,485,105,507,105,763,105,784,105,1062,105,1233,105,-853,126,-165,126,-143,126,-122,126,-100,126,-79,126,-57,126,-36,126,-14,126,8,126,29,126,51,126,72,126,94,126,115,126,137,126,158,126,180,126,201,126,223,126,244,126,266,126,287,126,309,126,330,126,352,126,373,126,395,126,416,126,761,126,782,126,997,126,1019,126,1040,126,1062,126,1083,126,1213,126,-910,147,-888,147,-866,147,-845,147,-172,147,-150,147,-128,147,-107,147,-85,147,-63,147,-41,147,-20,147,2,147,24,147,45,147,67,147,89,147,111,147,132,147,154,147,176,147,197,147,219,147,241,147,263,147,284,147,306,147,328,147,349,147,371,147,393,147,436,147,458,147,480,147,762,147,784,147,979,147,1001,147,1022,147,1044,147,1066,147,1088,147,-988,168,-966,168,-944,168,-923,168,-901,168,-155,168,-133,168,-111,168,-89,168,-67,168,-45,168,-23,168,-1,168,21,168,43,168,65,168,87,168,108,168,130,168,152,168,174,168,196,168,218,168,240,168,262,168,284,168,306,168,328,168,350,168,372,168,437,168,459,168,481,168,503,168,525,168,745,168,767,168,788,168,810,168,964,168,986,168,1008,168,1030,168,1052,168,1205,168,-1023,189,-1001,189,-979,189,-912,189,-890,189,-712,189,-690,189,-157,189,-135,189,-113,189,-91,189,-69,189,-46,189,-24,189,-2,189,20,189,42,189,65,189,87,189,109,189,131,189,153,189,176,189,198,189,220,189,242,189,264,189,286,189,309,189,331,189,353,189,420,189,442,189,464,189,486,189,508,189,531,189,553,189,730,189,753,189,775,189,797,189,819,189,841,189,952,189,975,189,997,189,1019,189,1041,189,-1035,210,-1013,210,-990,210,-900,210,-878,210,-765,210,-158,210,-135,210,-113,210,-90,210,-68,210,-45,210,-23,210,0,210,22,210,45,210,67,210,89,210,112,210,134,210,157,210,179,210,202,210,224,210,247,210,269,210,292,210,314,210,337,210,359,210,404,210,427,210,449,210,472,210,494,210,517,210,539,210,562,210,584,210,742,210,764,210,787,210,809,210,832,210,854,210,944,210,967,210,989,210,1012,210,1034,210,1057,210,1102,210,-1047,231,-1024,231,-1001,231,-978,231,-818,231,-156,231,-133,231,-111,231,-88,231,-65,231,-42,231,-19,231,4,231,26,231,49,231,72,231,95,231,118,231,141,231,163,231,186,231,209,231,232,231,255,231,278,231,300,231,323,231,346,231,392,231,415,231,437,231,460,231,483,231,506,231,529,231,552,231,574,231,711,231,734,231,757,231,780,231,803,231,826,231,848,231,871,231,894,231,917,231,940,231,962,231,985,231,1008,231,1031,231,1054,231,1077,231,1099,231,1122,231,1145,231,-1081,252,-1057,252,-1034,252,-1011,252,-988,252,-129,252,-106,252,-83,252,-59,252,-36,252,-13,252,10,252,33,252,57,252,80,252,103,252,126,252,150,252,173,252,196,252,219,252,242,252,266,252,289,252,312,252,335,252,382,252,405,252,428,252,451,252,474,252,498,252,614,252,683,252,707,252,730,252,753,252,776,252,799,252,823,252,846,252,869,252,892,252,915,252,939,252,962,252,985,252,1008,252,1031,252,1055,252,1078,252,1101,252,1124,252,1148,252,1171,252,-1138,273,-1091,273,-1067,273,-1044,273,-1020,273,-997,273,-807,273,-122,273,-98,273,-75,273,-51,273,-28,273,-4,273,20,273,43,273,67,273,91,273,114,273,138,273,161,273,185,273,209,273,232,273,256,273,280,273,303,273,327,273,374,273,398,273,421,273,445,273,469,273,492,273,540,273,563,273,587,273,610,273,634,273,658,273,681,273,705,273,729,273,752,273,776,273,800,273,823,273,847,273,870,273,894,273,918,273,941,273,965,273,989,273,1012,273,1036,273,1059,273,1083,273,1107,273,1130,273,1154,273,1178,273,1201,273,-1149,294,-1101,294,-1077,294,-1053,294,-1029,294,-1005,294,-980,294,-956,294,-908,294,-812,294,-89,294,-64,294,-40,294,-16,294,8,294,32,294,56,294,80,294,104,294,128,294,152,294,177,294,201,294,225,294,249,294,273,294,297,294,321,294,345,294,369,294,393,294,418,294,442,294,466,294,514,294,538,294,562,294,586,294,610,294,635,294,659,294,683,294,707,294,731,294,755,294,779,294,803,294,827,294,851,294,876,294,900,294,924,294,948,294,972,294,996,294,1020,294,1044,294,1068,294,1093,294,1117,294,1141,294,1165,294,1189,294,1213,294,-1160,315,-1135,315,-1110,315,-1086,315,-1061,315,-1036,315,-1012,315,-987,315,-963,315,-938,315,-913,315,-889,315,-864,315,-839,315,-815,315,-76,315,-51,315,-27,315,-2,315,23,315,47,315,72,315,96,315,121,315,146,315,220,315,244,315,367,315,392,315,417,315,441,315,466,315,491,315,515,315,540,315,564,315,589,315,614,315,638,315,663,315,688,315,712,315,737,315,761,315,786,315,811,315,835,315,860,315,885,315,909,315,934,315,958,315,983,315,1008,315,1032,315,1057,315,1082,315,1106,315,1131,315,1156,315,1180,315,1205,315,1303,315,-1170,336,-1144,336,-1119,336,-1094,336,-1069,336,-1044,336,-1018,336,-993,336,-968,336,-943,336,-918,336,-892,336,-867,336,-842,336,-817,336,-792,336,-60,336,-35,336,-10,336,15,336,41,336,66,336,91,336,368,336,393,336,419,336,444,336,469,336,494,336,520,336,545,336,570,336,595,336,620,336,646,336,671,336,696,336,721,336,746,336,772,336,797,336,822,336,847,336,873,336,898,336,923,336,948,336,973,336,999,336,1024,336,1049,336,1074,336,1099,336,1125,336,1150,336,1175,336,1200,336,1326,336,-1205,357,-1179,357,-1154,357,-1128,357,-1102,357,-1076,357,-1050,357,-1024,357,-998,357,-972,357,-947,357,-921,357,-895,357,-869,357,-843,357,-817,357,-791,357,-766,357,10,357,36,357,62,357,88,357,372,357,398,357,424,357,450,357,476,357,501,357,527,357,553,357,579,357,605,357,631,357,657,357,683,357,708,357,734,357,760,357,786,357,812,357,838,357,864,357,889,357,915,357,941,357,967,357,993,357,1019,357,1045,357,1070,357,1096,357,1122,357,1148,357,1174,357,1277,357,1381,357,1407,357,-1215,378,-1189,378,-1162,378,-1136,378,-1109,378,-1082,378,-1056,378,-1029,378,-1003,378,-976,378,-950,378,-923,378,-896,378,-870,378,-843,378,-817,378,-790,378,-763,378,-72,378,-46,378,-19,378,140,378,220,378,273,378,300,378,326,378,353,378,379,378,406,378,432,378,459,378,486,378,512,378,539,378,565,378,592,378,619,378,645,378,672,378,698,378,725,378,751,378,778,378,805,378,831,378,858,378,884,378,911,378,937,378,964,378,991,378,1017,378,1044,378,1070,378,1097,378,1123,378,1150,378,1177,378,1283,378,1389,378,-1225,399,-1198,399,-1170,399,-1143,399,-1116,399,-1088,399,-1061,399,-1034,399,-1006,399,-979,399,-951,399,-924,399,-897,399,-869,399,-842,399,-815,399,-787,399,-760,399,-75,399,-48,399,-21,399,89,399,226,399,280,399,308,399,335,399,363,399,390,399,417,399,445,399,472,399,499,399,527,399,554,399,581,399,609,399,636,399,664,399,691,399,718,399,746,399,773,399,800,399,828,399,855,399,883,399,910,399,937,399,965,399,992,399,1019,399,1047,399,1074,399,1102,399,1129,399,1156,399,1184,399,1238,399,1266,399,1403,399,-1235,420,-1207,420,-1178,420,-1150,420,-1122,420,-1094,420,-1065,420,-1037,420,-1009,420,-981,420,-952,420,-924,420,-896,420,-867,420,-839,420,-811,420,-783,420,-754,420,-726,420,-76,420,-48,420,-20,420,9,420,93,420,122,420,150,420,206,420,235,420,263,420,348,420,432,420,461,420,489,420,517,420,545,420,574,420,602,420,630,420,658,420,687,420,715,420,743,420,772,420,800,420,828,420,856,420,885,420,913,420,941,420,969,420,998,420,1026,420,1054,420,1082,420,1111,420,1139,420,1167,420,1195,420,1224,420,1252,420,1280,420,-1215,441,-1186,441,-1157,441,-1127,441,-1098,441,-1069,441,-1040,441,-1010,441,-981,441,-952,441,-923,441,-893,441,-864,441,-835,441,-806,441,-777,441,-747,441,-718,441,-689,441,-660,441,13,441,42,441,72,441,101,441,159,441,189,441,218,441,247,441,276,441,393,441,422,441,452,441,481,441,510,441,539,441,569,441,598,441,627,441,656,441,686,441,715,441,744,441,773,441,803,441,832,441,861,441,890,441,920,441,949,441,978,441,1007,441,1037,441,1066,441,1095,441,1124,441,1154,441,1183,441,1212,441,1241,441,1270,441,1300,441,1329,441,1417,441,-1224,462,-1193,462,-1163,462,-1133,462,-1102,462,-1072,462,-1041,462,-1011,462,-981,462,-950,462,-920,462,-890,462,-859,462,-829,462,-799,462,-768,462,-738,462,-708,462,-677,462,-647,462,-10,462,20,462,51,462,81,462,111,462,142,462,172,462,202,462,233,462,263,462,293,462,385,462,415,462,445,462,476,462,506,462,536,462,567,462,597,462,627,462,658,462,688,462,718,462,749,462,779,462,809,462,840,462,870,462,900,462,931,462,961,462,991,462,1022,462,1052,462,1082,462,1113,462,1143,462,1173,462,1204,462,1234,462,1264,462,1295,462,1325,462,1355,462,-1200,483,-1169,483,-1137,483,-1106,483,-1074,483,-1042,483,-1011,483,-979,483,-948,483,-916,483,-885,483,-853,483,-821,483,-790,483,-758,483,-727,483,-695,483,-664,483,-569,483,-537,483,-32,483,-1,483,31,483,63,483,94,483,126,483,157,483,189,483,220,483,252,483,283,483,315,483,347,483,378,483,410,483,441,483,473,483,504,483,536,483,568,483,599,483,631,483,662,483,694,483,725,483,757,483,789,483,820,483,852,483,883,483,915,483,946,483,978,483,1010,483,1041,483,1073,483,1104,483,1136,483,1167,483,1199,483,1231,483,1262,483,1294,483,1325,483,1357,483,1388,483,1420,483,-1273,504,-1240,504,-1207,504,-1174,504,-1141,504,-1108,504,-1075,504,-1042,504,-1009,504,-976,504,-943,504,-910,504,-878,504,-845,504,-812,504,-779,504,-746,504,-713,504,-680,504,-647,504,-614,504,-54,504,45,504,78,504,111,504,144,504,177,504,210,504,243,504,276,504,308,504,341,504,374,504,407,504,440,504,473,504,506,504,539,504,572,504,605,504,638,504,671,504,704,504,737,504,770,504,803,504,836,504,869,504,901,504,934,504,967,504,1000,504,1033,504,1066,504,1099,504,1132,504,1165,504,1198,504,1231,504,1264,504,1297,504,1330,504,1363,504,1396,504,1429,504,-1317,525,-1283,525,-1248,525,-1214,525,-1179,525,-1145,525,-1110,525,-1076,525,-1041,525,-1007,525,-972,525,-938,525,-903,525,-869,525,-834,525,-765,525,-731,525,-696,525,-662,525,-627,525,-593,525,-558,525,-75,525,-41,525,-6,525,63,525,97,525,132,525,166,525,201,525,235,525,270,525,304,525,339,525,373,525,408,525,442,525,477,525,511,525,546,525,580,525,615,525,649,525,684,525,718,525,753,525,787,525,822,525,856,525,891,525,925,525,960,525,994,525,1029,525,1063,525,1098,525,1132,525,1167,525,1201,525,1236,525,1270,525,1305,525,1339,525,1374,525,1408,525,1581,525,-1292,546,-1256,546,-1220,546,-1184,546,-1147,546,-1111,546,-1075,546,-1039,546,-1002,546,-966,546,-930,546,-894,546,-857,546,-785,546,-749,546,-712,546,-676,546,-640,546,-604,546,-60,546,-24,546,230,546,266,546,303,546,339,546,375,546,411,546,448,546,484,546,520,546,556,546,593,546,629,546,665,546,701,546,738,546,774,546,810,546,846,546,883,546,919,546,955,546,991,546,1028,546,1064,546,1100,546,1136,546,1173,546,1209,546,1245,546,1281,546,1318,546,1354,546,1571,546,1608,546,-1303,567,-1265,567,-1226,567,-1188,567,-1150,567,-1112,567,-1073,567,-1035,567,-997,567,-959,567,-920,567,-729,567,-691,567,-653,567,-41,567,151,567,227,567,265,567,304,567,342,567,380,567,418,567,457,567,495,567,533,567,571,567,610,567,648,567,686,567,724,567,763,567,801,567,839,567,877,567,916,567,954,567,992,567,1030,567,1069,567,1107,567,1145,567,1183,567,1222,567,1260,567,1298,567,1336,567,1375,567,1566,567,1604,567,-1557,588,-1354,588,-1314,588,-1273,588,-1232,588,-1192,588,-1151,588,-1111,588,-1070,588,-1030,588,-989,588,-949,588,-746,588,-705,588,65,588,146,588,267,588,308,588,349,588,389,588,430,588,470,588,511,588,551,588,592,588,632,588,673,588,713,588,754,588,794,588,835,588,876,588,916,588,957,588,997,588,1038,588,1078,588,1119,588,1159,588,1200,588,1240,588,1281,588,1321,588,1362,588,1403,588,1605,588,-1627,609,-1584,609,-1541,609,-1498,609,-1455,609,-1411,609,-1368,609,-1325,609,-1282,609,-1239,609,-1195,609,-1152,609,-1109,609,-1066,609,-1023,609,-980,609,-764,609,-720,609,-461,609,57,609,100,609,143,609,229,609,273,609,316,609,359,609,402,609,445,609,489,609,532,609,575,609,618,609,661,609,704,609,748,609,791,609,834,609,877,609,920,609,964,609,1007,609,1050,609,1093,609,1136,609,1179,609,1223,609,1266,609,1309,609,1352,609,1395,609,1439,609,1482,609,1525,609,1654,609,1698,609,-1615,630,-1569,630,-1522,630,-1476,630,-1430,630,-1384,630,-1337,630,-1291,630,-1245,630,-1199,630,-1152,630,-1106,630,-1060,630,-1014,630,-967,630,-921,630,-690,630,-505,630,-459,630,97,630,143,630,235,630,282,630,328,630,374,630,420,630,467,630,513,630,559,630,605,630,652,630,698,630,744,630,790,630,837,630,883,630,929,630,975,630,1022,630,1068,630,1114,630,1160,630,1207,630,1253,630,1299,630,1345,630,1392,630,1438,630,1484,630,1530,630,1577,630,1623,630,1669,630,1715,630,1762,630,-1800,651,-1750,651,-1650,651,-1600,651,-1551,651,-1501,651,-1451,651,-1401,651,-1351,651,-1301,651,-1251,651,-1201,651,-1152,651,-1102,651,-1052,651,-1002,651,-952,651,-902,651,-852,651,-753,651,-703,651,-503,651,-453,651,-403,651,-204,651,-154,651,145,651,195,651,295,651,345,651,444,651,494,651,544,651,594,651,644,651,694,651,744,651,794,651,843,651,893,651,943,651,993,651,1043,651,1093,651,1143,651,1193,651,1242,651,1292,651,1342,651,1392,651,1442,651,1492,651,1542,651,1592,651,1642,651,1691,651,1741,651,1791,651,-1800,672,-1637,672,-1583,672,-1529,672,-1475,672,-1421,672,-1366,672,-1312,672,-1258,672,-1204,672,-1150,672,-1096,672,-1041,672,-987,672,-933,672,-879,672,-825,672,-770,672,-716,672,-662,672,-499,672,-445,672,-391,672,-337,672,151,672,205,672,259,672,313,672,368,672,530,672,584,672,639,672,693,672,747,672,801,672,855,672,910,672,964,672,1018,672,1072,672,1126,672,1181,672,1235,672,1289,672,1343,672,1397,672,1451,672,1506,672,1560,672,1614,672,1668,672,1722,672,1777,672,-1622,693,-1562,693,-1503,693,-1444,693,-1325,693,-1265,693,-1206,693,-1146,693,-1087,693,-1028,693,-968,693,-909,693,-849,693,-731,693,-671,693,-493,693,-434,693,-374,693,-315,693,-255,693,220,693,279,693,636,693,695,693,755,693,814,693,873,693,933,693,992,693,1052,693,1111,693,1171,693,1230,693,1289,693,1349,693,1408,693,1468,693,1527,693,1586,693,1646,693,1705,693,1765,693,-1800,714,-1207,714,-1142,714,-1076,714,-944,714,-878,714,-812,714,-747,714,-483,714,-417,714,-352,714,-286,714,702,714,768,714,834,714,899,714,965,714,1031,714,1097,714,1163,714,1229,714,1360,714,1426,714,1492,714,-1208,735,-1061,735,-987,735,-913,735,-543,735,-469,735,-395,735,-321,735,-247,735,566,735,862,735,936,735,1010,735,1084,735,1158,735,-1124,756,-533,756,-449,756,-364,756,-280,756,902,756,987,756,1071,756,1409,756,-1110,777,-814,777,-617,777,-518,777,-420,777,-321,777,-223,777,172,777,-750,798,-633,798,-517,798,-400,798,-283,798,1000,798,-867,819,-750,819,-517,819,-400,819,-283,819]}, CH = [{"city":"Nairobi","region":"Kenya","lat":-1.29,"lon":36.82},{"city":"Lagos","region":"Nigeria","lat":6.52,"lon":3.38},{"city":"Accra","region":"Ghana","lat":5.6,"lon":-0.19},{"city":"Kampala","region":"Uganda","lat":0.35,"lon":32.58},{"city":"Dakar","region":"Senegal","lat":14.72,"lon":-17.47},{"city":"Addis Ababa","region":"Ethiopia","lat":9.03,"lon":38.74},{"city":"Cape Town","region":"South Africa","lat":-33.92,"lon":18.42},{"city":"Casablanca","region":"Morocco","lat":33.57,"lon":-7.59},{"city":"Lima","region":"Peru","lat":-12.05,"lon":-77.04},{"city":"Cusco","region":"Peru","lat":-13.53,"lon":-71.97},{"city":"Oaxaca","region":"Mexico","lat":17.07,"lon":-96.73},{"city":"Bogotá","region":"Colombia","lat":4.71,"lon":-74.07},{"city":"São Paulo","region":"Brazil","lat":-23.55,"lon":-46.63},{"city":"Recife","region":"Brazil","lat":-8.05,"lon":-34.88},{"city":"Buenos Aires","region":"Argentina","lat":-34.6,"lon":-58.38},{"city":"Detroit","region":"United States","lat":42.33,"lon":-83.05},{"city":"El Paso","region":"United States","lat":31.76,"lon":-106.49},{"city":"Jackson","region":"United States","lat":32.3,"lon":-90.18},{"city":"Montréal","region":"Canada","lat":45.5,"lon":-73.57},{"city":"Jakarta","region":"Indonesia","lat":-6.21,"lon":106.85},{"city":"Hanoi","region":"Viet Nam","lat":21.03,"lon":105.85},{"city":"Manila","region":"Philippines","lat":14.6,"lon":120.98},{"city":"Dhaka","region":"Bangladesh","lat":23.81,"lon":90.41},{"city":"Jaipur","region":"India","lat":26.91,"lon":75.79},{"city":"Chennai","region":"India","lat":13.08,"lon":80.27},{"city":"Kathmandu","region":"Nepal","lat":27.72,"lon":85.32},{"city":"Lahore","region":"Pakistan","lat":31.55,"lon":74.34},{"city":"Colombo","region":"Sri Lanka","lat":6.93,"lon":79.86},{"city":"Ulaanbaatar","region":"Mongolia","lat":47.89,"lon":106.91},{"city":"Amman","region":"Jordan","lat":31.95,"lon":35.93},{"city":"Beirut","region":"Lebanon","lat":33.89,"lon":35.5},{"city":"Tbilisi","region":"Georgia","lat":41.72,"lon":44.78},{"city":"Athens","region":"Greece","lat":37.98,"lon":23.73},{"city":"Lisbon","region":"Portugal","lat":38.72,"lon":-9.14},{"city":"Kraków","region":"Poland","lat":50.06,"lon":19.94},{"city":"Glasgow","region":"Scotland","lat":55.86,"lon":-4.25},{"city":"Suva","region":"Fiji","lat":-18.14,"lon":178.44},{"city":"Darwin","region":"Australia","lat":-12.46,"lon":130.85}];
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Act I: the diorama opens as you walk in ---------- */
+  var act1 = document.querySelector('.act1');
+  if (act1) {
+    var plates = [].slice.call(act1.querySelectorAll('.plate'));
+    var head = document.getElementById('a1h'), hint = document.getElementById('a1hint'), out = document.getElementById('a1out');
+    var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+    var tick1 = false;
+    function paint(p) {
+      var last = plates.length - 1;
+      for (var i = 0; i < plates.length; i++) {
+        var lit = i === last;
+        var k = lit ? 7.2 : 4.4 - i * 0.46;           /* nearer arches open faster */
+        var sc = 1 + p * k;
+        plates[i].style.transform = 'scale(' + sc.toFixed(3) + ')';
+        plates[i].style.opacity = lit ? '1' : clamp(1 - (sc - 2.5) / 0.9).toFixed(3);
+      }
+      head.style.opacity = clamp(1 - p / 0.3).toFixed(3);
+      hint.style.opacity = clamp(1 - p / 0.14).toFixed(3);
+      out.style.opacity = clamp((p - 0.68) / 0.18).toFixed(3);
+    }
+    function frame1() {
+      var total = act1.offsetHeight - innerHeight;
+      var p = total > 0 ? clamp(-act1.getBoundingClientRect().top / total) : 0;
+      paint(p); tick1 = false;
+    }
+    if (reduce) paint(0.3);
+    else {
+      addEventListener('scroll', function () { if (!tick1) { tick1 = true; requestAnimationFrame(frame1); } }, { passive: true });
+      addEventListener('resize', frame1, { passive: true });
+      frame1();
+    }
+  }
+
+
+  /* ---------- Act II: the globe ---------- */
+  var cv = document.getElementById('globe');
+  if (!cv) return;
+  var ctx = cv.getContext('2d'), Q = LAND.q, dots = LAND.dots;
+  var rot = -20, tilt = 14, dragging = false, lastX = 0, lastY = 0, vel = 0.05, active = -1;
+  var readout = document.getElementById('readout');
+  var size = 0, R = 0, cx = 0, cy = 0, dpr = Math.min(2, devicePixelRatio || 1);
+
+  function resize() {
+    var box = cv.getBoundingClientRect();
+    size = Math.max(200, box.width);
+    cv.width = size * dpr; cv.height = size * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    R = size * 0.44; cx = size / 2; cy = size / 2;
+  }
+
+  function project(lon, lat) {
+    var l = (lon + rot) * Math.PI / 180, p = lat * Math.PI / 180, t = tilt * Math.PI / 180;
+    var x = Math.cos(p) * Math.sin(l), y = Math.sin(p), z = Math.cos(p) * Math.cos(l);
+    var y2 = y * Math.cos(t) - z * Math.sin(t), z2 = y * Math.sin(t) + z * Math.cos(t);
+    return [cx + R * x, cy - R * y2, z2];
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, size, size);
+
+    /* the sphere, with dawn coming up one edge */
+    var g = ctx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
+    g.addColorStop(0, '#16203A'); g.addColorStop(1, '#243152');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.fillStyle = g; ctx.fill();
+
+    /* land, as halftone */
+    for (var i = 0; i < dots.length; i += 2) {
+      var pt = project(dots[i] / Q, dots[i + 1] / Q);
+      if (pt[2] < 0.02) continue;
+      ctx.globalAlpha = 0.22 + pt[2] * 0.62;
+      ctx.fillStyle = '#FFF6EC';
+      ctx.beginPath(); ctx.arc(pt[0], pt[1], 0.8 + pt[2] * 1.25, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    /* the chapters: a lit doorway each */
+    for (var c = 0; c < CH.length; c++) {
+      var q = project(CH[c].lon, CH[c].lat);
+      if (q[2] < 0.015) continue;
+      var on = c === active, s = (0.55 + q[2] * 0.75) * (on ? 2.1 : 1.35);
+      ctx.globalAlpha = on ? 1 : 0.35 + q[2] * 0.55;
+      ctx.fillStyle = '#FF8A3D';
+      ctx.beginPath(); ctx.arc(q[0], q[1], s * 2.6, 0, 6.2832); ctx.fill();
+      ctx.globalAlpha = (on ? 0.4 : 0.14) * (0.4 + q[2]);
+      ctx.beginPath(); ctx.arc(q[0], q[1], s * 7.5, 0, 6.2832); ctx.fill();
+      if (on) {
+        ctx.globalAlpha = 1; ctx.strokeStyle = '#FFF6EC'; ctx.lineWidth = 1.4;
+        ctx.beginPath(); ctx.arc(q[0], q[1], s * 5.2, 0, 6.2832); ctx.stroke();
+      }
+    }
+    ctx.globalAlpha = 1;
+
+    /* rim */
+    ctx.strokeStyle = 'rgba(255,246,236,.16)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.stroke();
+  }
+
+  function tick() {
+    if (!dragging) rot += vel;
+    draw();
+    requestAnimationFrame(tick);
+  }
+
+  function setActive(i, spin) {
+    active = i;
+    if (i < 0) { readout.innerHTML = '&nbsp;'; return; }
+    readout.innerHTML = CH[i].city + '<small>' + CH[i].region + '</small>';
+    document.querySelectorAll('.chapter-list button').forEach(function (b, n) {
+      b.setAttribute('aria-current', n === i ? 'true' : 'false');
+    });
+    if (spin) { rot = -CH[i].lon; tilt = Math.max(-35, Math.min(35, CH[i].lat * 0.55)); draw(); }
+  }
+
+  /* drag */
+  cv.addEventListener('pointerdown', function (e) { dragging = true; lastX = e.clientX; lastY = e.clientY; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointerup', function () { dragging = false; });
+  cv.addEventListener('pointercancel', function () { dragging = false; });
+  cv.addEventListener('pointermove', function (e) {
+    if (dragging) {
+      rot += (e.clientX - lastX) * 0.32;
+      tilt = Math.max(-62, Math.min(62, tilt + (e.clientY - lastY) * -0.22));
+      lastX = e.clientX; lastY = e.clientY;
+      draw();
+      return;
+    }
+    /* hover a chapter */
+    var b = cv.getBoundingClientRect(), mx = e.clientX - b.left, my = e.clientY - b.top, best = -1, bd = 18;
+    for (var c = 0; c < CH.length; c++) {
+      var q = project(CH[c].lon, CH[c].lat);
+      if (q[2] < 0.015) continue;
+      var d = Math.hypot(q[0] - mx, q[1] - my);
+      if (d < bd) { bd = d; best = c; }
+    }
+    if (best !== active) setActive(best, false);
+  });
+  cv.addEventListener('pointerleave', function () { if (!dragging) setActive(-1, false); });
+
+  /* the list is the accessible control surface */
+  document.querySelectorAll('.chapter-list button').forEach(function (b, i) {
+    b.addEventListener('focus', function () { setActive(i, true); });
+    b.addEventListener('mouseenter', function () { setActive(i, true); });
+    b.addEventListener('click', function () { setActive(i, true); });
+  });
+
+  addEventListener('resize', function () { resize(); draw(); }, { passive: true });
+  addEventListener('load', function () { resize(); draw(); });
+  if (window.ResizeObserver) new ResizeObserver(function () { resize(); draw(); }).observe(cv.parentNode);
+  resize();
+  if (reduce) { vel = 0; draw(); } else tick();
+})();
+</script>
+</body>
+</html>

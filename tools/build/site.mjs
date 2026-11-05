@@ -443,6 +443,13 @@ function indexPage(articles) {
 <div class="colonnade" aria-hidden="true">${colonnadeSvg}</div>
 <main class="list" id="list">
   <div class="wrap">
+    <a class="entry" href="showcase.html">
+      <p class="kicker">Showcase</p>
+      <h2>An open door, in three dimensions</h2>
+      <p>Walk through the mark itself, then find the thirty-eight chapters on a halftone globe.
+         Spatial depth and physical craft, built from the same tokens as everything else.</p>
+      <p class="meta"><span>Interactive</span><span class="dot">&middot;</span><span>Best with sound off and a scroll wheel</span></p>
+    </a>
     ${articles.map(a => `<a class="entry" href="articles/${a.slug}.html">
       <p class="kicker">${esc(a.meta.kicker)}</p>
       <h2>${esc(a.meta.title)}: ${esc(a.meta.subtitle)}</h2>

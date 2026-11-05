@@ -95,6 +95,8 @@ articles built from the same tokens, type scale and accessibility floor as every
 It is the system's own proof: if an article cannot be set well with these rules, the rules are
 wrong.
 
+It also carries **[An open door, in three dimensions](https://hkcarre.github.io/humanfirstai/showcase.html)** — walk through the mark itself as a backlit cut-paper diorama, then find the chapters on a halftone globe. Spatial depth and physical craft, built from the same tokens, with no libraries and 63 KB of page.
+
 Write a new piece as markdown in `site/content/`, run `npm run build` in `tools/`, and push.
 The generator produces the page, the social preview card and the index entry. GitHub Actions
 deploys it.
