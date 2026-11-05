@@ -27,7 +27,8 @@
     "editorial:pr": "node editorial/run.mjs pr",
     "editorial:list": "node editorial/run.mjs list",
     "editorial:feedback": "node editorial/feedback.mjs",
-    "editorial:test": "node editorial/test.mjs"
+    "editorial:test": "node editorial/test.mjs",
+    "linkedin": "node build/linkedin.mjs"
   },
   "devDependencies": {
     "kokoro-js": "^1.2.1",

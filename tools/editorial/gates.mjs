@@ -97,16 +97,23 @@ function claimsGate(md) {
 // --- 3. prompt injection ---------------------------------------------------
 // A submitted article is untrusted input. If it contains instructions aimed at
 // the swarm, that is a finding about the article, not a command to obey.
+// These must be narrow. A gate that fires on honest prose gets ignored, and an
+// ignored gate is worse than no gate. Two of these were far too broad on the
+// first pass: "do not tell" flagged "We do not tell people AI is easy", and a
+// bare "you are now" would flag "you are now able to check your own figures".
+// An injection is an IMPERATIVE aimed at the system, so require that shape.
+const IMP = '(?:^|[.!?]\\s+|\\n\\s*)';          // start of a sentence or a line
 const INJECTION = [
-  [/ignore (all )?(previous|prior|above) instructions/i, 'instruction override'],
-  [/disregard (the )?(system|previous|above)/i, 'instruction override'],
-  [/you are now\b/i, 'role reassignment'],
-  [/\bsystem prompt\b/i, 'system prompt reference'],
+  [new RegExp(`${IMP}ignore (all |any )?(previous|prior|above|earlier) instructions`, 'i'), 'instruction override'],
+  [new RegExp(`${IMP}disregard (the |all )?(system|previous|above|earlier)`, 'i'), 'instruction override'],
+  [/\byou are now (a|an|the|acting as|playing|no longer)\b/i, 'role reassignment'],
+  [/\b(ignore|override|bypass) (the |your )?system prompt\b/i, 'system prompt reference'],
   [/<\/?(system|assistant|user)>/i, 'role tag injection'],
-  [/\b(SYSTEM|ASSISTANT)\s*:/, 'role tag injection'],
-  [/do not (tell|mention|report|flag)/i, 'suppression request'],
-  [/output (only|exactly)\b/i, 'output coercion'],
-  [/\bapprove this (article|content)\b/i, 'gate coercion'],
+  [/^\s*(SYSTEM|ASSISTANT)\s*:/m, 'role tag injection'],
+  [new RegExp(`${IMP}do not (report|flag|mention|disclose|reveal)\\b[^.]{0,60}\\b(finding|issue|violation|error|problem|concern|instruction|prompt)`, 'i'), 'suppression request'],
+  [new RegExp(`${IMP}output (only|exactly) `, 'i'), 'output coercion'],
+  [/\b(approve|pass|accept) this (article|content|submission)\b/i, 'gate coercion'],
+  [/\bmark (this|it) as (ready|approved|verified)\b/i, 'gate coercion'],
 ];
 function injectionGate(md) {
   const hits = [];

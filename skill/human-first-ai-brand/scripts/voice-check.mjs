@@ -77,9 +77,17 @@ lines.forEach((line, i) => {
   }
 });
 
-const paras = text.split(/\n\s*\n/)
+// Fence delimiters and HTML tags are syntax, not sentences. Left in, a fenced
+// block containing a blank line leaks its ``` into the prose and a caption
+// ending in </sub> never terminates, so the splitter welds it to the next
+// paragraph and reports a sentence nobody wrote.
+const prose = text
+  .split('\n').filter(l => !/^\s*```/.test(l)).join('\n')
+  .replace(/<\/?[a-z][^>]*>/gi, '');
+
+const paras = prose.split(/\n\s*\n/)
   .map(p => p.trim())
-  .filter(p => p && !/^(#|>|-|\d+\.|\||```|!\[)/.test(p));   // ![img] is not prose
+  .filter(p => p && !/^(#|>|-|\d+\.|\||!\[)/.test(p));        // ![img] is not prose
 const body = paras.join(' ');
 const words = body.split(/\s+/).filter(Boolean);
 const sentences = body.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 1);
