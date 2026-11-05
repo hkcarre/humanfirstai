@@ -1,0 +1,31 @@
+{
+  "agent": "editorial-seo-geo",
+  "score": 62,
+  "seoTitle": "The Great Corporate Unmasking: How AI Makes Office Politics Costly",
+  "metaDescription": "AI makes proof, information and testing cheap. See why that raises the cost of office politics and what leaders must do to let evidence outrank authority.",
+  "slug": "the-great-corporate-unmasking",
+  "primaryTopic": "How AI changes office politics and leadership",
+  "relatedTopics": ["Truth Seekers vs Political Players", "performative vs pragmatic AI use", "evidence-based leadership", "AI and organisational decision-making", "AI productivity claims"],
+  "suggestedHeadings": [
+    "How does AI change office politics?",
+    "Why proof, information and testing are now cheap",
+    "Performative AI vs pragmatic AI: what is the difference?",
+    "What does leadership require when evidence outranks authority?"
+  ],
+  "internalLinks": [
+    "https://hkcarre.github.io/humanfirstai/articles/the-great-corporate-unmasking.html (link the short version to the full long-form article as the canonical deeper read; set rel=canonical deliberately to avoid duplicate-content competition between the two)"
+  ],
+  "externalCitations": [
+    "Advisory: no statistics are stated, so none are required. If the long version cites research on AI productivity or decision quality, reuse those sources here rather than adding new unverified ones."
+  ],
+  "faq": [
+    {"q": "How will AI change office politics?", "a": "AI makes proof, information access and testing cheap, so authority built on delayed results and information silos becomes harder to sustain."},
+    {"q": "What is the difference between performative and pragmatic AI use?", "a": "Performative use manufactures the appearance of progress, such as prettier decks and dashboards. Pragmatic use runs real experiments, validates data and ships working tools."}
+  ],
+  "structuredData": [
+    "Article (headline, author Helena Carre, datePublished 2026-11-05, mainEntityOfPage)",
+    "FAQPage only if the FAQ is shown on the page"
+  ],
+  "geoRationale": "The piece has a strong, extractable thesis and a clear two-way contrast (Truth Seekers vs Political Players; performative vs pragmatic), which suits answer engines. Weaknesses are that headings are statements rather than the questions readers ask, key terms (Truth Seekers, Political Players) are not defined in one citable sentence near the top, and there are no named sources or concrete examples, so the factual density is low. Recommendations: add a one-sentence definition of the core thesis in the opening, convert one or two headings to question form, add one specific sourced example, and link to the long version. Draft issues observed: title begins lowercase 'the', numbered headings mix title case ('Death of cheap authority'), and the opening has grammar slips ('used to see', 'proof much delayed') that undermine extractable quotes and should be fixed by the editorial agent. The intake gate G1 also flags a banned term and a long sentence, which are not re-litigated here. All of this is recommendation only: no search volumes, rankings or AI citation outcomes were measured, and no technique guarantees inclusion in AI answers. Keep the short and long versions distinct in angle or canonicalise to one.",
+  "measured": false
+}

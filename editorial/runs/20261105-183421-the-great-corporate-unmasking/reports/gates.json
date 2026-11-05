@@ -1,0 +1,99 @@
+{
+  "file": "editorial/runs/20261105-183421-the-great-corporate-unmasking/final_article.md",
+  "ran": "2026-11-05T19:11:17.903Z",
+  "status": "pass",
+  "blockers": [],
+  "checks": [
+    {
+      "id": "G1",
+      "name": "Voice and terminology",
+      "rule": "VC-001..004, CL Voice",
+      "status": "pass",
+      "detail": "6/6 checks pass.",
+      "guest": false,
+      "rows": [
+        {
+          "check": "paragraph shape",
+          "status": "pass",
+          "detail": "21.1 words a paragraph  (target 15-35)"
+        },
+        {
+          "check": "sentence length",
+          "status": "pass",
+          "detail": "12.7 words a sentence  (target under 22)"
+        },
+        {
+          "check": "long sentences",
+          "status": "pass",
+          "detail": "none over 25 words"
+        },
+        {
+          "check": "exclamation marks",
+          "status": "pass",
+          "detail": "none"
+        },
+        {
+          "check": "banned terms",
+          "status": "pass",
+          "detail": "none in our own voice"
+        },
+        {
+          "check": "intensifiers",
+          "status": "pass",
+          "detail": "none"
+        }
+      ],
+      "exitCode": 0
+    },
+    {
+      "id": "G2",
+      "name": "Numeric claims carry a source",
+      "rule": "CL Voice — \"Any number stated has a source. If estimated, it says about.\"",
+      "status": "pass",
+      "detail": "0 paragraph(s) with figures, all sourced or hedged.",
+      "claims": []
+    },
+    {
+      "id": "G3",
+      "name": "Prompt injection in submitted text",
+      "rule": "Spec §10 — defend against prompt injection",
+      "status": "pass",
+      "detail": "None found.",
+      "hits": []
+    },
+    {
+      "id": "G4",
+      "name": "Publishing metadata complete",
+      "rule": "site builder contract",
+      "status": "pass",
+      "detail": "All required fields present.",
+      "missing": [],
+      "notes": [],
+      "frontmatter": {
+        "title": "The Great Corporate Unmasking",
+        "subtitle": "AI is about to make office politics expensive",
+        "kicker": "Leadership",
+        "standfirst": "For decades, navigating office politics was a bulletproof career path. AI is about to turn it into a costly liability.",
+        "date": "2026-11-05",
+        "readingTime": "3",
+        "theme": "cream",
+        "author": "Helena Carre",
+        "authorPhoto": "people/helena-carre.jpg",
+        "longVersion": "the-great-corporate-unmasking",
+        "tags": "[Artificial Intelligence, Leadership, Future Of Work]"
+      }
+    },
+    {
+      "id": "G6",
+      "name": "Authorship preserved",
+      "rule": "docs/02-voice.md — Guest bylines; a byline means the voice is theirs",
+      "status": "pass",
+      "detail": "First person 0→0, length -1%.",
+      "introduced": [],
+      "wordsBefore": 469,
+      "wordsAfter": 462,
+      "growthPercent": -1
+    }
+  ],
+  "finalArticleSha": "e4fd25ec8298"
+}

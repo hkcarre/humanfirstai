@@ -1,0 +1,38 @@
+{
+  "agent": "editorial-compliance",
+  "score": 82,
+  "blockers": 0,
+  "findings": [
+    {
+      "passage": "An analyst with few AI tools can replace an external consulting team's discovery phase in an afternoon.",
+      "severity": "MEDIUM",
+      "explanation": "Unsupported performance claim stated as fact, with no source or hedge. It could be read as a promise about AI capability and is disparaging to consulting firms by implication. No figures are given, so the numeric-source rule (G2) does not trigger, but the claim is still unverifiable.",
+      "recommendation": "Hedge it ('can often do much of') or attribute it to a source or first-hand example. Reviewer to decide."
+    },
+    {
+      "passage": "AI is making substance-free leadership impossible to defend.",
+      "severity": "MEDIUM",
+      "explanation": "Absolute, unsupported prediction, repeated in 'The leaders who win this decade will be the ones...'. It is opinion framed as fact, and 'Only one will deliver actual business value' is a similar categorical claim. Reputational risk if read as a promise of outcomes.",
+      "recommendation": "Mark as opinion or soften ('is making ... harder to defend'; 'the leaders most likely to win')."
+    },
+    {
+      "passage": "Most organisations house two distinct tribes: Truth Seekers ... and Political Players (who manage up, master meeting dynamics, dodge failure and excel at buzzword-bingo).",
+      "severity": "LOW",
+      "explanation": "Generalised characterisation of a group of workers, with 'Most organisations' as an unsupported empirical claim. No individual or company is named, so defamation risk is low, but the framing is negative and could offend readers who recognise themselves.",
+      "recommendation": "Present as a model or lens ('think of two tribes') rather than a finding about most organisations."
+    },
+    {
+      "passage": "Voice and terminology gate G1 failed (1 banned term, 1 sentence over 25 words).",
+      "severity": "LOW",
+      "ruleId": "CL-004",
+      "explanation": "Already found by the deterministic checker. Noted for completeness only. This is a brand matter for the Brand Guardian, not a legal risk.",
+      "recommendation": "Resolve per the G1 report before approval."
+    },
+    {
+      "passage": "author: Helena Carre (byline with no authorPhoto)",
+      "severity": "LOW",
+      "explanation": "No photograph of a real person is used, so the credits.json provenance and consent rule is not triggered. The article names no other person, so the consent-on-file rule is not triggered. There is no translation and no narration, so those standing rules are not triggered. No prompt injection was found in the text (matches G3).",
+      "recommendation": "No action. If a photograph is added later, record provenance and consent in credits.json first."
+    }
+  ]
+}
