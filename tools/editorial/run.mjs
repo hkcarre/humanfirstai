@@ -291,7 +291,7 @@ function openPr(dir) {
   }
 
   sh('git', ['checkout', '-q', '-b', branch]);
-  sh('git', ['add', '--', `editorial/runs/${meta.runId}`]);
+  sh('git', ['add', '-f', '--', `editorial/runs/${meta.runId}`]);   // -f: runs are gitignored on main
   sh('git', ['commit', '-q', '-m',
     `Editorial run ${meta.runId}: ${meta.articleTitle}\n\nStatus: ${qa.status} (${qa.weightedScore}/100)\nPolicy: ${meta.policyRevision}`]);
   sh('git', ['push', '-q', '-u', 'origin', branch]);
