@@ -1,346 +1,143 @@
 ---
 title: The Great Corporate Unmasking
-subtitle: AI Is Coming for the Politicians
+subtitle: When proof gets cheap, talk gets expensive
 kicker: Leadership
-standfirst: For decades, corporate politics has been a surprisingly successful career strategy. Artificial intelligence may be about to make it a very expensive one.
+standfirst: For years, being good at office politics has been a reliable career. AI is about to make it a costly one.
 date: 2026-11-04
-readingTime: 11
+readingTime: 7
 theme: cream
 tags: [Artificial Intelligence, AI Leadership, Future Of Work, Corporate Culture, Leadership]
 ---
 
-There are two types of people in almost every organisation.
+Most organisations hold two kinds of people. Truth Seekers ask uncomfortable questions. They challenge assumptions, run experiments, build things, fail in public now and then, and work out why. Political Players learned a different set of skills. Which meetings matter. Whose ideas to back. When to stay quiet. How to walk away from a failed programme with a better job title.
 
-The Truth Seekers and the Political Players.
-
-The Truth Seekers ask uncomfortable questions. They challenge assumptions, experiment, build things, occasionally fail spectacularly, and then figure out why.
-
-The Political Players have developed an entirely different set of skills.
-
-They know which meetings to attend, whose ideas to endorse, when to remain strategically silent, and how to emerge from a failed transformation programme with an even more impressive job title.
-
-Both have built successful careers.
-
-But something fascinating is happening.
+Both have built good careers. That is starting to change, and not for the reason most people expect.
 
 > AI is changing the economics of competence.
 
-And some corporate masks are about to become considerably harder to wear.
+## 1 · The masquerade
 
-## 1 · The Great Corporate Masquerade
+Some leaders create real value. Others create excellent slides about the value they intend to create. For a long time, telling the two apart was genuinely hard.
 
-Let's acknowledge something we have all witnessed.
-
-There are leaders who create extraordinary value.
-
-And then there are leaders who create extraordinary PowerPoint presentations about the value they intend to create.
-
-Historically, distinguishing between the two wasn't always straightforward.
-
-A charismatic executive could survive for years through carefully managed relationships, strategic vocabulary, and an almost supernatural ability to associate themselves with successful initiatives.
+A confident executive could go years on well-managed relationships, the right vocabulary, and a gift for standing next to things that went well. The vocabulary did much of the work.
 
 - "Transformation."
 - "Strategic alignment."
 - "Operational excellence."
 - "Unlocking synergies."
 
-Beautiful expressions.
+Ask what actually improved for a customer, a colleague or a shareholder, and the answer was usually another workshop.
 
-But ask what has actually improved for customers, employees, or shareholders, and suddenly everyone needs another workshop.
+Office politics worked because proof was expensive. Testing an idea cost money. Information sat in silos. Showing a better way needed a budget and a team. When evidence is hard to come by, the story wins. When experiments are costly, opinion passes for strategy. When information is held, seniority passes for expertise.
 
-Corporate politics has thrived partly because testing ideas was expensive, information was fragmented, and demonstrating alternatives required significant resources.
+AI is making all three cheap.
 
-When evidence is difficult to obtain, narratives can dominate.
+## 2 · When thinking gets cheap, authority has to earn its keep
 
-When experimentation is expensive, opinions can masquerade as strategy.
+Power inside an organisation has always rested partly on access. To information, to expertise, to people who can build things. The more senior you were, the more of it you controlled.
 
-When information is controlled, authority can masquerade as expertise.
+That advantage is thinning.
 
-AI is beginning to disrupt all three.
-
-## 2 · When Intelligence Becomes Abundant, Authority Has to Earn Its Place
-
-For generations, organisational power has depended partly on access to information, expertise, and resources.
-
-The more senior you were, the greater your ability to control them.
-
-AI is weakening that advantage.
-
-Today, a talented analyst equipped with advanced AI can investigate strategic questions that previously required a consulting team.
-
-A product manager can build a working prototype before the next steering committee has agreed on its agenda.
-
-A small team can orchestrate AI agents to research, code, analyse, test, and improve solutions at extraordinary speed.
-
-And perhaps most importantly, an employee can increasingly challenge a confident assertion with something far more powerful than an opinion.
+An analyst with good tools can now look into a question that used to need a consulting team. A product manager can have something working before the steering group has agreed its agenda. A small group can research, build, test and improve in the time a committee takes to meet twice. Most importantly, someone junior can answer a confident assertion with something stronger than an opinion.
 
 Evidence.
 
-Imagine the conversation.
+Picture the conversation.
 
 ```dialogue
 Leader: Interesting idea, but we need six months to assess feasibility.
-Employee: Actually, I built a prototype yesterday.
-Leader: Yes, but have we aligned the stakeholders?
-Employee: The prototype has already been tested with customers.
-Leader: Right. Let's schedule a meeting to discuss the implications.
+Employee: I built a prototype yesterday.
+Leader: Have we aligned the stakeholders?
+Employee: We tested it with four customers this morning.
+Leader: Right. Let's book a meeting to discuss the implications.
 ```
 
-Somewhere, a PowerPoint presentation quietly loses the will to live.
+Somewhere, a slide deck quietly gives up.
 
-Of course, prototypes aren't production systems. Governance, security, compliance, and organisational alignment remain essential.
+A prototype is not a working system. Governance, security, privacy and bringing people with you still matter. Skipping them is how organisations end up hurting the people they meant to serve. But the gap between careful diligence and theatre is getting easier to see. That is the point. AI does not make leadership unnecessary. It makes leadership without substance harder to defend.
 
-But the difference between legitimate diligence and bureaucratic theatre is becoming increasingly visible.
+## 3 · Two tribes
 
-And that's the point.
+Political Players run on preservation. They optimise for visibility, status, control and survival. They do not necessarily resist new technology — many will become its loudest champions. They will start AI committees, publish AI strategies, build AI maturity frameworks and generate handsome decks explaining why the organisation is now "AI-first". Some will be good at it, because these tools can manufacture the appearance of progress faster than anything we have had before.
 
-> AI doesn't make leadership obsolete. It makes leadership without substance harder to justify.
+Their real risk is not that a machine takes their job.
 
-## 3 · The Two Tribes of the AI Revolution
+It is that somebody eventually asks what all of it achieved.
 
-I suspect AI will increasingly reveal a divide that has always existed inside organisations.
+Truth Seekers run on discovery. They want to know what works, why, and how to make it better. They question their own assumptions as readily as anyone else's, they are comfortable not knowing yet, and they do not need to own every idea. They also do not stop at being curious. They build, measure, ship, learn, and go again. A brilliant idea without execution is just a more entertaining form of procrastination.
 
-### The Political Players
+> Political Players use intelligence to protect their position. Truth Seekers use it to widen what's possible.
 
-Their primary instinct is preservation.
+AI amplifies both.
 
-They optimise for visibility, status, control, and career survival.
+Only one of them turns capability into anything you can point at.
 
-They don't necessarily oppose innovation. In fact, many will become enthusiastic advocates of AI.
+## 4 · It makes better nonsense too
 
-They'll launch AI committees.
+Here is the part that gets missed. AI is not automatically on the side of truth. It may turn out to be the finest corporate nonsense generator ever built.
 
-They'll announce AI transformation strategies.
+Picture an organisation where every mediocre proposal arrives complete. Business case, board deck, market assessment, roadmap. All of it produced in about eleven minutes. The danger is not that people become more productive. It is that they get more productive at work nobody needed. More reports. More dashboards. More carefully argued reasons why nothing has changed.
 
-They'll create impressive AI maturity frameworks.
+These tools also get things wrong with great confidence. They make things up. They will happily reinforce a flawed assumption and turn selective evidence into a persuasive case. Anyone who tells you otherwise is selling something.
 
-They'll generate AI-powered presentations explaining why their organisation is becoming AI-first.
+So the real divide will not be between organisations that adopt AI and organisations that don't.
 
-And some will become exceptionally good at it.
+> It will be between those that use it to find out what is true, and those that use it to look like they already know.
 
-Because AI can manufacture the appearance of progress at unprecedented speed.
+The first group will connect these tools to real data, real experiments and real outcomes. The second will connect them to the slide template. Both will report impressive productivity gains. Only one will have something to show for it.
 
-Their biggest risk isn't that AI will take their jobs.
+## 5 · What good leadership looks like now
 
-It's that someone might eventually ask what all those AI initiatives actually achieved.
+The best leaders in this next stretch will not be the most technically sophisticated people in the room. They will be the ones who make the whole room more capable.
 
-### The Truth Seekers
+They will hire people who know things they don't. They will invite disagreement and mean it. They will reward experiments and finished work. They will tell the difference between a failure that taught everyone something and a beautifully run project that produced nothing. When someone twenty years younger builds something remarkable, they will say so out loud.
 
-Their primary instinct is discovery.
+That takes two things corporate life does not hand out often. The confidence to be surrounded by people sharper than you. The humility to accept that your job is not to win the argument, but to help the best idea win.
 
-They want to understand what works, why it works, and how to make it better.
+A leader who needs to be the cleverest person in every meeting may find the meeting has become their biggest disadvantage.
 
-They challenge their own assumptions as readily as they challenge other people's.
+## 6 · The bill arrives eventually
 
-They are comfortable with uncertainty.
+Office politics is not going away. People will keep wanting status, influence, security and recognition, and plenty of organisations will keep rewarding loyalty over competence and visibility over results. AI will not fix a broken incentive. It will make that incentive more expensive to keep.
 
-They don't need to own every idea.
+Picture two competitors. One has seventeen approval layers, six governance committees and a leadership team deeply committed to discussing change. The other has capable people, sensible safeguards, good tools and a culture that rewards shipping.
 
-And, crucially, they don't stop at being curious.
+The first announces its roadmap. The second launches its third product. The first books an offsite to understand the competitive threat. The second is already sitting with customers.
 
-They execute. They experiment. They measure. They ship. They learn. They improve.
+The market notices eventually. Not every time, not quickly, and not without exceptions — markets reward all sorts of things that are not merit. But over a few years, organisations that turn thinking into outcomes should beat organisations that turn thinking into presentations.
 
-They understand that a brilliant idea without execution is simply a more entertaining form of procrastination.
+> AI will not end office politics. It will raise the cost of putting up with it.
 
-> Political Players use intelligence to protect their position. Truth Seekers use intelligence to expand what's possible.
+## 7 · Not revenge. Room.
 
-AI can amplify both.
-
-But only one consistently turns greater capability into genuine progress.
-
-## 4 · The AI Paradox: More Truth or More Sophisticated Nonsense?
-
-Here's where the story becomes particularly interesting.
-
-AI is not automatically on the side of truth.
-
-In fact, it could become the greatest corporate nonsense generator ever invented.
-
-Imagine an organisation where every mediocre initiative comes with a beautifully written business case, a polished executive presentation, an AI-generated market assessment, and a compelling transformation roadmap.
-
-All produced in approximately eleven minutes.
-
-Welcome to Corporate Theatre 2.0.
-
-The danger isn't simply that AI makes people more productive.
-
-It's that it can make people more productive at doing things that never needed to be done.
-
-- More reports.
-- More meetings.
-- More dashboards.
-- More strategic narratives.
-- More beautifully articulated reasons why nothing has changed.
-
-AI can hallucinate. It can reinforce flawed assumptions. It can turn selective evidence into persuasive arguments.
-
-So the real divide won't be between companies that adopt AI and companies that don't.
-
-> It will be between companies that use AI to discover reality and companies that use AI to manufacture appearances.
-
-The first group will connect AI to reliable data, real experiments, customer outcomes, and measurable business value.
-
-The second will connect it to PowerPoint.
-
-Both will announce impressive productivity gains.
-
-Only one will have something meaningful to show for them.
-
-## 5 · The New Leadership Test
-
-The next generation of exceptional leaders won't necessarily be the most technically sophisticated people in the room.
-
-They will be the ones who know how to make the entire room more capable.
-
-They'll surround themselves with people who know things they don't.
-
-They'll encourage intelligent disagreement.
-
-They'll reward experimentation and execution.
-
-They'll distinguish a failed experiment that generated valuable learning from a beautifully managed project that generated nothing.
-
-And they won't feel threatened when someone more junior produces something extraordinary.
-
-They'll celebrate it.
-
-Because leadership in the AI era is less about controlling intelligence and more about multiplying it.
-
-This requires something surprisingly rare in corporate life.
-
-The confidence to be surrounded by people who might be smarter than you.
-
-And the humility to recognise that your job is not to win every argument.
-
-It's to help the best ideas win.
-
-A leader who needs to be the smartest person in every meeting may soon discover that the meeting has become their biggest competitive disadvantage.
-
-## 6 · The Market Will Eventually Send the Invoice
-
-Corporate politics won't disappear.
-
-Human beings will continue to pursue status, influence, security, and recognition.
-
-Some organisations will continue rewarding loyalty over competence, conformity over curiosity, and visibility over results.
-
-AI won't magically fix broken incentives.
-
-But it could make those incentives increasingly expensive.
-
-Imagine two competing companies.
-
-Company A has seventeen approval layers, six AI governance committees, and a leadership team deeply committed to discussing transformation.
-
-Company B has talented people, sensible safeguards, access to advanced AI, and a culture that rewards testing ideas and delivering outcomes.
-
-Company A announces its AI roadmap.
-
-Company B launches its third product.
-
-Company A schedules a strategic offsite to understand the competitive threat.
-
-Company B is already learning from customers.
-
-Eventually, the market notices.
-
-Not every time. Not immediately. And not without exceptions.
-
-But over time, organisations that consistently convert intelligence into outcomes should have an advantage over those that primarily convert intelligence into presentations.
-
-> AI won't automatically eliminate corporate politics. It will raise the opportunity cost of tolerating it.
-
-And that may prove far more disruptive.
-
-## 7 · The Truth Seekers' Revenge (Without the Revenge)
-
-For years, some of the most curious and capable people in organisations have heard the same advice.
+For years the most curious people in an organisation have heard the same advice:
 
 - "Don't rock the boat."
 - "Be more diplomatic."
 - "Read the room."
 - "That's not how things work here."
-- "Great idea, but perhaps not the right time."
+- "Great idea, but perhaps not now."
 
-AI is changing the economics of rocking the boat.
+The economics of rocking the boat have changed. One capable person no longer needs a budget and a team to show what is possible. They can build it, test it, and bring evidence instead of enthusiasm.
 
-A talented individual no longer needs an enormous budget or a large team to demonstrate what is possible.
+But Truth Seekers do not win because Political Players lose. That would be a thin result for a technology this significant. They win when organisations finally accept that curiosity, honesty, judgment and follow-through are worth more than protecting the arrangement as it stands.
 
-They can build. They can test. They can challenge conventional wisdom with evidence. They can collaborate with AI systems that dramatically extend their capabilities.
+And they win properly when that capability points at something larger than the quarter. Better care. Schools that reach further. Research that moves. A trader who can check her own stock figures. A farmer who gets a frost warning in time. People who have never had access to expertise getting some, for free, in their own language.
 
-But here's the most important part.
+Think what capable people could do if they spent less time managing internal politics and more time on problems that matter. That is the part worth building.
 
-The Truth Seekers don't win simply because the Political Players lose.
+## 8 · Who actually wins
 
-That would be a rather disappointing outcome for such an extraordinary technological revolution.
+This moment gets described as a contest between people and machines. The more interesting contest is between two deeply human ideas about what intelligence is for.
 
-They win when organisations finally recognise that curiosity, intellectual honesty, sound judgment, and execution are more valuable than protecting the status quo.
+One treats it as something to hold. The other treats it as something to grow, share, argue with and use. One protects the hierarchy. The other goes looking. One asks how to keep its position. The other asks what we could find out.
 
-And they win when those capabilities are directed towards something bigger than quarterly targets and personal ambition.
+AI hands both of them remarkable tools. Tools do not decide outcomes. Values, incentives, judgment and nerve decide outcomes.
 
-- Better healthcare.
-- More accessible education.
-- Scientific breakthroughs.
-- Environmental sustainability.
-- Greater opportunity for people who have historically lacked access to expertise and resources.
-- AI that serves humanity rather than simply concentrating power.
+The organisations that come out of this well may not be the ones with the largest AI budgets or the most impressive strategies. They may simply be the ones willing to let evidence outrank authority, let talent outrank hierarchy, and let progress outrank habit. Which may be the real opportunity here — not faster organisations, but more honest ones.
 
-Imagine what talented people could accomplish if they spent less time navigating internal politics and more time solving problems that genuinely matter.
+The masks will not all come off at once, and some will get more sophisticated. But as the distance between what was promised and what was delivered becomes easier to measure, substance starts to compound.
 
-That is the future worth building.
+And the people who gain most are not the executives, the vendors, or even the Truth Seekers.
 
-## 8 · The Final Plot Twist: The Winners Won't Be Who You Think
-
-The AI revolution is often described as a competition between humans and machines.
-
-I think the more interesting competition is between two very human philosophies.
-
-One believes that intelligence is something to control.
-
-The other believes that intelligence is something to cultivate, challenge, share, and apply.
-
-One protects hierarchy.
-
-The other pursues possibility.
-
-One asks, "How do I maintain my position?"
-
-The other asks, "What can we discover, build, and improve?"
-
-AI will give both extraordinary tools.
-
-But tools alone don't determine outcomes.
-
-Values, incentives, judgment, and courage do.
-
-The most successful organisations may not be those with the largest AI budgets or the most impressive AI strategies.
-
-They may be those brave enough to let evidence challenge authority, talent challenge hierarchy, and progress challenge tradition.
-
-And perhaps that is the most profound opportunity AI presents.
-
-Not simply to make organisations faster.
-
-But to make them more honest about what creates value.
-
-The masks won't all fall overnight.
-
-Some will become considerably more sophisticated.
-
-But as the distance between promises and results becomes easier to measure, the organisations that reward substance over theatre will have a powerful advantage.
-
-And the ultimate winners?
-
-Not the executives.
-
-Not the AI vendors.
-
-Not even the Truth Seekers.
-
-Humanity.
-
-Because the greatest promise of artificial intelligence isn't that it will help us win corporate games.
-
-It's that it might finally free more of our collective intelligence to work on problems worth solving.
-
-> The future doesn't need more people who are brilliant at appearing right. It needs more people who are brave enough to discover what's true.
+> The future doesn't need more people who are brilliant at appearing right. It needs more people who are brave enough to find out what's true.

@@ -60,6 +60,9 @@ Design tokens for code: `assets/tokens.json`.
 node scripts/check-contrast.mjs "#1F2A44" "#FFF6EC"
 node scripts/check-contrast.mjs --audit path/to/styles.css
 
+# Check a draft against the voice rules
+node scripts/voice-check.mjs draft.md
+
 # Generate an on-brand card as SVG (no dependencies)
 node scripts/new-card.mjs --type statement --w 1200 --h 627 \
   --kicker "Plain English AI" \
@@ -67,7 +70,7 @@ node scripts/new-card.mjs --type statement --w 1200 --h 627 \
   --out post.svg
 ```
 
-Run `--help` on either script for all options.
+Run `--help` on any of them for all options.
 
 ## Common mistakes
 

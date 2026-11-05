@@ -48,6 +48,7 @@ human-first-ai-brand/
     logo/                   the nine logo builds you actually reach for
   scripts/
     check-contrast.mjs      WCAG checker and palette auditor
+    voice-check.mjs         paragraph shape, sentence length, banned terms
     new-card.mjs            generates an on-brand card as editable SVG
 ```
 
@@ -64,6 +65,12 @@ node scripts/check-contrast.mjs "#187F72"
 
 # every hex in a file, flagged if it is off-palette
 node scripts/check-contrast.mjs --audit src/styles.css
+```
+
+```bash
+# paragraph shape, sentence length, banned terms, intensifiers
+node scripts/voice-check.mjs draft.md
+node scripts/voice-check.mjs draft.md --verbose
 ```
 
 ```bash

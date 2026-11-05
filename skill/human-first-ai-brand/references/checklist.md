@@ -6,7 +6,10 @@ Run this before anything goes out. All of it, not the convenient parts.
 
 - [ ] Sounds like a patient teacher, not a tech company
 - [ ] A twelve-year-old could read the main message and act on it
+- [ ] Paragraphs are 15-35 words — not a column of one-line paragraphs
 - [ ] No banned words (`AI-powered`, `unlock`, `seamless`, `revolutionise`, `leverage`, `empower`…)
+- [ ] Paragraphs run 15–35 words — not a column of one-line paragraphs
+- [ ] `node scripts/voice-check.mjs <file>` passes all six checks
 - [ ] AI described by what it helps someone *do*, never as a mind or as magic
 - [ ] The limit is stated — what it does not do, in the same breath
 - [ ] Any person named has consent on file

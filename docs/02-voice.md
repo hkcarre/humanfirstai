@@ -71,6 +71,79 @@ Use these, or write in their shape.
 - From fear to confidence, one neighbourhood at a time.
 - It is a tool. You are the one deciding.
 
+## The voice applied to a real piece
+
+[The Great Corporate Unmasking](https://hkcarre.github.io/humanfirstai/articles/the-great-corporate-unmasking.html)
+came to us written for LinkedIn. The argument was good and survived intact. The voice work
+was almost entirely about **shape**, which is the part people miss.
+
+| | Before | After |
+|---|---|---|
+| Words | 1,482 | 1,420 |
+| Sentences | 149 | 134 |
+| Average sentence | 9.9 words | 10.6 words |
+| **Paragraphs** | **136** | **44** |
+| **Average paragraph** | **10.9 words** | **32.3 words** |
+| Banned terms in our own voice | 9 | 0 |
+
+### The sentences were never the problem
+
+At 9.9 words a sentence, the original already read plainly. What made it off-brand was that
+**almost every sentence was its own paragraph.**
+
+That staccato is a house style, and it is not ours. It is the same register as the
+hook-and-thread opener and the "Agree? 👇" sign-off — writing that performs for an algorithm
+rather than talking to a person. It makes a reader feel handled.
+
+A paragraph is a unit of thought. When each one holds three or four sentences, the reader can
+see where an idea starts and stops. When each one holds a single line, every sentence is
+shouted at the same volume and nothing is load-bearing.
+
+**Keep the short sentences. Join them into paragraphs.**
+
+### Six edits that show the difference
+
+| Before | After | Why |
+|---|---|---|
+| AI is beginning to disrupt all three. | AI is making all three cheap. | "Disrupt" is on the list. The replacement is also more precise — it says *how*. |
+| …an almost supernatural ability to associate themselves with successful initiatives. | …a gift for standing next to things that went well. | Same joke, plainer words, funnier. |
+| Welcome to Corporate Theatre 2.0. | *(cut)* | A punchline that congratulates the writer. The paragraph lands harder without it. |
+| AI can hallucinate. | They make things up. | "Hallucinate" dresses up a plain fact. We never let a technical word hide a limitation. |
+| Better healthcare. More accessible education. Scientific breakthroughs. Environmental sustainability. | Better care. Schools that reach further. A trader who can check her own stock figures. A farmer who gets a frost warning in time. | Four abstractions became things you can picture. Two of them have a person in them. |
+| **AI Is Coming for the Politicians** *(subtitle)* | **When proof gets cheap, talk gets expensive** | "Coming for" is a threat. We are quietly confident, not combative — and the replacement states the actual argument. |
+
+### What we deliberately left alone
+
+- **The eight-section structure**, and the section titles' sense of humour.
+- **The dialogue scene.** It is the best thing in the piece: concrete, plain, no adjectives.
+- **"Unlocking synergies", "Transformation", "Strategic alignment"** — these stay, in quotation
+  marks, in a list of things being mocked. Naming jargon in order to puncture it is exactly what
+  the [jargon list](#the-jargon-list) is for. The rule is that we do not use these words
+  *in our own voice*, not that we pretend nobody says them.
+- **The author's best lines**, including "a brilliant idea without execution is simply a more
+  entertaining form of procrastination" and the closing pair about appearing right versus
+  finding out what's true.
+
+### One thing we added
+
+The brand requires that we state a limit in the same breath as a claim. The original noted that
+AI can be wrong; the rewrite makes it unmissable, because a piece arguing for evidence cannot
+be vague about its own:
+
+> These tools also get things wrong with great confidence. They make things up. They will
+> happily reinforce a flawed assumption and turn selective evidence into a persuasive case.
+> Anyone who tells you otherwise is selling something.
+
+### Checking your own draft
+
+```bash
+# from the repo root — counts paragraphs, sentence length and banned terms
+node skill/human-first-ai-brand/scripts/voice-check.mjs your-piece.md
+```
+
+Aim for **15–35 words a paragraph** and **zero banned terms outside quotation marks**. If your
+average paragraph is under 12 words, you are performing rather than talking.
+
 ## Translation
 
 Translate the **meaning**, not the words. "Open door" carries almost everywhere. "Locked lab"
