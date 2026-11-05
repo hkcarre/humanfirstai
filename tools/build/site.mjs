@@ -14,6 +14,30 @@ const OUT = `${ROOT}/dist`;
 // Our own rule: a photograph of a real person ships only with provenance and
 // consent recorded, and we never fill the gap with a generated face.
 const MISSING = new Set();
+
+// src -> srcset string, for photographs wide enough to be worth two sizes.
+const SRCSET = new Map();
+
+/** Copy an article image next to the page, optimised, with a 800w companion
+ *  for anything wide. Returns false if the file is not in the repository. */
+async function placeImage(src) {
+  const from = `${ROOT}/content/${src}`;
+  if (!existsSync(from)) { MISSING.add(src); return false; }
+  const dir = src.split('/').slice(0, -1).join('/');
+  mkdirSync(`${OUT}/articles/${dir}`, { recursive: true });
+  const meta = await sharp(from).metadata();
+  if (/\.(jpe?g|png)$/i.test(src) && meta.width > 1000) {
+    const stem = src.replace(/\.[^.]+$/, '');
+    await sharp(from).resize({ width: 800 }).jpeg({ quality: 82, mozjpeg: true })
+      .toFile(`${OUT}/articles/${stem}-800.jpg`);
+    await sharp(from).jpeg({ quality: 82, mozjpeg: true }).toFile(`${OUT}/articles/${stem}.jpg`);
+    // Paths stay relative to the page, not to the image's own folder.
+    SRCSET.set(src, `${stem}-800.jpg 800w, ${stem}.jpg ${meta.width}w`);
+  } else {
+    copyFileSync(from, `${OUT}/articles/${src}`);
+  }
+  return true;
+}
 for (const d of ['', '/assets', '/assets/fonts', '/articles']) mkdirSync(`${OUT}${d}`, { recursive: true });
 
 // ===========================================================================
@@ -57,7 +81,7 @@ function frontmatter(src) {
   return [meta, src.slice(m[0].length)];
 }
 
-function markdown(src) {
+function markdown(src, meta = {}) {
   const lines = src.split('\n');
   const out = [];
   let i = 0, section = 0;
@@ -125,13 +149,23 @@ function markdown(src) {
       if (i < lines.length && /^\*[^*].*\*$/.test(lines[i].trim())) { cap = lines[i].trim().slice(1, -1); i++; }
       // A missing photograph is a hole in the page, not a silent omission.
       // The slot states what belongs here so nobody ships the gap by accident.
+      // An unresolved [credit] is the author's own placeholder. We keep their
+      // words and mark the gap, rather than silently publishing a bracket.
+      const capHtml = cap
+        ? `<figcaption>${inline(cap).replace(/\[credit\]/gi,
+            '<mark class="todo">photographer to be credited</mark>')}</figcaption>`
+        : '';
+      const set = SRCSET.get(im[2]);
+      const file = set ? im[2].replace(/\.[^.]+$/, '.jpg') : im[2];
+      // The author's own portrait sets small and round, not full bleed.
+      const portrait = meta.author && im[1].trim() === meta.author.trim();
       out.push(MISSING.has(im[2])
         ? `<figure class="fig photo-missing"><div class="slot" role="img" aria-label="${esc(im[1])}">`
           + `<p class="slot-t">Photograph not supplied</p><p class="slot-d">${esc(im[1])}</p>`
-          + `<p class="slot-f"><code>${esc(im[2])}</code></p></div>`
-          + (cap ? `<figcaption>${inline(cap)}</figcaption>` : '') + `</figure>`
-        : `<figure class="fig photo"><img src="${esc(im[2])}" alt="${esc(im[1])}" loading="lazy" decoding="async">`
-          + (cap ? `<figcaption>${inline(cap)}</figcaption>` : '') + `</figure>`);
+          + `<p class="slot-f"><code>${esc(im[2])}</code></p></div>` + capHtml + `</figure>`
+        : `<figure class="fig ${portrait ? 'portrait' : 'photo'}">`
+          + `<img src="${esc(file)}"${set ? ` srcset="${esc(set)}" sizes="(max-width: 46rem) 100vw, 44rem"` : ''}`
+          + ` alt="${esc(im[1])}" loading="lazy" decoding="async">` + capHtml + `</figure>`);
       continue;
     }
 
@@ -404,8 +438,29 @@ footer a { color: var(--hf-text-muted); }
   font-size: .875rem; color: var(--hf-text-muted);
 }
 
+/* ---- the face by the name ---- */
+/* alt="" because the name is right beside it: a screen reader announcing
+   "photo of Helena Carre, Helena Carre" is noise, not access. */
+.meta .face {
+  width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
+  margin-right: .1rem; vertical-align: middle;
+  border: 1px solid var(--hf-border); background: var(--hf-surface-raised);
+}
+
 /* ---- photographs ---- */
 .photo img { width: 100%; height: auto; display: block; border-radius: var(--hf-radius); }
+/* The author's own portrait in a bio block. Small and round, not full bleed. */
+.portrait { margin: 2rem 0 1.25rem; }
+.portrait img {
+  width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block;
+  border: 1px solid var(--hf-border);
+}
+/* An unresolved placeholder the author left. Visible, not pretending. */
+mark.todo {
+  background: color-mix(in srgb, var(--hf-sunrise) 22%, transparent);
+  color: var(--hf-text); padding: .05em .35em; border-radius: 3px;
+  font-family: var(--hf-font-brand); font-weight: 700; font-size: .9em;
+}
 .photo figcaption, .photo-missing figcaption {
   margin: .75rem 0 0; font-size: .875rem; line-height: 1.5; color: var(--hf-text-muted);
 }
@@ -547,6 +602,7 @@ ${alternates}
     <p class="subtitle">${esc(meta.subtitle)}</p>
     ${meta.standfirst ? `<p class="standfirst">${esc(meta.standfirst)}</p>` : ''}
     <p class="meta">
+      ${meta.authorPhoto ? `<img class="face" src="${esc(meta.authorPhoto)}" alt="" loading="lazy" decoding="async" width="36" height="36">` : ''}
       <span>${esc(meta.author || BRAND.name)}</span><span class="dot">&middot;</span>
       ${meta.author ? `<span>${esc(BRAND.name)}</span><span class="dot">&middot;</span>` : ''}
       <time datetime="${meta.date}">${dateStr}</time><span class="dot">&middot;</span>
@@ -713,15 +769,11 @@ for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md'))
   // Resolve the article's own images. Anything present is copied next to the
   // page; anything absent is recorded so it renders as a labelled slot.
   for (const m of body.matchAll(/^!\[[^\]]*\]\(([^)]+)\)\s*$/gm)) {
-    const src = m[1];
-    if (/^https?:/i.test(src)) continue;
-    if (existsSync(`${ROOT}/content/${src}`)) {
-      mkdirSync(`${OUT}/articles/${src.split('/').slice(0, -1).join('/')}`, { recursive: true });
-      copyFileSync(`${ROOT}/content/${src}`, `${OUT}/articles/${src}`);
-    } else MISSING.add(src);
+    if (!/^https?:/i.test(m[1])) await placeImage(m[1]);
   }
+  if (meta.authorPhoto) await placeImage(meta.authorPhoto);
 
-  const { html, sections } = markdown(body);
+  const { html, sections } = markdown(body, meta);
   writeFileSync(`${OUT}/articles/${slug}.html`, page(meta, html, slug, TRANSLATED));
 
   // Social preview card, from the same template system as every other asset.

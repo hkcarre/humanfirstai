@@ -7,3 +7,8 @@ node_modules/
 .DS_Store
 Thumbs.db
 .models/
+
+# Drop folder for supplied originals. Only photographs an article actually
+# uses, with a cleared row in brand/photography/credits.json, belong in the
+# repository — under site/content/.
+photos/

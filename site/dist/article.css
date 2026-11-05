@@ -227,8 +227,29 @@ footer a { color: var(--hf-text-muted); }
   font-size: .875rem; color: var(--hf-text-muted);
 }
 
+/* ---- the face by the name ---- */
+/* alt="" because the name is right beside it: a screen reader announcing
+   "photo of Helena Carre, Helena Carre" is noise, not access. */
+.meta .face {
+  width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
+  margin-right: .1rem; vertical-align: middle;
+  border: 1px solid var(--hf-border); background: var(--hf-surface-raised);
+}
+
 /* ---- photographs ---- */
 .photo img { width: 100%; height: auto; display: block; border-radius: var(--hf-radius); }
+/* The author's own portrait in a bio block. Small and round, not full bleed. */
+.portrait { margin: 2rem 0 1.25rem; }
+.portrait img {
+  width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block;
+  border: 1px solid var(--hf-border);
+}
+/* An unresolved placeholder the author left. Visible, not pretending. */
+mark.todo {
+  background: color-mix(in srgb, var(--hf-sunrise) 22%, transparent);
+  color: var(--hf-text); padding: .05em .35em; border-radius: 3px;
+  font-family: var(--hf-font-brand); font-weight: 700; font-size: .9em;
+}
 .photo figcaption, .photo-missing figcaption {
   margin: .75rem 0 0; font-size: .875rem; line-height: 1.5; color: var(--hf-text-muted);
 }

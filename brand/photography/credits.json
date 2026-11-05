@@ -69,6 +69,66 @@
       "dateTaken": null,
       "location": null,
       "clearedForPublication": false
+    },
+    {
+      "slug": "andres-headshot",
+      "file": "site/content/human-first-ai-assets/andres-headshot.jpg",
+      "alt": "Andrés Sepulveda Morales",
+      "caption": "Author portrait.",
+      "where": "Barcelona",
+      "goodFor": "Byline and bio for Andrés Sepulveda Morales only.",
+      "photographer": "UNKNOWN — confirm with the author",
+      "origin": "Supplied by the author for use with their own byline, via Human First AI",
+      "consent": "Subject is the author and supplied the image for this purpose",
+      "licence": "UNKNOWN — confirm with the author",
+      "dateTaken": null,
+      "location": "Barcelona, Spain",
+      "clearedForPublication": true
+    },
+    {
+      "slug": "helena-carre",
+      "file": "site/content/people/helena-carre.jpg",
+      "alt": "Helena Carre",
+      "caption": "Author portrait.",
+      "where": "—",
+      "goodFor": "Byline and bio for Helena Carre only.",
+      "photographer": "UNKNOWN — confirm",
+      "origin": "Supplied by Helena Carre for use with her own byline",
+      "consent": "Subject supplied the image for this purpose",
+      "licence": "UNKNOWN — confirm",
+      "dateTaken": null,
+      "location": null,
+      "clearedForPublication": true
+    },
+    {
+      "slug": "andres-with-clawd",
+      "file": "site/content/human-first-ai-assets/andres-with-clawd.jpg",
+      "alt": "Andrés holding up a crocheted Clawd the Crab in front of the room at the Claude Community House",
+      "caption": "Holding up a finished Clawd at the Claude Community House, Barcelona.",
+      "where": "Claude Community House · Barcelona",
+      "goodFor": "The Grace to Be Bad at It only, until the photographer is credited.",
+      "photographer": "NOT ON FILE — the author left \"Photo: [credit]\" in his draft, so somebody is owed a credit",
+      "origin": "Supplied by the author, via Human First AI",
+      "consent": "Subject is the author. Other people appear in the room — confirm before any reuse.",
+      "licence": "NOT ON FILE",
+      "dateTaken": "2026-09",
+      "location": "Barcelona, Spain",
+      "clearedForPublication": false
+    },
+    {
+      "slug": "workshop-room",
+      "file": "photos/workshop-room.jpg",
+      "alt": "NOT WRITTEN",
+      "caption": null,
+      "where": "Claude Community House · Barcelona",
+      "goodFor": "Unused. Supplied but not referenced by any article.",
+      "photographer": "NOT ON FILE",
+      "origin": "Supplied via Human First AI",
+      "consent": "NOT ON FILE — a room of identifiable people",
+      "licence": "NOT ON FILE",
+      "dateTaken": "2026-09",
+      "location": "Barcelona, Spain",
+      "clearedForPublication": false
     }
   ]
 }

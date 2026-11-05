@@ -7,6 +7,7 @@ date: 2026-11-04
 readingTime: 8
 theme: cream
 author: Helena Carre
+authorPhoto: people/helena-carre.jpg
 lang: es
 voice: ef_dora
 phonemeLang: es-419
