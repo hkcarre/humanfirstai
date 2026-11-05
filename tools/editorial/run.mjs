@@ -273,6 +273,23 @@ function openPr(dir) {
   if (existing.length) return { ok: true, url: existing[0].url, reused: true };
 
   const base = sh('git', ['rev-parse', '--abbrev-ref', 'HEAD']);
+
+  // If the run is already committed on the base branch there is nothing for a
+  // branch to carry, and `git commit` exits non-zero. That is not a failure
+  // worth a stack trace — it means somebody committed the artifacts directly.
+  const tracked = (() => {
+    try { return sh('git', ['ls-files', '--', `editorial/runs/${meta.runId}`]).length > 0; }
+    catch { return false; }
+  })();
+  const dirty = (() => {
+    try { return sh('git', ['status', '--porcelain', '--', `editorial/runs/${meta.runId}`]).length > 0; }
+    catch { return true; }
+  })();
+  if (tracked && !dirty) {
+    return { ok: false, reason: `run already committed on ${base}; nothing for a pull request to carry. `
+      + `Let 'pr' commit the run instead of adding editorial/runs/ yourself.`, status: qa.status, score: qa.weightedScore };
+  }
+
   sh('git', ['checkout', '-q', '-b', branch]);
   sh('git', ['add', '--', `editorial/runs/${meta.runId}`]);
   sh('git', ['commit', '-q', '-m',
