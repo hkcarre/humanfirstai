@@ -1,0 +1,114 @@
+{
+  "voice": "bf_emma",
+  "grade": "B-",
+  "phonemeLang": "en-gb",
+  "lang": "en",
+  "reviewed": false,
+  "model": "hexgrad/Kokoro-82M v1.0 (Apache-2.0)",
+  "phonemiser": "espeak-ng (GPL-3.0) via wasm",
+  "synthetic": true,
+  "generated": "2026-11-05",
+  "seconds": 188.7,
+  "marks": [
+    {
+      "t": 0,
+      "text": "Most organisations house two distinct tribes. Truth Seekers ask uncomfortable qu"
+    },
+    {
+      "t": 18.89,
+      "text": "We are used to seeing the Political Players prosper quickly. AI is about to chan"
+    },
+    {
+      "t": 25.96,
+      "text": "Part One. The death of cheap authority."
+    },
+    {
+      "t": 29.71,
+      "text": "A confident executive could go years on well-managed relationships, the right vo"
+    },
+    {
+      "t": 46.01,
+      "text": "Office politics worked because proof was slow. Information sat in silos. Showing"
+    },
+    {
+      "t": 60.63,
+      "text": "AI is making all three , proof, access to information, and testing , dirt cheap."
+    },
+    {
+      "t": 66.2,
+      "text": "An analyst with a few AI tools can replace a consulting team's discovery phase i"
+    },
+    {
+      "t": 72.8,
+      "text": "A junior can gather real customer feedback before a committee has agreed its age"
+    },
+    {
+      "t": 78.92,
+      "text": "Seniority no longer grants a monopoly when the information is open to everyone a"
+    },
+    {
+      "t": 87.61,
+      "text": "AI is making substance-free leadership impossible to defend."
+    },
+    {
+      "t": 93.79,
+      "text": "Part Two. High-speed nonsense versus real discovery."
+    },
+    {
+      "t": 98.51,
+      "text": "The counter-risk: AI is also the most potent corporate fluff generator ever crea"
+    },
+    {
+      "t": 110.01,
+      "text": "So the coming divide will not be between companies using AI and companies ignori"
+    },
+    {
+      "t": 118.53,
+      "text": "Performative. To manufacture the appearance of progress: more dashboards, pretti"
+    },
+    {
+      "t": 125.72,
+      "text": "Pragmatic. To run real experiments, check real data, and ship working tools."
+    },
+    {
+      "t": 131.49,
+      "text": "Both will claim large productivity gains. Only one will deliver actual business "
+    },
+    {
+      "t": 138.44,
+      "text": "Part Three. What modern leadership requires."
+    },
+    {
+      "t": 142.61,
+      "text": "The leaders who win this decade will be the ones secure enough to let evidence o"
+    },
+    {
+      "t": 150.66,
+      "text": "Hiring people sharper than yourself, and giving them room."
+    },
+    {
+      "t": 154.88,
+      "text": "Rewarding finished work and informative failures over flawless presentations."
+    },
+    {
+      "t": 160.55,
+      "text": "Accepting that your job is not to win the argument, but to make sure the best id"
+    },
+    {
+      "t": 167.34,
+      "text": "The bottom line."
+    },
+    {
+      "t": 170.02,
+      "text": "AI will not eliminate corporate politics. It raises the cost of keeping them."
+    },
+    {
+      "t": 175.89,
+      "text": "The real contest is not human against machine. It is between two ideas about wha"
+    },
+    {
+      "t": 189.68,
+      "text": "The future doesn't need more people who are brilliant at appearing right. It nee"
+    }
+  ]
+}

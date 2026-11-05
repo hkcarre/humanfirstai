@@ -122,6 +122,9 @@ h1 {
 .langs a { color: var(--hf-text-link); text-decoration: none; }
 .langs a:hover, .langs a:focus-visible { background: var(--hf-surface-raised); text-decoration: underline; }
 .langnote { margin: .6rem 0 0; font-size: .8125rem; line-height: 1.5; color: var(--hf-text-muted); max-width: 46ch; }
+.switches { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+.switches .langs { margin: 1.25rem 0 0; }
+.lens .on { background: var(--hf-teal); color: var(--hf-cream); }
 
 /* ---- listen ---- */
 .listen {

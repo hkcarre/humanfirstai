@@ -333,6 +333,9 @@ h1 {
 .langs a { color: var(--hf-text-link); text-decoration: none; }
 .langs a:hover, .langs a:focus-visible { background: var(--hf-surface-raised); text-decoration: underline; }
 .langnote { margin: .6rem 0 0; font-size: .8125rem; line-height: 1.5; color: var(--hf-text-muted); max-width: 46ch; }
+.switches { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+.switches .langs { margin: 1.25rem 0 0; }
+.lens .on { background: var(--hf-teal); color: var(--hf-cream); }
 
 /* ---- listen ---- */
 .listen {
@@ -492,7 +495,7 @@ const inlineLockup = (kind, way, cls = '') => {
   return `<svg class="${cls}" viewBox="0 0 ${w} ${h}" aria-hidden="true" focusable="false">${stripSvg(svg)}</svg>`;
 };
 
-function page(meta, bodyHtml, slug, TRANSLATED = new Map()) {
+function page(meta, bodyHtml, slug, TRANSLATED = new Map(), ARTICLES = new Set()) {
   const L = (meta.lang || 'en') === 'es'
     ? { listen: 'Escuchar', read: 'min de lectura', by: 'Leído por una voz sintética',
         tail: 'Está leyendo las palabras de abajo, las de nadie más.', other: 'Read in English', otherHref: `${slug.replace(/\.es$/, '')}.html` }
@@ -521,6 +524,25 @@ function page(meta, bodyHtml, slug, TRANSLATED = new Map()) {
   // The Spanish page states its own review status on arrival. An English
   // reader deciding whether to send someone the link deserves to know before
   // they click, not after.
+  // Short/long pairing. Declared on both sides and resolved against what the
+  // build can actually see, for the same reason the language switcher is: a
+  // control that promises a page which does not exist is worse than no control.
+  const suffix = isEs ? '.es' : '';
+  const pair = meta.longVersion ? { other: meta.longVersion, onShort: true }
+    : meta.shortVersion ? { other: meta.shortVersion, onShort: false } : null;
+  const pairExists = pair && ARTICLES.has(`${pair.other}${suffix}`);
+  const lenNav = pairExists ? `<nav class="langs lens" aria-label="${isEs ? 'Extensión' : 'Length'}">`
+    + `<span class="langs-l">${isEs ? 'Extensión' : 'Length'}</span>`
+    + [
+      { name: isEs ? 'En breve' : 'In brief', on: pair.onShort,
+        href: `${pair.onShort ? base : pair.other}${suffix}.html` },
+      { name: isEs ? 'Completo' : 'Full version', on: !pair.onShort,
+        href: `${pair.onShort ? pair.other : base}${suffix}.html` },
+    ].map(l => l.on
+      ? `<span class="on" aria-current="true">${l.name}</span>`
+      : `<a href="${l.href}">${l.name}</a>`).join('')
+    + `</nav>` : '';
+
   const esState = !isEs ? TRANSLATED.get(base) : null;
   const langNote = esState && esState !== 'true' ? `<p class="langnote">${esState === 'text'
     ? 'The Spanish is a machine-assisted translation. Its text has been reviewed against this page; its narration has not.'
@@ -609,7 +631,7 @@ ${alternates}
       <span>${meta.readingTime} ${L.read}</span>
     </p>
     ${audio}
-    ${langNav}${langNote}
+    <div class="switches">${langNav}${lenNav}</div>${langNote}
     ${meta.reviewed === 'false' ? `<aside class="unreviewed" role="note">
       <strong>Borrador sin revisar.</strong> Esta traducción y su narración se generaron con
       ayuda de una máquina y <strong>todavía no las revisó un hablante nativo</strong>. Nuestras
@@ -758,6 +780,11 @@ for (const f of readdirSync('../brand/type/fonts')) copyFileSync(`../brand/type/
 const articles = [];
 // Which pieces exist in more than one language. Computed before any page is
 // rendered, so a language switcher is only ever offered when its target exists.
+// Every article slug the build can see, so a switcher never offers a page
+// that does not exist.
+const ARTICLES = new Set(readdirSync(`${ROOT}/content`)
+  .filter(f => f.endsWith('.md'))
+  .map(f => f.replace(/\.md$/, '')));
 const TRANSLATED = new Map(readdirSync(`${ROOT}/content`)
   .filter(f => f.endsWith('.es.md'))
   .map(f => [f.replace(/\.es\.md$/, ''),
@@ -774,7 +801,7 @@ for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md'))
   if (meta.authorPhoto) await placeImage(meta.authorPhoto);
 
   const { html, sections } = markdown(body, meta);
-  writeFileSync(`${OUT}/articles/${slug}.html`, page(meta, html, slug, TRANSLATED));
+  writeFileSync(`${OUT}/articles/${slug}.html`, page(meta, html, slug, TRANSLATED, ARTICLES));
 
   // Social preview card, from the same template system as every other asset.
   const og = (() => {

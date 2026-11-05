@@ -1,0 +1,114 @@
+{
+  "voice": "ef_dora",
+  "grade": "not graded by the model author",
+  "phonemeLang": "es-419",
+  "lang": "es",
+  "reviewed": false,
+  "model": "hexgrad/Kokoro-82M v1.0 (Apache-2.0)",
+  "phonemiser": "espeak-ng (GPL-3.0) via wasm",
+  "synthetic": true,
+  "generated": "2026-11-05",
+  "seconds": 201.5,
+  "marks": [
+    {
+      "t": 0,
+      "text": "En casi toda organización conviven dos tribus. Quienes buscan la verdad hacen pr"
+    },
+    {
+      "t": 21.77,
+      "text": "Estamos acostumbrados a ver prosperar rápido a quienes juegan a la política. Eso"
+    },
+    {
+      "t": 29.19,
+      "text": "Part One. El fin de la autoridad barata."
+    },
+    {
+      "t": 32.69,
+      "text": "Un ejecutivo seguro de sí mismo podía sostenerse años con buenas relaciones, el "
+    },
+    {
+      "t": 50.73,
+      "text": "La política de oficina funcionaba porque la prueba era lenta. La información viv"
+    },
+    {
+      "t": 67.2,
+      "text": "La inteligencia artificial está abaratando las tres cosas: la prueba, el acceso "
+    },
+    {
+      "t": 74.6,
+      "text": "Una analista con unas cuantas herramientas puede reemplazar en una tarde la fase"
+    },
+    {
+      "t": 82.12,
+      "text": "Alguien con poca antigüedad puede traer opiniones reales de clientes antes de qu"
+    },
+    {
+      "t": 88.91,
+      "text": "La jerarquía ya no da el monopolio cuando la información está abierta a todos y "
+    },
+    {
+      "t": 97.31,
+      "text": "La inteligencia artificial vuelve imposible defender un liderazgo sin sustancia."
+    },
+    {
+      "t": 103.76,
+      "text": "Part Two. Tonterías a toda velocidad, o descubrimiento de verdad."
+    },
+    {
+      "t": 109.01,
+      "text": "El riesgo del otro lado: la inteligencia artificial también es la mejor máquina "
+    },
+    {
+      "t": 122.78,
+      "text": "Así que la división que viene no será entre empresas que la usan y empresas que "
+    },
+    {
+      "t": 130.57,
+      "text": "Para aparentar. Para fabricar la apariencia de avance: más tableros, presentacio"
+    },
+    {
+      "t": 138.17,
+      "text": "Para hacer. Para correr experimentos reales, revisar datos reales y entregar her"
+    },
+    {
+      "t": 144.51,
+      "text": "Las dos dirán que ganaron mucha productividad. Solo una entregará valor real."
+    },
+    {
+      "t": 150.21,
+      "text": "Part Three. Qué exige hoy el liderazgo."
+    },
+    {
+      "t": 153.56,
+      "text": "Quienes lideren bien esta década serán los que tengan la seguridad suficiente pa"
+    },
+    {
+      "t": 163.08,
+      "text": "Contratar gente más aguda que uno, y darle espacio."
+    },
+    {
+      "t": 166.72,
+      "text": "Premiar el trabajo terminado y los fracasos que enseñan, por encima de las prese"
+    },
+    {
+      "t": 173.09,
+      "text": "Aceptar que el trabajo de uno no es ganar la discusión, sino lograr que gane la "
+    },
+    {
+      "t": 179.56,
+      "text": "En resumen."
+    },
+    {
+      "t": 181.51,
+      "text": "La inteligencia artificial no va a eliminar la política de oficina. Encarece man"
+    },
+    {
+      "t": 187.38,
+      "text": "La competencia de verdad no es entre personas y máquinas. Es entre dos ideas sob"
+    },
+    {
+      "t": 201.68,
+      "text": "El futuro no necesita más gente brillante en aparentar que tiene razón. Necesita"
+    }
+  ]
+}

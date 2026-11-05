@@ -6,6 +6,7 @@ standfirst: Durante años, ser bueno en la política de oficina fue una carrera 
 date: 2026-11-04
 readingTime: 8
 theme: cream
+shortVersion: the-great-corporate-unmasking-in-brief
 author: Helena Carre
 authorPhoto: people/helena-carre.jpg
 lang: es
