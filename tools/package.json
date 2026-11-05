@@ -14,10 +14,16 @@
     "icons": "node build/icons.mjs",
     "graphics": "node build/graphics.mjs",
     "social": "node build/social.mjs",
-    "photos": "node build/photos.mjs"
+    "photos": "node build/photos.mjs",
+    "narrate": "node build/narrate.mjs",
+    "voices": "node build/voices.mjs"
   },
   "devDependencies": {
     "opentype.js": "^1.3.4",
-    "sharp": "^0.34.2"
+    "sharp": "^0.34.2",
+    "kokoro-js": "^1.2.1"
+  },
+  "dependencies": {
+    "kokoro-js": "^1.2.1"
   }
 }

@@ -87,6 +87,16 @@ h1 {
 }
 .meta .dot { color: var(--hf-border); }
 
+/* ---- listen ---- */
+.listen {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .85rem 1.25rem;
+  margin: 1.75rem 0 0; padding: 1rem 1.15rem;
+  background: var(--hf-surface-raised); border: 1px solid var(--hf-border); border-radius: var(--hf-radius);
+}
+.listen audio { height: 40px; flex: 1 1 260px; min-width: 0; }
+.listen .lab { font-family: var(--hf-font-brand); font-weight: 700; font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; color: var(--hf-text-accent); }
+.listen .sub { flex: 1 1 100%; font-size: .8125rem; color: var(--hf-text-muted); margin: 0; }
+
 /* ---- body ---- */
 article { padding: clamp(2rem, 5vw, 3.5rem) 0 1rem; }
 article p { margin: 0 0 1.45rem; }

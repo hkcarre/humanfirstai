@@ -84,6 +84,58 @@ decorative image is correct. A missing alt attribute never is.
 
 All alt text for the set: [`brand/photography/alt-text.md`](../brand/photography/alt-text.md).
 
+## Synthetic voice
+
+We narrate articles with [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M), an
+open-weight model under Apache-2.0. It runs on a laptop at build time. The audio file is
+generated once and committed, so no reader's text is ever sent to anybody, and nothing is
+called at runtime.
+
+Narration is an accessibility feature, not a flourish. A good share of the people this
+movement exists for read slowly, read in a second language, have low vision, or are listening
+while doing something else with their hands.
+
+### What it may do
+
+- Read our own published prose, with the written text on the same page.
+- Carry a label saying it is synthetic, every time, where you cannot miss it.
+
+### What it may never do
+
+- **Speak as a named person.** Not a learner, not a volunteer, not a staff member.
+- **Read a quote or a piece of testimony.** If someone said it, either they read it or nobody does.
+- **Appear anywhere a listener could reasonably believe they are hearing a specific human being.**
+
+The line is the same one we draw for photography, for the same reason. A synthetic face invents
+a person who does not exist. A synthetic voice reading our own words is a reading aid, much
+like a screen reader. The moment it speaks *as* somebody, it becomes the same lie — and a
+movement whose whole argument is that people come first cannot afford to put words in a mouth
+that was never there.
+
+### Choosing a voice
+
+Listen before you pick: [the voice picker](https://hkcarre.github.io/humanfirstai/voices.html)
+has every candidate reading the same three lines. Anything the model's author grades D or
+below is out — if we are asking people to trust what we say, it has to be comfortable to
+listen to.
+
+Current narrator: **af_heart**, graded A, American English.
+
+```bash
+cd tools
+npm run voices                              # rebuild the picker page
+npm run narrate -- --voice bf_emma --force  # change the narrator
+```
+
+### Other languages
+
+The ONNX build we use ships **English voices only**. Kokoro v1.0 has packs for Spanish,
+French, Hindi, Italian, Brazilian Portuguese, Japanese and Mandarin, but we have not tested
+them and the same rule applies as to written translation: a native speaker from that chapter
+reviews it before it goes out. For any language where a chapter has a willing volunteer, **a
+human reading is better than a synthetic one** and should be preferred. A neighbour's voice is
+the point.
+
 ## Illustration
 
 Where we have no photograph and will not fake one.

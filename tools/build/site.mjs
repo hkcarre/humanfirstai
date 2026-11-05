@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, readdirSync, existsSync } from 'node:fs';
 import { renderPng } from '../lib/type.mjs';
 import { C, BRAND, WAYS } from '../lib/brand.mjs';
 import { lockup } from '../lib/lockup.mjs';
@@ -199,6 +199,16 @@ h1 {
 }
 .meta .dot { color: var(--hf-border); }
 
+/* ---- listen ---- */
+.listen {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .85rem 1.25rem;
+  margin: 1.75rem 0 0; padding: 1rem 1.15rem;
+  background: var(--hf-surface-raised); border: 1px solid var(--hf-border); border-radius: var(--hf-radius);
+}
+.listen audio { height: 40px; flex: 1 1 260px; min-width: 0; }
+.listen .lab { font-family: var(--hf-font-brand); font-weight: 700; font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; color: var(--hf-text-accent); }
+.listen .sub { flex: 1 1 100%; font-size: .8125rem; color: var(--hf-text-muted); margin: 0; }
+
 /* ---- body ---- */
 article { padding: clamp(2rem, 5vw, 3.5rem) 0 1rem; }
 article p { margin: 0 0 1.45rem; }
@@ -298,6 +308,19 @@ const inlineLockup = (kind, way, cls = '') => {
 };
 
 function page(meta, bodyHtml, slug) {
+  // Narration, if it has been generated. preload="none" so it costs a reader
+  // on a slow connection nothing at all unless they ask for it.
+  let audio = '';
+  if (existsSync(`${OUT}/articles/${slug}.mp3`)) {
+    const info = JSON.parse(readFileSync(`${OUT}/articles/${slug}.audio.json`, 'utf8'));
+    const mins = Math.round(info.seconds / 60);
+    audio = `<div class="listen">
+      <span class="lab">Listen &middot; ${mins} min</span>
+      <audio controls preload="none" src="${slug}.mp3" aria-label="Listen to this article, ${mins} minutes, read by a synthetic voice"></audio>
+      <p class="sub">Read by a synthetic voice (<a href="https://huggingface.co/hexgrad/Kokoro-82M">Kokoro-82M</a>,
+      generated locally, no tracking). It is reading the words below, nobody else's.</p>
+    </div>`;
+  }
   const url = `https://hkcarre.github.io/humanfirstai/articles/${slug}.html`;
   const tags = Array.isArray(meta.tags) ? meta.tags : [];
   const date = new Date(meta.date + 'T00:00:00Z');
@@ -354,6 +377,7 @@ ${JSON.stringify({
       <time datetime="${meta.date}">${dateStr}</time><span class="dot">&middot;</span>
       <span>${meta.readingTime} min read</span>
     </p>
+    ${audio}
   </div>
 </div>
 <div class="colonnade" aria-hidden="true">${colonnadeSvg}</div>
@@ -443,6 +467,13 @@ function indexPage(articles) {
 <div class="colonnade" aria-hidden="true">${colonnadeSvg}</div>
 <main class="list" id="list">
   <div class="wrap">
+    <a class="entry" href="voices.html">
+      <p class="kicker">Narration</p>
+      <h2>Choosing a narrator</h2>
+      <p>Seven candidate voices reading the same three lines, so you can pick with your ears
+         instead of from a table. Generated locally with Kokoro, Apache-2.0.</p>
+      <p class="meta"><span>Audio</span><span class="dot">&middot;</span><span>7 samples</span></p>
+    </a>
     <a class="entry" href="showcase.html">
       <p class="kicker">Showcase</p>
       <h2>An open door, in three dimensions</h2>

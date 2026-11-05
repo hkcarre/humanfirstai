@@ -1,0 +1,294 @@
+{
+  "voice": "af_heart",
+  "grade": "A",
+  "model": "hexgrad/Kokoro-82M v1.0 (Apache-2.0)",
+  "synthetic": true,
+  "generated": "2026-11-05",
+  "seconds": 689.3,
+  "marks": [
+    {
+      "t": 0,
+      "text": "Most organisations hold two kinds of people. Truth Seekers ask uncomfortable que"
+    },
+    {
+      "t": 23.7,
+      "text": "Both have built good careers. That is starting to change, and not for the reason"
+    },
+    {
+      "t": 31.21,
+      "text": "AI is changing the economics of competence."
+    },
+    {
+      "t": 36.29,
+      "text": "Part One. The masquerade."
+    },
+    {
+      "t": 39.36,
+      "text": "Some leaders create real value. Others create excellent slides about the value t"
+    },
+    {
+      "t": 50.86,
+      "text": "A confident executive could go years on well-managed relationships, the right vo"
+    },
+    {
+      "t": 63.3,
+      "text": "Transformation."
+    },
+    {
+      "t": 65.53,
+      "text": "Strategic alignment."
+    },
+    {
+      "t": 67.87,
+      "text": "Operational excellence."
+    },
+    {
+      "t": 70.39,
+      "text": "Unlocking synergies."
+    },
+    {
+      "t": 72.71,
+      "text": "Ask what actually improved for a customer, a colleague or a shareholder, and the"
+    },
+    {
+      "t": 81.06,
+      "text": "Office politics worked because proof was expensive. Testing an idea cost money. "
+    },
+    {
+      "t": 103.98,
+      "text": "AI is making all three cheap."
+    },
+    {
+      "t": 107.72,
+      "text": "Part Two. When thinking gets cheap, authority has to earn its keep."
+    },
+    {
+      "t": 113.12,
+      "text": "Power inside an organisation has always rested partly on access. To information,"
+    },
+    {
+      "t": 125.79,
+      "text": "That advantage is thinning."
+    },
+    {
+      "t": 128.41,
+      "text": "An analyst with good tools can now look into a question that used to need a cons"
+    },
+    {
+      "t": 152.91,
+      "text": "Evidence."
+    },
+    {
+      "t": 154.9,
+      "text": "Picture the conversation."
+    },
+    {
+      "t": 157.5,
+      "text": "The leader says. Interesting idea, but we need six months to assess feasibility."
+    },
+    {
+      "t": 163.57,
+      "text": "The employee says. I built a prototype yesterday."
+    },
+    {
+      "t": 167.72,
+      "text": "The leader says. Have we aligned the stakeholders?"
+    },
+    {
+      "t": 171.52,
+      "text": "The employee says. We tested it with four customers this morning."
+    },
+    {
+      "t": 176.37,
+      "text": "The leader says. Right. Let's book a meeting to discuss the implications."
+    },
+    {
+      "t": 181.82,
+      "text": "Somewhere, a slide deck quietly gives up."
+    },
+    {
+      "t": 185.34,
+      "text": "A prototype is not a working system. Governance, security, privacy and bringing "
+    },
+    {
+      "t": 210.46,
+      "text": "Part Three. Two tribes."
+    },
+    {
+      "t": 213.54,
+      "text": "Political Players run on preservation. They optimise for visibility, status, con"
+    },
+    {
+      "t": 241.26,
+      "text": "Their real risk is not that a machine takes their job."
+    },
+    {
+      "t": 245.55,
+      "text": "It is that somebody eventually asks what all of it achieved."
+    },
+    {
+      "t": 249.92,
+      "text": "Truth Seekers run on discovery. They want to know what works, why, and how to ma"
+    },
+    {
+      "t": 275.74,
+      "text": "Political Players use intelligence to protect their position. Truth Seekers use "
+    },
+    {
+      "t": 283.82,
+      "text": "AI amplifies both."
+    },
+    {
+      "t": 286.51,
+      "text": "Only one of them turns capability into anything you can point at."
+    },
+    {
+      "t": 292.08,
+      "text": "Part Four. It makes better nonsense too."
+    },
+    {
+      "t": 295.88,
+      "text": "Here is the part that gets missed. AI is not automatically on the side of truth."
+    },
+    {
+      "t": 306.63,
+      "text": "Picture an organisation where every mediocre proposal arrives complete. Business"
+    },
+    {
+      "t": 330.12,
+      "text": "These tools also get things wrong with great confidence. They make things up. Th"
+    },
+    {
+      "t": 344.94,
+      "text": "So the real divide will not be between organisations that adopt AI and organisat"
+    },
+    {
+      "t": 352.81,
+      "text": "It will be between those that use it to find out what is true, and those that us"
+    },
+    {
+      "t": 360.13,
+      "text": "The first group will connect these tools to real data, real experiments and real"
+    },
+    {
+      "t": 376.45,
+      "text": "Part Five. What good leadership looks like now."
+    },
+    {
+      "t": 380.58,
+      "text": "The best leaders in this next stretch will not be the most technically sophistic"
+    },
+    {
+      "t": 390.45,
+      "text": "They will hire people who know things they don't. They will invite disagreement "
+    },
+    {
+      "t": 411.57,
+      "text": "That takes two things corporate life does not hand out often. The confidence to "
+    },
+    {
+      "t": 425.84,
+      "text": "A leader who needs to be the cleverest person in every meeting may find the meet"
+    },
+    {
+      "t": 434.41,
+      "text": "Part Six. The bill arrives eventually."
+    },
+    {
+      "t": 438.38,
+      "text": "Office politics is not going away. People will keep wanting status, influence, s"
+    },
+    {
+      "t": 458.83,
+      "text": "Picture two competitors. One has seventeen approval layers, six governance commi"
+    },
+    {
+      "t": 474.95,
+      "text": "The first announces its roadmap. The second launches its third product. The firs"
+    },
+    {
+      "t": 487.29,
+      "text": "The market notices eventually. Not every time, not quickly, and not without exce"
+    },
+    {
+      "t": 506.06,
+      "text": "AI will not end office politics. It will raise the cost of putting up with it."
+    },
+    {
+      "t": 512.94,
+      "text": "Part Seven. Not revenge. Room.."
+    },
+    {
+      "t": 516.59,
+      "text": "For years the most curious people in an organisation have heard the same advice:"
+    },
+    {
+      "t": 522.28,
+      "text": "Don't rock the boat."
+    },
+    {
+      "t": 524.38,
+      "text": "Be more diplomatic."
+    },
+    {
+      "t": 526.52,
+      "text": "Read the room."
+    },
+    {
+      "t": 528.57,
+      "text": "That's not how things work here."
+    },
+    {
+      "t": 531.24,
+      "text": "Great idea, but perhaps not now."
+    },
+    {
+      "t": 534.33,
+      "text": "The economics of rocking the boat have changed. One capable person no longer nee"
+    },
+    {
+      "t": 547.88,
+      "text": "But Truth Seekers do not win because Political Players lose. That would be a thi"
+    },
+    {
+      "t": 566.45,
+      "text": "And they win properly when that capability points at something larger than the q"
+    },
+    {
+      "t": 587.02,
+      "text": "Think what capable people could do if they spent less time managing internal pol"
+    },
+    {
+      "t": 598.26,
+      "text": "Part Eight. Who actually wins."
+    },
+    {
+      "t": 601.49,
+      "text": "This moment gets described as a contest between people and machines. The more in"
+    },
+    {
+      "t": 612.78,
+      "text": "One treats it as something to hold. The other treats it as something to grow, sh"
+    },
+    {
+      "t": 628.05,
+      "text": "AI hands both of them remarkable tools. Tools do not decide outcomes. Values, in"
+    },
+    {
+      "t": 638.35,
+      "text": "The organisations that come out of this well may not be the ones with the larges"
+    },
+    {
+      "t": 660.54,
+      "text": "The masks will not all come off at once, and some will get more sophisticated. B"
+    },
+    {
+      "t": 673.51,
+      "text": "And the people who gain most are not the executives, the vendors, or even the Tr"
+    },
+    {
+      "t": 680.61,
+      "text": "The future doesn't need more people who are brilliant at appearing right. It nee"
+    }
+  ]
+}
