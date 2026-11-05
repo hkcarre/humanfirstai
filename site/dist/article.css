@@ -36,6 +36,9 @@ body {
 }
 .skip:focus { left: 0; }
 
+/* Screen-reader only. Was used on table captions before it was ever defined. */
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
 .wrap { width: min(100% - 2.5rem, 38rem); margin-inline: auto; }
 .hero .wrap, .closing .wrap { width: min(100% - 2.5rem, 44rem); }
 .wide { width: min(100% - 2.5rem, 64rem); margin-inline: auto; }
@@ -96,6 +99,9 @@ h1 {
 }
 .unreviewed strong { font-family: var(--hf-font-brand); }
 .unreviewed a { color: var(--hf-text-accent); }
+/* One rung down: the text has been reviewed, the audio has not. Teal, because
+   Sunrise is reserved for "nobody has checked any of this". */
+.revised { border-color: var(--hf-teal); background: color-mix(in srgb, var(--hf-teal) 8%, transparent); }
 .xlang { margin: 1.25rem 0 0; font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem; }
 .xlang a { color: var(--hf-text-accent); text-decoration: none; }
 .xlang a:hover { text-decoration: underline; }
@@ -191,4 +197,77 @@ footer a { color: var(--hf-text-muted); }
   .progress, .masthead, .closing .cta { display: none; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .colonnade { display: none; }
+}
+
+/* ---- photographs ---- */
+.photo img { width: 100%; height: auto; display: block; border-radius: var(--hf-radius); }
+.photo figcaption, .photo-missing figcaption {
+  margin: .75rem 0 0; font-size: .875rem; line-height: 1.5; color: var(--hf-text-muted);
+}
+.photo-missing .slot {
+  display: grid; place-content: center; gap: .4rem; text-align: center;
+  aspect-ratio: 3 / 2; padding: 1.5rem;
+  border: 2px dashed var(--hf-border); border-radius: var(--hf-radius);
+  background: var(--hf-surface-raised);
+}
+.photo-missing .slot-t {
+  margin: 0; font-family: var(--hf-font-brand); font-weight: 800; font-size: .75rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--hf-text-accent);
+}
+.photo-missing .slot-d { margin: 0; max-width: 28rem; font-size: .9375rem; line-height: 1.5; }
+.photo-missing .slot-f { margin: 0; font-size: .8125rem; color: var(--hf-text-muted); }
+
+/* ---- figures: everything in this article is a ring ---- */
+.fig { margin: 3rem 0; }
+.fig figcaption {
+  margin: 1rem auto 0; max-width: 34rem; text-align: center;
+  font-size: .9375rem; line-height: 1.55; color: var(--hf-text-muted);
+}
+.fig figcaption a { color: var(--hf-text-accent); }
+.fig-stage { position: relative; }
+.fig svg { display: block; width: 100%; height: auto; }
+.fig .dome { color: var(--hf-text); }
+
+/* hero */
+.fig-hero { margin: 3.5rem 0 3rem; }
+.fig-hero .fig-stage { max-width: 34rem; margin: 0 auto; }
+.fig-hero .st { transform-box: fill-box; transform-origin: center; }
+.fig-step {
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin: .25rem auto 0; max-width: 30rem;
+  font-family: var(--hf-font-brand); font-weight: 700; font-size: .75rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--hf-text-muted);
+}
+.fig-step span { transition: color .35s ease; }
+.fig-step span.on { color: var(--hf-text-accent); }
+
+/* stat rings */
+.fig-stat .fig-stage { max-width: 20rem; margin: 0 auto; }
+.fig-stat .big {
+  font-family: var(--hf-font-brand); font-weight: 800; font-size: 54px;
+  fill: var(--hf-text); letter-spacing: -.02em;
+}
+.fig-stat .small {
+  font-family: var(--hf-font-brand); font-weight: 700; font-size: 15px;
+  fill: var(--hf-text-muted); letter-spacing: .04em;
+}
+.fig-stat .tick { opacity: .55; }
+.fig-stat .tick.on { opacity: 0; }
+.fig-cmp .big { font-size: 44px; }
+.fig-key {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem 1.1rem;
+  margin: .7rem 0 0; font-size: .8125rem; line-height: 1.3; color: var(--hf-text-muted);
+}
+.fig-key > span { white-space: nowrap; }
+.fig-key .k { display: inline-block; width: .7rem; height: .7rem; border-radius: 50%; margin-right: .35rem; vertical-align: -1px; }
+.fig-key .k.ghost { background: var(--hf-text-muted); }
+.fig-key .k.on { background: var(--hf-sunrise); }
+
+/* The reveal. Without JS, or with reduced motion, these are simply absent and
+   every figure is already in its finished state. */
+.js .fig .val, .js .fig .ghost { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+.js .fig .st { opacity: 0; transform: scale(.4); }
+@media (prefers-reduced-motion: reduce) {
+  .js .fig .val, .js .fig .ghost { stroke-dashoffset: 0; }
+  .js .fig .st { opacity: 1; transform: none; }
 }

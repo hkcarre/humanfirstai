@@ -16,13 +16,17 @@
     "social": "node build/social.mjs",
     "photos": "node build/photos.mjs",
     "narrate": "node build/narrate.mjs",
-    "voices": "node build/voices.mjs"
+    "voices": "node build/voices.mjs",
+    "phonemes:check": "node check-phonemes.mjs",
+    "voice-check": "node ../skill/human-first-ai-brand/scripts/voice-check.mjs",
+    "site": "node build/site.mjs"
   },
   "devDependencies": {
     "kokoro-js": "^1.2.1",
     "opentype.js": "^1.3.4",
     "sharp": "^0.34.2",
-    "espeak-ng": "^1.0.2"
+    "espeak-ng": "^1.0.2",
+    "onnxruntime-node": "^1.23.0"
   },
   "dependencies": {
     "espeak-ng": "^1.0.2",

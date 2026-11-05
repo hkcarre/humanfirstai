@@ -146,6 +146,56 @@ Writing is translated first and narrated second. A machine-assisted translation 
 until a native speaker from that chapter has read it, and the page says so in a box nobody can
 miss until they have. See [02 Voice](02-voice.md).
 
+### Spanish from Spain
+
+Yes, and two ways.
+
+**Inside Kokoro**, set `phonemeLang: es` instead of `es-419`. The *zeta* comes back and
+*gracias* is said with a th. That is a real change and it costs one line. But it is an accent
+worn by a voice whose origin the model's author never states: Kokoro's Spanish is the only
+language in its voice list with neither a grade nor a training-hours figure.
+
+**Recorded in Spain**, use a [Piper](https://github.com/OHF-Voice/piper1-gpl) `es_ES` voice.
+These are VITS models in ONNX, tens of megabytes, run locally at build time through
+onnxruntime with the same espeak-ng we already use for phonemes — no Python, no network at
+runtime. Lower fidelity than Kokoro, 22.05kHz against 24, and plainly a Spaniard reading.
+Three are on the picker: `davefx` (CC0) and the two speakers of `sharvard` (CC BY 3.0).
+Weights download on demand into `.models/` and are **not committed** — they are large and
+they are not ours.
+
+A caution worth stating plainly: our Spanish article is written in Latin American Spanish,
+leaning Rioplatense — *acá*, *leé*, *agendar*. Putting a Castilian voice over that text is a
+costume, not a Spain edition. A Spain edition needs the text passed again too.
+
+### The phonemiser bug, and why it is written down
+
+For a while every Spanish narration we produced was fluent, confident nonsense, and nobody
+could tell from looking at it.
+
+espeak-ng was being invoked with `-b=1`. It parses the value as the string `"=1"`, fails to
+match, and **silently falls back to 8-bit input**. Every UTF-8 character then arrives as its
+separate bytes read as Latin-1, and espeak pronounces the mojibake exactly as written:
+
+| written | spoken |
+| --- | --- |
+| `niño` | "ni a-tilde (en) plus or minus o" |
+| `título` | "te a-circumflex tulo" |
+| `don’t` | "doughnut tea" |
+| `what’s` | "water es" |
+
+The flag is `-b 1` as two arguments, or `-b1`, or simply left out. It is now in exactly one
+place, `tools/lib/phonemes.mjs`, with a check that fails the build:
+
+```bash
+cd tools && npm run phonemes:check
+```
+
+Two things this cost us are worth keeping in mind. The output *looked* fine — plausible IPA,
+right duration, fluent audio — so every check that did not involve listening passed. And the
+English only broke the day we switched the articles to curly apostrophes, because until then
+the text happened to be pure ASCII. A pipeline that is correct by accident will stop being
+correct without warning.
+
 ### Other languages
 
 Kokoro v1.0 also has packs for French, Hindi, Italian, Brazilian Portuguese, Japanese and

@@ -8,12 +8,12 @@ Run this before anything goes out. All of it, not the convenient parts.
 - [ ] A twelve-year-old could read the main message and act on it
 - [ ] Paragraphs are 15-35 words — not a column of one-line paragraphs
 - [ ] No banned words (`AI-powered`, `unlock`, `seamless`, `revolutionise`, `leverage`, `empower`…)
-- [ ] Paragraphs run 15–35 words — not a column of one-line paragraphs
 - [ ] `node scripts/voice-check.mjs <file>` passes all six checks
 - [ ] AI described by what it helps someone *do*, never as a mind or as magic
 - [ ] The limit is stated — what it does not do, in the same breath
 - [ ] Any person named has consent on file
 - [ ] Any number stated has a source. If estimated, it says "about".
+- [ ] Translations: `voice-check` scales word targets by language. Shape must still match the original.
 
 ## Identity
 
@@ -43,6 +43,7 @@ Run this before anything goes out. All of it, not the convenient parts.
 - [ ] Scrim behind any type on a photograph, measured not eyeballed
 - [ ] Alt text written to the formula: who + what they are doing + where and how it feels
 - [ ] Decorative images carry `alt=""`
+- [ ] A photograph we do not have renders as a labelled slot, never a broken image or a generated face
 
 ## Reach
 
@@ -51,6 +52,17 @@ Run this before anything goes out. All of it, not the convenient parts.
 - [ ] Still makes sense in greyscale
 - [ ] Keyboard reachable with a visible focus ring, if interactive
 - [ ] Captions on video, transcripts on audio
+
+## Figures and audio
+
+- [ ] The figure shows something the sentence beside it cannot. If decorative, cut it.
+- [ ] Figures in one piece are variations on one idea, not unrelated chart types
+- [ ] Two quantities sit on two radii, never stacked on the same one
+- [ ] Every number carries its source in the caption. Estimates say "about".
+- [ ] Renders complete with JavaScript off and under `prefers-reduced-motion`
+- [ ] `role="img"` with a label describing the finding, not the drawing
+- [ ] Narration: `cd tools && npm run phonemes:check` passes before generating audio
+- [ ] **Somebody has listened to the audio end to end.** Nothing else catches a mis-encoded voice.
 
 ## Then
 

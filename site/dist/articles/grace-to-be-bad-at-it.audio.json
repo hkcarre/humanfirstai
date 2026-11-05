@@ -1,0 +1,130 @@
+{
+  "voice": "bf_emma",
+  "grade": "B-",
+  "phonemeLang": "en-gb",
+  "lang": "en",
+  "reviewed": false,
+  "model": "hexgrad/Kokoro-82M v1.0 (Apache-2.0)",
+  "phonemiser": "espeak-ng (GPL-3.0) via wasm",
+  "synthetic": true,
+  "generated": "2026-11-05",
+  "seconds": 267.9,
+  "marks": [
+    {
+      "t": 0,
+      "text": "Crazy question: when was the last time you were a total beginner at something, i"
+    },
+    {
+      "t": 6.49,
+      "text": "For me it was September, and I was the one teaching. Yes, at an AI conference. S"
+    },
+    {
+      "t": 12.61,
+      "text": "Claude Community House was four days in Barcelona for people who build with Clau"
+    },
+    {
+      "t": 31.56,
+      "text": "I ran it with Christina Pruneski, who taught me to crochet and is still much bet"
+    },
+    {
+      "t": 45.66,
+      "text": "Then came the magic ring. It’s how you start anything round, and every beginner "
+    },
+    {
+      "t": 57.98,
+      "text": "Nobody could ask an AI to fix a dropped stitch. So people did one of two things."
+    },
+    {
+      "t": 72.39,
+      "text": "Holding up a finished Clawd at the Claude Community House, Barcelona."
+    },
+    {
+      "t": 77.34,
+      "text": "Being bad at something, and asking for help. Those are the two moves most of us "
+    },
+    {
+      "t": 86.16,
+      "text": "So why do we avoid them?."
+    },
+    {
+      "t": 89.33,
+      "text": "With AI especially, it can feel like everyone else already knows what they’re do"
+    },
+    {
+      "t": 99.9,
+      "text": "The fear is simple: if I’m bad at this, people will think less of me. The resear"
+    },
+    {
+      "t": 107.8,
+      "text": "What if being bad at it is the point?."
+    },
+    {
+      "t": 111.5,
+      "text": "One of my slides for the session said this."
+    },
+    {
+      "t": 115.59,
+      "text": "There is no prompt for this. The minutes you spend being bad at it are the skill"
+    },
+    {
+      "t": 120.89,
+      "text": "Elizabeth and Robert Bjork have a name for the idea: desirable difficulty. Pract"
+    },
+    {
+      "t": 135.89,
+      "text": "You don’t need a study to know you can be bad at something in front of an audien"
+    },
+    {
+      "t": 142.03,
+      "text": "Julia Child did it on television in 1963. She tried to flip a potato pancake and"
+    },
+    {
+      "t": 157.78,
+      "text": "And what about asking for help?."
+    },
+    {
+      "t": 161.06,
+      "text": "The stranger next to you is more likely to say yes than you think. Francis Flynn"
+    },
+    {
+      "t": 173.2,
+      "text": "One attendee said it better than I could."
+    },
+    {
+      "t": 177.25,
+      "text": "It was an amazing parallel to the adaptation moment we’ve been through in the AI"
+    },
+    {
+      "t": 189.67,
+      "text": "So where do we go from here?."
+    },
+    {
+      "t": 192.9,
+      "text": "This is where the grace comes in, and it starts with you. In one study, students"
+    },
+    {
+      "t": 209.02,
+      "text": "Then give the same grace to the next beginner. When the person next to you is st"
+    },
+    {
+      "t": 223.24,
+      "text": "Try this. Pick one AI tool you have been avoiding. Give yourself twenty minutes "
+    },
+    {
+      "t": 231.78,
+      "text": "Then come back and tell us which tool you picked, and how bad you were at it. No"
+    },
+    {
+      "t": 238.65,
+      "text": "About the author."
+    },
+    {
+      "t": 241.38,
+      "text": "Andrés Sepulveda Morales is a Puerto Rican technologist in Barcelona and a volun"
+    },
+    {
+      "t": 259.7,
+      "text": "Andrés is a Top Independent on Contra and one of Favikon’s Top 10 Puerto Rican V"
+    }
+  ]
+}

@@ -42,6 +42,18 @@ catch (e) { console.error(`Cannot read ${file}: ${e.message}`); process.exit(1);
 const text = raw.replace(/^---\n[\s\S]*?\n---\n/, '');          // drop frontmatter
 const lines = text.split('\n');
 
+// Word counts are not comparable across languages. The same sentence takes
+// more words in Spanish or French than in English, so an English threshold
+// marks a faithful translation as "too dense" for doing its job. The targets
+// below are English; these factors restate them in the target language.
+// They scale the COUNT, never the shape: paragraph and sentence counts are
+// still expected to match the original, and those are what we actually care
+// about. Figures are the usual localisation expansion ranges, rounded down.
+const EXPANSION = { en: 1, es: 1.2, pt: 1.2, fr: 1.2, it: 1.15, de: 1.1, nl: 1.1 };
+const lang = (raw.match(/^---\n[\s\S]*?^lang:\s*([a-z]{2})/m) || [, 'en'])[1];
+const X = EXPANSION[lang] || 1;
+const T = { para: [15 * X, 35 * X], sent: 22 * X, long: 25 * X };
+
 // Quoted jargon is allowed — naming a word in order to puncture it is the point.
 const unquoted = s => s
   .replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
@@ -67,14 +79,15 @@ lines.forEach((line, i) => {
 
 const paras = text.split(/\n\s*\n/)
   .map(p => p.trim())
-  .filter(p => p && !/^(#|>|-|\d+\.|\||```)/.test(p));
+  .filter(p => p && !/^(#|>|-|\d+\.|\||```|!\[)/.test(p));   // ![img] is not prose
 const body = paras.join(' ');
 const words = body.split(/\s+/).filter(Boolean);
 const sentences = body.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 1);
 const wordsPerPara = words.length / (paras.length || 1);
 const wordsPerSent = words.length / (sentences.length || 1);
-const longSentences = sentences.filter(s => s.split(/\s+/).length > 25);
-const bangs = (text.match(/!/g) || []).length;
+const longSentences = sentences.filter(s => s.split(/\s+/).length > T.long);
+// Images are written ![alt](src) — that exclamation mark is syntax, not tone.
+const bangs = (text.replace(/!\[[^\]]*\]\([^)]*\)/g, '').match(/!/g) || []).length;
 
 const PASS = '  ok  ', FAIL = '  !!  ';
 const line = () => console.log('-'.repeat(72));
@@ -82,23 +95,27 @@ let problems = 0;
 
 console.log(`\nVoice check — ${file}`);
 line();
-console.log(`  ${words.length} words · ${sentences.length} sentences · ${paras.length} paragraphs\n`);
+console.log(`  ${words.length} words · ${sentences.length} sentences · ${paras.length} paragraphs`);
+console.log(X === 1 ? '' : `  language ${lang} — word targets scaled ×${X} for expansion\n`);
 
 const judge = (ok, label, detail) => {
   if (!ok) problems++;
   console.log((ok ? PASS : FAIL) + label.padEnd(34) + detail);
 };
 
-judge(wordsPerPara >= 15 && wordsPerPara <= 35, 'paragraph shape',
+judge(wordsPerPara >= T.para[0] && wordsPerPara <= T.para[1], 'paragraph shape',
   `${wordsPerPara.toFixed(1)} words a paragraph` +
-  (wordsPerPara < 15 ? '  — too staccato. Join sentences into paragraphs.'
-   : wordsPerPara > 35 ? '  — too dense. Break them up.' : '  (target 15-35)'));
+  (wordsPerPara < T.para[0] ? '  — too staccato. Join sentences into paragraphs.'
+   : wordsPerPara > T.para[1] ? '  — too dense. Break them up.'
+   : `  (target ${T.para[0].toFixed(0)}-${T.para[1].toFixed(0)})`));
 
-judge(wordsPerSent <= 22, 'sentence length',
-  `${wordsPerSent.toFixed(1)} words a sentence` + (wordsPerSent > 22 ? '  — shorten them.' : '  (target under 22)'));
+judge(wordsPerSent <= T.sent, 'sentence length',
+  `${wordsPerSent.toFixed(1)} words a sentence`
+  + (wordsPerSent > T.sent ? '  — shorten them.' : `  (target under ${T.sent.toFixed(0)})`));
 
 judge(longSentences.length === 0, 'long sentences',
-  longSentences.length === 0 ? 'none over 25 words' : `${longSentences.length} over 25 words`);
+  longSentences.length === 0 ? `none over ${T.long.toFixed(0)} words`
+    : `${longSentences.length} over ${T.long.toFixed(0)} words`);
 
 judge(bangs === 0, 'exclamation marks', bangs === 0 ? 'none' : `${bangs} found — we do not use them`);
 

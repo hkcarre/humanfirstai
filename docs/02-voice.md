@@ -168,3 +168,20 @@ Worked example, currently awaiting review:
 > mlango wazi kwa kila mtu."* — "akili unde" is not Swahili. It should be
 > **"Kufanya akili bandia iwe mlango wazi kwa kila mtu."** This is exactly the failure mode the
 > rule above exists to catch: a machine-drafted line that shipped into a brand book unreviewed.
+
+## The voice checker and other languages
+
+`voice-check.mjs` counts words. Word counts do not travel between languages: the same
+sentence takes more words in Spanish or French than in English, so English thresholds mark a
+faithful translation as "too dense" for doing its job.
+
+The checker reads `lang` from the article's frontmatter and scales the **word** targets by the
+usual localisation expansion — Spanish, Portuguese and French ×1.2, Italian ×1.15, German and
+Dutch ×1.1. It never scales the **shape**: paragraph and sentence counts are still expected to
+match the original, and those are what we actually care about. The Spanish translation of *The
+Great Corporate Unmasking* has exactly the same 44 paragraphs and 136 sentences as the
+English.
+
+This is a measurement fix, not a relaxation. If a translation is genuinely dense it still
+fails — the Spanish did, on two sentences, after the thresholds were corrected, and both were
+rewritten.

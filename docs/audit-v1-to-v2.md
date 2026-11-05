@@ -179,3 +179,65 @@ Honest list.
    them or stop using them.
 4. **Translations beyond the samples here** have not been reviewed by native speakers.
 5. **No motion guidance yet.** If the movement starts making video, that is the next chapter.
+
+## Round three — 5 November 2026
+
+What a native-speaker review of the Spanish, and one question about Iberian voices, turned up.
+
+### The Spanish translation
+
+A reviewer compared the published translation against the English and returned 27 changes:
+9 grammar, 4 meaning, 10 calques, 4 style. All 27 applied, plus Spanish quotation typography.
+Three were worth the review on their own:
+
+- *la economía de la **competencia*** read as "the economics of **competition**" in a piece
+  about competitors. English meant *competence*. Now *capacidad*.
+- *No muevas el bote* was "don't rock the boat" translated word by word. The Spanish idiom is
+  *no hagas olas*. This was the exact line flagged as uncertain when it shipped.
+- The closing paragraph said who does **not** gain most and never said who does. The English
+  had the same hole and the answer only existed in the page footer. Closed in both.
+
+Two of the reviewer's suggestions were not taken as written, and the reasons are on the record:
+*el orden establecido* (changed to *las cosas como están* — our rules say plain words over
+institutional ones) and *en unos años* (changed to *con los años*, which keeps the English's
+"over time" rather than "in a few years").
+
+### Two bugs in our own tools, found by the review
+
+1. **The voice checker was penalising Spanish for being Spanish.** Word-count thresholds
+   calibrated on English flagged a translation with the *identical* paragraph and sentence
+   count as "too dense". Now scaled per language. It is not a loosening: two genuinely long
+   sentences still failed afterwards and were rewritten.
+2. **The checker counted the `!` in `![image](…)` as an exclamation mark.** Fixed, along with
+   counting image lines as prose paragraphs.
+
+### The one that mattered
+
+**Every Spanish narration we had produced was fluent, confident nonsense.** espeak-ng was
+invoked with `-b=1`; it parses the value as `"=1"`, silently falls back to 8-bit, and reads
+UTF-8 bytes as Latin-1. `niño` was narrated "ni a-tilde en plus or minus o". The English broke
+the same day for the same reason, the moment the articles moved to curly apostrophes —
+`don’t` became "doughnut tea".
+
+Nothing caught it because nothing was wrong on paper: plausible IPA, correct duration, fluent
+audio. The only test that would have caught it is listening, and the page already said nobody
+had. The phonemiser now lives in one file with a check that fails the build
+(`npm run phonemes:check`).
+
+Worth sitting with: the unreviewed-translation banner was argued for on principle, and it
+turned out to be literally true in a way nobody had guessed.
+
+### Spanish from Spain
+
+Asked for, and available two ways — `phonemeLang: es` inside Kokoro for Castilian
+pronunciation, or a Piper `es_ES` voice actually recorded in Spain, run locally through
+onnxruntime. Three of the latter are on the picker. Note that the article's text is Latin
+American; a Castilian voice over it is a costume, not a Spain edition.
+
+### Still open, added to the list above
+
+6. **Nobody has listened to either narration end to end.** Both were regenerated correctly;
+   neither has been heard. The Spanish page says so.
+7. **Two photographs for *Give Yourself the Grace to Be Bad at It* do not exist** and the
+   caption credit is a placeholder. They render as labelled empty slots and the build prints
+   them. We will not fill them with a generated face.

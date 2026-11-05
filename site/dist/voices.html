@@ -11,6 +11,7 @@
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="article.css">
 <style>
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
   table{width:100%;border-collapse:collapse;margin:2rem 0}
   th{text-align:left;font-family:var(--hf-font-brand);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--hf-text-muted);font-weight:700;padding:0 .75rem .6rem 0;border-bottom:2px solid var(--hf-text)}
   td{padding:1rem .75rem;border-bottom:1px solid var(--hf-border);vertical-align:middle}
@@ -140,6 +141,40 @@
       </tbody>
     </table>
     <blockquote><p>Que la inteligencia artificial sea una puerta abierta, no un laboratorio cerrado. No hace falta un título en informática para usarla. Talleres gratuitos en tu barrio, en tu idioma.</p></blockquote>
+
+    <h2 id="espana"><span class="sec-text">Spanish from Spain</span></h2>
+    <p>The three above are Kokoro packs. Pointing the phonemiser at <code>es</code> rather than
+      <code>es-419</code> gets Castilian pronunciation out of them &mdash; the <em>zeta</em> comes
+      back &mdash; but that is an accent worn by a voice whose origin the model author never
+      states. There is no published grade and no training-hours figure for Kokoro's Spanish, the
+      only language in its voice list with neither.</p>
+    <p>These are the other thing: <a href="https://github.com/OHF-Voice/piper1-gpl">Piper</a>
+      voices recorded in Spain, run locally through onnxruntime at build time. Lower fidelity
+      than Kokoro &mdash; 22.05kHz against 24 &mdash; and plainly a Spaniard reading.</p>
+    <table>
+      <caption class="sr">Spanish voices recorded in Spain, with an audio sample of each</caption>
+      <thead><tr><th>Voz</th><th>Nota</th><th>Carácter</th><th>Escuchar</th></tr></thead>
+      <tbody>
+      <tr>
+        <td class="n"><strong>Dave</strong><span class="id">es_ES-davefx-medium</span></td>
+        <td class="g"><span class="grade">&mdash;</span></td>
+        <td class="d">Español de España · Masculina<span class="note">Grabada en España. Distinción &mdash; &ldquo;gracias&rdquo; con zeta. <em>CC0</em></span></td>
+        <td class="p"><audio controls preload="none" src="voice/es_davefx.mp3" aria-label="Muestra de la voz Dave, español de España"></audio></td>
+      </tr>
+      <tr>
+        <td class="n"><strong>Sharvard F</strong><span class="id">es_ES-sharvard-medium · 1</span></td>
+        <td class="g"><span class="grade">&mdash;</span></td>
+        <td class="d">Español de España · Femenina<span class="note">Corpus SHARVARD, Universidad de Edimburgo. Lectura clara y pausada. <em>CC BY 3.0</em></span></td>
+        <td class="p"><audio controls preload="none" src="voice/es_sharvard_f.mp3" aria-label="Muestra de la voz Sharvard F, español de España"></audio></td>
+      </tr>
+      <tr>
+        <td class="n"><strong>Sharvard M</strong><span class="id">es_ES-sharvard-medium</span></td>
+        <td class="g"><span class="grade">&mdash;</span></td>
+        <td class="d">Español de España · Masculina<span class="note">El otro hablante del mismo corpus. <em>CC BY 3.0</em></span></td>
+        <td class="p"><audio controls preload="none" src="voice/es_sharvard_m.mp3" aria-label="Muestra de la voz Sharvard M, español de España"></audio></td>
+      </tr>
+      </tbody>
+    </table>
 
     <h2 id="what"><span class="sec-text">What the English voices are saying</span></h2>
     <blockquote><p>Make AI feel like an open door, not a locked lab. You do not need a computer science degree to use this. Free workshops in your neighbourhood, taught in your language.</p></blockquote>

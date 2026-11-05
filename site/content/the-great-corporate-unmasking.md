@@ -21,10 +21,10 @@ Some leaders create real value. Others create excellent slides about the value t
 
 A confident executive could go years on well-managed relationships, the right vocabulary, and a gift for standing next to things that went well. The vocabulary did much of the work.
 
-- "Transformation."
-- "Strategic alignment."
-- "Operational excellence."
-- "Unlocking synergies."
+- “Transformation.”
+- “Strategic alignment.”
+- “Operational excellence.”
+- “Unlocking synergies.”
 
 Ask what actually improved for a customer, a colleague or a shareholder, and the answer was usually another workshop.
 
@@ -49,7 +49,7 @@ Leader: Interesting idea, but we need six months to assess feasibility.
 Employee: I built a prototype yesterday.
 Leader: Have we aligned the stakeholders?
 Employee: We tested it with four customers this morning.
-Leader: Right. Let's book a meeting to discuss the implications.
+Leader: Right. Let’s book a meeting to discuss the implications.
 ```
 
 Somewhere, a slide deck quietly gives up.
@@ -58,15 +58,15 @@ A prototype is not a working system. Governance, security, privacy and bringing 
 
 ## 3 · Two tribes
 
-Political Players run on preservation. They optimise for visibility, status, control and survival. They do not necessarily resist new technology — many will become its loudest champions. They will start AI committees, publish AI strategies, build AI maturity frameworks and generate handsome decks explaining why the organisation is now "AI-first". Some will be good at it, because these tools can manufacture the appearance of progress faster than anything we have had before.
+Political Players run on preservation. They optimise for visibility, status, control and survival. They do not necessarily resist new technology — many will become its loudest champions. They will start AI committees, publish AI strategies, build AI maturity frameworks and generate handsome decks explaining why the organisation is now “AI-first”. Some will be good at it, because these tools can manufacture the appearance of progress faster than anything we have had before.
 
 Their real risk is not that a machine takes their job.
 
 It is that somebody eventually asks what all of it achieved.
 
-Truth Seekers run on discovery. They want to know what works, why, and how to make it better. They question their own assumptions as readily as anyone else's, they are comfortable not knowing yet, and they do not need to own every idea. They also do not stop at being curious. They build, measure, ship, learn, and go again. A brilliant idea without execution is just a more entertaining form of procrastination.
+Truth Seekers run on discovery. They want to know what works, why, and how to make it better. They question their own assumptions as readily as anyone else’s, they are comfortable not knowing yet, and they do not need to own every idea. They also do not stop at being curious. They build, measure, ship, learn, and go again. A brilliant idea without execution is just a more entertaining form of procrastination.
 
-> Political Players use intelligence to protect their position. Truth Seekers use it to widen what's possible.
+> Political Players use intelligence to protect their position. Truth Seekers use it to widen what’s possible.
 
 AI amplifies both.
 
@@ -80,7 +80,7 @@ Picture an organisation where every mediocre proposal arrives complete. Business
 
 These tools also get things wrong with great confidence. They make things up. They will happily reinforce a flawed assumption and turn selective evidence into a persuasive case. Anyone who tells you otherwise is selling something.
 
-So the real divide will not be between organisations that adopt AI and organisations that don't.
+So the real divide will not be between organisations that adopt AI and organisations that don’t.
 
 > It will be between those that use it to find out what is true, and those that use it to look like they already know.
 
@@ -90,7 +90,7 @@ The first group will connect these tools to real data, real experiments and real
 
 The best leaders in this next stretch will not be the most technically sophisticated people in the room. They will be the ones who make the whole room more capable.
 
-They will hire people who know things they don't. They will invite disagreement and mean it. They will reward experiments and finished work. They will tell the difference between a failure that taught everyone something and a beautifully run project that produced nothing. When someone twenty years younger builds something remarkable, they will say so out loud.
+They will hire people who know things they don’t. They will invite disagreement and mean it. They will reward experiments and finished work. They will tell the difference between a failure that taught everyone something and a beautifully run project that produced nothing. When someone twenty years younger builds something remarkable, they will say so out loud.
 
 That takes two things corporate life does not hand out often. The confidence to be surrounded by people sharper than you. The humility to accept that your job is not to win the argument, but to help the best idea win.
 
@@ -112,11 +112,11 @@ The market notices eventually. Not every time, not quickly, and not without exce
 
 For years the most curious people in an organisation have heard the same advice:
 
-- "Don't rock the boat."
-- "Be more diplomatic."
-- "Read the room."
-- "That's not how things work here."
-- "Great idea, but perhaps not now."
+- “Don’t rock the boat.”
+- “Be more diplomatic.”
+- “Read the room.”
+- “That’s not how things work here.”
+- “Great idea, but perhaps not now.”
 
 The economics of rocking the boat have changed. One capable person no longer needs a budget and a team to show what is possible. They can build it, test it, and bring evidence instead of enthusiasm.
 
@@ -138,6 +138,6 @@ The organisations that come out of this well may not be the ones with the larges
 
 The masks will not all come off at once, and some will get more sophisticated. But as the distance between what was promised and what was delivered becomes easier to measure, substance starts to compound.
 
-And the people who gain most are not the executives, the vendors, or even the Truth Seekers.
+And the people who gain most are not the executives, the vendors, or even the Truth Seekers. They are everyone who was never in the room.
 
-> The future doesn't need more people who are brilliant at appearing right. It needs more people who are brave enough to find out what's true.
+> The future doesn’t need more people who are brilliant at appearing right. It needs more people who are brave enough to find out what’s true.

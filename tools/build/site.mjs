@@ -4,9 +4,16 @@ import { renderPng } from '../lib/type.mjs';
 import { C, BRAND, WAYS } from '../lib/brand.mjs';
 import { lockup } from '../lib/lockup.mjs';
 import { para, mark, arch, THEMES, doc } from '../lib/layout.mjs';
+import { FIGURES, FIGURE_CSS, FIGURE_JS } from '../lib/figures.mjs';
 
 const ROOT = '../site';
 const OUT = `${ROOT}/dist`;
+
+// Images an article asks for that are not in the repository. They render as a
+// labelled empty slot rather than a broken <img>, and the build prints them.
+// Our own rule: a photograph of a real person ships only with provenance and
+// consent recorded, and we never fill the gap with a generated face.
+const MISSING = new Set();
 for (const d of ['', '/assets', '/assets/fonts', '/articles']) mkdirSync(`${OUT}${d}`, { recursive: true });
 
 // ===========================================================================
@@ -67,6 +74,35 @@ function markdown(src) {
         + rows.map(([who, what]) =>
             `<p class="turn"><span class="who">${esc(who)}</span><span class="said">&ldquo;${esc(what)}&rdquo;</span></p>`).join('')
         + `</div>`);
+      continue;
+    }
+
+    // fenced figure — ```figure\nname\n```
+    if (line.startsWith('```figure')) {
+      i++;
+      const name = (lines[i] || '').trim();
+      while (i < lines.length && !lines[i].startsWith('```')) i++;
+      i++;
+      if (!FIGURES[name]) throw new Error(`Unknown figure "${name}". Known: ${Object.keys(FIGURES).join(', ')}`);
+      out.push(FIGURES[name]());
+      continue;
+    }
+
+    // image, optionally followed by an italic caption line
+    let im;
+    if ((im = line.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*$/))) {
+      i++;
+      let cap = '';
+      if (i < lines.length && /^\*[^*].*\*$/.test(lines[i].trim())) { cap = lines[i].trim().slice(1, -1); i++; }
+      // A missing photograph is a hole in the page, not a silent omission.
+      // The slot states what belongs here so nobody ships the gap by accident.
+      out.push(MISSING.has(im[2])
+        ? `<figure class="fig photo-missing"><div class="slot" role="img" aria-label="${esc(im[1])}">`
+          + `<p class="slot-t">Photograph not supplied</p><p class="slot-d">${esc(im[1])}</p>`
+          + `<p class="slot-f"><code>${esc(im[2])}</code></p></div>`
+          + (cap ? `<figcaption>${inline(cap)}</figcaption>` : '') + `</figure>`
+        : `<figure class="fig photo"><img src="${esc(im[2])}" alt="${esc(im[1])}" loading="lazy" decoding="async">`
+          + (cap ? `<figcaption>${inline(cap)}</figcaption>` : '') + `</figure>`);
       continue;
     }
 
@@ -148,6 +184,9 @@ body {
 }
 .skip:focus { left: 0; }
 
+/* Screen-reader only. Was used on table captions before it was ever defined. */
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
 .wrap { width: min(100% - 2.5rem, 38rem); margin-inline: auto; }
 .hero .wrap, .closing .wrap { width: min(100% - 2.5rem, 44rem); }
 .wide { width: min(100% - 2.5rem, 64rem); margin-inline: auto; }
@@ -208,6 +247,9 @@ h1 {
 }
 .unreviewed strong { font-family: var(--hf-font-brand); }
 .unreviewed a { color: var(--hf-text-accent); }
+/* One rung down: the text has been reviewed, the audio has not. Teal, because
+   Sunrise is reserved for "nobody has checked any of this". */
+.revised { border-color: var(--hf-teal); background: color-mix(in srgb, var(--hf-teal) 8%, transparent); }
 .xlang { margin: 1.25rem 0 0; font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem; }
 .xlang a { color: var(--hf-text-accent); text-decoration: none; }
 .xlang a:hover { text-decoration: underline; }
@@ -304,7 +346,25 @@ footer a { color: var(--hf-text-muted); }
   body { background: #fff; color: #000; font-size: 11pt; }
   .colonnade { display: none; }
 }
-`;
+
+/* ---- photographs ---- */
+.photo img { width: 100%; height: auto; display: block; border-radius: var(--hf-radius); }
+.photo figcaption, .photo-missing figcaption {
+  margin: .75rem 0 0; font-size: .875rem; line-height: 1.5; color: var(--hf-text-muted);
+}
+.photo-missing .slot {
+  display: grid; place-content: center; gap: .4rem; text-align: center;
+  aspect-ratio: 3 / 2; padding: 1.5rem;
+  border: 2px dashed var(--hf-border); border-radius: var(--hf-radius);
+  background: var(--hf-surface-raised);
+}
+.photo-missing .slot-t {
+  margin: 0; font-family: var(--hf-font-brand); font-weight: 800; font-size: .75rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--hf-text-accent);
+}
+.photo-missing .slot-d { margin: 0; max-width: 28rem; font-size: .9375rem; line-height: 1.5; }
+.photo-missing .slot-f { margin: 0; font-size: .8125rem; color: var(--hf-text-muted); }
+${FIGURE_CSS}`;
 
 const colonnadeSvg = (() => {
   const n = 9, w = 1200, h = 96, aw = w / n;
@@ -345,6 +405,10 @@ function page(meta, bodyHtml, slug) {
   const date = new Date(meta.date + 'T00:00:00Z');
   const dateStr = date.toLocaleDateString(meta.lang === 'es' ? 'es-419' : 'en-GB',
     { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const revStr = meta.reviewDate
+    ? new Date(meta.reviewDate).toLocaleDateString(meta.lang === 'es' ? 'es-419' : 'en-GB',
+      { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+    : '';
   const desc = meta.standfirst;
   return `<!doctype html>
 <html lang="${meta.lang || 'en'}">
@@ -393,7 +457,8 @@ ${JSON.stringify({
     <p class="subtitle">${esc(meta.subtitle)}</p>
     <p class="standfirst">${esc(meta.standfirst)}</p>
     <p class="meta">
-      <span>${esc(BRAND.name)}</span><span class="dot">&middot;</span>
+      <span>${esc(meta.author || BRAND.name)}</span><span class="dot">&middot;</span>
+      ${meta.author ? `<span>${esc(BRAND.name)}</span><span class="dot">&middot;</span>` : ''}
       <time datetime="${meta.date}">${dateStr}</time><span class="dot">&middot;</span>
       <span>${meta.readingTime} ${L.read}</span>
     </p>
@@ -403,6 +468,14 @@ ${JSON.stringify({
       ayuda de una máquina y <strong>todavía no las revisó un hablante nativo</strong>. Nuestras
       propias reglas exigen esa revisión antes de publicar, así que esto es una muestra de
       trabajo, no material aprobado.
+      <a href="https://github.com/hkcarre/humanfirstai/blob/main/docs/02-voice.md">La regla</a> ·
+      <a href="${L.otherHref}">${L.other}</a>
+    </aside>` : meta.reviewed === 'text' ? `<aside class="unreviewed revised" role="note">
+      <strong>Texto revisado. Audio todavía no.</strong> Un revisor hispanohablante comparó esta
+      traducción con el original en inglés el ${revStr} y aplicamos sus correcciones.
+      La narración se volvió a generar con el texto corregido, pero
+      <strong>nadie la escuchó todavía de principio a fin</strong>, así que la marca se queda
+      hasta que alguien lo haga.
       <a href="https://github.com/hkcarre/humanfirstai/blob/main/docs/02-voice.md">La regla</a> ·
       <a href="${L.otherHref}">${L.other}</a>
     </aside>` : `<p class="xlang"><a href="${L.otherHref}">${L.other} &rarr;</a></p>`}
@@ -420,9 +493,9 @@ ${JSON.stringify({
 <section class="closing">
   <div class="wrap">
     <p class="line">${esc(BRAND.promise)}</p>
-    <p class="sub">Human First AI runs free workshops that help people use AI in real life &mdash;
-      in libraries, market halls and community centres, in their own language.</p>
-    <p><a class="cta" href="https://github.com/hkcarre/humanfirstai">See the brand system</a></p>
+    <p class="sub">${meta.ctaSub || `Human First AI runs free workshops that help people use AI in real life &mdash;
+      in libraries, market halls and community centres, in their own language.`}</p>
+    <p><a class="cta" href="${meta.ctaHref || 'https://github.com/hkcarre/humanfirstai'}">${esc(meta.ctaLabel || 'See the brand system')}</a></p>
     <p style="margin-top:2.5rem">${inlineLockup('horizontal', 'reversed')}</p>
   </div>
 </section>
@@ -448,6 +521,7 @@ ${JSON.stringify({
   addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
   update();
 })();
+${bodyHtml.includes('class="fig') ? FIGURE_JS : ''}
 </script>
 </body>
 </html>
@@ -500,7 +574,7 @@ function indexPage(articles) {
       <h2>Choosing a narrator</h2>
       <p>Seven candidate voices reading the same three lines, so you can pick with your ears
          instead of from a table. Generated locally with Kokoro, Apache-2.0.</p>
-      <p class="meta"><span>Audio</span><span class="dot">&middot;</span><span>7 samples</span></p>
+      <p class="meta"><span>Audio</span><span class="dot">&middot;</span><span>13 samples, 4 accents</span></p>
     </a>
     <a class="entry" href="showcase.html">
       <p class="kicker">Showcase</p>
@@ -540,6 +614,18 @@ const articles = [];
 for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md')).sort()) {
   const slug = file.replace(/\.md$/, '');
   const [meta, body] = frontmatter(readFileSync(`${ROOT}/content/${file}`, 'utf8'));
+
+  // Resolve the article's own images. Anything present is copied next to the
+  // page; anything absent is recorded so it renders as a labelled slot.
+  for (const m of body.matchAll(/^!\[[^\]]*\]\(([^)]+)\)\s*$/gm)) {
+    const src = m[1];
+    if (/^https?:/i.test(src)) continue;
+    if (existsSync(`${ROOT}/content/${src}`)) {
+      mkdirSync(`${OUT}/articles/${src.split('/').slice(0, -1).join('/')}`, { recursive: true });
+      copyFileSync(`${ROOT}/content/${src}`, `${OUT}/articles/${src}`);
+    } else MISSING.add(src);
+  }
+
   const { html, sections } = markdown(body);
   writeFileSync(`${OUT}/articles/${slug}.html`, page(meta, html, slug));
 
@@ -562,6 +648,12 @@ for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md'))
 }
 
 writeFileSync(`${OUT}/index.html`, indexPage(articles));
+if (MISSING.size) {
+  console.log(`\n  ${MISSING.size} photograph(s) an article asks for and the repository does not have.`);
+  console.log('  They render as a labelled slot, not a broken image. Drop the files in');
+  console.log('  site/content/ at these paths, with provenance and consent in credits.json:');
+  for (const m of MISSING) console.log(`    site/content/${m}`);
+}
 writeFileSync(`${OUT}/.nojekyll`, '');
 writeFileSync(`${OUT}/robots.txt`, `User-agent: *\nAllow: /\n`);
 console.log(`site: ${articles.length} article(s) -> site/dist/`);

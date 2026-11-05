@@ -1,5 +1,5 @@
 import { KokoroTTS } from 'kokoro-js';
-import ESpeakNg from 'espeak-ng';
+import { phonemise, assertClean } from '../lib/phonemes.mjs';
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, statSync } from 'node:fs';
 
@@ -29,13 +29,8 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync
 const argVoice = (() => { const i = process.argv.indexOf('--voice'); return i > -1 ? process.argv[i + 1] : null; })();
 const DEFAULTS = { voice: 'bf_emma', phonemeLang: 'en-gb' };
 
-/** espeak-ng, full language data, IPA out. kokoro-js cannot do this. */
-async function phonemise(text, lang) {
-  const e = await ESpeakNg({
-    arguments: ['--phonout', 'o.txt', '--sep=""', '-q', '-b=1', '--ipa=3', '-v', lang, text],
-  });
-  return e.FS.readFile('o.txt', { encoding: 'utf8' }).replace(/\s+/g, ' ').trim();
-}
+// espeak-ng, full language data, IPA out. kokoro-js cannot do this.
+// Lives in lib/phonemes.mjs — see the warning there about the -b flag.
 const FORCE = process.argv.includes('--force');
 const SRC = '../site/content';
 const OUT = '../site/dist/articles';
@@ -75,6 +70,20 @@ function toSpeech(md) {
       i++; continue;
     }
 
+    // Any other fenced block — a figure, a code sample. Skip the whole thing.
+    // Without this the paragraph branch below matches nothing, never advances
+    // i, and the loop spins until the heap dies. It did exactly that.
+    if (line.startsWith('```')) {
+      i++;
+      while (i < lines.length && !lines[i].startsWith('```')) i++;
+      i++; continue;
+    }
+
+    // An image. The alt text describes the picture for someone who cannot see
+    // it; it is not part of the piece being read aloud. Any caption beneath it
+    // is prose and is read as a paragraph.
+    if (/^!\[[^\]]*\]\([^)]*\)\s*$/.test(line)) { i++; continue; }
+
     let m;
     if ((m = line.match(/^##\s+(.*)$/))) {
       const num = m[1].match(/^(\d+)\s*·\s*(.*)$/);
@@ -94,7 +103,10 @@ function toSpeech(md) {
     }
     if (line.startsWith('- ')) {
       while (i < lines.length && lines[i].startsWith('- ')) {
-        out.push({ text: clean(lines[i].slice(2)).replace(/^"|"$/g, ''), pause: 420 });
+        // Strip the wrapping quotes. English closes "like this." and Spanish
+        // closes “like this”. — keep whichever full stop the language used.
+        const item = clean(lines[i].slice(2)).replace(/^["“]/, '').replace(/["”](\.?)$/, '$1');
+        out.push({ text: item, pause: 420 });
         i++;
       }
       continue;
@@ -121,7 +133,23 @@ if (!todo.length) {
   process.exit(0);
 }
 
-console.log(`narrate: ${todo.length} article(s)`);
+// Each espeak-ng instance is a fresh ~20MB wasm module holding the full
+// language data, and the build cannot re-run one (callMain is not exported).
+// An article is ~70 chunks, so three articles in a single process walked into
+// the 4GB heap limit and died with the audio half written. One process per
+// article keeps the ceiling flat however many articles we add.
+const ONLY = (() => { const i = process.argv.indexOf('--only'); return i > -1 ? process.argv[i + 1] : null; })();
+if (!ONLY) {
+  console.log(`narrate: ${todo.length} article(s), one process each`);
+  for (const file of todo) {
+    execFileSync(process.execPath, [process.argv[1], '--force', '--only', file,
+      ...(argVoice ? ['--voice', argVoice] : [])], { stdio: 'inherit' });
+  }
+  process.exit(0);
+}
+if (!todo.includes(ONLY)) { console.error(`narrate: ${ONLY} is not an article`); process.exit(1); }
+todo.length = 0;
+todo.push(ONLY);
 const tts = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', { dtype: 'fp32', device: 'cpu' });
 
 for (const file of todo) {
@@ -140,10 +168,11 @@ for (const file of todo) {
   const parts = [], marks = [];
   let n = 0, elapsed = 0, t0 = Date.now();
 
-  for (const c of chunks) {
+  for (const [k, c] of chunks.entries()) {
     if (c.lead) { const s = `${dir}/${String(n++).padStart(4, '0')}.wav`; silence(s, c.lead); parts.push(s); elapsed += c.lead / 1000; }
     const wav = `${dir}/${String(n++).padStart(4, '0')}.wav`;
-    const { input_ids } = tts.tokenizer(await phonemise(c.text, LANG), { truncation: true });
+    const { input_ids } = tts.tokenizer(
+      assertClean(await phonemise(c.text, LANG), `${slug} chunk ${k + 1}`), { truncation: true });
     const audio = await tts.generate_from_ids(input_ids, { voice: VOICE });
     await audio.save(wav);
     marks.push({ t: +elapsed.toFixed(2), text: c.text.slice(0, 80) });
