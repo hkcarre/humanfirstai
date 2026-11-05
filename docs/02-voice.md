@@ -154,6 +154,16 @@ Every translation is reviewed by a native speaker from that chapter before it is
 including machine-assisted drafts. Especially machine-assisted drafts. A movement that teaches
 people to check the machine cannot skip checking its own.
 
+### Machine-assisted translation
+
+A draft from a machine is a draft. It is published only with an unmissable notice saying it
+has not been reviewed, and it stays that way until a native speaker from that chapter has read
+it and said so. The notice is not a disclaimer to tuck in a footer — it sits above the article,
+in the reader's language, in Sunrise.
+
+Worked example, currently awaiting review:
+[La gran caída de las máscaras](https://hkcarre.github.io/humanfirstai/articles/the-great-corporate-unmasking.es.html).
+
 > **v1 correction.** The Swahili specimen in the previous guidelines read *"Kufanya akili unde
 > mlango wazi kwa kila mtu."* — "akili unde" is not Swahili. It should be
 > **"Kufanya akili bandia iwe mlango wazi kwa kila mtu."** This is exactly the failure mode the

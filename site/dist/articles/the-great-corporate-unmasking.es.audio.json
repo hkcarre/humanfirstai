@@ -1,0 +1,298 @@
+{
+  "voice": "ef_dora",
+  "grade": "not graded by the model author",
+  "phonemeLang": "es-419",
+  "lang": "es",
+  "reviewed": false,
+  "model": "hexgrad/Kokoro-82M v1.0 (Apache-2.0)",
+  "phonemiser": "espeak-ng (GPL-3.0) via wasm",
+  "synthetic": true,
+  "generated": "2026-11-05",
+  "seconds": 742.3,
+  "marks": [
+    {
+      "t": 0,
+      "text": "En casi toda organización conviven dos tipos de personas. Las que buscan la verd"
+    },
+    {
+      "t": 24.62,
+      "text": "Las dos han hecho buenas carreras. Eso está empezando a cambiar, y no por el mot"
+    },
+    {
+      "t": 32.06,
+      "text": "La inteligencia artificial está cambiando la economía de la competencia."
+    },
+    {
+      "t": 38.27,
+      "text": "Part One. La mascarada."
+    },
+    {
+      "t": 40.81,
+      "text": "Hay líderes que crean valor real. Otros crean excelentes presentaciones sobre el"
+    },
+    {
+      "t": 52.31,
+      "text": "Un ejecutivo seguro de sí mismo podía sostenerse años con buenas relaciones, el "
+    },
+    {
+      "t": 68.28,
+      "text": "Transformación."
+    },
+    {
+      "t": 71.03,
+      "text": "Alineación estratégica."
+    },
+    {
+      "t": 75.55,
+      "text": "Excelencia operativa."
+    },
+    {
+      "t": 77.67,
+      "text": "Desbloquear sinergias."
+    },
+    {
+      "t": 79.74,
+      "text": "Pregunte qué mejoró de verdad para un cliente, un compañero o un accionista, y l"
+    },
+    {
+      "t": 90.86,
+      "text": "La política de oficina funcionaba porque la prueba era cara. Probar una idea cos"
+    },
+    {
+      "t": 114.77,
+      "text": "La inteligencia artificial está abaratando las tres cosas."
+    },
+    {
+      "t": 119.99,
+      "text": "Part Two. Cuando pensar se abarata, la autoridad tiene que ganarse el puesto."
+    },
+    {
+      "t": 125.64,
+      "text": "El poder dentro de una organización siempre dependió en parte del acceso. A la i"
+    },
+    {
+      "t": 141.39,
+      "text": "Esa ventaja se está adelgazando."
+    },
+    {
+      "t": 144.54,
+      "text": "Una analista con buenas herramientas puede hoy investigar una pregunta que antes"
+    },
+    {
+      "t": 167.83,
+      "text": "Evidencia."
+    },
+    {
+      "t": 169.35,
+      "text": "Imagine la conversación."
+    },
+    {
+      "t": 172.62,
+      "text": "The jefa says. Idea interesante, pero necesitamos seis meses para evaluar la via"
+    },
+    {
+      "t": 178.4,
+      "text": "The empleado says. Hice un prototipo ayer."
+    },
+    {
+      "t": 181.57,
+      "text": "The jefa says. ¿Ya alineamos a todas las áreas?"
+    },
+    {
+      "t": 186.37,
+      "text": "The empleado says. Lo probamos con cuatro clientes esta mañana."
+    },
+    {
+      "t": 192.35,
+      "text": "The jefa says. Bien. Agendemos una reunión para discutir las implicaciones."
+    },
+    {
+      "t": 198.2,
+      "text": "En algún lugar, una presentación se rinde en silencio."
+    },
+    {
+      "t": 203.54,
+      "text": "Un prototipo no es un sistema en funcionamiento. La gobernanza, la seguridad, la"
+    },
+    {
+      "t": 228.59,
+      "text": "Part Three. Dos tribus."
+    },
+    {
+      "t": 231.16,
+      "text": "Quienes juegan a la política se mueven por conservación. Optimizan visibilidad, "
+    },
+    {
+      "t": 256.41,
+      "text": "Su riesgo real no es que una máquina les quite el puesto."
+    },
+    {
+      "t": 260.68,
+      "text": "Es que alguien, en algún momento, pregunte qué logró todo eso."
+    },
+    {
+      "t": 267.67,
+      "text": "Quienes buscan la verdad se mueven por descubrimiento. Quieren saber qué funcion"
+    },
+    {
+      "t": 291.14,
+      "text": "Quienes juegan a la política usan la inteligencia para proteger su posición. Qui"
+    },
+    {
+      "t": 300.64,
+      "text": "La inteligencia artificial amplifica a ambos."
+    },
+    {
+      "t": 304.06,
+      "text": "Solo uno de los dos convierte esa capacidad en algo que se pueda señalar."
+    },
+    {
+      "t": 311.45,
+      "text": "Part Four. También fabrica mejores tonterías."
+    },
+    {
+      "t": 317.05,
+      "text": "Acá está la parte que se pasa por alto. La inteligencia artificial no está autom"
+    },
+    {
+      "t": 331.75,
+      "text": "Imagine una organización donde cada propuesta mediocre llega completa. Caso de n"
+    },
+    {
+      "t": 355.59,
+      "text": "Estas herramientas además se equivocan con enorme seguridad. Inventan cosas. Ref"
+    },
+    {
+      "t": 371.76,
+      "text": "Así que la división real no será entre organizaciones que adoptan inteligencia a"
+    },
+    {
+      "t": 381.23,
+      "text": "Será entre las que la usan para averiguar qué es cierto y las que la usan para p"
+    },
+    {
+      "t": 389.58,
+      "text": "El primer grupo conectará estas herramientas a datos reales, experimentos reales"
+    },
+    {
+      "t": 407.5,
+      "text": "Part Five. Cómo se ve hoy un buen liderazgo."
+    },
+    {
+      "t": 411.9,
+      "text": "Los mejores líderes de este tramo no serán los más sofisticados técnicamente. Se"
+    },
+    {
+      "t": 424.4,
+      "text": "Contratarán gente que sabe cosas que ellos no saben. Invitarán al desacuerdo y l"
+    },
+    {
+      "t": 448.49,
+      "text": "Eso exige dos cosas que la vida corporativa no reparte seguido. La confianza par"
+    },
+    {
+      "t": 463.81,
+      "text": "Un líder que necesita ser la persona más inteligente de cada reunión puede descu"
+    },
+    {
+      "t": 476.28,
+      "text": "Part Six. La cuenta llega tarde o temprano."
+    },
+    {
+      "t": 480.11,
+      "text": "La política de oficina no va a desaparecer. La gente seguirá queriendo estatus, "
+    },
+    {
+      "t": 501.48,
+      "text": "Imagine dos competidores. Uno tiene diecisiete niveles de aprobación, seis comit"
+    },
+    {
+      "t": 520.67,
+      "text": "El primero anuncia su hoja de ruta. El segundo lanza su tercer producto. El prim"
+    },
+    {
+      "t": 534.14,
+      "text": "El mercado se da cuenta tarde o temprano. No siempre, no rápido y no sin excepci"
+    },
+    {
+      "t": 556.19,
+      "text": "La inteligencia artificial no va a terminar con la política de oficina. Va a sub"
+    },
+    {
+      "t": 564.01,
+      "text": "Part Seven. No es revancha. Es espacio.."
+    },
+    {
+      "t": 567.39,
+      "text": "Durante años, la gente más curiosa de una organización escuchó siempre el mismo "
+    },
+    {
+      "t": 577.28,
+      "text": "No muevas el bote."
+    },
+    {
+      "t": 579.2,
+      "text": "Sé más diplomático."
+    },
+    {
+      "t": 583.37,
+      "text": "Leé el ambiente."
+    },
+    {
+      "t": 586.52,
+      "text": "Acá las cosas no se hacen así."
+    },
+    {
+      "t": 589.76,
+      "text": "Buena idea, pero quizá no ahora."
+    },
+    {
+      "t": 592.73,
+      "text": "La economía de mover el bote cambió. Una sola persona capaz ya no necesita presu"
+    },
+    {
+      "t": 605.68,
+      "text": "Pero quienes buscan la verdad no ganan porque quienes juegan a la política pierd"
+    },
+    {
+      "t": 623.9,
+      "text": "Y ganan de verdad cuando esa capacidad apunta a algo más grande que el trimestre"
+    },
+    {
+      "t": 648.19,
+      "text": "Piense en lo que podría hacer la gente capaz si pasara menos tiempo gestionando "
+    },
+    {
+      "t": 660.41,
+      "text": "Part Eight. Quién gana de verdad."
+    },
+    {
+      "t": 664.94,
+      "text": "Este momento se describe como una competencia entre personas y máquinas. La comp"
+    },
+    {
+      "t": 678.33,
+      "text": "Una la trata como algo que hay que retener. La otra, como algo que hay que culti"
+    },
+    {
+      "t": 696.2,
+      "text": "La inteligencia artificial les entrega a ambas herramientas notables. Las herram"
+    },
+    {
+      "t": 707.22,
+      "text": "Las organizaciones que salgan bien de esto quizá no sean las de mayor presupuest"
+    },
+    {
+      "t": 730.84,
+      "text": "Las máscaras no van a caerse todas de golpe, y algunas se volverán más sofistica"
+    },
+    {
+      "t": 746.49,
+      "text": "Y quienes más ganan no son los ejecutivos, ni los proveedores, ni siquiera quien"
+    },
+    {
+      "t": 753.96,
+      "text": "El futuro no necesita más gente brillante para parecer que tiene razón. Necesita"
+    }
+  ]
+}

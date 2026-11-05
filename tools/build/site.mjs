@@ -199,6 +199,19 @@ h1 {
 }
 .meta .dot { color: var(--hf-border); }
 
+/* ---- translation state ---- */
+.unreviewed {
+  margin: 1.25rem 0 0; padding: 1rem 1.15rem;
+  border: 2px solid var(--hf-sunrise); border-radius: var(--hf-radius);
+  background: color-mix(in srgb, var(--hf-sunrise) 10%, transparent);
+  font-size: .9375rem; line-height: 1.55;
+}
+.unreviewed strong { font-family: var(--hf-font-brand); }
+.unreviewed a { color: var(--hf-text-accent); }
+.xlang { margin: 1.25rem 0 0; font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem; }
+.xlang a { color: var(--hf-text-accent); text-decoration: none; }
+.xlang a:hover { text-decoration: underline; }
+
 /* ---- listen ---- */
 .listen {
   display: flex; flex-wrap: wrap; align-items: center; gap: .85rem 1.25rem;
@@ -308,6 +321,12 @@ const inlineLockup = (kind, way, cls = '') => {
 };
 
 function page(meta, bodyHtml, slug) {
+  const L = (meta.lang || 'en') === 'es'
+    ? { listen: 'Escuchar', read: 'min de lectura', by: 'Leído por una voz sintética',
+        tail: 'Está leyendo las palabras de abajo, las de nadie más.', other: 'Read in English', otherHref: `${slug.replace(/\.es$/, '')}.html` }
+    : { listen: 'Listen', read: 'min read', by: 'Read by a synthetic voice',
+        tail: "It is reading the words below, nobody else's.", other: 'Leer en español', otherHref: `${slug}.es.html` };
+
   // Narration, if it has been generated. preload="none" so it costs a reader
   // on a slow connection nothing at all unless they ask for it.
   let audio = '';
@@ -315,19 +334,20 @@ function page(meta, bodyHtml, slug) {
     const info = JSON.parse(readFileSync(`${OUT}/articles/${slug}.audio.json`, 'utf8'));
     const mins = Math.round(info.seconds / 60);
     audio = `<div class="listen">
-      <span class="lab">Listen &middot; ${mins} min</span>
-      <audio controls preload="none" src="${slug}.mp3" aria-label="Listen to this article, ${mins} minutes, read by a synthetic voice"></audio>
-      <p class="sub">Read by a synthetic voice (<a href="https://huggingface.co/hexgrad/Kokoro-82M">Kokoro-82M</a>,
-      generated locally, no tracking). It is reading the words below, nobody else's.</p>
+      <span class="lab">${L.listen} &middot; ${mins} min</span>
+      <audio controls preload="none" src="${slug}.mp3" aria-label="${L.listen}, ${mins} min"></audio>
+      <p class="sub">${L.by} (<a href="https://huggingface.co/hexgrad/Kokoro-82M">Kokoro-82M</a>,
+      ${meta.lang === 'es' ? 'generada localmente, sin rastreo' : 'generated locally, no tracking'}). ${L.tail}</p>
     </div>`;
   }
   const url = `https://hkcarre.github.io/humanfirstai/articles/${slug}.html`;
   const tags = Array.isArray(meta.tags) ? meta.tags : [];
   const date = new Date(meta.date + 'T00:00:00Z');
-  const dateStr = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const dateStr = date.toLocaleDateString(meta.lang === 'es' ? 'es-419' : 'en-GB',
+    { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
   const desc = meta.standfirst;
   return `<!doctype html>
-<html lang="en">
+<html lang="${meta.lang || 'en'}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -375,9 +395,17 @@ ${JSON.stringify({
     <p class="meta">
       <span>${esc(BRAND.name)}</span><span class="dot">&middot;</span>
       <time datetime="${meta.date}">${dateStr}</time><span class="dot">&middot;</span>
-      <span>${meta.readingTime} min read</span>
+      <span>${meta.readingTime} ${L.read}</span>
     </p>
     ${audio}
+    ${meta.reviewed === 'false' ? `<aside class="unreviewed" role="note">
+      <strong>Borrador sin revisar.</strong> Esta traducción y su narración se generaron con
+      ayuda de una máquina y <strong>todavía no las revisó un hablante nativo</strong>. Nuestras
+      propias reglas exigen esa revisión antes de publicar, así que esto es una muestra de
+      trabajo, no material aprobado.
+      <a href="https://github.com/hkcarre/humanfirstai/blob/main/docs/02-voice.md">La regla</a> ·
+      <a href="${L.otherHref}">${L.other}</a>
+    </aside>` : `<p class="xlang"><a href="${L.otherHref}">${L.other} &rarr;</a></p>`}
   </div>
 </div>
 <div class="colonnade" aria-hidden="true">${colonnadeSvg}</div>

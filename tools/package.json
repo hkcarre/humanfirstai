@@ -19,11 +19,13 @@
     "voices": "node build/voices.mjs"
   },
   "devDependencies": {
+    "kokoro-js": "^1.2.1",
     "opentype.js": "^1.3.4",
     "sharp": "^0.34.2",
-    "kokoro-js": "^1.2.1"
+    "espeak-ng": "^1.0.2"
   },
   "dependencies": {
+    "espeak-ng": "^1.0.2",
     "kokoro-js": "^1.2.1"
   }
 }

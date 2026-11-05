@@ -87,6 +87,19 @@ h1 {
 }
 .meta .dot { color: var(--hf-border); }
 
+/* ---- translation state ---- */
+.unreviewed {
+  margin: 1.25rem 0 0; padding: 1rem 1.15rem;
+  border: 2px solid var(--hf-sunrise); border-radius: var(--hf-radius);
+  background: color-mix(in srgb, var(--hf-sunrise) 10%, transparent);
+  font-size: .9375rem; line-height: 1.55;
+}
+.unreviewed strong { font-family: var(--hf-font-brand); }
+.unreviewed a { color: var(--hf-text-accent); }
+.xlang { margin: 1.25rem 0 0; font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem; }
+.xlang a { color: var(--hf-text-accent); text-decoration: none; }
+.xlang a:hover { text-decoration: underline; }
+
 /* ---- listen ---- */
 .listen {
   display: flex; flex-wrap: wrap; align-items: center; gap: .85rem 1.25rem;

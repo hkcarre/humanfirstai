@@ -1,4 +1,5 @@
 import { KokoroTTS } from 'kokoro-js';
+import ESpeakNg from 'espeak-ng';
 import { execFileSync } from 'node:child_process';
 import { writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { C, BRAND, WAYS } from '../lib/brand.mjs';
@@ -22,10 +23,20 @@ mkdirSync(AUD, { recursive: true });
 const SAMPLE = 'Make AI feel like an open door, not a locked lab. '
   + 'You do not need a computer science degree to use this. '
   + 'Free workshops in your neighbourhood, taught in your language.';
+const SAMPLE_ES = 'Que la inteligencia artificial sea una puerta abierta, no un laboratorio cerrado. '
+  + 'No hace falta un título en informática para usarla. '
+  + 'Talleres gratuitos en tu barrio, en tu idioma.';
+
+/** espeak-ng with full language data — kokoro-js can only do English. */
+async function phonemise(text, lang) {
+  const e = await ESpeakNg({ arguments: ['--phonout', 'o.txt', '--sep=""', '-q', '-b=1', '--ipa=3', '-v', lang, text] });
+  return e.FS.readFile('o.txt', { encoding: 'utf8' }).replace(/s+/g, ' ').trim();
+}
 
 // The shortlist. Anything graded D or F is not a candidate for a brand that
 // asks people to trust what it says.
 const CURRENT = 'bf_emma';
+const CURRENT_ES = 'es_dora_latam';
 const SHORTLIST = [
   ['af_heart',   'Warm, unhurried, American. The only A in the set.'],
   ['af_bella',   'American, a little more energy and edge.'],
@@ -36,10 +47,17 @@ const SHORTLIST = [
   ['bm_fable',   'British male, storyteller cadence.'],
 ];
 
+// id, label, voice pack, espeak language, sample text
+const SPANISH = [
+  ['es_dora_latam',  'ef_dora', 'es-419', SAMPLE_ES],
+  ['es_dora_castil', 'ef_dora', 'es',     SAMPLE_ES],
+  ['es_alex_latam',  'em_alex', 'es-419', SAMPLE_ES],
+];
 const need = SHORTLIST.filter(([v]) => FORCE || !existsSync(`${AUD}/${v}.mp3`));
+const needEs = SPANISH.filter(([id]) => FORCE || !existsSync(`${AUD}/${id}.mp3`));
 let voices = {};
 
-if (need.length) {
+if (need.length || needEs.length) {
   console.log(`voices: generating ${need.length} sample(s)`);
   const tts = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', { dtype: 'fp32', device: 'cpu' });
   voices = tts.voices;
@@ -49,7 +67,16 @@ if (need.length) {
     await audio.save(wav);
     execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', wav,
       '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-ac', '1', '-ar', '44100', '-b:a', '96k', `${AUD}/${v}.mp3`]);
-    console.log(`  ${v.padEnd(12)} ${(statSync(`${AUD}/${v}.mp3`).size / 1024).toFixed(0)}KB`);
+    console.log(`  ${v.padEnd(16)} ${(statSync(`${AUD}/${v}.mp3`).size / 1024).toFixed(0)}KB`);
+  }
+  for (const [id, pack, lang, text] of needEs) {
+    const wav = `../.scratch/${id}.wav`;
+    const { input_ids } = tts.tokenizer(await phonemise(text, lang), { truncation: true });
+    const a = await tts.generate_from_ids(input_ids, { voice: pack });
+    await a.save(wav);
+    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', wav,
+      '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-ac', '1', '-ar', '44100', '-b:a', '96k', `${AUD}/${id}.mp3`]);
+    console.log(`  ${id.padEnd(16)} ${(statSync(`${AUD}/${id}.mp3`).size / 1024).toFixed(0)}KB`);
   }
 } else {
   console.log('voices: samples already present, use --force to regenerate');
@@ -69,6 +96,21 @@ const mark = way => {
   const [, w, h] = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/).map(Number);
   return `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true" focusable="false">${stripSvg(svg)}</svg>`;
 };
+
+const ES_META = {
+  es_dora_latam:  ['Dora', 'Español latinoamericano', 'Femenina', 'Seseo — "gracias" con ese. La variante que hablan nuestros capítulos.'],
+  es_dora_castil: ['Dora', 'Español de España', 'Femenina', 'Distinción — "gracias" con zeta. Misma voz, otro acento.'],
+  es_alex_latam:  ['Alex', 'Español latinoamericano', 'Masculina', 'Seseo, registro más grave.'],
+};
+const esRows = SPANISH.map(([id]) => {
+  const [name, lang, gender, note] = ES_META[id];
+  return `      <tr>
+        <td class="n"><strong>${name}</strong><span class="id">${id}</span>${id === CURRENT_ES ? '<span class="live">in use</span>' : ''}</td>
+        <td class="g"><span class="grade">&mdash;</span></td>
+        <td class="d">${lang} · ${gender}<span class="note">${note}</span></td>
+        <td class="p"><audio controls preload="none" src="voice/${id}.mp3" aria-label="Muestra de la voz ${name}, ${lang}"></audio></td>
+      </tr>`;
+}).join('\n');
 
 const rows = SHORTLIST.map(([v, note]) => {
   const [name, lang, gender] = META[v];
@@ -142,7 +184,21 @@ ${rows}
       </tbody>
     </table>
 
-    <h2 id="what"><span class="sec-text">What they are all saying</span></h2>
+    <h2 id="spanish"><span class="sec-text">Spanish</span></h2>
+    <p>Kokoro ships Spanish voice packs, but <code>kokoro-js</code> only ever phonemises as
+      English and then applies English-only fixups, which turn Spanish into noise. We phonemise
+      with the full espeak-ng build instead and feed the model token ids directly. The model has
+      no published grade for these.</p>
+    <table>
+      <caption class="sr">Spanish narration voices, with an audio sample of each</caption>
+      <thead><tr><th>Voz</th><th>Nota</th><th>Carácter</th><th>Escuchar</th></tr></thead>
+      <tbody>
+${esRows}
+      </tbody>
+    </table>
+    <blockquote><p>${SAMPLE_ES}</p></blockquote>
+
+    <h2 id="what"><span class="sec-text">What the English voices are saying</span></h2>
     <blockquote><p>${SAMPLE}</p></blockquote>
 
     <h2 id="rules"><span class="sec-text">The rule this voice lives under</span></h2>

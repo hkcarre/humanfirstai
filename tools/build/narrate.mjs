@@ -1,4 +1,5 @@
 import { KokoroTTS } from 'kokoro-js';
+import ESpeakNg from 'espeak-ng';
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, statSync } from 'node:fs';
 
@@ -16,14 +17,25 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync
 //      npm run narrate -- --force  rebuild all of them
 //      npm run narrate -- --voice af_heart
 //
+//  Languages: kokoro-js only ever phonemises as English and then applies
+//  English-only fixups (r -> ɹ, x -> k), which would destroy Spanish. So we
+//  phonemise ourselves with the full espeak-ng build and feed the model token
+//  ids directly. Any of the 54 bundled voice packs works this way.
+//
 //  Policy for what this voice may and may not say: docs/07-photography.md,
 //  "Synthetic voice". The short version — it reads our own prose, labelled.
 //  It never speaks as a named person.
 // ---------------------------------------------------------------------------
-const VOICE = (() => {
-  const i = process.argv.indexOf('--voice');
-  return i > -1 ? process.argv[i + 1] : 'bf_emma';
-})();
+const argVoice = (() => { const i = process.argv.indexOf('--voice'); return i > -1 ? process.argv[i + 1] : null; })();
+const DEFAULTS = { voice: 'bf_emma', phonemeLang: 'en-gb' };
+
+/** espeak-ng, full language data, IPA out. kokoro-js cannot do this. */
+async function phonemise(text, lang) {
+  const e = await ESpeakNg({
+    arguments: ['--phonout', 'o.txt', '--sep=""', '-q', '-b=1', '--ipa=3', '-v', lang, text],
+  });
+  return e.FS.readFile('o.txt', { encoding: 'utf8' }).replace(/\s+/g, ' ').trim();
+}
 const FORCE = process.argv.includes('--force');
 const SRC = '../site/content';
 const OUT = '../site/dist/articles';
@@ -99,6 +111,9 @@ const meta = md => Object.fromEntries((md.match(/^---\n([\s\S]*?)\n---/) || ['',
   .filter(Boolean));
 
 const articles = readdirSync(SRC).filter(f => f.endsWith('.md')).sort();
+const metaOf = f => Object.fromEntries((readFileSync(`${SRC}/${f}`, 'utf8').match(/^---\n([\s\S]*?)\n---/) || ['', ''])[1]
+  .split('\n').map(l => { const i = l.indexOf(':'); return i < 0 ? null : [l.slice(0, i).trim(), l.slice(i + 1).trim()]; })
+  .filter(Boolean));
 const todo = articles.filter(f => FORCE || !existsSync(`${OUT}/${f.replace(/\.md$/, '')}.mp3`));
 
 if (!todo.length) {
@@ -106,30 +121,30 @@ if (!todo.length) {
   process.exit(0);
 }
 
-console.log(`narrate: ${todo.length} article(s), voice ${VOICE}`);
+console.log(`narrate: ${todo.length} article(s)`);
 const tts = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', { dtype: 'fp32', device: 'cpu' });
-if (!tts.voices[VOICE]) {
-  console.error(`Unknown voice "${VOICE}". Available: ${Object.keys(tts.voices).join(', ')}`);
-  process.exit(1);
-}
-const grade = tts.voices[VOICE].overallGrade;
 
 for (const file of todo) {
   const slug = file.replace(/\.md$/, '');
   const md = readFileSync(`${SRC}/${file}`, 'utf8');
+  const fm = metaOf(file);
+  const VOICE = argVoice || fm.voice || DEFAULTS.voice;
+  const LANG = fm.phonemeLang || DEFAULTS.phonemeLang;
+  const grade = tts.voices[VOICE]?.overallGrade || 'not graded by the model author';
   const chunks = toSpeech(md);
   const dir = `${TMP}/${slug}`;
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
 
-  console.log(`\n  ${slug}: ${chunks.length} chunks`);
+  console.log(`\n  ${slug}: ${chunks.length} chunks, voice ${VOICE}, phonemes ${LANG}`);
   const parts = [], marks = [];
   let n = 0, elapsed = 0, t0 = Date.now();
 
   for (const c of chunks) {
     if (c.lead) { const s = `${dir}/${String(n++).padStart(4, '0')}.wav`; silence(s, c.lead); parts.push(s); elapsed += c.lead / 1000; }
     const wav = `${dir}/${String(n++).padStart(4, '0')}.wav`;
-    const audio = await tts.generate(c.text, { voice: VOICE });
+    const { input_ids } = tts.tokenizer(await phonemise(c.text, LANG), { truncation: true });
+    const audio = await tts.generate_from_ids(input_ids, { voice: VOICE });
     await audio.save(wav);
     marks.push({ t: +elapsed.toFixed(2), text: c.text.slice(0, 80) });
     elapsed += audio.audio.length / audio.sampling_rate;
@@ -149,7 +164,9 @@ for (const file of todo) {
   elapsed = +execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
     '-of', 'default=nw=1:nk=1', `${OUT}/${slug}.mp3`]).toString().trim();
   writeFileSync(`${OUT}/${slug}.audio.json`, JSON.stringify({
-    voice: VOICE, grade, model: 'hexgrad/Kokoro-82M v1.0 (Apache-2.0)',
+    voice: VOICE, grade, phonemeLang: LANG, lang: fm.lang || 'en',
+    reviewed: fm.reviewed === 'true',
+    model: 'hexgrad/Kokoro-82M v1.0 (Apache-2.0)', phonemiser: 'espeak-ng (GPL-3.0) via wasm',
     synthetic: true, generated: new Date().toISOString().slice(0, 10),
     seconds: +elapsed.toFixed(1), marks,
   }, null, 2));

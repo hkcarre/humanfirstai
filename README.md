@@ -87,7 +87,7 @@ npm run contrast     # prints the measured WCAG matrix
 | `tools/build/social.mjs` | 28 templates across LinkedIn, newsletter, IG, WhatsApp, X, slides |
 | `tools/build/photos.mjs` | Responsive photo sets, arch crops, photo cards, alt text |
 | `tools/build/site.mjs` | The published site and the long-form article template |
-| `tools/build/narrate.mjs` | Article narration with Kokoro-82M, run locally (`npm run narrate`) |
+| `tools/build/narrate.mjs` | Article narration with Kokoro-82M, English and Spanish, run locally (`npm run narrate`) |
 | `tools/build/voices.mjs` | The voice picker page (`npm run voices`) |
 
 ## The published site

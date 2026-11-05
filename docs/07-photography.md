@@ -129,14 +129,31 @@ npm run voices                              # rebuild the picker page
 npm run narrate -- --voice af_heart --force # change the narrator
 ```
 
+### Spanish
+
+Spanish narration works. It took a detour: `kokoro-js` only ever converts text to English
+sounds and then applies English-only corrections — it turns every `r` into the English one and
+every `x` into a `k`, which is fatal for Spanish. We phonemise with the full espeak-ng build
+instead and hand the model token ids directly, which unlocks all 54 voice packs rather than
+the 28 English ones.
+
+**Latin American, not Castilian.** The chapters are in Lima, Cusco, Oaxaca, Bogotá, São Paulo
+and Buenos Aires. `es-419` says *gracias* with an s; `es` says it with a th. Both are on the
+[picker](https://hkcarre.github.io/humanfirstai/voices.html) — we use `es-419`, with
+**ef_dora**. The model's author publishes no grade for the Spanish voices.
+
+Writing is translated first and narrated second. A machine-assisted translation is a draft
+until a native speaker from that chapter has read it, and the page says so in a box nobody can
+miss until they have. See [02 Voice](02-voice.md).
+
 ### Other languages
 
-The ONNX build we use ships **English voices only**. Kokoro v1.0 has packs for Spanish,
-French, Hindi, Italian, Brazilian Portuguese, Japanese and Mandarin, but we have not tested
-them and the same rule applies as to written translation: a native speaker from that chapter
-reviews it before it goes out. For any language where a chapter has a willing volunteer, **a
-human reading is better than a synthetic one** and should be preferred. A neighbour's voice is
-the point.
+Kokoro v1.0 also has packs for French, Hindi, Italian, Brazilian Portuguese, Japanese and
+Mandarin. The pipeline now handles any of them — set `voice` and `phonemeLang` in the
+article's frontmatter — but none has been tested or reviewed.
+
+For any language where a chapter has a willing volunteer, **a human reading beats a synthetic
+one** and should be preferred. A neighbour's voice is the point.
 
 ## Illustration
 
