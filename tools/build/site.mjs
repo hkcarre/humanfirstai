@@ -77,6 +77,20 @@ function markdown(src) {
       continue;
     }
 
+    // Somebody else's words. Fenced rather than a plain blockquote so the
+    // narrator can be made to skip it — our synthetic voice may read our own
+    // prose and never a person's testimony. See docs/07-photography.md.
+    if (line.startsWith('```testimony')) {
+      i++;
+      const buf = [];
+      while (i < lines.length && !lines[i].startsWith('```')) { buf.push(lines[i]); i++; }
+      i++;
+      const who = buf.length && /^[—-]\s/.test(buf[buf.length - 1]) ? buf.pop().replace(/^[—-]\s*/, '') : '';
+      out.push(`<figure class="testimony"><blockquote><p>${inline(buf.join(' ').trim())}</p></blockquote>`
+        + (who ? `<figcaption>&mdash; ${inline(who)}</figcaption>` : '') + `</figure>`);
+      continue;
+    }
+
     // fenced figure — ```figure\nname\n```
     if (line.startsWith('```figure')) {
       i++;
@@ -174,6 +188,8 @@ body {
     --hf-text: #FFF6EC; --hf-text-muted: #A8B3C9;
     --hf-text-accent: #FF8A3D; --hf-text-link: #7CC4F2;
     --hf-border: #3C4A6B; --hf-focus-ring: #FF8A3D;
+    /* Teal clears 3:1 on cream but only 2.93:1 on this surface. Sky is 7.49:1. */
+    --hf-quote-rule: #7CC4F2;
   }
 }
 
@@ -345,6 +361,17 @@ footer a { color: var(--hf-text-muted); }
   .progress, .masthead, .closing .cta { display: none; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .colonnade { display: none; }
+}
+
+/* ---- somebody else's words ---- */
+/* Teal, not Sunrise: Sunrise marks a pull quote, which is our own voice. This
+   rule marks words that are not ours. The two must not look the same. */
+.testimony { margin: 2.5rem 0; padding-left: 1.25rem; border-left: 3px solid var(--hf-quote-rule, var(--hf-teal)); }
+.testimony blockquote { margin: 0; padding: 0; border: 0; }
+.testimony blockquote p { margin: 0; font-size: 1.125rem; line-height: 1.6; }
+.testimony figcaption {
+  margin: .6rem 0 0; font-family: var(--hf-font-brand); font-weight: 700;
+  font-size: .875rem; color: var(--hf-text-muted);
 }
 
 /* ---- photographs ---- */

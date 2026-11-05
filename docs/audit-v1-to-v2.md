@@ -241,3 +241,21 @@ American; a Castilian voice over it is a costume, not a Spain edition.
 7. **Two photographs for *Give Yourself the Grace to Be Bad at It* do not exist** and the
    caption credit is a placeholder. They render as labelled empty slots and the build prints
    them. We will not fill them with a generated face.
+
+### The voice read somebody else's words
+
+Asked whether the second article was ready, the answer was no, for a reason nobody had
+noticed: the narrator read an attendee's quotation aloud, in Emma's voice, straight after a
+sentence introducing it as that attendee's. A listener had no way to know they were not
+hearing them.
+
+[07 Photography](07-photography.md) forbids exactly that, in a line written two rounds ago —
+*if someone said it, either they read it or nobody does*. The rule was right and the tooling
+quietly ignored it, because a quotation in markdown is just a blockquote and a narrator reads
+blockquotes.
+
+Fixed by format rather than by vigilance: other people's words go in a `testimony` block, the
+page sets them with their attribution, and the narrator says a quotation is there instead of
+performing it. The checklist now has a line for it.
+
+Both times this round, the rule on the page was correct and the thing underneath it was not.

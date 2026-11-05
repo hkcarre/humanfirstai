@@ -106,6 +106,33 @@ while doing something else with their hands.
 - **Read a quote or a piece of testimony.** If someone said it, either they read it or nobody does.
 - **Appear anywhere a listener could reasonably believe they are hearing a specific human being.**
 
+### How testimony is kept out of the voice
+
+This rule is easy to agree with and easy to break: a quotation in an article is just a
+blockquote, and a narrator reads blockquotes. *Give Yourself the Grace to Be Bad at It* shipped
+its first narration with an attendee's words in Emma's voice, after a paragraph introducing
+them as that attendee's. A listener had no way to know they were not hearing them.
+
+So somebody else's words get their own block, and the narrator is built to skip it:
+
+````markdown
+```testimony
+It was an amazing parallel to the adaptation moment we've been through.
+— An attendee, Claude Community House
+```
+````
+
+On the page it sets as a quotation with its attribution. In the audio the voice says *"Here the
+written text carries a quotation from an attendee, Claude Community House. This voice does not
+read other people's words,"* and moves on.
+
+A plain `>` blockquote stays available for **our own** prose — a pull quote, a line from one of
+our own slides. The distinction is not decorative. If the words belong to a person who is not
+us, they go in a `testimony` block.
+
+An invented illustration is not testimony. The dialogue in *The Great Corporate Unmasking* is
+introduced as something to picture and is the author's own writing, so the voice may read it.
+
 The line is the same one we draw for photography, for the same reason. A synthetic face invents
 a person who does not exist. A synthetic voice reading our own words is a reading aid, much
 like a screen reader. The moment it speaks *as* somebody, it becomes the same lie — and a

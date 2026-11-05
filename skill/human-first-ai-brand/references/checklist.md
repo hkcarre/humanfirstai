@@ -63,6 +63,8 @@ Run this before anything goes out. All of it, not the convenient parts.
 - [ ] `role="img"` with a label describing the finding, not the drawing
 - [ ] Narration: `cd tools && npm run phonemes:check` passes before generating audio
 - [ ] **Somebody has listened to the audio end to end.** Nothing else catches a mis-encoded voice.
+- [ ] Anyone else's words are in a ` ```testimony ` block, not a `>` blockquote — the synthetic
+      voice must never read a real person's testimony
 
 ## Then
 

@@ -66,7 +66,10 @@ ask-gap
 
 One attendee said it better than I could.
 
-> It was an amazing parallel to the adaptation moment we’ve been through in the AI era. It’s interesting to realise how much you can accomplish when you focus, and also ask for help.
+```testimony
+It was an amazing parallel to the adaptation moment we’ve been through in the AI era. It’s interesting to realise how much you can accomplish when you focus, and also ask for help.
+— An attendee, Claude Community House
+```
 
 ## So where do we go from here?
 

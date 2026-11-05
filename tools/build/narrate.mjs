@@ -70,6 +70,21 @@ function toSpeech(md) {
       i++; continue;
     }
 
+    // Testimony. The voice says that a quotation is there and does not read
+    // it. Our rule: if someone said it, either they read it or nobody does.
+    // A listener must never be able to mistake this voice for that person.
+    if (line.startsWith('```testimony')) {
+      i++;
+      const buf = [];
+      while (i < lines.length && !lines[i].startsWith('```')) { buf.push(lines[i]); i++; }
+      i++;
+      const who = buf.length && /^[—-]\s/.test(buf[buf.length - 1])
+        ? buf[buf.length - 1].replace(/^[—-]\s*/, '').replace(/^./, c => c.toLowerCase()) : 'someone who was there';
+      out.push({ text: `Here the written text carries a quotation from ${clean(who)}. `
+        + `This voice does not read other people's words.`, pause: 700, lead: 400 });
+      continue;
+    }
+
     // Any other fenced block — a figure, a code sample. Skip the whole thing.
     // Without this the paragraph branch below matches nothing, never advances
     // i, and the loop spins until the heap dies. It did exactly that.
