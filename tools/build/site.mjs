@@ -28,7 +28,15 @@ for (const d of ['', '/assets', '/assets/fonts', '/articles']) mkdirSync(`${OUT}
 //    **bold**  *italic*  `code`  [text](url)
 // ===========================================================================
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const inline = s => esc(s)
+// Typesetting, not editing. Curly quotes are how the text is SET; the source
+// files keep whatever the author typed. Applied before links are built, so no
+// href or attribute is ever touched.
+const smart = s => s
+  .replace(/"([^"]*)"/g, '“$1”')
+  .replace(/([A-Za-z0-9])'([A-Za-z])/g, '$1’$2')
+  .replace(/'(\d\d)s\b/g, '’$1s');
+
+const inline = s => smart(esc(s))
   .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
   .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
   .replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>')
@@ -86,8 +94,15 @@ function markdown(src) {
       while (i < lines.length && !lines[i].startsWith('```')) { buf.push(lines[i]); i++; }
       i++;
       const who = buf.length && /^[—-]\s/.test(buf[buf.length - 1]) ? buf.pop().replace(/^[—-]\s*/, '') : '';
-      out.push(`<figure class="testimony"><blockquote><p>${inline(buf.join(' ').trim())}</p></blockquote>`
-        + (who ? `<figcaption>&mdash; ${inline(who)}</figcaption>` : '') + `</figure>`);
+      const body = inline(buf.join(' ').trim());
+      // With an attribution it sets as a quotation. Without one it is an
+      // ordinary paragraph that happens to contain somebody's words — the
+      // author wrote it that way and we are not restructuring their prose to
+      // suit our tooling. Either way the narrator skips it.
+      out.push(who
+        ? `<figure class="testimony"><blockquote><p>${body}</p></blockquote>`
+          + `<figcaption>&mdash; ${inline(who)}</figcaption></figure>`
+        : `<p>${body}</p>`);
       continue;
     }
 
@@ -436,7 +451,9 @@ function page(meta, bodyHtml, slug) {
     ? new Date(meta.reviewDate).toLocaleDateString(meta.lang === 'es' ? 'es-419' : 'en-GB',
       { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
     : '';
-  const desc = meta.standfirst;
+  // A guest piece may have no standfirst of its own. We do not write one for
+  // them and put it under their byline.
+  const desc = meta.standfirst || meta.subtitle;
   return `<!doctype html>
 <html lang="${meta.lang || 'en'}">
 <head>
@@ -482,7 +499,7 @@ ${JSON.stringify({
     <p class="kicker">${esc(meta.kicker)}</p>
     <h1>${esc(meta.title)}</h1>
     <p class="subtitle">${esc(meta.subtitle)}</p>
-    <p class="standfirst">${esc(meta.standfirst)}</p>
+    ${meta.standfirst ? `<p class="standfirst">${esc(meta.standfirst)}</p>` : ''}
     <p class="meta">
       <span>${esc(meta.author || BRAND.name)}</span><span class="dot">&middot;</span>
       ${meta.author ? `<span>${esc(BRAND.name)}</span><span class="dot">&middot;</span>` : ''}
@@ -613,7 +630,7 @@ function indexPage(articles) {
     ${articles.map(a => `<a class="entry" href="articles/${a.slug}.html">
       <p class="kicker">${esc(a.meta.kicker)}</p>
       <h2>${esc(a.meta.title)}: ${esc(a.meta.subtitle)}</h2>
-      <p>${esc(a.meta.standfirst)}</p>
+      <p>${esc(a.meta.standfirst || a.meta.subtitle)}</p>
       <p class="meta"><time datetime="${a.meta.date}">${new Date(a.meta.date + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time><span class="dot">&middot;</span><span>${a.meta.readingTime} min read</span></p>
     </a>`).join('\n    ')}
   </div>

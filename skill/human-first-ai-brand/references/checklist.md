@@ -9,6 +9,7 @@ Run this before anything goes out. All of it, not the convenient parts.
 - [ ] Paragraphs are 15-35 words — not a column of one-line paragraphs
 - [ ] No banned words (`AI-powered`, `unlock`, `seamless`, `revolutionise`, `leverage`, `empower`…)
 - [ ] `node scripts/voice-check.mjs <file>` passes all six checks
+- [ ] Guest byline? The voice rules are notes for the author, not edits we make for them
 - [ ] AI described by what it helps someone *do*, never as a mind or as magic
 - [ ] The limit is stated — what it does not do, in the same breath
 - [ ] Any person named has consent on file

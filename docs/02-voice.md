@@ -185,3 +185,31 @@ English.
 This is a measurement fix, not a relaxation. If a translation is genuinely dense it still
 fails — the Spanish did, on two sentences, after the thresholds were corrected, and both were
 rewritten.
+
+## Guest bylines
+
+These rules describe how **Human First AI** writes. They are not a licence to edit a
+contributor's prose into our house style.
+
+When a piece carries someone else's `author` in its frontmatter, `voice-check` still runs every
+check and prints every finding — the author may well want them — but marks them `--` instead of
+`!!` and exits clean. They are notes to pass on, not failures to fix on somebody's behalf.
+
+*Give Yourself the Grace to Be Bad at It* keeps its exclamation mark, its long sentences and its
+dense paragraphs, because they are Andrés's and the piece is better for sounding like a person
+rather than like a style guide.
+
+What we still do to a guest piece, because it is the setting and not the writing:
+
+- **Typeset it.** Curly quotes and apostrophes are applied when the page is built, so the source
+  file keeps exactly what the author typed.
+- **Add figures**, where they show something the prose cannot.
+- **Keep the narrator out of other people's mouths.** A quotation inside a guest's paragraph is
+  still a third party's testimony. The author's own lead-in is read aloud; the quotation is not.
+  See [07 Photography](07-photography.md).
+- **Leave their placeholders visible.** A missing photograph or an unresolved `[credit]` shows on
+  the page rather than being quietly written around.
+
+What we do not do: rewrite sentences, change punctuation, invent a standfirst to sit under their
+name, or alter a stated reading time. If something genuinely needs to change, it is a
+conversation with the author, not an edit.

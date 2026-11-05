@@ -98,9 +98,17 @@ line();
 console.log(`  ${words.length} words · ${sentences.length} sentences · ${paras.length} paragraphs`);
 console.log(X === 1 ? '' : `  language ${lang} — word targets scaled ×${X} for expansion\n`);
 
+// A piece carrying someone else's byline is in someone else's voice. These
+// rules describe how HUMAN FIRST AI writes; they are not a licence to edit a
+// guest's prose into our house style. For a guest piece the findings are still
+// printed in full — the author may want them — but they are notes to pass on,
+// not failures to fix on their behalf.
+const GUEST = /^---\n[\s\S]*?^author:\s*\S/m.test(raw);
+const NOTE = '  --  ';
+
 const judge = (ok, label, detail) => {
-  if (!ok) problems++;
-  console.log((ok ? PASS : FAIL) + label.padEnd(34) + detail);
+  if (!ok && !GUEST) problems++;
+  console.log((ok ? PASS : GUEST ? NOTE : FAIL) + label.padEnd(34) + detail);
 };
 
 judge(wordsPerPara >= T.para[0] && wordsPerPara <= T.para[1], 'paragraph shape',
@@ -140,6 +148,18 @@ if (bad.length) {
 if (verbose && longSentences.length) {
   console.log('\nSentences over 25 words:\n');
   for (const s of longSentences.slice(0, 10)) console.log(`  ${s.trim().slice(0, 110)}…`);
+}
+
+const notes = GUEST ? [wordsPerPara < T.para[0] || wordsPerPara > T.para[1], wordsPerSent > T.sent,
+  longSentences.length > 0, bangs > 0, bad.length > 0, hedges.length > 2].filter(Boolean).length : 0;
+
+if (GUEST) {
+  console.log(`\nGuest byline. These rules describe how we write, not how our`);
+  console.log('contributors have to. Nothing above is a failure.');
+  console.log(notes
+    ? `\n${notes} thing${notes === 1 ? '' : 's'} to raise with the author, if they want them. Their call, not ours.\n`
+    : '\nNothing to raise.\n');
+  process.exit(0);
 }
 
 console.log(problems === 0
