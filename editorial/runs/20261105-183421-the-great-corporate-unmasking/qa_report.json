@@ -1,0 +1,92 @@
+{
+  "runId": "20261105-183421-the-great-corporate-unmasking",
+  "evaluated": "2026-11-05T19:11:17.906Z",
+  "policyRevision": "hkcarre/humanfirstai@313bf72ebcdee16cd35db8ecce4e9f940800fa5b+dirty",
+  "dimensions": {
+    "brandAdherence": 94,
+    "factualIntegrity": 93,
+    "editorialQuality": 91,
+    "seoGeoReadiness": 72,
+    "audienceUsefulness": 87,
+    "publishingReadiness": 58
+  },
+  "weights": {
+    "brandAdherence": 0.25,
+    "factualIntegrity": 0.25,
+    "editorialQuality": 0.2,
+    "seoGeoReadiness": 0.15,
+    "audienceUsefulness": 0.1,
+    "publishingReadiness": 0.05
+  },
+  "weightedScore": 87.4,
+  "publicationGates": {
+    "passed": false,
+    "blockers": [
+      "SEO:SLUG_COLLISION"
+    ],
+    "note": "A high weighted score cannot override a critical failure."
+  },
+  "finalArticleSha": "e4fd25ec8298",
+  "schemaErrors": [],
+  "brandViolationsSurvivingIntoFinal": [],
+  "deterministicGates": [
+    {
+      "id": "G1",
+      "name": "Voice and terminology",
+      "status": "pass",
+      "detail": "6/6 checks pass."
+    },
+    {
+      "id": "G2",
+      "name": "Numeric claims carry a source",
+      "status": "pass",
+      "detail": "0 paragraph(s) with figures, all sourced or hedged."
+    },
+    {
+      "id": "G3",
+      "name": "Prompt injection in submitted text",
+      "status": "pass",
+      "detail": "None found."
+    },
+    {
+      "id": "G4",
+      "name": "Publishing metadata complete",
+      "status": "pass",
+      "detail": "All required fields present."
+    },
+    {
+      "id": "G6",
+      "name": "Authorship preserved",
+      "status": "pass",
+      "detail": "First person 0→0, length -1%."
+    }
+  ],
+  "qaVerdict": "REPAIR",
+  "unresolvedFindings": [
+    {
+      "issue": "Repair instruction from round 1 not carried out: final_article.md still has no standfirst and no authorPhoto. This is a verified site-builder defect, not a preference. tools/build/site.mjs:575 sets the page description as `meta.standfirst || meta.subtitle`, and site.mjs:756 renders the index-card excerpt the same way. With no standfirst, both the og:description and the article's card on the index page fall back to the eight-word subtitle \"AI is about to make office politics expensive\", where the already-published sibling site/content/the-great-corporate-unmasking-in-brief.md carries a full standfirst and authorPhoto: people/helena-carre.jpg. Intake G4 flagged the missing photo as a note; the standfirst consequence was flagged by me in round 1 and nothing in reports/integration.json acknowledges either (grep: no occurrence of 'standfirst' or 'authorPhoto').",
+      "repair": "Add two frontmatter keys to final_article.md, copied from the published sibling, changing nothing in the body: `standfirst: For decades, navigating office politics was a bulletproof career path. AI is about to turn it into a costly liability.` and `authorPhoto: people/helena-carre.jpg`. Then delete that same opening line from the body, because the published sibling keeps it in standfirst only and site.mjs:625 prints standfirst above the body, which would otherwise print it twice. Both strings are the author's own words already live on the site, so this adds nothing of yours. Record it in changes[]."
+    },
+    {
+      "issue": "publishing_metadata.json is stale from round 1 and names a live article as the destination. It still carries `recommendedSlug: \"the-great-corporate-unmasking\"`, `articleTitle: \"the Great Corporate Unmasking\"` (the lowercase title this round corrected), `weightedScore: 85.2` and `finalisedAt: 2026-11-05T18:54:12.578Z`. site.mjs:793 derives the slug from the filename, so that slug is site/content/the-great-corporate-unmasking.md, the live 1716-word long form. Anyone acting on the metadata file rather than on the prose of integration.json would overwrite a published article. The integrator's own rejectedRecommendations say this slug \"is already taken by the published 7-minute long form and using it would overwrite a live article\" — but that correction lives only in the report, while the machine-readable field still says otherwise.",
+      "repair": "Do not edit harness-owned fields (weightedScore, finalisedAt). Instead add one explicit entry to integration.json changes[] or a dedicated note stating, in these terms: publishing_metadata.json recommendedSlug must not be used; it names the live long form. If this draft ships as a separate page the filename is the-great-corporate-unmasking-in-brief.md, which replaces the published short form; there is no third free slug in this pair. Also correct articleTitle to \"The Great Corporate Unmasking\" if the harness permits writing that field, and say so either way."
+    },
+    {
+      "issue": "Repair instruction from round 1 not carried out: the translation consequence is still unrecorded. reports/integration.json mentions Spanish exactly once, in passing, inside the longVersion change, and never states the requirement. If this draft replaces site/content/the-great-corporate-unmasking-in-brief.md, then site/content/the-great-corporate-unmasking-in-brief.es.md becomes a translation of text that no longer exists. CL-011 requires a translation's shape to match the original; CL-032 requires a language switcher only where the other version actually exists; site.mjs:515-535 renders both the language and the length switchers from what the build can see, so the English page would offer a Spanish version of superseded wording. The human choosing replace over duplicate needs this before they choose.",
+      "repair": "No article edit. Add a paragraph to integration.json recording that replacing the in-brief page requires re-translating the Spanish in-brief in the same change, that the two must ship together or not at all, and citing CL-011 and CL-032. This is a report line, not a prose edit, and it was the whole of this instruction in round 1."
+    },
+    {
+      "issue": "Advisory, no repair on your authority — for the human reviewer. Two substantive softenings in this run contradict wording the house has already published for this same article, so the site would end up stating two different strengths of the same claim on two live pages. (1) Section 1 bullet: the final says \"An analyst with a few AI tools can run much of a consulting team's discovery phase themselves.\" The published site/content/the-great-corporate-unmasking-in-brief.md says \"An analyst with a few AI tools can replace a consulting team's discovery phase in an afternoon.\" — the full, unhedged claim the Fact Checker rated UNVERIFIED with \"Do not publish as established fact\". (2) The final says \"much harder to defend\"; the published sibling carries \"AI is making substance-free leadership impossible to defend.\" as a pull-quote. Both of this run's choices are the defensible ones and I am not asking for them to be reverted. The finding is that no agent in this run noticed the live page already ships what the Fact Checker said must not ship, which means the fact-check finding applies to a published page nobody has been asked to fix.",
+      "repair": "No change to final_article.md. Record for the human reviewer that the fact-check finding on the consulting claim also lands on the live in-brief page, and that whichever version survives, the two pages must not disagree about the strength of that claim."
+    },
+    {
+      "issue": "Advisory, low. changes[] counts 20 but mixes two baselines and double-counts one edit. Entry 10 (\"with few AI tools\" to \"with a few AI tools\") is contained inside entry 3, which rewrites that same bullet; \"few AI tools\" occurs nowhere else in the submission. Entries 19 and 20 describe reverting your own round-1 work, so they are zero delta against original_article.md. Measured against the submission the final contains 18 distinct changes: 13 modified sentences, 1 added sentence, 3 headings recased as one change, plus title, subtitle and the longVersion key. The count of 20 is honest and the reverts are worth logging, so this is a labelling point, not a correctness one.",
+      "repair": "Optional. If changes[] is revised for the items above, mark entries 19 and 20 as reverts rather than changes, and fold entry 10 into entry 3. Do not change the prose for this."
+    },
+    {
+      "issue": "Advisory, low. Spelling: the final uses \"judgement\" in the added sentence, while the published long form site/content/the-great-corporate-unmasking.md:126 and :138 uses \"judgment\" twice in the author's own sentences. The run changed \"organizational\" to \"organisational\" for British consistency, which is right, but the house's own precedent for this specific word in this specific article is the other form.",
+      "repair": "Optional, one word. Either keep \"judgement\" and note the divergence, or match the long form with \"judgment\". Flag it to the reviewer rather than deciding silently."
+    }
+  ],
+  "status": "NEEDS_REVIEW"
+}
