@@ -281,9 +281,24 @@ h1 {
 /* One rung down: the text has been reviewed, the audio has not. Teal, because
    Sunrise is reserved for "nobody has checked any of this". */
 .revised { border-color: var(--hf-teal); background: color-mix(in srgb, var(--hf-teal) 8%, transparent); }
-.xlang { margin: 1.25rem 0 0; font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem; }
-.xlang a { color: var(--hf-text-accent); text-decoration: none; }
-.xlang a:hover { text-decoration: underline; }
+/* Language switcher. Both versions are named, the one you are on is marked,
+   and it looks the same on each so the pair is obvious. */
+.langs {
+  display: inline-flex; align-items: stretch; margin: 1.25rem 0 0;
+  border: 1px solid var(--hf-border); border-radius: var(--hf-radius); overflow: hidden;
+  font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem;
+}
+.langs-l {
+  display: flex; align-items: center; padding: .4rem .7rem;
+  font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--hf-text-muted); background: var(--hf-surface-raised);
+  border-right: 1px solid var(--hf-border);
+}
+.langs .on, .langs a { padding: .4rem .85rem; display: flex; align-items: center; }
+.langs .on { background: var(--hf-ink); color: var(--hf-cream); }
+.langs a { color: var(--hf-text-link); text-decoration: none; }
+.langs a:hover, .langs a:focus-visible { background: var(--hf-surface-raised); text-decoration: underline; }
+.langnote { margin: .6rem 0 0; font-size: .8125rem; line-height: 1.5; color: var(--hf-text-muted); max-width: 46ch; }
 
 /* ---- listen ---- */
 .listen {
@@ -422,12 +437,39 @@ const inlineLockup = (kind, way, cls = '') => {
   return `<svg class="${cls}" viewBox="0 0 ${w} ${h}" aria-hidden="true" focusable="false">${stripSvg(svg)}</svg>`;
 };
 
-function page(meta, bodyHtml, slug) {
+function page(meta, bodyHtml, slug, TRANSLATED = new Map()) {
   const L = (meta.lang || 'en') === 'es'
     ? { listen: 'Escuchar', read: 'min de lectura', by: 'Leído por una voz sintética',
         tail: 'Está leyendo las palabras de abajo, las de nadie más.', other: 'Read in English', otherHref: `${slug.replace(/\.es$/, '')}.html` }
     : { listen: 'Listen', read: 'min read', by: 'Read by a synthetic voice',
         tail: "It is reading the words below, nobody else's.", other: 'Leer en español', otherHref: `${slug}.es.html` };
+
+  // Only offer the other language when it actually exists. Assuming every
+  // English article had a Spanish twin put a live "Leer en español" link on
+  // Andrés's article pointing at a 404.
+  const base = slug.replace(/\.es$/, '');
+  const isEs = (meta.lang || 'en') === 'es';
+  const hasOther = isEs || TRANSLATED.has(base);
+  const langs = hasOther ? [
+    { code: 'en', name: 'English', href: `${base}.html`, on: !isEs },
+    { code: 'es', name: 'Español', href: `${base}.es.html`, on: isEs },
+  ] : [];
+  const langNav = langs.length ? `<nav class="langs" aria-label="${isEs ? 'Idioma' : 'Language'}">`
+    + `<span class="langs-l">${isEs ? 'Idioma' : 'Language'}</span>`
+    + langs.map(l => l.on
+      ? `<span class="on" aria-current="true" lang="${l.code}">${l.name}</span>`
+      : `<a href="${l.href}" hreflang="${l.code}" lang="${l.code}">${l.name}</a>`).join('')
+    + `</nav>` : '';
+  const alternates = langs.map(l =>
+    `<link rel="alternate" hreflang="${l.code}" href="https://hkcarre.github.io/humanfirstai/articles/${l.href}">`).join('\n');
+
+  // The Spanish page states its own review status on arrival. An English
+  // reader deciding whether to send someone the link deserves to know before
+  // they click, not after.
+  const esState = !isEs ? TRANSLATED.get(base) : null;
+  const langNote = esState && esState !== 'true' ? `<p class="langnote">${esState === 'text'
+    ? 'The Spanish is a machine-assisted translation. Its text has been reviewed against this page; its narration has not.'
+    : 'The Spanish is a machine-assisted translation and has not been reviewed by a native speaker yet.'}</p>` : '';
 
   // Narration, if it has been generated. preload="none" so it costs a reader
   // on a slow connection nothing at all unless they ask for it.
@@ -476,11 +518,15 @@ function page(meta, bodyHtml, slug) {
 ${JSON.stringify({
   '@context': 'https://schema.org', '@type': 'Article',
   headline: `${meta.title}: ${meta.subtitle}`, description: desc,
+  inLanguage: meta.lang || 'en',
+  ...(meta.author ? { author: { '@type': 'Person', name: meta.author } } : {}),
+  ...(meta.translationOf ? { translationOfWork: { '@type': 'Article', name: meta.title } } : {}),
   datePublished: meta.date, publisher: { '@type': 'Organization', name: BRAND.name },
   image: `https://hkcarre.github.io/humanfirstai/articles/${slug}-og.png`,
   mainEntityOfPage: url,
 }, null, 2)}
 </script>
+${alternates}
 <link rel="stylesheet" href="../article.css">
 </head>
 <body>
@@ -507,22 +553,21 @@ ${JSON.stringify({
       <span>${meta.readingTime} ${L.read}</span>
     </p>
     ${audio}
+    ${langNav}${langNote}
     ${meta.reviewed === 'false' ? `<aside class="unreviewed" role="note">
       <strong>Borrador sin revisar.</strong> Esta traducción y su narración se generaron con
       ayuda de una máquina y <strong>todavía no las revisó un hablante nativo</strong>. Nuestras
       propias reglas exigen esa revisión antes de publicar, así que esto es una muestra de
       trabajo, no material aprobado.
-      <a href="https://github.com/hkcarre/humanfirstai/blob/main/docs/02-voice.md">La regla</a> ·
-      <a href="${L.otherHref}">${L.other}</a>
+      <a href="https://github.com/hkcarre/humanfirstai/blob/main/docs/02-voice.md">La regla</a>
     </aside>` : meta.reviewed === 'text' ? `<aside class="unreviewed revised" role="note">
       <strong>Texto revisado. Audio todavía no.</strong> Un revisor hispanohablante comparó esta
       traducción con el original en inglés el ${revStr} y aplicamos sus correcciones.
       La narración se volvió a generar con el texto corregido, pero
       <strong>nadie la escuchó todavía de principio a fin</strong>, así que la marca se queda
       hasta que alguien lo haga.
-      <a href="https://github.com/hkcarre/humanfirstai/blob/main/docs/02-voice.md">La regla</a> ·
-      <a href="${L.otherHref}">${L.other}</a>
-    </aside>` : `<p class="xlang"><a href="${L.otherHref}">${L.other} &rarr;</a></p>`}
+      <a href="https://github.com/hkcarre/humanfirstai/blob/main/docs/02-voice.md">La regla</a>
+    </aside>` : ''}
   </div>
 </div>
 <div class="colonnade" aria-hidden="true">${colonnadeSvg}</div>
@@ -655,6 +700,12 @@ for (const f of readdirSync('../brand/type/fonts')) copyFileSync(`../brand/type/
 // fonts.css points at fonts/… relative to itself, which already matches assets/fonts/.
 
 const articles = [];
+// Which pieces exist in more than one language. Computed before any page is
+// rendered, so a language switcher is only ever offered when its target exists.
+const TRANSLATED = new Map(readdirSync(`${ROOT}/content`)
+  .filter(f => f.endsWith('.es.md'))
+  .map(f => [f.replace(/\.es\.md$/, ''),
+    (readFileSync(`${ROOT}/content/${f}`, 'utf8').match(/^reviewed:\s*(\S+)/m) || [, 'false'])[1]]));
 for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md')).sort()) {
   const slug = file.replace(/\.md$/, '');
   const [meta, body] = frontmatter(readFileSync(`${ROOT}/content/${file}`, 'utf8'));
@@ -671,7 +722,7 @@ for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md'))
   }
 
   const { html, sections } = markdown(body);
-  writeFileSync(`${OUT}/articles/${slug}.html`, page(meta, html, slug));
+  writeFileSync(`${OUT}/articles/${slug}.html`, page(meta, html, slug, TRANSLATED));
 
   // Social preview card, from the same template system as every other asset.
   const og = (() => {

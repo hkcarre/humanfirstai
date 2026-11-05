@@ -104,9 +104,24 @@ h1 {
 /* One rung down: the text has been reviewed, the audio has not. Teal, because
    Sunrise is reserved for "nobody has checked any of this". */
 .revised { border-color: var(--hf-teal); background: color-mix(in srgb, var(--hf-teal) 8%, transparent); }
-.xlang { margin: 1.25rem 0 0; font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem; }
-.xlang a { color: var(--hf-text-accent); text-decoration: none; }
-.xlang a:hover { text-decoration: underline; }
+/* Language switcher. Both versions are named, the one you are on is marked,
+   and it looks the same on each so the pair is obvious. */
+.langs {
+  display: inline-flex; align-items: stretch; margin: 1.25rem 0 0;
+  border: 1px solid var(--hf-border); border-radius: var(--hf-radius); overflow: hidden;
+  font-family: var(--hf-font-brand); font-weight: 700; font-size: .875rem;
+}
+.langs-l {
+  display: flex; align-items: center; padding: .4rem .7rem;
+  font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--hf-text-muted); background: var(--hf-surface-raised);
+  border-right: 1px solid var(--hf-border);
+}
+.langs .on, .langs a { padding: .4rem .85rem; display: flex; align-items: center; }
+.langs .on { background: var(--hf-ink); color: var(--hf-cream); }
+.langs a { color: var(--hf-text-link); text-decoration: none; }
+.langs a:hover, .langs a:focus-visible { background: var(--hf-surface-raised); text-decoration: underline; }
+.langnote { margin: .6rem 0 0; font-size: .8125rem; line-height: 1.5; color: var(--hf-text-muted); max-width: 46ch; }
 
 /* ---- listen ---- */
 .listen {

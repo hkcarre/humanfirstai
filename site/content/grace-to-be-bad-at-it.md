@@ -6,6 +6,7 @@ date: 2026-11-05
 readingTime: 6
 theme: cream
 author: Andrés Sepulveda Morales
+guest: true
 ctaLabel: Find a workshop
 ctaSub: Free, plain-language workshops. No computer science degree required.
 ctaHref: https://github.com/hkcarre/humanfirstai

@@ -6,6 +6,7 @@ standfirst: Durante años, ser bueno en la política de oficina fue una carrera 
 date: 2026-11-04
 readingTime: 8
 theme: cream
+author: Helena Carre
 lang: es
 voice: ef_dora
 phonemeLang: es-419

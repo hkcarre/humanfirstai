@@ -9,7 +9,7 @@ Run this before anything goes out. All of it, not the convenient parts.
 - [ ] Paragraphs are 15-35 words — not a column of one-line paragraphs
 - [ ] No banned words (`AI-powered`, `unlock`, `seamless`, `revolutionise`, `leverage`, `empower`…)
 - [ ] `node scripts/voice-check.mjs <file>` passes all six checks
-- [ ] Guest byline? The voice rules are notes for the author, not edits we make for them
+- [ ] `guest: true` only for writers outside the movement — a byline alone keeps the rules on
 - [ ] AI described by what it helps someone *do*, never as a mind or as magic
 - [ ] The limit is stated — what it does not do, in the same breath
 - [ ] Any person named has consent on file
@@ -44,6 +44,7 @@ Run this before anything goes out. All of it, not the convenient parts.
 - [ ] Scrim behind any type on a photograph, measured not eyeballed
 - [ ] Alt text written to the formula: who + what they are doing + where and how it feels
 - [ ] Decorative images carry `alt=""`
+- [ ] A language switcher is only offered when the other version actually exists
 - [ ] A photograph we do not have renders as a labelled slot, never a broken image or a generated face
 
 ## Reach

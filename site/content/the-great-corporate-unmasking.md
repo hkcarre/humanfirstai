@@ -6,6 +6,7 @@ standfirst: For years, being good at office politics has been a reliable career.
 date: 2026-11-04
 readingTime: 7
 theme: cream
+author: Helena Carre
 tags: [Artificial Intelligence, AI Leadership, Future Of Work, Corporate Culture, Leadership]
 ---
 

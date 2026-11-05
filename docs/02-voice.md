@@ -191,9 +191,15 @@ rewritten.
 These rules describe how **Human First AI** writes. They are not a licence to edit a
 contributor's prose into our house style.
 
-When a piece carries someone else's `author` in its frontmatter, `voice-check` still runs every
-check and prints every finding — the author may well want them — but marks them `--` instead of
-`!!` and exits clean. They are notes to pass on, not failures to fix on somebody's behalf.
+A piece marked `guest: true` in its frontmatter still gets every check run and every finding
+printed — the author may well want them — but they are marked `--` instead of `!!` and the check
+exits clean. They are notes to pass on, not failures to fix on somebody's behalf.
+
+**`guest` is a separate field from `author`, deliberately.** A byline does not mean the writing
+sits outside our voice: most of what we publish is written by someone in the movement and is held
+to every rule here. *The Great Corporate Unmasking* carries Helena Carre's byline and has to pass
+all six checks. Keying the exemption off `author` would have silently stopped checking any article
+the moment it got a name on it.
 
 *Give Yourself the Grace to Be Bad at It* keeps its exclamation mark, its long sentences and its
 dense paragraphs, because they are Andrés's and the piece is better for sounding like a person

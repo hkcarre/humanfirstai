@@ -103,7 +103,11 @@ console.log(X === 1 ? '' : `  language ${lang} — word targets scaled ×${X} fo
 // guest's prose into our house style. For a guest piece the findings are still
 // printed in full — the author may want them — but they are notes to pass on,
 // not failures to fix on their behalf.
-const GUEST = /^---\n[\s\S]*?^author:\s*\S/m.test(raw);
+// Keyed on `guest`, NOT on `author`. A byline does not mean the piece is
+// outside our voice — most of what we publish is written by someone in the
+// movement and is held to every rule here. Conflating the two would have
+// silently stopped checking any article the moment it got a name on it.
+const GUEST = /^---\n[\s\S]*?^guest:\s*true\s*$/m.test(raw);
 const NOTE = '  --  ';
 
 const judge = (ok, label, detail) => {
