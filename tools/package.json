@@ -19,7 +19,15 @@
     "voices": "node build/voices.mjs",
     "phonemes:check": "node check-phonemes.mjs",
     "voice-check": "node ../skill/human-first-ai-brand/scripts/voice-check.mjs",
-    "site": "node build/site.mjs"
+    "site": "node build/site.mjs",
+    "editorial:policy": "node editorial/policy.mjs",
+    "editorial:gates": "node editorial/gates.mjs",
+    "editorial:init": "node editorial/run.mjs init",
+    "editorial:finalise": "node editorial/run.mjs finalise",
+    "editorial:pr": "node editorial/run.mjs pr",
+    "editorial:list": "node editorial/run.mjs list",
+    "editorial:feedback": "node editorial/feedback.mjs",
+    "editorial:test": "node editorial/test.mjs"
   },
   "devDependencies": {
     "kokoro-js": "^1.2.1",

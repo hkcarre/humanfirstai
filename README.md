@@ -64,6 +64,26 @@ Then just ask — "draft a LinkedIn post about the Lagos workshop", "check this 
 the brand" — and it will apply the voice, the palette and the accessibility floor.
 Installation detail and two zero-dependency helper scripts: [`skill/README.md`](skill/README.md).
 
+## The editorial swarm
+
+[`editorial/`](editorial/README.md) is a reusable publishing pipeline. Paste an article and
+eight specialist agents review it against the brand rules in this repository, verify its
+factual claims, optimise it for search and AI answers, assess publication risk, and audit
+the result independently.
+
+```
+/editorial-swarm
+```
+
+The brand policy is **extracted from this repo at a named commit** — 51 rules, each with its
+source file and line — so every decision traces back to approved text. Scoring and the
+publication gates run in code, not in an agent, because a model grading its own work is not
+evidence. Default mode prepares a pull request; it never publishes or merges.
+
+```bash
+cd tools && npm run editorial:test      # 34 tests
+```
+
 ## Regenerating the assets
 
 Everything in `brand/` is generated. **Never hand-edit it** — the next build overwrites your

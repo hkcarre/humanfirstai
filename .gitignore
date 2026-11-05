@@ -12,3 +12,6 @@ Thumbs.db
 # uses, with a cleared row in brand/photography/credits.json, belong in the
 # repository — under site/content/.
 photos/
+
+# Pasted article drafts awaiting a run. Runs themselves are committed.
+editorial/inbox/
