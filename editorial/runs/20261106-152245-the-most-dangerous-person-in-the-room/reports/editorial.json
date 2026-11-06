@@ -1,0 +1,57 @@
+{
+  "agent": "editorial",
+  "score": 90,
+  "findings": [
+    {
+      "passage": "The AI did the work in minutes. The question took a new hire, two months and a napkin.",
+      "severity": "MEDIUM",
+      "explanation": "The whole story runs from 7:52 a.m. to 11:47 p.m. on one day. 'Two months' is never set up, so it reads as a continuity slip. The line is also the thesis in miniature, so it should be exact.",
+      "recommendation": "Either say earlier that Maya has been there two months (one clause in the 7:52 scene, or 'Maya, eight weeks in, arrives early'), or change the line to 'The question took a new hire and a napkin.' The first option keeps the rhythm."
+    },
+    {
+      "passage": "It's also four days faster and roughly forty times more readable.",
+      "severity": "LOW",
+      "explanation": "'Forty times more readable' is an invented metric. It sits in a piece that later uses real figures, so a reader may take it for one. It is also the only joke in the scene that is not earned by a detail.",
+      "recommendation": "Cut to 'It's ugly. It's also four days faster, and people will actually read it.' This is optional. The author's comic voice can carry the original."
+    },
+    {
+      "passage": "the technology works, but the bottom-line gains aren't arriving at scale.",
+      "severity": "LOW",
+      "ruleId": "VC-001",
+      "explanation": "'at scale' is on the banned list and is in the author's own voice here. The gate flagged one banned term and this is the only candidate I found. It is a one-word swap and costs nothing.",
+      "recommendation": "Replace 'at scale' with 'widely'. Fact accuracy of the Gallup attribution is for the Fact Checker."
+    },
+    {
+      "passage": "Love the fresh eyes! But we tried changing the report in 2017.",
+      "severity": "LOW",
+      "ruleId": "VC-004",
+      "explanation": "The gate flagged the exclamation mark. It is inside Graham's dialogue, and the brand rule covers 'our own voice'. The bang is also the characterisation: forced cheer from a man who is about to stonewall her.",
+      "recommendation": "Advisory. Keep it as dialogue and let compliance rule on it. If it must go, 'Love the fresh eyes.' with a full stop still reads as false warmth."
+    },
+    {
+      "passage": "licence / Licences versus organization / Every organization",
+      "severity": "LOW",
+      "explanation": "British 'licence' sits next to American 'organization' (and 'organisation' is the house spelling in the policy examples). A consistency slip only. Not a brand rule I can cite, so advisory.",
+      "recommendation": "Choose one spelling convention and apply it throughout."
+    },
+    {
+      "passage": "Nearly half of American adults have been bullied at work or watched it happen, and those targeted face a 62% chance of losing their job.",
+      "severity": "LOW",
+      "explanation": "Editorially, the story shows exclusion, not bullying. The statistic is a slightly bigger claim than the scene earns, though 'the immune response is not invisible' bridges it adequately. Whether the figures are accurate is for the Fact Checker.",
+      "recommendation": "No change needed on editorial grounds if the figures verify. If one needs trimming, trim the source-heavy 'The bill' paragraph before touching the narrative."
+    }
+  ],
+  "preserved": [
+    "The timestamped structure and the short scenes. They are the form, they carry the argument, and the one-line paragraphs are earned. Do not merge them to satisfy the paragraph-length check; that would damage the piece.",
+    "The opening ('Last year, AI made answers free. Nobody told the org chart.'). It is a hook with a thesis, not a formulaic introduction.",
+    "Graham's characterisation, including 'never, in recorded history, said the words I don't know'. The callback at 4:30 ('for the first time in recorded history' about Dev smiling) is deliberate and pays off.",
+    "Small specific details that make the scenes: Dev checking that the PDF uploaded, the emotion near the oat milk, the unsent 'Sorry if I overstepped', the lunch nobody invited her to. These are the intellectual nuance, not decoration.",
+    "The 1:22 p.m. interruption that explains the immune-response metaphor. It breaks the timeline on purpose and is placed exactly when the reader has enough evidence. The metaphor is a little crowded (fever, infection, autoimmune) but it holds together.",
+    "The manager's 'Tell me more.' and the line 'One sentence. That's all it takes to stop an immune response.' This is the practical lesson and it is not over-explained.",
+    "The VP's 'I don't know' to his daughter, and the turn to Graham at five years old. It could tip into sentiment, but the 'Find your Graham. Be patient with him.' close complicates the villain at the right moment.",
+    "The analytical sections ('Why this is now an AI problem', 'The bill'). They are short, the argument follows from the story, and 'Answers are a commodity now. Questions are the moat.' is a clean landing. The AI is described by what it does and what it cannot do, which satisfies CL-007 and CL-008.",
+    "The ending and call to action. The closing question and the comment prompt are specific, not a repeated summary.",
+    "The four long sentences flagged by the gate. I did not itemise them: they are rhythm in a narrative voice, and the average sentence length is 8.9 words. The integrator should split one or two only if it is free of cost to meaning.",
+    "The G2 numeric warnings for 2017, 2019 and '100%'. These are fictional scene details, not claims. The 2026 Gallup and MIT Sloan figures belong to the Fact Checker."
+  ]
+}

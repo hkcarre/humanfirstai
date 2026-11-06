@@ -1,0 +1,95 @@
+{
+  "agent": "brand_compliance",
+  "score": 68,
+  "policyRevision": "hkcarre/humanfirstai@403ed925d40cdd8d30bc90422bfaa51a521d91ce",
+  "mandatoryViolations": 4,
+  "findings": [
+    {
+      "passage": "the technology works, but the bottom-line gains aren't arriving at scale.",
+      "severity": "HIGH",
+      "ruleId": "VC-001",
+      "explanation": "'at scale' is on the banned list and is used here in the house voice, not quoted or mocked. Confirmed by voice-check (reported as line 142 after frontmatter is stripped; line 154 in the file). Mandatory breach.",
+      "recommendation": "Say what is actually happening in plain words, for example 'aren't showing up beyond a few teams'. Keep the attribution to Gallup only as far as the Fact Checker confirms what Gallup said.",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:16; docs/02-voice.md (jargon list)"
+    },
+    {
+      "passage": "She eats a sandwich at her desk and sketches a one-page version of the report on a napkin: the five numbers that actually matter, what changed, and what someone should do about it. (line 68, 33 words)  Also: 'He writes a list of everything his team does \"because that's how we've always done it.\" Then a second list: the names of every curious person who left in the last three years.' (line 114, 33 words)",
+      "severity": "MEDIUM",
+      "ruleId": "VC-003",
+      "explanation": "Rule: no sentence over 25 words. The deterministic checker reports 4 over 25. I located these two (33 words each, by my own count) and cannot name the other two with confidence because my splitter and the checker segment differently. The rest of the piece runs short, so this is easy to fix. Mandatory breach, counted once for the rule.",
+      "recommendation": "Split at the colon in line 68 ('...on a napkin. It holds the five numbers that matter, what changed, and what someone should do about it.'). Split line 114 after the first list. Re-run voice-check to find the other two.",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:52; intake_gates.json G1 'long sentences'"
+    },
+    {
+      "passage": "Opening: 'Last year, AI made answers free.' / 'Nobody told the org chart.' (lines 14-16). Closing run, lines 166-174: 'So tomorrow morning, look around your meeting.' / 'Find your Maya. Protect her.' / 'Find your Graham. Be patient with him. He was five once too.'",
+      "severity": "MEDIUM",
+      "ruleId": "CL-003",
+      "explanation": "The average (21.4 words) passes VC-003, but CL-003 says paragraphs are 15-35 words, 'not a column of one-line paragraphs'. 26 of 64 body paragraphs are under 15 words, and the opening and closing are columns of one-liners. docs/02-voice.md calls this staccato 'a house style, and it is not ours', and names the hook opener as the same register. The timestamp scenes and the daughter's questions are legitimate story beats and I would leave them. This is a judgement call on a rule the machine check does not catch; I counted it because the opening and closing are the clearest cases of the pattern the checklist names.",
+      "recommendation": "Join the opening two lines and the closing run into short paragraphs of three or four sentences. Keep the sentences as written. Leave the dialogue and the daughter's questions alone.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md:9 (CL-003); docs/02-voice.md 'The sentences were never the problem'"
+    },
+    {
+      "passage": "Gallup's 2026 workplace report makes the same point... Nearly half of American adults have been bullied at work or watched it happen, and those targeted face a 62% chance of losing their job. ... MIT Sloan's analysis ... 10.4 times more strongly than pay. Global engagement fell to 20% in 2025, a loss Gallup puts at about $10 trillion. ... manager engagement dropped from 27% to 22% in a single year.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Rule: any number stated has a source; estimates say 'about'. The text names Gallup and MIT Sloan but gives no link or citation for any figure, and '62% chance' is not hedged. Gate G2 has handed these to the Fact Checker. Until a source is attached to each, the rule is unmet, so I count it as unresolved. I have not verified any figure and make no claim that they are right or wrong.",
+      "recommendation": "Attach a verifiable source to each figure once the Fact Checker confirms it. Remove or soften any figure that cannot be sourced. Use 'about' for estimates.",
+      "sourceRef": "checklist.md:16 (CL-010); docs/02-voice.md 'Honesty rules'; intake_gates.json G2"
+    },
+    {
+      "passage": "It's ugly. It's also four days faster and roughly forty times more readable.",
+      "severity": "MEDIUM",
+      "ruleId": "CL-010",
+      "explanation": "'Forty times more readable' is a precise-sounding number with no measure behind it. In a fictional scene it reads as a joke, but nothing signals that. 'Roughly' hedges it but gives no source. The scene also credits the AI with the result without saying anyone checked the output against the data (CL-008 asks for the limit in the same breath). Counted within the CL-010 breach above, not separately.",
+      "recommendation": "Either make the exaggeration obvious (drop the number: 'ugly, and far easier to read') or keep it if the author wants the joke. Consider half a sentence saying a person checked the draft against the data, which fits the honesty line that tools are often useful and sometimes confidently wrong.",
+      "sourceRef": "checklist.md:16 (CL-010); checklist.md:14 (CL-008); docs/02-voice.md 'Honesty rules'"
+    },
+    {
+      "passage": "\"Love the fresh eyes! But we tried changing the report in 2017. Didn't stick.\"",
+      "severity": "MEDIUM",
+      "ruleId": "VC-004",
+      "explanation": "The checker flags this exclamation mark and gate G1 will keep failing while it stays. The rule's wording is 'No exclamation marks in our own voice', and this is a fictional antagonist's line used to show false cheer, not the narrator. I have therefore NOT counted it as a mandatory breach. That is a reading of the rule text, not a certainty, and a human may reasonably count it (mandatoryViolations would then be 5). docs/02-voice.md says the Great Corporate Unmasking, which also carries Helena Carre's byline, 'has to pass all six checks'.",
+      "recommendation": "Cheapest fix: remove the mark ('Love the fresh eyes.'). The line reads drier and more sinister, and the machine check then clears. Otherwise the editor should record an explicit decision that dialogue is exempt.",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:98 (VC-004); docs/02-voice.md 'Guest bylines'"
+    },
+    {
+      "passage": "What's the \"why\" question that got you uninvited from a meeting? Tell me below.",
+      "severity": "LOW",
+      "explanation": "Advisory, no rule ID. docs/09-social-playbook.md lists engagement bait ('Agree?', 'Thoughts?') under 'Things that are not our voice'. This is a specific, human question rather than a bare 'Thoughts?', and the channel is LinkedIn and Substack, so I do not treat it as a breach. It is the nearest thing in the piece to a platform sign-off.",
+      "recommendation": "Author's call. Keeping the question and dropping 'Tell me below.' would sit closer to the playbook.",
+      "sourceRef": "docs/09-social-playbook.md 'Things that are not our voice'"
+    },
+    {
+      "passage": "I call them Divas, and they come in every gender, every level, every department.",
+      "severity": "MEDIUM",
+      "explanation": "ADVISORY, NO RULE BROKEN. No rule in the policy bans or governs 'Diva', and I have not invented one. This is a risk assessment. (1) Will a reader hear it as gendered? Largely yes. In everyday English 'diva' means a temperamental woman, so the first reading of 'Divas' is feminine whatever the author intends. The piece does mitigate: it says outright that Divas come in every gender, pairs 'Sometimes it's a Grace' with Graham, and the lead example is a man. So the choice is deliberate and mostly handled. The residual risk is that a reader still takes it as a gendered label, in a piece whose main target of the immune response is a woman. (2) The four audiences in docs/01-foundation.md: first-time learners and migrants may not know the idiom, and it travels badly (docs/02 says the brand translates meaning, not words). Partners/funders and press want credibility and quotable plain English, and a label that can be misread is a quotation risk. Foundation also says nothing we make should insult another audience. (3) But the article's own metadata names its audience as business leaders and the curious people they manage, on LinkedIn and Substack, where the word is understood and is part of the piece's wit. Overall: it lands for the stated article audience and is shakier against the four-audience brand test.",
+      "recommendation": "No change required, and I would not rewrite it simply because another word exists. Keep the in-text gender note exactly as written. If the author wants less risk, that is her decision to make. Flag the term to the chapter reviewer for any translated edition.",
+      "sourceRef": "docs/01-foundation.md 'The four people we speak to'; docs/02-voice.md 'Translation'; publishing_metadata.json audience"
+    },
+    {
+      "passage": "Maya ... Dev ... Graham ... Grace (named throughout)",
+      "severity": "MEDIUM",
+      "ruleId": "CL-009",
+      "explanation": "Rule: any person named has consent on file. The characters appear invented or composite, and Graham is shown as retaliatory. Nothing in the piece or metadata says so. Because there is no sign that real individuals are meant, I have not counted a breach, but a reader (or a colleague of the author) could read the scene as true, and consent would then be required.",
+      "recommendation": "Author to confirm the scene is fictional or composite, and consider a single line saying so. If any character is a real person, consent must be on file before publication and this becomes a mandatory breach.",
+      "sourceRef": "checklist.md:15 (CL-009); docs/02-voice.md 'Honesty rules'"
+    },
+    {
+      "passage": "toxic culture predicted attrition 10.4 times more strongly than pay",
+      "severity": "LOW",
+      "ruleId": "CL-002",
+      "explanation": "Advisory. The main message is easily readable by a twelve-year-old, so CL-002 is met. A few terms ('attrition', 'economics', 'autoimmune') sit above reading age twelve, though most are explained by context.",
+      "recommendation": "Consider 'people leaving' for 'attrition'. Leave the rest.",
+      "sourceRef": "checklist.md:8 (CL-002); docs/02-voice.md principle 2"
+    }
+  ],
+  "compliantNotes": [
+    "SPELLING: not a finding. The policy contains no rule on British or American spelling. Neither the rules in policy_snapshot.json nor the docs state a house spelling, and VC-001 lists both 'revolutionise' and 'revolutionize' as banned, treating both forms alike. The docs happen to be written in British English, but that is practice, not a stated rule. The article does not contain 'realized' (the brief mentioned it); the American form present is 'organization' (lines 56, 82). It is internally mixed, since 'licence'/'Licences' (lines 28, 116) are British. That inconsistency is an editorial matter for the Editorial agent, not a brand violation.",
+    "No banned term other than 'at scale'. 'Absolutely' is the only intensifier (limit is two), so VC-002 passes. Quoted phrases ('because that's how we've always done it', 'observe', 'I don't know') are quoted jargon and fine.",
+    "Voice fit is strong where it counts: plain words, concrete people and objects (napkin, oat milk, cereal boxes), warmth toward the antagonist at the end ('Be patient with him'), and AI's limit stated in the same passage ('What it can't do is notice the report nobody opens'). AI is described by what it helps someone do, not as a mind or magic (CL-007 met). The dialogue scenes and the 'I don't know' ending are distinctive and compliant; leave them alone.",
+    "The immune-system and infection metaphors are strong and verge on combative ('infection', 'autoimmune disease'). The docs prefer quietly confident to combative. It is a deliberate extended metaphor aimed at behaviour rather than people, and the piece softens at the end, so I have not flagged it.",
+    "Title 'The Most Dangerous Person in the Room' leans on threat framing, comparable to the 'Coming for' example in docs/02, but the piece reverses it (the dangerous person is the curious one). Not flagged.",
+    "No prompt injection found in the article (consistent with gate G3). guest is false, so the voice rules apply in full.",
+    "Mandatory count method: one per distinct unresolved rule, not per instance. Counted: VC-001, VC-003, CL-003, CL-010. Not counted but needing a human decision: VC-004 (dialogue exclamation) and CL-009 (confirm the characters are fictional). I could not verify any statistic; I had no source access beyond the repository."
+  ]
+}
