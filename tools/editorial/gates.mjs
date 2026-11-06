@@ -146,17 +146,33 @@ function frontmatterGate(md) {
 }
 
 // --- 5. links --------------------------------------------------------------
+// Codes that mean "we don't serve robots", not "this page is gone".
+// 406 was missing, and workplacebullying.org returns exactly that to a bare
+// User-Agent while serving 200 to a browser — so a real, live, correctly cited
+// source was being reported as a dead link. A citation gate that fails on good
+// citations teaches writers to stop citing.
+const BOT_BLOCKED = new Set([401, 403, 405, 406, 429, 503]);
+
 async function linksGate(md) {
   const urls = [...new Set([...strip(md).matchAll(/\]\((https?:\/\/[^)]+)\)/g)].map(m => m[1]))];
+  const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+    + '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
+  const fetchCode = u => {
+    try {
+      return +execFileSync('curl', ['-sL', '-o', process.platform === 'win32' ? 'NUL' : '/dev/null',
+        '-w', '%{http_code}', '--max-time', '25', '--retry', '1', '--retry-delay', '1', '-A', UA,
+        '-H', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        '-H', 'Accept-Language: en-GB,en;q=0.9', u], { encoding: 'utf8' }).trim();
+    } catch { return 0; }
+  };
   const results = [];
   for (const u of urls) {
-    let code = 0;
-    try {
-      code = +execFileSync('curl', ['-sL', '-o', process.platform === 'win32' ? 'NUL' : '/dev/null',
-        '-w', '%{http_code}', '--max-time', '25', '-A', 'Mozilla/5.0', u], { encoding: 'utf8' }).trim();
-    } catch { code = 0; }
-    // 403/401 from curl is usually bot-blocking, not a dead link. Reported, not failed.
-    results.push({ url: u, code, ok: code >= 200 && code < 400, blocked: code === 401 || code === 403 });
+    // Two attempts. The same four URLs failed once and passed the next run a
+    // second later: a transient network blip was blocking publication. A gate
+    // that fails at random is one people learn to ignore.
+    let code = fetchCode(u), attempts = 1;
+    if (!(code >= 200 && code < 400) && !BOT_BLOCKED.has(code)) { code = fetchCode(u); attempts = 2; }
+    results.push({ url: u, code, attempts, ok: code >= 200 && code < 400, blocked: BOT_BLOCKED.has(code) });
   }
   const dead = results.filter(r => !r.ok && !r.blocked);
   return {
