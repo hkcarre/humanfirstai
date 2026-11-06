@@ -18,6 +18,12 @@ const MISSING = new Set();
 // src -> srcset string, for photographs wide enough to be worth two sizes.
 const SRCSET = new Map();
 
+// Video assets an article asks for, and the ones shipping without captions.
+// Our own checklist says "captions on video, transcripts on audio", so a video
+// with none is reported at every build rather than noticed a month later.
+const VIDEOS = new Set();
+const NO_CAPTIONS = new Set();
+
 /** Copy an article image next to the page, optimised, with a 800w companion
  *  for anything wide. Returns false if the file is not in the repository. */
 async function placeImage(src) {
@@ -52,6 +58,13 @@ for (const d of ['', '/assets', '/assets/fonts', '/articles']) mkdirSync(`${OUT}
 //    **bold**  *italic*  `code`  [text](url)
 // ===========================================================================
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// For attribute VALUES, which also have to survive quotes. esc() deliberately
+// leaves them alone, because inline() turns straight quotes into curly ones
+// after escaping and would not recognise &quot;. The first alt text containing
+// a quotation mark — a video description quoting a line of dialogue — closed
+// its own aria-label early and put the rest of the sentence into the markup.
+const attr = s => esc(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 // Typesetting, not editing. Curly quotes are how the text is SET; the source
 // files keep whatever the author typed. Applied before links are built, so no
 // href or attribute is ever touched.
@@ -109,6 +122,43 @@ function markdown(src, meta = {}) {
       continue;
     }
 
+    // Video. Fenced because a video is not an image: it needs a poster so the
+    // page does not sit blank, preload="metadata" so it costs a reader nothing
+    // until they press play, and — by our own checklist — captions.
+    //
+    //   ```video
+    //   file: assets/thing.mp4
+    //   poster: assets/thing-poster.jpg
+    //   captions: assets/thing.vtt
+    //   alt: what happens in it, for someone who cannot watch
+    //   caption: the line printed underneath
+    //   ```
+    if (line.startsWith('```video')) {
+      i++;
+      const v = {};
+      while (i < lines.length && !lines[i].startsWith('```')) {
+        const at = lines[i].indexOf(':');
+        if (at > 0) v[lines[i].slice(0, at).trim()] = lines[i].slice(at + 1).trim();
+        i++;
+      }
+      i++;
+      if (!v.file) throw new Error('video block has no file:');
+      VIDEOS.add(v.file);
+      if (v.poster) VIDEOS.add(v.poster);
+      if (v.captions) VIDEOS.add(v.captions);
+      else NO_CAPTIONS.add(v.file);
+      out.push(`<figure class="fig video">`
+        + `<video controls playsinline preload="metadata"${v.poster ? ` poster="${attr(v.poster)}"` : ''}`
+        + `${v.alt ? ` aria-label="${attr(v.alt)}"` : ''}>`
+        + `<source src="${attr(v.file)}" type="video/mp4">`
+        + (v.captions ? `<track kind="captions" src="${attr(v.captions)}" srclang="en" label="English" default>` : '')
+        + `<p>Your browser cannot play this video. `
+        + `<a href="${esc(v.file)}">Download it instead</a>.</p></video>`
+        + (v.caption ? `<figcaption>${inline(v.caption)}</figcaption>` : '')
+        + `</figure>`);
+      continue;
+    }
+
     // Somebody else's words. Fenced rather than a plain blockquote so the
     // narrator can be made to skip it — our synthetic voice may read our own
     // prose and never a person's testimony. See docs/07-photography.md.
@@ -160,12 +210,12 @@ function markdown(src, meta = {}) {
       // The author's own portrait sets small and round, not full bleed.
       const portrait = meta.author && im[1].trim() === meta.author.trim();
       out.push(MISSING.has(im[2])
-        ? `<figure class="fig photo-missing"><div class="slot" role="img" aria-label="${esc(im[1])}">`
+        ? `<figure class="fig photo-missing"><div class="slot" role="img" aria-label="${attr(im[1])}">`
           + `<p class="slot-t">Photograph not supplied</p><p class="slot-d">${esc(im[1])}</p>`
           + `<p class="slot-f"><code>${esc(im[2])}</code></p></div>` + capHtml + `</figure>`
         : `<figure class="fig ${portrait ? 'portrait' : 'photo'}">`
           + `<img src="${esc(file)}"${set ? ` srcset="${esc(set)}" sizes="(max-width: 46rem) 100vw, 44rem"` : ''}`
-          + ` alt="${esc(im[1])}" loading="lazy" decoding="async">` + capHtml + `</figure>`);
+          + ` alt="${attr(im[1])}" loading="lazy" decoding="async">` + capHtml + `</figure>`);
       continue;
     }
 
@@ -450,6 +500,18 @@ footer a { color: var(--hf-text-muted); }
   border: 1px solid var(--hf-border); background: var(--hf-surface-raised);
 }
 
+/* ---- video ---- */
+.video { margin: 2.5rem 0; }
+.video video {
+  width: 100%; height: auto; display: block; border-radius: var(--hf-radius);
+  background: #111113;    /* the video's own ground, so no flash before it paints */
+}
+.video figcaption {
+  margin: .85rem 0 0; font-size: .9375rem; line-height: 1.55; color: var(--hf-text-muted);
+}
+/* A square video should not fill a desktop column edge to edge. */
+.video { max-width: 34rem; margin-inline: auto; }
+
 /* ---- photographs ---- */
 .photo img { width: 100%; height: auto; display: block; border-radius: var(--hf-radius); }
 /* The author's own portrait in a bio block. Small and round, not full bleed. */
@@ -624,7 +686,7 @@ ${alternates}
     <p class="subtitle">${esc(meta.subtitle)}</p>
     ${meta.standfirst ? `<p class="standfirst">${esc(meta.standfirst)}</p>` : ''}
     <p class="meta">
-      ${meta.authorPhoto ? `<img class="face" src="${esc(meta.authorPhoto)}" alt="" loading="lazy" decoding="async" width="36" height="36">` : ''}
+      ${meta.authorPhoto ? `<img class="face" src="${attr(meta.authorPhoto)}" alt="" loading="lazy" decoding="async" width="36" height="36">` : ''}
       <span>${esc(meta.author || BRAND.name)}</span><span class="dot">&middot;</span>
       ${meta.author ? `<span>${esc(BRAND.name)}</span><span class="dot">&middot;</span>` : ''}
       <time datetime="${meta.date}">${dateStr}</time><span class="dot">&middot;</span>
@@ -800,6 +862,19 @@ for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md'))
   }
   if (meta.authorPhoto) await placeImage(meta.authorPhoto);
 
+  // Video and its poster are copied verbatim — no re-encode. Re-compressing
+  // someone's finished render to save a megabyte is a good way to ship a worse
+  // video than the one they made.
+  for (const m of body.matchAll(/^\s*(?:file|poster|captions):\s*(\S+)$/gm)) {
+    const src = m[1];
+    if (/^https?:/i.test(src) || !existsSync(`${ROOT}/content/${src}`)) {
+      if (!/^https?:/i.test(src)) MISSING.add(src);
+      continue;
+    }
+    mkdirSync(`${OUT}/articles/${src.split('/').slice(0, -1).join('/')}`, { recursive: true });
+    copyFileSync(`${ROOT}/content/${src}`, `${OUT}/articles/${src}`);
+  }
+
   const { html, sections } = markdown(body, meta);
   writeFileSync(`${OUT}/articles/${slug}.html`, page(meta, html, slug, TRANSLATED, ARTICLES));
 
@@ -822,6 +897,12 @@ for (const file of readdirSync(`${ROOT}/content`).filter(f => f.endsWith('.md'))
 }
 
 writeFileSync(`${OUT}/index.html`, indexPage(articles));
+if (NO_CAPTIONS.size) {
+  console.log(`\n  ${NO_CAPTIONS.size} video(s) shipping WITHOUT captions.`);
+  console.log('  The review checklist requires captions on video. A viewer who is deaf,');
+  console.log('  or anyone on a muted autoplaying feed, gets nothing from the audio.');
+  for (const v of NO_CAPTIONS) console.log(`    ${v}`);
+}
 if (MISSING.size) {
   console.log(`\n  ${MISSING.size} photograph(s) an article asks for and the repository does not have.`);
   console.log('  They render as a labelled slot, not a broken image. Drop the files in');

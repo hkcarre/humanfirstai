@@ -304,7 +304,15 @@ function openPr(dir) {
   const url = sh('gh', ['pr', 'create', '--base', base, '--head', branch,
     '--title', `Editorial: ${meta.articleTitle} [${qa.status}]`, '--body', body]);
   sh('git', ['checkout', '-q', base]);
-  return { ok: true, url, branch };
+  // Switching back deletes the run from disk: it is tracked on the branch and
+  // gitignored on base, so git treats it as a file that should not be here.
+  // Restore it unstaged. Losing the working copy of a finished run the moment
+  // you open its pull request is not an acceptable way to end a run.
+  try {
+    sh('git', ['checkout', branch, '--', `editorial/runs/${meta.runId}`]);
+    sh('git', ['reset', '-q', '--', `editorial/runs/${meta.runId}`]);
+  } catch { /* the branch has it; the PR is still valid */ }
+  return { ok: true, url, branch, localCopyRestored: existsSync(`${dir}/final_article.md`) };
 }
 
 // --- cli -------------------------------------------------------------------

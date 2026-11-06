@@ -81,9 +81,29 @@ lines.forEach((line, i) => {
 // block containing a blank line leaks its ``` into the prose and a caption
 // ending in </sub> never terminates, so the splitter welds it to the next
 // paragraph and reports a sentence nobody wrote.
-const prose = text
-  .split('\n').filter(l => !/^\s*```/.test(l)).join('\n')
-  .replace(/<\/?[a-z][^>]*>/gi, '');
+// A LABELLED fence — ```video, ```figure, ```testimony — holds structure, not
+// prose: "file: assets/thing.mp4" is not a sentence and was being counted as a
+// 26-word one. Its contents are dropped. A BARE ``` fence is kept, because in a
+// reference document that is the copy which actually ships, and it should be
+// held to the same rules as everything else.
+// Fences nest: a ````markdown block can contain a ```video block, and only a
+// marker at least as long as the opening one closes it. Matching any ``` meant
+// the inner fence closed the outer one and its contents leaked into the prose.
+const prose = (() => {
+  const keep = [];
+  let open = null;            // { ticks, labelled } or null
+  for (const l of text.split('\n')) {
+    const fence = l.match(/^\s*(`{3,})(\S*)/);
+    if (fence) {
+      const ticks = fence[1].length;
+      if (open) { if (ticks >= open.ticks) open = null; else if (!open.labelled) keep.push(l); continue; }
+      open = { ticks, labelled: Boolean(fence[2]) };
+      continue;
+    }
+    if (!open || !open.labelled) keep.push(l);
+  }
+  return keep.join('\n');
+})().replace(/<\/?[a-z][^>]*>/gi, '');
 
 const paras = prose.split(/\n\s*\n/)
   .map(p => p.trim())
@@ -94,7 +114,8 @@ const words = body.split(/\s+/).filter(Boolean);
 // of dialogue welds to the sentence after it: `said "I don't know." "With
 // respect," he says` counted as one 33-word sentence. Two narrative articles
 // were each flagged for four or five over-long sentences that did not exist.
-const sentences = body.split(/(?<=[.!?]["'’”»]?)\s+/).filter(s => s.trim().length > 1);
+// ...and a markdown emphasis marker after that: *"…a long time."* Then an AI…
+const sentences = body.split(/(?<=[.!?]["'’”»]?[*_`]*)\s+/).filter(s => s.trim().length > 1);
 const wordsPerPara = words.length / (paras.length || 1);
 const wordsPerSent = words.length / (sentences.length || 1);
 const longSentences = sentences.filter(s => s.split(/\s+/).length > T.long);

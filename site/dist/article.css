@@ -239,6 +239,18 @@ footer a { color: var(--hf-text-muted); }
   border: 1px solid var(--hf-border); background: var(--hf-surface-raised);
 }
 
+/* ---- video ---- */
+.video { margin: 2.5rem 0; }
+.video video {
+  width: 100%; height: auto; display: block; border-radius: var(--hf-radius);
+  background: #111113;    /* the video's own ground, so no flash before it paints */
+}
+.video figcaption {
+  margin: .85rem 0 0; font-size: .9375rem; line-height: 1.55; color: var(--hf-text-muted);
+}
+/* A square video should not fill a desktop column edge to edge. */
+.video { max-width: 34rem; margin-inline: auto; }
+
 /* ---- photographs ---- */
 .photo img { width: 100%; height: auto; display: block; border-radius: var(--hf-radius); }
 /* The author's own portrait in a bio block. Small and round, not full bleed. */
