@@ -1,0 +1,89 @@
+{
+  "agent": "compliance",
+  "score": 25,
+  "blockers": 2,
+  "findings": [
+    {
+      "passage": "Ours was Richard. Eleven years in. When the new hire asked her question, Richard leaned back and said, \"With respect, some of us have been doing this a long time.\" It was the most expensive sentence anyone said that year.",
+      "severity": "CRITICAL",
+      "ruleId": "CL-009",
+      "explanation": "A first-hand account of a real workplace gives a first name, a tenure, a role label (the Diva), a verbatim quotation and a damaging characterisation. The team is described as fourteen people, so colleagues and probably clients can identify him from the first name, eleven years of service and the meeting. 'The most expensive sentence anyone said that year' implies he caused measurable financial loss. The author does not support that, and says elsewhere that she cannot prove any single Diva tanked any single share price. Labelling him the Diva, the loudest cell and the fever adds ridicule. This is defamation and harassment-adjacent risk for a human to judge. I am not counsel and make no legal determination. CL-009 requires consent on file for any person named, and nothing in the run shows it. The piece claims to be true, so a 'it was only illustrative' position is not available.",
+      "recommendation": "Do not publish this passage as written. Either record Richard's written consent to the name, quotation and characterisation, or remove the name, tenure and verbatim quote and recast him as an explicitly labelled composite or a generic type. Cut or soften 'the most expensive sentence' unless the author can substantiate a cost. A person with legal competence should review the final wording."
+    },
+    {
+      "passage": "She started rehearsing meetings in the shower. She stopped asking questions, then stopped sleeping properly, then started wondering whether the problem was her. ... She nearly left. She told me later she'd drafted the resignation email twice.",
+      "severity": "CRITICAL",
+      "ruleId": "CL-009",
+      "explanation": "This attributes sleep disturbance, self-doubt and a near-resignation to a real, identifiable colleague (the new hire, two months in, in a team of fourteen), on the strength of a private conversation ('She told me later'). Information about an identifiable person's wellbeing is sensitive personal data in many jurisdictions (for example GDPR special-category and employment-context considerations). That is a risk flag for a human, not legal advice. The same section alleges she was socially excluded, nicknamed 'our little auditor', dropped from a kickoff and described as 'not quite a culture fit', which are bullying allegations against unnamed colleagues. No consent from her is recorded. Brand honesty rule: 'Never use someone's story to sell a technology. The story belongs to them.' Her private disclosures need her consent to be published.",
+      "recommendation": "Obtain her written, informed consent to the specific text, covering both the wellbeing details and the exclusion allegations. Otherwise remove the health-related details (sleep, self-doubt, resignation draft) and the exclusion specifics, or recast the account as an openly labelled composite. The author should also confirm the account is accurate."
+    },
+    {
+      "passage": "Names and some details have been changed.",
+      "severity": "HIGH",
+      "ruleId": "CL-009",
+      "explanation": "The note is not sufficient and is in the wrong place. Position: it is the last line, after the reader has taken the whole piece as literal, and after the Richard passage. A note belongs at or before first use. Substance: changing a name does not de-identify someone whose colleagues were in the room, and the retained detail (eleven years, fourteen people, a six-year four-sign-off process, the folder name, last spring) identifies the setting. Ambiguity: 'some details' does not say which. A reader cannot tell whether Richard is a real or invented name, and if the account is altered or composite, the first-hand framing ('I watched', 'She told me later') may overstate what happened, which is a misleading-statement risk in itself. A disclaimer is not a substitute for consent and does not cure the CRITICAL findings.",
+      "recommendation": "Move a precise note to the opening, for example stating that the account is a composite, or that names, roles and identifying details have been changed. The author must confirm which statement is true. Alter or remove identifying specifics rather than relying on a footer. A human should decide the final wording."
+    },
+    {
+      "passage": "In a 2024 US survey, 32% of adults said they had been bullied at work and another 14% had witnessed it. Targets face a 62% chance of losing their job.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Intake gate G2 flagged this paragraph: no source, no link, no hedge, and the survey is not named. The second sentence presents '62% chance of losing their job' as a forecast for an individual, which may misstate what a survey measured (for example a share of respondents). The submission brief says the author herself flagged these figures as unverified or unsourced. CL-010 is mandatory. I have not checked the figures against any source and do not say they are wrong.",
+      "recommendation": "Name the survey and publisher, link it, and reword to match what was measured. Otherwise remove the figures. Do not publish figures the author knows are unverified."
+    },
+    {
+      "passage": "In MIT Sloan's analysis of employee reviews, toxic culture predicted attrition 10.4 times more strongly than compensation.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Intake G2 flagged this as unsourced. A precise multiplier attributed to a named institution without a citation creates a misattribution risk against MIT Sloan. I did not verify it. The Fact Checker owns accuracy.",
+      "recommendation": "Cite the specific study with a link, using its own wording of the finding, or cut the sentence."
+    },
+    {
+      "passage": "Gallup's 2026 workplace report puts it plainly: the technology works, but the bottom-line gains aren't arriving at scale. / Global engagement fell to 20% in 2025 ... around $10 trillion ... 23% higher profitability ... 2.3% to 3.8% a year over 28 years. / manager engagement just fell from 27% to 22% in a single year.",
+      "severity": "MEDIUM",
+      "ruleId": "CL-010",
+      "explanation": "Several figures and a paraphrase attributed to Gallup, and a comparison attributed to an unnamed '100 Best Companies' list, carry no links (G2). 'Puts it plainly' presents a paraphrase as a close summary of a named third party. The list and its publisher are not identified. The compliance concern is attribution to named third parties without a source on file.",
+      "recommendation": "Add a source link for each figure, name the list and its publisher, and make sure paraphrases do not put words in Gallup's mouth."
+    },
+    {
+      "passage": "The boss gave the textbook answer: \"It's how we ensure quality.\" ... Her manager pulled her aside and said: \"Keep asking. I'll take the heat.\"",
+      "severity": "HIGH",
+      "ruleId": "CL-009",
+      "explanation": "Two more verbatim quotations are attributed to real, identifiable people. The boss quote is mildly unflattering. The manager quote comes from a private conversation the author could only know second-hand ('pulled her aside'). Neither has consent recorded. The author also describes her employer's internal processes, AI tool rollout and results (a six-year approval workflow, an eleven-days-to-an-afternoon prototype), which may be confidential depending on her employment terms. I cannot tell from the files.",
+      "recommendation": "Confirm consent from both people, or paraphrase without quotation marks. Ask the author to confirm she has her employer's permission to describe the processes and results, or generalise them."
+    },
+    {
+      "passage": "Ours was Richard. ... \"With respect, some of us have been doing this a long time.\" (and the boss and manager quotations, in running prose)",
+      "severity": "HIGH",
+      "ruleId": "CL-047",
+      "explanation": "CL-047 says anyone else's words go in a testimony block, not prose, because the synthetic narration voice may read our own prose and may never read a named person's testimony. Richard's quote is attributed to a named person and sits in body prose. If the piece is narrated, the synthetic voice would read it. I could not tell from the run whether narration is planned.",
+      "recommendation": "If any third-party quote stays, put it in a testimony block so it is excluded from narration. Better, remove the named quote (see the CRITICAL finding). If the piece will be narrated, a human must confirm no third-party words are voiced."
+    },
+    {
+      "passage": "authorPhoto: people/helena-carre.jpg",
+      "severity": "MEDIUM",
+      "ruleId": "CL-027",
+      "explanation": "The photograph of a real person has a row in brand/photography/credits.json marked clearedForPublication: true, with consent recorded as the subject supplying it for her own byline. But photographer is 'UNKNOWN — confirm', licence is 'UNKNOWN — confirm', and dateTaken and location are null. docs/07-photography.md requires photographer, origin, consent, licence, date and location. The row is marked cleared while incomplete, so the clearance is not supported by the record. Copyright in the image may belong to a photographer who has not licensed it.",
+      "recommendation": "Complete photographer and licence (and date and location if known) before release, or withdraw the cleared flag. Use for the byline only, as the row states."
+    },
+    {
+      "passage": "Within a month, she had mapped the whole process, found that two of the four sign-offs had never once rejected anything, and ... built a prototype that did in an afternoon what used to take us eleven days.",
+      "severity": "MEDIUM",
+      "ruleId": "CL-008",
+      "explanation": "This is a performance claim for an AI tool (eleven days to an afternoon) stated as fact with no scope, no verification and no limit. CL-008 requires the limit to be stated in the same breath, and brand voice says never to imply a tool is accurate. Readers could take it as a promise of results.",
+      "recommendation": "Add 'in our case', say what the prototype did not do (for example that it was a prototype, that people still checked it), and keep the claim modest."
+    },
+    {
+      "passage": "AI is about to make it fatal  /  There's a medical term for an immune system that attacks something healthy. It's not protection. It's autoimmune disease.",
+      "severity": "LOW",
+      "explanation": "Advisory only, not a policy rule. 'Fatal' is an unsupported forecast, and the extended autoimmune metaphor may read as trivialising to people living with those conditions. The 'Diva' label is described as gender-neutral but carries gendered connotations in practice, which matters beside a named male colleague.",
+      "recommendation": "Consider softening 'fatal' and the metaphor, and reconsider the 'Diva' label. Editorial judgement for a human."
+    },
+    {
+      "passage": "(whole piece)",
+      "severity": "LOW",
+      "explanation": "Intake G3 found no prompt injection, and I found no text addressed to a reviewer. No sponsor, vendor relationship or employer affiliation is declared, so I cannot rule out a disclosure requirement. The G1 voice failures (long sentences, an exclamation mark, a banned term) belong to the Brand Guardian and are not re-litigated here. I did not verify any statistic or check any source, and I have not cleared this piece legally.",
+      "recommendation": "Ask the author to confirm that no commercial relationship needs disclosing."
+    }
+  ]
+}

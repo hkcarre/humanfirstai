@@ -1,0 +1,149 @@
+{
+  "file": "editorial/inbox/most-dangerous-person-b.md",
+  "ran": "2026-11-06T15:22:47.139Z",
+  "status": "fail",
+  "blockers": [
+    "G1"
+  ],
+  "checks": [
+    {
+      "id": "G1",
+      "name": "Voice and terminology",
+      "rule": "VC-001..004, CL Voice",
+      "status": "fail",
+      "detail": "3/6 checks pass.",
+      "guest": false,
+      "rows": [
+        {
+          "check": "paragraph shape",
+          "status": "pass",
+          "detail": "25.5 words a paragraph  (target 15-35)"
+        },
+        {
+          "check": "sentence length",
+          "status": "pass",
+          "detail": "11.1 words a sentence  (target under 22)"
+        },
+        {
+          "check": "long sentences",
+          "status": "fail",
+          "detail": "5 over 25 words"
+        },
+        {
+          "check": "exclamation marks",
+          "status": "fail",
+          "detail": "1 found — we do not use them"
+        },
+        {
+          "check": "banned terms",
+          "status": "fail",
+          "detail": "1 found"
+        },
+        {
+          "check": "intensifiers",
+          "status": "pass",
+          "detail": "1 (absolutely)"
+        }
+      ],
+      "exitCode": 1
+    },
+    {
+      "id": "G2",
+      "name": "Numeric claims carry a source",
+      "rule": "CL Voice — \"Any number stated has a source. If estimated, it says about.\"",
+      "status": "warn",
+      "detail": "4 paragraph(s) state a figure with no source link and no hedge. The Fact Checker must resolve each.",
+      "claims": [
+        {
+          "line": 74,
+          "figures": [
+            "2026"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "That's the trap most companies are in right now. They bought the tools and pointed them at processes nobody had questioned. Gallup's 2026 workplace report puts it plainly: the technology works, but the bottom-line gains "
+        },
+        {
+          "line": 88,
+          "figures": [
+            "2024",
+            "32%",
+            "14%",
+            "62%"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "If you've been there, you're far from alone. In a 2024 US survey, 32% of adults said they had been bullied at work and another 14% had witnessed it. Targets face a 62% chance of losing their job."
+        },
+        {
+          "line": 96,
+          "figures": [
+            "10.4"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "In MIT Sloan's analysis of employee reviews, toxic culture predicted attrition 10.4 times more strongly than compensation. You cannot pay your way out of a culture that bites."
+        },
+        {
+          "line": 98,
+          "figures": [
+            "20%",
+            "2025",
+            "2020",
+            "23%",
+            "100",
+            "2.3%",
+            "3.8%"
+          ],
+          "hasSourceLink": false,
+          "hedged": true,
+          "needsVerification": true,
+          "text": "Global engagement fell to 20% in 2025, the lowest since 2020, a drag Gallup prices at around $10 trillion in lost productivity. Flip it around: top-quartile engagement is linked to 23% higher profitability, and the \"100 "
+        },
+        {
+          "line": 116,
+          "figures": [
+            "27%",
+            "22%"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "1. Authority used to come from having answers. AI ended that. Authority now comes from asking the question nobody else will. 2. Your AI strategy is a culture strategy. Automating a process nobody has questioned just make"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Prompt injection in submitted text",
+      "rule": "Spec §10 — defend against prompt injection",
+      "status": "pass",
+      "detail": "None found.",
+      "hits": []
+    },
+    {
+      "id": "G4",
+      "name": "Publishing metadata complete",
+      "rule": "site builder contract",
+      "status": "pass",
+      "detail": "All required fields present.",
+      "missing": [],
+      "notes": [],
+      "frontmatter": {
+        "title": "Your Company Has an Autoimmune Disease",
+        "subtitle": "AI is about to make it fatal",
+        "kicker": "Leadership",
+        "date": "2026-11-06",
+        "readingTime": "8",
+        "theme": "cream",
+        "author": "Helena Carre",
+        "authorPhoto": "people/helena-carre.jpg",
+        "channel": "Publication pitch, guest column",
+        "tags": "[Artificial Intelligence, AI Leadership, Corporate Culture, Future Of Work, Leadership]"
+      }
+    }
+  ]
+}

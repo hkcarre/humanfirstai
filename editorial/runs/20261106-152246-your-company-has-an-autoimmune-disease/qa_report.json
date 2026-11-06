@@ -1,0 +1,187 @@
+{
+  "runId": "20261106-152246-your-company-has-an-autoimmune-disease",
+  "evaluated": "2026-11-06T15:51:20.333Z",
+  "policyRevision": "hkcarre/humanfirstai@403ed925d40cdd8d30bc90422bfaa51a521d91ce",
+  "dimensions": {
+    "brandAdherence": 58,
+    "factualIntegrity": 76,
+    "editorialQuality": 86,
+    "seoGeoReadiness": 72,
+    "audienceUsefulness": 66,
+    "publishingReadiness": 18
+  },
+  "weights": {
+    "brandAdherence": 0.25,
+    "factualIntegrity": 0.25,
+    "editorialQuality": 0.2,
+    "seoGeoReadiness": 0.15,
+    "audienceUsefulness": 0.1,
+    "publishingReadiness": 0.05
+  },
+  "weightedScore": 69,
+  "publicationGates": {
+    "passed": false,
+    "blockers": [
+      "FACTCHECK:CONTRADICTED_CLAIM",
+      "COMPLIANCE:CRITICAL",
+      "QA:REJECTED"
+    ],
+    "note": "A high weighted score cannot override a critical failure."
+  },
+  "finalArticleSha": "cedea2007f63",
+  "schemaErrors": [],
+  "brandViolationsSurvivingIntoFinal": [
+    {
+      "severity": "LOW",
+      "ruleId": "VC-004",
+      "passage": "It looks like \"Love the energy! Let's park this for Q3.\""
+    },
+    {
+      "severity": "MEDIUM",
+      "passage": "Yes, I chose the word on purpose, and no, it has no gender. Divas come in every gender, le"
+    }
+  ],
+  "deterministicGates": [
+    {
+      "id": "G1",
+      "name": "Voice and terminology",
+      "status": "pass",
+      "detail": "6/6 checks pass."
+    },
+    {
+      "id": "G2",
+      "name": "Numeric claims carry a source",
+      "status": "pass",
+      "detail": "5 paragraph(s) with figures, all sourced or hedged."
+    },
+    {
+      "id": "G3",
+      "name": "Prompt injection in submitted text",
+      "status": "pass",
+      "detail": "None found."
+    },
+    {
+      "id": "G4",
+      "name": "Publishing metadata complete",
+      "status": "pass",
+      "detail": "All required fields present."
+    },
+    {
+      "id": "G6",
+      "name": "Authorship preserved",
+      "status": "pass",
+      "detail": "First person 14→14, length +2%."
+    },
+    {
+      "id": "G5",
+      "name": "External links resolve",
+      "status": "pass",
+      "detail": "4 checked; 0 bot-blocked but live."
+    }
+  ],
+  "qaVerdict": "REJECT",
+  "unresolvedFindings": [
+    {
+      "issue": "CL-009 CRITICAL #1, UNRESOLVED AND NOT FIXABLE BY THE INTEGRATOR. 'Ours was Richard. Eleven years in. ... \"With respect, some of us have been doing this a long time.\" It was the most expensive sentence anyone said that year.' is unchanged in final_article.md (verified by diff). A named, identifiable colleague in a team the piece states is fourteen people, with exact tenure, a verbatim quote, the labels 'the Diva' / 'the loudest cell' / 'the fever', and an implied financial-loss attribution. No consent is on file anywhere in this run. CL-009 is mandatory and sits at the top of the policy precedence order. I am not counsel and make no legal determination.",
+      "repair": "DO NOT ROUTE THIS TO THE INTEGRATOR. Route to the author and then to counsel. Author must either (a) produce written consent to the name, the quotation and the characterisation, or (b) remove the first name, the 'Eleven years in' tenure and the verbatim quote and recast him as an explicitly labelled composite. Changing the name alone does not fix it: the tenure plus the fourteen-person meeting identifies him to anyone who was in the room. Separately, 'the most expensive sentence anyone said that year' must be substantiated or softened, but only as part of the whole passage, not as a standalone word change. The integrator's decision to leave the passage untouched was correct: de-identifying on the author's behalf would have rewritten a piece that presents itself as a true first-hand account."
+    },
+    {
+      "issue": "CL-009 CRITICAL #2, UNRESOLVED AND NOT FIXABLE BY THE INTEGRATOR. 'She started rehearsing meetings in the shower. She stopped asking questions, then stopped sleeping properly, then started wondering whether the problem was her.' and 'She told me later she'd drafted the resignation email twice.' are unchanged (verified by diff). Sleep loss, self-doubt and a near-resignation attributed to an identifiable colleague (two months into the job, team of fourteen) from a private disclosure, alongside bullying allegations against unnamed colleagues ('our little auditor', dropped from a kickoff, 'not quite a culture fit'). No consent recorded. The brand honesty rule in docs/02-voice.md is not jurisdictional: 'Never use someone's story to sell a technology. The story belongs to them.'",
+      "repair": "Route to the author. Obtain her written, informed consent to this specific text, covering both the wellbeing details and the exclusion allegations; or remove the health details and exclusion specifics; or recast as an openly labelled composite. If the passage is reworked, also move the 'She told me later' attribution up, as Editorial recommended (one phrase, no rewrite)."
+    },
+    {
+      "issue": "CL-009 HIGH, UNRESOLVED. 'Names and some details have been changed.' remains the last line of the article. Compliance judged it insufficient in substance (it does not de-identify), misplaced (it arrives after the reader has taken the whole piece as literal, including the Richard passage), and ambiguous (a reader cannot tell which details changed, or whether 'Richard' is real).",
+      "repair": "Author only. She must state which is true — real account with changed names, or composite — then a precise note goes at or before first use. The integrator was right to refuse: Compliance itself says 'the author must confirm which statement is true', and writing either version would have invented a fact about the article's provenance."
+    },
+    {
+      "issue": "AUTHENTICITY / FACTUAL INTEGRITY, UNRESOLVED. I independently confirmed that 'some of us have been doing this a long time' appears verbatim in the companion run 20261106-152245 ('The Most Dangerous Person in the Room', final_article.md line 40), spoken there by Graham at a different company. That run's SEO report also records the Diva/fever paragraph, the Great Corporate Unmasking paragraph and the Gallup sentence as word-for-word shared, and the two accounts give incompatible details (two months in, six-year process, four sign-offs, eleven days here; a 2019 wiki page, three departments, four days, an analyst named Dev there). This essay's entire authority rests on being first-hand. If both publish as true, a reader who sees both concludes one is invented.",
+      "repair": "Author decision affecting both runs: reconcile the accounts, or state once in each that they are composites, or move the shared quote and paragraphs out of one piece. Also settle sequencing and any first-publication/exclusivity terms with the target outlet before the companion goes live. The integrator flagged this correctly and was right not to silently edit either instance."
+    },
+    {
+      "issue": "ADDED SENTENCE NEEDS AUTHOR SIGN-OFF (not drift, not a hallucination). 'Bullying is the extreme case of the same reflex.' is a sentence the author did not write. I traced it: it is verbatim from editorial.json's own recommendation ('Make the link honest with a half-sentence such as \"Bullying is the extreme case of the same reflex.\"'). It asserts no checkable fact; it marks the WBI bullying figures as measuring an extreme of the essay's subject rather than the subject itself, which makes the paragraph more honest, not less. The author had already juxtaposed her story with the 32% figure, so the sentence names what she implied. Judgement: a necessary bridge, properly sourced to a specialist, correctly disclosed in the integration report, and legitimate editorial work — not the integrator arguing. It is still one interpretive sentence under a first-person byline.",
+      "repair": "Author approves the sentence as written or it comes out. No integrator action needed. If it comes out, the WBI figures need a different honest bridge, because without one the 32% and 62% read as measuring the expulsion of curious people, which they do not."
+    },
+    {
+      "issue": "MEANING NARROWING THE AUTHOR MUST CONFIRM. The author's 'Gallup's 2026 workplace report puts it plainly: the technology works, but the bottom-line gains aren't arriving at scale' became '...shows the gap. In US organizations using AI, 65% of workers report a personal productivity gain. Only 12% strongly agree it has changed how work gets done.' Both figures are in fact_check.json's retrieved evidence and the rewrite is almost verbatim the Fact Checker's recommended action. The replacement is a different and narrower proposition than the author's (US-only; measures whether work changed, not bottom-line gains). I did NOT classify this as meaning drift, because the original put a sentence in a named third party's mouth that the Fact Checker could not find in the source, and CL-010 plus the honesty rules require removing a misattribution. A human may disagree with that call; the reasoning is on the record here.",
+      "repair": "Author confirms she is content with the narrower, sourced claim, or writes her own version of the bottom-line point with her own retrieved source. Her surrounding argument ('they bought the tools and pointed them at processes nobody had questioned') is untouched and carries the paragraph either way."
+    },
+    {
+      "issue": "CL-008 (mandatory) STILL UNSATISFIED. 'In our case, it did in an afternoon what used to take us eleven days.' now scopes the performance claim, but CL-008 requires the limit — what the tool does not do — in the same breath, and no limit is stated. The integrator declined to add one because it would have had to invent a fact (for example that a person still checked the output). That reasoning is correct.",
+      "repair": "Author adds the limit in her own words, in the same sentence or the next one: what the prototype did not do, who still checked it, whether it ever went into production. One clause closes a mandatory rule."
+    },
+    {
+      "issue": "CL-003 (mandatory) UNRESOLVED DISAGREEMENT, NEEDS A BRAND-DIRECTOR RULING, NOT AN INTEGRATOR PASS. The four consecutive one-line paragraphs under 'The antibodies' are unchanged. CL-003's text is 'Paragraphs are 15-35 words — not a column of one-line paragraphs'. The Brand Guardian read that clause literally and asked for a merge (MEDIUM); the integrator sided with Editorial, which lists the run in 'preserved' as deliberate anaphora, and noted the deterministic companion check passes at 26.1 words a paragraph. On the literal rule text the Brand Guardian has the better reading; on the rule's evident purpose the integrator does. The integrator recorded it as a live disagreement rather than a cleared finding, which is the honest handling.",
+      "repair": "A brand director rules. If the ruling goes to the Brand Guardian, merge the four beats into one paragraph of 35 words or fewer while keeping the 'It looks like' run intact. Do not have the integrator decide this a second time."
+    },
+    {
+      "issue": "CL-027 (mandatory) UNRESOLVED, OWNED OUTSIDE THIS ARTICLE. brand/photography/credits.json marks the authorPhoto row clearedForPublication true while photographer and licence are both 'UNKNOWN — confirm' and dateTaken and location are null. docs/07-photography.md requires all six. The clearance is not supported by the record. No text change is available to the integrator.",
+      "repair": "Whoever owns credits.json completes photographer and licence (and date and location if known), or withdraws the cleared flag before release. Byline use only, as the row states."
+    },
+    {
+      "issue": "G5 WAS NEVER RUN, AND THE INTEGRATION VERDICT OVERCLAIMS. The integration report's verdict string says 'every deterministic gate passes'; it ran gates.mjs with --no-links, which skips G5 entirely. It did disclose the skip in toolsAndLimits, so this is an incomplete claim rather than a false one. I ran G5 myself: it FAILS, reporting one dead link — https://workplacebullying.org/2024-wbi-us-survey/ returns 406 to the gate's curl invocation. I then re-fetched that URL with browser headers and got 200, so the link is live and the gate failure is a checker artefact: linksGate in tools/editorial/gates.mjs whitelists only 401 and 403 as bot-blocking and treats 406 as dead. sloanreview.mit.edu returns 403 and is correctly reported as blocked-but-live. Both Gallup URLs return 200.",
+      "repair": "Two separate actions. (1) Article: none needed — all four external links are live. (2) Tooling, for the repo owner: add 406 (and consider 429) to the blocked set in linksGate, otherwise every run citing workplacebullying.org will fail G5 spuriously. And before any future run claims 'all gates pass', it must have run G5 or name the skipped gate in the verdict, not only in a limits footnote."
+    },
+    {
+      "issue": "CL-010 LOW, CITATION CAVEAT THE INTEGRATOR LINKED THROUGH. Three citations point at https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx. fact_check.json retrieved the $10 trillion, 27%-to-22% and 65%/12% figures from that URL but explicitly recorded that Gallup's slugs were inconsistent across searches, that the page did not clearly look canonical, that the 20% engagement figure came from a different slug (697904), and that 'a human should confirm the canonical Gallup URL and the reference year before linking'. The integrator linked it anyway. The figures are verified; the URL is not confirmed canonical and the $10 trillion reference year (2024 vs 2025) is still unresolved.",
+      "repair": "Fact desk confirms the canonical Gallup State of the Global Workplace URL and the $10 trillion reference year, then updates the three links. No figure changes."
+    },
+    {
+      "issue": "ADVISORY, FOUR SPECIALISTS CONCUR, NO RULE GOVERNS IT. The subtitle 'AI is about to make it fatal' is unchanged. Brand Guardian (MEDIUM), Audience (HIGH), Editorial (LOW) and SEO/GEO all object: the body never shows a company dying, and 'I can't prove that any single Diva tanked any single share price' undercuts it. I confirmed the integrator's rule analysis: no rule in policy_snapshot.json governs a subtitle, and the Audience agent's citation of CL-007 is wrong — CL-007 is 'AI described by what it helps someone do, never as a mind or as magic' and does not reach a forecast about cost. The integrator refusing to apply CL-007 here is correct rule discipline, not evasion.",
+      "repair": "Author's call, with all four reports and the alternative already on record ('AI is about to make it expensive'). Advisory only. Do not treat this as a compliance item and do not let an integrator rewrite an author's headline on advisory grounds."
+    },
+    {
+      "issue": "ADVISORY, THE TWO REAL READER GAPS REMAIN. A reader who recognises themselves as the Diva is offered no route back, and an excluded reader whose manager is part of the problem is offered no step they can take alone. Audience and Brand Guardian both raised these; the integrator declined both because writing them means writing new argument in the author's voice, and because naming a support resource would mean naming an organisation nobody verified. Both refusals are right.",
+      "repair": "Passed to the author as the single highest-value addition she could make. No integrator action. If she adds a support resource, she sources it herself."
+    },
+    {
+      "passage": "Ours was Richard. Eleven years in. When the new hire asked her question, Richard leaned back and said, \"With respect, some of us have been doing this a long time.\" It was the most expensive sentence anyone said that year.",
+      "severity": "CRITICAL",
+      "ruleId": "CL-009",
+      "explanation": "A first-hand account of a real workplace gives a first name, a tenure, a role label (the Diva), a verbatim quotation and a damaging characterisation. The team is described as fourteen people, so colleagues and probably clients can identify him from the first name, eleven years of service and the meeting. 'The most expensive sentence anyone said that year' implies he caused measurable financial loss. The author does not support that, and says elsewhere that she cannot prove any single Diva tanked any single share price. Labelling him the Diva, the loudest cell and the fever adds ridicule. This is defamation and harassment-adjacent risk for a human to judge. I am not counsel and make no legal determination. CL-009 requires consent on file for any person named, and nothing in the run shows it. The piece claims to be true, so a 'it was only illustrative' position is not available.",
+      "recommendation": "Do not publish this passage as written. Either record Richard's written consent to the name, quotation and characterisation, or remove the name, tenure and verbatim quote and recast him as an explicitly labelled composite or a generic type. Cut or soften 'the most expensive sentence' unless the author can substantiate a cost. A person with legal competence should review the final wording."
+    },
+    {
+      "passage": "She started rehearsing meetings in the shower. She stopped asking questions, then stopped sleeping properly, then started wondering whether the problem was her. ... She nearly left. She told me later she'd drafted the resignation email twice.",
+      "severity": "CRITICAL",
+      "ruleId": "CL-009",
+      "explanation": "This attributes sleep disturbance, self-doubt and a near-resignation to a real, identifiable colleague (the new hire, two months in, in a team of fourteen), on the strength of a private conversation ('She told me later'). Information about an identifiable person's wellbeing is sensitive personal data in many jurisdictions (for example GDPR special-category and employment-context considerations). That is a risk flag for a human, not legal advice. The same section alleges she was socially excluded, nicknamed 'our little auditor', dropped from a kickoff and described as 'not quite a culture fit', which are bullying allegations against unnamed colleagues. No consent from her is recorded. Brand honesty rule: 'Never use someone's story to sell a technology. The story belongs to them.' Her private disclosures need her consent to be published.",
+      "recommendation": "Obtain her written, informed consent to the specific text, covering both the wellbeing details and the exclusion allegations. Otherwise remove the health-related details (sleep, self-doubt, resignation draft) and the exclusion specifics, or recast the account as an openly labelled composite. The author should also confirm the account is accurate."
+    },
+    {
+      "passage": "Names and some details have been changed.",
+      "severity": "HIGH",
+      "ruleId": "CL-009",
+      "explanation": "The note is not sufficient and is in the wrong place. Position: it is the last line, after the reader has taken the whole piece as literal, and after the Richard passage. A note belongs at or before first use. Substance: changing a name does not de-identify someone whose colleagues were in the room, and the retained detail (eleven years, fourteen people, a six-year four-sign-off process, the folder name, last spring) identifies the setting. Ambiguity: 'some details' does not say which. A reader cannot tell whether Richard is a real or invented name, and if the account is altered or composite, the first-hand framing ('I watched', 'She told me later') may overstate what happened, which is a misleading-statement risk in itself. A disclaimer is not a substitute for consent and does not cure the CRITICAL findings.",
+      "recommendation": "Move a precise note to the opening, for example stating that the account is a composite, or that names, roles and identifying details have been changed. The author must confirm which statement is true. Alter or remove identifying specifics rather than relying on a footer. A human should decide the final wording."
+    },
+    {
+      "passage": "In a 2024 US survey, 32% of adults said they had been bullied at work and another 14% had witnessed it. Targets face a 62% chance of losing their job.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Intake gate G2 flagged this paragraph: no source, no link, no hedge, and the survey is not named. The second sentence presents '62% chance of losing their job' as a forecast for an individual, which may misstate what a survey measured (for example a share of respondents). The submission brief says the author herself flagged these figures as unverified or unsourced. CL-010 is mandatory. I have not checked the figures against any source and do not say they are wrong.",
+      "recommendation": "Name the survey and publisher, link it, and reword to match what was measured. Otherwise remove the figures. Do not publish figures the author knows are unverified."
+    },
+    {
+      "passage": "In MIT Sloan's analysis of employee reviews, toxic culture predicted attrition 10.4 times more strongly than compensation.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Intake G2 flagged this as unsourced. A precise multiplier attributed to a named institution without a citation creates a misattribution risk against MIT Sloan. I did not verify it. The Fact Checker owns accuracy.",
+      "recommendation": "Cite the specific study with a link, using its own wording of the finding, or cut the sentence."
+    },
+    {
+      "passage": "The boss gave the textbook answer: \"It's how we ensure quality.\" ... Her manager pulled her aside and said: \"Keep asking. I'll take the heat.\"",
+      "severity": "HIGH",
+      "ruleId": "CL-009",
+      "explanation": "Two more verbatim quotations are attributed to real, identifiable people. The boss quote is mildly unflattering. The manager quote comes from a private conversation the author could only know second-hand ('pulled her aside'). Neither has consent recorded. The author also describes her employer's internal processes, AI tool rollout and results (a six-year approval workflow, an eleven-days-to-an-afternoon prototype), which may be confidential depending on her employment terms. I cannot tell from the files.",
+      "recommendation": "Confirm consent from both people, or paraphrase without quotation marks. Ask the author to confirm she has her employer's permission to describe the processes and results, or generalise them."
+    },
+    {
+      "passage": "Ours was Richard. ... \"With respect, some of us have been doing this a long time.\" (and the boss and manager quotations, in running prose)",
+      "severity": "HIGH",
+      "ruleId": "CL-047",
+      "explanation": "CL-047 says anyone else's words go in a testimony block, not prose, because the synthetic narration voice may read our own prose and may never read a named person's testimony. Richard's quote is attributed to a named person and sits in body prose. If the piece is narrated, the synthetic voice would read it. I could not tell from the run whether narration is planned.",
+      "recommendation": "If any third-party quote stays, put it in a testimony block so it is excluded from narration. Better, remove the named quote (see the CRITICAL finding). If the piece will be narrated, a human must confirm no third-party words are voiced."
+    }
+  ],
+  "status": "NEEDS_REVIEW"
+}
