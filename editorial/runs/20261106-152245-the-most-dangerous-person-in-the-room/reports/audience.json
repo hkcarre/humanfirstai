@@ -1,0 +1,145 @@
+{
+  "agent": "audience",
+  "score": 60,
+  "findings": [
+    {
+      "passage": "Lines 36-38 and 56: 'Graham has opinions on everything...' and 'Every organization has a Graham... the Diva is the fever: hot, loud and absolutely convinced it's helping.' Reader: a leader who is someone's Graham.",
+      "severity": "HIGH",
+      "explanation": "This is where a Graham-type reader is most likely to stop reading or start defending themselves. Graham is described only as a behaviour and a diagnosis, never as a person whose certainty protected something. The one line that gives him an inner life (line 132) sits in the VP's head at 7:15 p.m. and is speculation. The only sentence aimed at him ('Be patient with him', line 170) is addressed to bystanders and gives him no step to take. The reader who recognises himself gets a verdict and no way back, apart from the question at line 172, which arrives after the verdict has already landed.",
+      "ruleId": "CL-001",
+      "recommendation": "Advisory: give the Graham-type reader one concrete, low-shame step in their own register, for example asking one question they cannot answer themselves this week. Keep the 'fever' verdict only if the piece also says what certainty was protecting. CL-001 asks for a patient teacher; the current tone of lines 56 and 134 reads more like a columnist mocking a type.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md (Voice); docs/02-voice.md (Who is speaking)"
+    },
+    {
+      "passage": "Lines 140-144: 'Maya can't sleep... She drafts a message to her manager: Sorry if I overstepped today. She doesn't send it. Tomorrow, she'll ask another question.' Reader: someone who IS Maya, at 11 p.m.",
+      "severity": "HIGH",
+      "explanation": "This passage names the pain well and is the strongest emotional moment for her. It does not help with the question she is actually asking, which is 'am I the problem?'. The piece answers by fiat: Maya is right and Graham is the infection (lines 84-86). A reader whose situation is less clean gets no test of whether their question was well timed, and no way to tell a bad day from a real pattern. The only plan offered, 'ask another question', works only if the manager is on her side. The article has just raised a 62% job-loss figure (line 160) with no route for the fear it creates.",
+      "recommendation": "Advisory: add a short passage that gives Maya a self-check and a route that does not depend on a supportive manager. Examples: write down dated facts about what was said and by whom; talk to one trusted person; if there is a pattern, use HR or an ombuds. Say plainly that asking a fair question is not overstepping, which the narrative implies but never states to the reader."
+    },
+    {
+      "passage": "Lines 92-94: 'Her manager does the most important thing a manager can do in this decade... One sentence. That's all it takes to stop an immune response.'",
+      "severity": "HIGH",
+      "explanation": "This is the piece's one usable behaviour, wrapped in an absolute claim that one sentence reliably stops organisational bullying. A Maya-reader whose manager does not respond this way may conclude they failed, or that the article is wrong about their workplace. A leader reader will read it as a promise they can test and find false. The superlative 'the most important thing... in this decade' also breaks the brand's quietly confident principle.",
+      "sourceRef": "docs/02-voice.md (Four principles, point 3: no superlatives; Honesty rules: never overclaim)",
+      "recommendation": "Advisory: keep the move ('Tell me more', 'I'll handle Graham') and cut 'That's all it takes' and 'in this decade'. Describe what the scene shows, not what it guarantees."
+    },
+    {
+      "passage": "Lines 50-54 and 92: the 'Quick sync re: process questions' invite, 'we tried changing the report in 2017', and 'Ignore the sync invite. I'll handle Graham.' None of these is resolved.",
+      "severity": "HIGH",
+      "explanation": "Open loop. The manager promises to handle Graham and the piece never returns to whether she did. The HR-copied invite and the 2017 remark also stay unanswered. Maya's central fear, that she will be isolated for asking, is never resolved, and a leader reader does not learn what 'handling it' looks like in practice. The reader is left holding the question at the 11:47 p.m. section.",
+      "recommendation": "Advisory: add a short paragraph that shows what handling looked like, or say explicitly that the scene is a composite illustration and not a report of an outcome (see the trust finding below)."
+    },
+    {
+      "passage": "Lines 166-172: 'Find your Maya. Protect her.' 'Find your Graham. Be patient with him.' Reader: the leader deciding what to do on Monday.",
+      "severity": "HIGH",
+      "explanation": "The closing gives two verbs, 'protect' and 'be patient', with no mechanism. The only mechanism in the piece is the manager's move at line 92, and the closing does not point back to it. A leader who wants to act has to dig it out of the middle of the article. This is the main gap for a leader who wants a way forward rather than a verdict.",
+      "recommendation": "Advisory: move the copyable behaviour into the closing, for example: 'Ask, then say tell me more. Stand between the person and the pressure, and say so out loud.' Let the reader see that the behaviour is the protection."
+    },
+    {
+      "passage": "Line 174: 'What's the why question that got you uninvited from a meeting? Tell me below.'",
+      "severity": "HIGH",
+      "explanation": "This invites readers to publicly describe, on LinkedIn, the question that got them excluded at work. The article has just described people being isolated and watched, and Maya herself opens LinkedIn 'just in case' (line 70). A Maya-reader who replies publicly exposes their employer and perhaps themselves. The brand asks that job and privacy fears be taken seriously, and this CTA works against that. The better closing question for the leader is already at line 172.",
+      "sourceRef": "docs/02-voice.md (Do and don't: Take job and privacy fears seriously)",
+      "recommendation": "Advisory: replace the public call with a non-public option, or drop it and end on line 172, which speaks to the leader directly."
+    },
+    {
+      "passage": "Lines 98-102: 'They feed it the raw data and the napkin. By 4:20 they have a rough version... The AI did the work in minutes.' The VP then takes it as the answer.",
+      "severity": "HIGH",
+      "explanation": "The AI's output goes to leadership with no mention that it was checked, or that a tool of this kind can be wrong. A leader reader will copy the scene, and the piece gives them no limit on the tool's output. The brand's honesty rules say a tool is often useful and sometimes confidently wrong, and the piece never says so in the very scene where a tool is trusted with a report.",
+      "ruleId": "CL-008",
+      "sourceRef": "skill/human-first-ai-brand/references/voice.md (Honesty rules: never say a tool is accurate; say it is often useful and sometimes confidently wrong)",
+      "recommendation": "State what checking happened, but only if that is what happened in the real account. If it was not checked, the scene should say so, because a reader will assume it was."
+    },
+    {
+      "passage": "Line 100: 'It's also four days faster and roughly forty times more readable.'",
+      "severity": "HIGH",
+      "explanation": "The piece's proof point for AI is an unsourced multiplier. 'Roughly' is not the brand's word for an estimate, which is 'about', and 'forty times more readable' has no stated method. The deterministic check counted the paragraph-level figures but did not flag this line. A leader reader will repeat it as evidence.",
+      "ruleId": "CL-010",
+      "recommendation": "Remove the multiplier and describe what changed in plain terms (for example, the five numbers on one page). If a measurement exists, cite it and say 'about'."
+    },
+    {
+      "passage": "Lines 158-164, 'The bill': 'Nearly half of American adults... a 62% chance of losing their job.' 'In MIT Sloan's analysis... 10.4 times more strongly than pay.' 'Global engagement fell to 20%... about $10 trillion.' 'manager engagement dropped from 27% to 22%.'",
+      "severity": "HIGH",
+      "explanation": "This block is where a leader reader is most likely to stop and check, and nothing in the piece lets them. None of the figures has a source link. 'Nearly half of American adults' is US-only on a global channel, and the piece never states that scope as a limit. '10.4 times more strongly' is unexplained, and a non-specialist cannot tell what it measures. The 62% line is the one a Maya-reader will feel most, and it arrives with no way to check it or act on it. The deterministic check flagged these paragraphs as needing verification; from a reader's view, the trust cost lands here.",
+      "ruleId": "CL-010",
+      "recommendation": "Source each figure with a link and a date, or cut it. Use 'about' for estimates. Say in plain words what the 10.4 measures. State the US scope in the same sentence as the number."
+    },
+    {
+      "passage": "Whole piece, especially the named people: Maya, Dev, Graham, the VP and his five-year-old daughter (lines 20-136).",
+      "severity": "HIGH",
+      "explanation": "The reader cannot tell from the text whether these people are real, composites, or fiction. The voice is a first-person essayist's ('I call them Divas', 'I wrote'), the times are specific, and the details (oat milk, a daughter, fourteen years of tenure) read as observed. A leader who recognises themselves in Graham may assume the author is naming a real colleague, and a reader in Dev's position will wonder what he agreed to. The piece never says which. This file cannot show whether consent is on file, so this finding is about reader trust, not a verdict on consent.",
+      "ruleId": "CL-009",
+      "recommendation": "State the status in one line: composite, fiction, or real with consent on file. If the people are composites, say so, because readers who see themselves will otherwise assume they are being named."
+    },
+    {
+      "passage": "Lines 48, 56, 82-86 and 94: 'The immune system wakes up.' 'the culture is the immune system, the Diva is the fever.' 'The organization is reacting to Maya the way a body reacts to something foreign.' 'She looks like an infection.' 'It's autoimmune disease.'",
+      "severity": "MEDIUM",
+      "explanation": "The metaphor changes who is the disease. At line 56 Graham is the fever, a symptom. At line 84 Maya is the infection. At line 86 she is healthy tissue that the immune system attacks. A reader who has not studied immunology must hold three mappings and resolve them without help. 'Autoimmune disease' is not explained in plain words. The clinical frame may also make Maya's experience sound like a condition to be treated rather than conduct to be named, which a Maya-reader may find cold.",
+      "recommendation": "Advisory: choose one mapping and keep it. Define autoimmune in one clause, for example 'when the body attacks its own healthy cells'. Consider whether the medical frame serves the reader or distances them from what happened."
+    },
+    {
+      "passage": "Lines 152-156: 'AI changed the economics... That quietly bankrupts the Diva... Gallup's 2026 workplace report makes the same point... Answers are a commodity now. Questions are the moat.'",
+      "severity": "MEDIUM",
+      "explanation": "The core 'why now' thesis for leaders is asserted as economic fact, with a Gallup reference and no link. A leader who wants to take the argument to a board has nothing to cite. 'Moat' is business jargon that a second-language or non-finance reader must decode, and 'bankrupts the Diva' is a claim about incentives presented as established.",
+      "ruleId": "CL-010",
+      "recommendation": "Advisory: link the Gallup report and state what it says in one sentence. Label the 'Diva loses currency' argument as the author's reading, not a finding. Replace 'moat' with a plainer phrase such as 'what makes you hard to replace'."
+    },
+    {
+      "passage": "Line 154: 'aren't arriving at scale'.",
+      "severity": "MEDIUM",
+      "explanation": "'At scale' is on the banned list in the author's own voice. The deterministic check counted one banned term; this is the one I can locate in the author's voice. It is also a phrase a second-language reader must decode.",
+      "ruleId": "VC-001",
+      "recommendation": "Replace with a plain phrase, for example 'across whole organisations'."
+    },
+    {
+      "passage": "Throughout the middle of the piece: one-line paragraphs such as 'Silence.' (line 34), 'Maya raises her hand.' (line 30), 'Maya can't sleep.' (line 140), and the run at lines 166-172.",
+      "severity": "MEDIUM",
+      "explanation": "Much of the piece is built from one-line paragraphs. The G1 average of 21.4 words a paragraph hides this. The brand's voice guide says a column of single lines makes every sentence shout at the same volume, so a reader cannot see where an idea starts and stops. For a second-language reader, this rhythm makes the timeline harder to follow. The closing run of one-liners works as a deliberate punch, but the middle of the piece does not need it.",
+      "ruleId": "CL-003",
+      "recommendation": "Join short sentences into three- or four-sentence paragraphs, keeping one-liners for the closing and for the 'Silence' moment."
+    },
+    {
+      "passage": "Line 116 ('a rounding error'), line 74 ('on the case'), line 162 ('running on empty'), line 164 ('turn the ship around... throw the people... overboard'), and the subtitle 'Nobody told the org chart.'",
+      "severity": "MEDIUM",
+      "explanation": "The piece leans on idioms and business shorthand. Line 164 stacks three of them into the article's verdict on companies, which is hard for a second-language reader to parse. 'Org chart' in the subtitle is the hook, and a reader who does not know the term has to decode the thesis before the first paragraph. The twelve-year-old test is a mandatory rule, and these lines fail it for a reader outside the business idiom.",
+      "ruleId": "CL-002",
+      "recommendation": "Advisory: replace the stacked idiom at line 164 with one plain sentence, and swap 'rounding error' for 'almost nothing'. Keep 'org chart' only if the first paragraph explains it in the same sentence."
+    },
+    {
+      "passage": "Line 102: 'The question took a new hire, two months and a napkin.'",
+      "severity": "LOW",
+      "explanation": "'New hire' and 'two months' appear for the first time here. The day's timeline has no two months, and Maya's tenure is never stated before this line. A reader will look back for the basis of the figure and not find it, which undercuts a line the piece wants them to remember.",
+      "recommendation": "Advisory: state Maya's tenure where she is introduced, or cut 'two months' if it is not from the real account."
+    },
+    {
+      "passage": "Lines 36 and 106: 'Graham has never, in recorded history, said the words I don't know.' and 'for the first time in recorded history, smiling.'",
+      "severity": "LOW",
+      "explanation": "Hyperbole used as a comic device. It works for a leader who reads it as wit, but it sits uneasily with the brand's quietly confident principle, and a reader who has met someone like Graham may find it mocking rather than funny."
+    },
+    {
+      "passage": "Line 56: 'I call them Divas, and they come in every gender, every level, every department.'",
+      "severity": "LOW",
+      "explanation": "'Diva' is a gendered word, and the piece says it applies to every gender without explaining why the word was chosen. A second-language reader may take 'diva' to mean a performer or a difficult woman. The label then does work the description should do."
+    },
+    {
+      "passage": "Line 134: 'In The Great Corporate Unmasking, I wrote about the masks we wear at work.'",
+      "severity": "LOW",
+      "explanation": "The mask idea is imported from another piece with no link. A reader who has not read it has to take 'the Diva's mask is certainty' on trust."
+    },
+    {
+      "passage": "Line 54: 'Love the fresh eyes!' (inside Graham's quoted speech).",
+      "severity": "LOW",
+      "explanation": "The deterministic check flagged this exclamation mark. It sits inside Graham's quotation, so it reads as his voice rather than the author's, though the rule on exclamation marks is written for the author's own voice. The editorial agent should decide whether to keep it. This note does not contradict the check."
+    },
+    {
+      "passage": "Lines 26-42 ('Who reads this report?' and 'Silence.'), line 136 ('I don't know... Let's find out.'), and lines 140-144 ('Tomorrow, she'll ask another question.').",
+      "severity": "LOW",
+      "explanation": "Keep these. The opening question is concrete and relatable for both readers. The VP's 'I don't know' is the piece's best line for a leader reader, because it shows the admission without humiliation. The closing line of the 11 p.m. section gives Maya agency. Changes elsewhere should not dilute them."
+    },
+    {
+      "passage": "Lines 26-28: the setting is a salaried office with an enterprise AI licence that 'everyone has'.",
+      "severity": "LOW",
+      "explanation": "The metadata names the audience as business leaders and the curious people they manage, so the piece is on-brief for its channel. It does not speak to the people the movement mostly serves, who have been locked out of the technology. That is a fit question for the editor, not a defect in the piece as written."
+    }
+  ]
+}

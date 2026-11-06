@@ -1,0 +1,153 @@
+{
+  "file": "editorial/inbox/most-dangerous-person-a.md",
+  "ran": "2026-11-06T15:22:46.154Z",
+  "status": "fail",
+  "blockers": [
+    "G1"
+  ],
+  "checks": [
+    {
+      "id": "G1",
+      "name": "Voice and terminology",
+      "rule": "VC-001..004, CL Voice",
+      "status": "fail",
+      "detail": "3/6 checks pass.",
+      "guest": false,
+      "rows": [
+        {
+          "check": "paragraph shape",
+          "status": "pass",
+          "detail": "21.4 words a paragraph  (target 15-35)"
+        },
+        {
+          "check": "sentence length",
+          "status": "pass",
+          "detail": "8.9 words a sentence  (target under 22)"
+        },
+        {
+          "check": "long sentences",
+          "status": "fail",
+          "detail": "4 over 25 words"
+        },
+        {
+          "check": "exclamation marks",
+          "status": "fail",
+          "detail": "1 found — we do not use them"
+        },
+        {
+          "check": "banned terms",
+          "status": "fail",
+          "detail": "1 found"
+        },
+        {
+          "check": "intensifiers",
+          "status": "pass",
+          "detail": "none"
+        }
+      ],
+      "exitCode": 1
+    },
+    {
+      "id": "G2",
+      "name": "Numeric claims carry a source",
+      "rule": "CL Voice — \"Any number stated has a source. If estimated, it says about.\"",
+      "status": "warn",
+      "detail": "4 paragraph(s) state a figure with no source link and no hedge. The Fact Checker must resolve each.",
+      "claims": [
+        {
+          "line": 20,
+          "figures": [
+            "2019"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "Maya arrives early. Not to impress anyone. She just wants to read the onboarding wiki before the coffee runs out. She finds a page, last updated in 2019, explaining how the monthly report works. She reads it twice. It st"
+        },
+        {
+          "line": 54,
+          "figures": [
+            "2017"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "Graham stops by her desk, smiling. \"Love the fresh eyes! But we tried changing the report in 2017. Didn't stick.\" He leaves before she can ask why."
+        },
+        {
+          "line": 116,
+          "figures": [
+            "100%"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "Then he pulls up the AI rollout dashboard. Licences: 100% deployed. Measurable impact: a rounding error. He'd blamed the tool."
+        },
+        {
+          "line": 154,
+          "figures": [
+            "2026"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "Hand AI to a culture that punishes \"why\" and you get the same broken process, just faster. That's why so many companies have rolled out the tools and are still waiting for the returns. Gallup's 2026 workplace report make"
+        },
+        {
+          "line": 160,
+          "figures": [
+            "62%"
+          ],
+          "hasSourceLink": false,
+          "hedged": true,
+          "needsVerification": true,
+          "text": "For the person on the receiving end, the immune response is not invisible. Nearly half of American adults have been bullied at work or watched it happen, and those targeted face a 62% chance of losing their job."
+        },
+        {
+          "line": 162,
+          "figures": [
+            "10.4",
+            "20%",
+            "2025",
+            "27%",
+            "22%"
+          ],
+          "hasSourceLink": false,
+          "hedged": true,
+          "needsVerification": true,
+          "text": "Companies pay too. In MIT Sloan's analysis of employee reviews, toxic culture predicted attrition 10.4 times more strongly than pay. Global engagement fell to 20% in 2025, a loss Gallup puts at about $10 trillion. And th"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Prompt injection in submitted text",
+      "rule": "Spec §10 — defend against prompt injection",
+      "status": "pass",
+      "detail": "None found.",
+      "hits": []
+    },
+    {
+      "id": "G4",
+      "name": "Publishing metadata complete",
+      "rule": "site builder contract",
+      "status": "pass",
+      "detail": "All required fields present.",
+      "missing": [],
+      "notes": [],
+      "frontmatter": {
+        "title": "The Most Dangerous Person in the Room",
+        "subtitle": "AI made answers free. Nobody told the org chart.",
+        "kicker": "Leadership",
+        "date": "2026-11-06",
+        "readingTime": "9",
+        "theme": "cream",
+        "author": "Helena Carre",
+        "authorPhoto": "people/helena-carre.jpg",
+        "channel": "LinkedIn and Substack",
+        "tags": "[Artificial Intelligence, AI Leadership, Corporate Culture, Future Of Work, Leadership]"
+      }
+    }
+  ]
+}
