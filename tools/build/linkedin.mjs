@@ -27,6 +27,10 @@ import { renderPng } from '../lib/type.mjs';
 // ---------------------------------------------------------------------------
 
 const OUT = '../brand/templates/linkedin';
+// Guides live in their own folder. Sitting beside the real files under a
+// near-identical name, one got uploaded to a live group and published a red
+// 'LinkedIn covers this' box to the world. Nothing in OUT is a debug asset.
+const GUIDE_DIR = `${OUT}/safe-zone-guides-do-not-upload`;
 mkdirSync(OUT, { recursive: true });
 const GUIDES = process.argv.includes('--guides');
 
@@ -34,6 +38,12 @@ const GUIDES = process.argv.includes('--guides');
 const OVERLAY = {
   personal: { w: 1584, h: 396, cx: 196, cy: 396, r: 158 },   // profile photo circle
   page: { w: 1128, h: 191, x: 48, y: 96, w2: 168, h2: 168 }, // page logo square
+  // A LinkedIn GROUP is not a page and does not take the page cover size.
+  // Published guidance disagrees with itself — 1776x444 and 1536x768 both get
+  // quoted. Measured from a live group instead: a 1128x191 upload (5.9:1) came
+  // back letterboxed top and bottom, and the slot reads about 4:1, which is
+  // 1776x444 and not the 2:1 of 1536x768.
+  group: { w: 1776, h: 444, x: 58, y: 255, w2: 386, h2: 189 },
 };
 
 const colonnade = (w, h, t, n = 9) => {
@@ -77,6 +87,24 @@ function page({ theme = 'ink', line = 'AI for everyone. Opportunity for all.' } 
     `${BRAND.name} — LinkedIn page cover`);
 }
 
+/** Group cover. Taller than a page cover, so the lockup fits beside the group
+ *  logo rather than having to go under it. */
+function group({ theme = 'ink', line = BRAND.promise } = {}) {
+  const w = 1776, h = 444, t = THEMES[theme];
+  const o = OVERLAY.group;
+  const left = o.x + o.w2 + 86;
+  const right = w - 110;
+  const markH = 112;
+  const m = mark('horizontal', WAYS[t.way], { x: left, y: 118, h: markH });
+  const l = para([line], { x: left, y: 118 + markH + 40, maxW: right - left, size: 42, weight: 500, fill: t.muted });
+  const rule = 12;
+  return doc(w, h,
+    `  <rect width="${w}" height="${h}" fill="${t.bg}"/>\n  ${colonnade(w, h, t, 11)}
+  <rect x="0" y="${h - rule}" width="${w}" height="${rule}" fill="${C.sunrise}"/>
+  ${m.svg}\n  ${l.svg}`,
+    `${BRAND.name} — LinkedIn group cover`);
+}
+
 /** The 300x300 page logo. Square, generous padding, symbol only — the name is
  *  right beside it in the LinkedIn interface, so repeating it wastes the space
  *  and shrinks the door. */
@@ -105,8 +133,9 @@ const save = async (name, svg, kind) => {
   await renderPng(sharp, svg, null, `${OUT}/${name}.png`);
   if (GUIDES && kind) {
     const g = withGuides(svg, kind);
-    writeFileSync(`${OUT}/_guide-${name}.svg`, g);
-    await renderPng(sharp, g, null, `${OUT}/_guide-${name}.png`);
+    mkdirSync(GUIDE_DIR, { recursive: true });
+    writeFileSync(`${GUIDE_DIR}/${name}.svg`, g);
+    await renderPng(sharp, g, null, `${GUIDE_DIR}/${name}.png`);
   }
   console.log(`  ${name}`);
 };
@@ -115,6 +144,8 @@ console.log('linkedin: building with overlay safe zones');
 await save('banner-personal-1584x396', personal(), 'personal');
 await save('banner-personal-1584x396-cream', personal({ theme: 'cream' }), 'personal');
 await save('banner-page-1128x191', page(), 'page');
+await save('banner-group-1776x444', group(), 'group');
+await save('banner-group-1776x444-cream', group({ theme: 'cream' }), 'group');
 await save('page-logo-300x300', pageLogo(), null);
 await save('page-logo-300x300-cream', pageLogo({ theme: 'cream' }), null);
 console.log(`linkedin: -> ${OUT}${GUIDES ? ' (with safe-zone guides)' : ''}`);

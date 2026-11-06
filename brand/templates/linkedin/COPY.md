@@ -78,6 +78,82 @@ plain-language technology · public libraries · adult learning · open educatio
 
 ---
 
+## Group
+
+A LinkedIn **group** is not a page. Different cover size, and it has a description and
+rules instead of an About section.
+
+### Group name — 100 characters max
+
+```
+Human First AI
+```
+<sub>14 / 100.</sub>
+
+### Description — 2,000 characters max
+
+```
+A place for the people running free, plain-language AI workshops, and for anyone who wants
+to start one.
+
+Human First AI is a volunteer movement. We run free two-hour hands-on sessions in libraries,
+market halls, community centres and farm cooperatives. Local volunteers teach them, in local
+languages, on tablets we bring. No fee, no account, no upsell.
+
+This group is for the practical side of that. What worked in the room and what did not.
+Teaching material you can pick up and use on Saturday. Questions from first-time organisers.
+Honest accounts of sessions that went badly, which are more useful than the ones that went
+well.
+
+Everything we make is published openly, so you never need permission to use it.
+
+You are welcome here whether you have run forty sessions or none.
+
+AI for everyone. Opportunity for all.
+```
+<sub>716 / 2,000.</sub>
+
+### Group rules
+
+Short, and each one says why. Rules without reasons get argued with.
+
+```
+1. Plain language, always.
+   Assume a reader who is new to this and reading in a second language. No jargon without
+   an explanation beside it.
+
+2. No selling.
+   No products, no courses, no recruitment, no consulting pitches. Nothing we make has a
+   price and nothing posted here should either.
+
+3. Say what did not work.
+   A session that went badly teaches more than one that went well. Those posts are the
+   most valuable thing in this group.
+
+4. Numbers need a source.
+   If you quote a figure, link where it came from. If it is an estimate, say "about".
+
+5. No photographs of people without their consent.
+   Especially learners. Ask first, every time, and say who took the picture.
+
+6. Disagree with the idea, not the person.
+   People here teach for free on their weekends. Treat them accordingly.
+
+7. No AI hype and no AI doom.
+   Both lose the people we exist for. Describe what the tool did, and what it did not do.
+```
+
+### Group fields
+
+| Field | Value |
+|---|---|
+| Name | `Human First AI` |
+| Cover | `banner-group-1776x444.png` |
+| Logo | `page-logo-300x300.png` |
+| Type | Public, if you want people to find it without asking |
+
+---
+
 ## Vision and mission
 
 Short enough to say out loud, which is the test.
@@ -166,6 +242,18 @@ LinkedIn covers part of every banner you upload. These files already account for
 |---|---|---|
 | Personal 1584×396 | profile photo, a circle about 300px across | lower left |
 | Page 1128×191 | the 300×300 page logo | lower left |
+| Group 1776×444 | the group logo square | lower left |
+
+**A group is not a page.** Published guidance disagrees with itself here — 1776×444 and
+1536×768 both get quoted. Measured from a live group instead. A 1128×191 page cover uploaded to a
+group comes back letterboxed with grey bands top and bottom, and the slot reads about 4:1.
+That is 1776×444, not the 2:1 of 1536×768.
+
+> **Never upload anything from `safe-zone-guides-do-not-upload/`.** Those files have a red
+> box drawn on them showing what LinkedIn covers. One of them reached a live group and
+> published "LinkedIn covers this" to everyone who visited. They used to sit beside the real
+> files under a near-identical name, which is why that happened; they are now in their own
+> folder with a name you cannot paste by accident.
 
 The generic banners elsewhere in this repository put the lockup in that corner, so the mark
 would have been half-hidden. Use the files in this folder for LinkedIn.
