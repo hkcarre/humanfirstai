@@ -90,12 +90,19 @@ const paras = prose.split(/\n\s*\n/)
   .filter(p => p && !/^(#|>|-|\d+\.|\||!\[)/.test(p));        // ![img] is not prose
 const body = paras.join(' ');
 const words = body.split(/\s+/).filter(Boolean);
-const sentences = body.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 1);
+// Allow a closing quote after the terminal punctuation. Without it, every line
+// of dialogue welds to the sentence after it: `said "I don't know." "With
+// respect," he says` counted as one 33-word sentence. Two narrative articles
+// were each flagged for four or five over-long sentences that did not exist.
+const sentences = body.split(/(?<=[.!?]["'’”»]?)\s+/).filter(s => s.trim().length > 1);
 const wordsPerPara = words.length / (paras.length || 1);
 const wordsPerSent = words.length / (sentences.length || 1);
 const longSentences = sentences.filter(s => s.split(/\s+/).length > T.long);
 // Images are written ![alt](src) — that exclamation mark is syntax, not tone.
-const bangs = (text.replace(/!\[[^\]]*\]\([^)]*\)/g, '').match(/!/g) || []).length;
+// And the rule is "no exclamation marks IN OUR OWN VOICE": a character saying
+// "Love the fresh eyes!" is characterisation, not us shouting. Quoted speech is
+// stripped here for the same reason unquoted() strips it for banned terms.
+const bangs = (unquoted(text.replace(/!\[[^\]]*\]\([^)]*\)/g, '')).match(/!/g) || []).length;
 
 const PASS = '  ok  ', FAIL = '  !!  ';
 const line = () => console.log('-'.repeat(72));
