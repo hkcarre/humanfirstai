@@ -1,0 +1,134 @@
+{
+  "agent": "audience-insights",
+  "score": 60,
+  "findings": [
+    {
+      "passage": "Subtitle (frontmatter, line 3): 'AI is about to make it fatal'",
+      "severity": "HIGH",
+      "explanation": "The subtitle is the second thing a 15-second editor reads, and it makes the strongest claim in the piece. The body never shows a company dying. It describes one approval process, one stalled new hire and one prototype. The article's own caveat at line 100 ('I can't prove that any single Diva tanked any single share price') undercuts 'fatal' directly. An HBR or Forbes editor who reaches line 100 will discount the subtitle, and a defensive leader may dismiss the whole piece on it. Relevance to the brand's stated 'Policy and press' reader: that reader is said to lose interest at 'Overclaiming' and 'Doom' (docs/01-foundation.md).",
+      "ruleId": "CL-007",
+      "recommendation": "Write a subtitle that the body can carry, using a claim the article actually supports (for example, about curious people leaving and unquestioned processes being run faster by AI). Do not add drama the body does not show.",
+      "sourceRef": "docs/01-foundation.md, 'The four people we speak to' (Policy and press row); skill/human-first-ai-brand/references/voice.md, 'Quietly confident — no superlatives'"
+    },
+    {
+      "passage": "Line 88: 'In a 2024 US survey, 32% of adults said they had been bullied at work and another 14% had witnessed it. Targets face a 62% chance of losing their job.'",
+      "severity": "HIGH",
+      "explanation": "Three figures with no named survey, no link and no hedge. The 62% figure is the most alarming sentence in the piece and the least sourced, and it is the sentence a reader in the middle of being pushed out is most likely to take as settled fact. HBR and Forbes editors will ask for the source before they read further. The deterministic gate (G2) flagged this paragraph. This audience review did not verify any figure; the Fact Checker owns that.",
+      "ruleId": "CL-010",
+      "recommendation": "Name the survey, its publisher and year, and link it, or cut the figures. If the figures are estimates, say 'about'. Do not keep 'far from alone' as a claim that rests on unnamed numbers.",
+      "sourceRef": "skill/human-first-ai-brand/references/voice.md, 'Honesty rules': 'Never state an impact number we cannot source.'"
+    },
+    {
+      "passage": "Line 74: 'Gallup's 2026 workplace report puts it plainly: the technology works, but the bottom-line gains aren't arriving at scale.'",
+      "severity": "MEDIUM",
+      "explanation": "Attributed to a named report with no title, page or link, so the editor cannot check what was said. 'At scale' appears in the author's own voice, unquoted, and is on the banned list (the deterministic banned-terms check counted one hit, which is this phrase). A reader who does not work in tech will not know what 'at scale' means here.",
+      "ruleId": "VC-001",
+      "recommendation": "Link the report and quote or closely paraphrase its finding. Replace 'at scale' with plain words, such as 'across the whole company'.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md, 'Voice': 'Any number stated has a source'"
+    },
+    {
+      "passage": "Line 96: 'In MIT Sloan's analysis of employee reviews, toxic culture predicted attrition 10.4 times more strongly than compensation. You cannot pay your way out of a culture that bites.'",
+      "severity": "MEDIUM",
+      "explanation": "A lay reader cannot tell what '10.4 times more strongly' measures: a ratio of coefficients, a correlation, odds, or something else. The study is unnamed. 'Predicted' is an association, and the next sentence turns it into a causal rule ('You cannot pay your way out'). Readers who work with data will notice the gap and stop trusting the paragraph; readers who do not will simply take the number on faith.",
+      "ruleId": "CL-010",
+      "recommendation": "Name the study and say in one plain clause what was measured. Describe the finding as an association. Keep the sentence about pay if the source supports it.",
+      "sourceRef": "skill/human-first-ai-brand/references/voice.md, 'Honesty rules'"
+    },
+    {
+      "passage": "Line 98: 'Global engagement fell to 20% in 2025, the lowest since 2020, a drag Gallup prices at around $10 trillion in lost productivity. Flip it around: top-quartile engagement is linked to 23% higher profitability, and the \"100 Best Companies to Work For\" beat their peers by 2.3% to 3.8% a year over 28 years.'",
+      "severity": "MEDIUM",
+      "explanation": "The densest paragraph in the piece: seven figures in two sentences, none linked. 'Engagement' is a term of art that is never defined. 'Beat their peers' does not say on what measure (share price, profit, returns). 'Prices at' is an odd verb for an estimate. 'Flip it around' turns an association into a cause, which is the opposite of the honest caveat at line 100. The 'Best Companies' list will be unfamiliar to readers outside the US. A reader who has come this far will skim here and lose the thread of the argument.",
+      "ruleId": "CL-010",
+      "recommendation": "Define 'engagement' in one clause. State what 'beat' measured. Link each source. Split the paragraph so one figure does one job. Say 'about' wherever the figure is an estimate.",
+      "sourceRef": "docs/11-accessibility.md, 'Plain language is an accessibility feature': 'Short sentences. One idea each.'"
+    },
+    {
+      "passage": "Item 6, 'What I've learned since' (line 121): 'manager engagement just fell from 27% to 22% in a single year.'",
+      "severity": "MEDIUM",
+      "explanation": "A specific trend number with no source, used as the premise for the piece's most actionable advice ('Protect the protectors'). The gate reports this figure at 'line 116' in its own count; the text is in item 6 at line 121. The figure is unsourced in either place. A manager reading this will want the number before accepting the advice.",
+      "ruleId": "CL-010",
+      "recommendation": "Link the source and year for the 27% to 22% figure, or remove the figure and keep the advice.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md, 'Figures and audio': 'Every number carries its source'"
+    },
+    {
+      "passage": "Line 56: 'Ours was Richard. Eleven years in. ... \"With respect, some of us have been doing this a long time.\" It was the most expensive sentence anyone said that year.' (Closing note, line 129: 'Names and some details have been changed.')",
+      "severity": "HIGH",
+      "explanation": "A named individual is presented as the cause of a colleague's damage. The closing note says names were changed, but 'Richard' is the name used in the body. The run directory contains no consent record and no credits file, so consent for any named person cannot be confirmed from this run. Even with a changed name, the new hire's details (two months in, a resignation email drafted twice, sleep lost) make her identifiable to colleagues. The brand requires consent for any named person; the editor should know whether 'Richard' is a pseudonym and whether the individual would recognise himself.",
+      "ruleId": "CL-009",
+      "recommendation": "Confirm consent for every named person, or replace the name and state in the body (not only in the closing note) that the account is composite. Record the consent status before submission.",
+      "sourceRef": "skill/human-first-ai-brand/references/voice.md, 'Honesty rules': 'Never publish a learner's words or face without consent on file.' (applied by analogy to any person described)"
+    },
+    {
+      "passage": "Lines 16, 24, 42, 56, 66, 70 and 76: 'let's take this offline' and 'taken out back' (16); 'like sediment, or emails from your bank' (24); 'park this for Q3' (42); 'With respect' as irony (56); 'Experience was the moat' (66); 'commoditized' (70); 'The missing ingredient isn't compute' (76).",
+      "severity": "MEDIUM",
+      "explanation": "The main message is clear to a native English reader in a corporate job, but several phrases carry meaning through idiom or business jargon and are not glossed. A reader in a second language, or one who has been kept outside corporate meeting culture, will not know that 'taken out back' means removed, that 'With respect' here is a rebuke, or what 'moat' and 'commoditized' are doing in the sentence. These readers are the brand's core audience, and this is the point where they lose the thread. The simile 'sediment, or emails from your bank' is unclear to readers outside the author's experience.",
+      "ruleId": "CL-002",
+      "recommendation": "Keep the phrases that carry the scene. Gloss each business term in the same sentence the first time it appears ('compute, the computing power AI needs'; 'a moat, an advantage that is hard for others to copy'). Replace the bank simile with something a reader from any country will recognise.",
+      "sourceRef": "docs/11-accessibility.md, 'Plain language is an accessibility feature': 'Define a term the first time, in the same sentence.'"
+    },
+    {
+      "passage": "Lines 52 to 62 (the Diva section), especially line 54: 'the Diva is the fever: hot, loud and absolutely convinced it's helping.'",
+      "severity": "MEDIUM",
+      "explanation": "The leader who may be someone's Diva without knowing it will likely stop here. The section diagnoses a type and gives a verdict ('They have never once said I don't know ... and they're quietly proud of it'). The only route back is implied: 'they were curious once. Every one of us was' (line 60). That reads as nostalgia rather than an invitation. Nothing tells a leader what to do differently in the next meeting. The closest concrete move, 'Humility is the door curiosity walks through', sits in a generic list (item 4, line 119) and is not addressed to the Diva. A reader who recognises themselves will either defend or close the tab, and the piece gives them no third option.",
+      "recommendation": "Add one short passage addressed to the leader who recognises themselves. It should name one concrete, low-stakes change the article already implies, such as saying 'I don't know yet' once in a meeting. Keep it as an invitation, not a promise of reward.",
+      "sourceRef": "Brief: 'Does the piece leave them a way back, or only a verdict?'; skill/human-first-ai-brand/references/voice.md, 'Who is speaking' (advisory)"
+    },
+    {
+      "passage": "Lines 86 to 90: 'She started rehearsing meetings in the shower ... it convinces them they deserved it.' and 'The person who gets attacked is usually the one who leaves.'",
+      "severity": "MEDIUM",
+      "explanation": "A reader being pushed out right now is most likely to recognise themselves here, and the passage names the self-blame mechanism accurately. It then gives no next step until line 106 ('She nearly left'). The only way out offered depends on a manager choosing to intervene. A reader whose manager is part of the problem has no route in the piece: no mention of keeping a dated record, a trusted colleague, HR, an employee-support service or the option to leave on their own terms. 'Usually the one who leaves' is a generalisation with no source, and for this reader it sounds like a prediction about their own future.",
+      "recommendation": "Add one specific, non-legal step the person can take alone, with a pointer to a support resource the author can verify. Source or soften 'usually the one who leaves'. Keep the emotional accuracy of line 86 unchanged.",
+      "sourceRef": "Brief: the reader being pushed out; skill/human-first-ai-brand/references/voice.md, 'Who is speaking' and 'Do and don't' (advisory)"
+    },
+    {
+      "passage": "Lines 20 to 32 and 108: 'I watched the immune system kick in.' and 'Her manager pulled her aside and said ...'",
+      "severity": "MEDIUM",
+      "explanation": "The narrator's own role is never stated. They sit in the meeting and 'watched' (line 32). The boss gives the 'textbook answer' (line 28), and a manager later intervenes (line 108), but the narrator's position relative to either is unclear, and nothing says what the narrator did or did not do in the room. A leader reading an article that holds leaders to account will ask 'and you?' and find no answer. This is a credibility gap, not a rule failure.",
+      "recommendation": "Add one sentence on the narrator's position and one on what they did or did not say at the time. Do not invent a heroic act; state what happened.",
+      "sourceRef": "Brief: credibility for a leader reader (advisory)"
+    },
+    {
+      "passage": "Line 110: 'Within a month, she had mapped the whole process, found that two of the four sign-offs had never once rejected anything, and, with the same AI tool we'd been using to fill in spreadsheets, built a prototype that did in an afternoon what used to take us eleven days.'",
+      "severity": "MEDIUM",
+      "explanation": "This is the payoff sentence and it is about 50 words with stacked clauses, which is hard going for a second-language reader. It also leaves the reader's most obvious question open: did the process change, or was only a prototype built? The piece's central claim is that curiosity works, but the reader cannot tell whether the change was adopted. The 'eleven days' figure has no stated measurement, though as a first-hand account it is the author's to make. Other open questions a reader will carry out of the piece: did the new hire stay, and what happened to Richard?",
+      "recommendation": "Split the sentence. State what was built and whether it was used. Say what happened to the new hire and to Richard's position, or state plainly that the author does not know.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md, 'Voice': 'A twelve-year-old could read the main message and act on it' (CL-002)"
+    },
+    {
+      "passage": "Lines 66 to 72 and 76: 'AI just drained it.' / 'What AI can't do is notice ... It can't ask whether the report should exist.' / 'The missing ingredient isn't compute. It's the person who asks why.'",
+      "severity": "LOW",
+      "explanation": "AI is described as an agent that notices, asks and drains, which is the framing the brand asks writers to avoid. The sentence 'It can't ask whether the report should exist' describes the tool as a mind and then lists what it lacks. The core claim, that certainty has been commoditised, is an opinion stated as settled fact.",
+      "ruleId": "CL-007",
+      "recommendation": "Describe what the tool does ('a model returns a confident answer in seconds'), and state the human judgement as the human's job. Mark the commoditisation claim as the author's view.",
+      "sourceRef": "skill/human-first-ai-brand/references/voice.md, 'Do and don't': 'Describe AI as a mind, a brain, or magic' (avoid)"
+    },
+    {
+      "passage": "Lines 110 to 112: 'with the same AI tool we'd been using to fill in spreadsheets ... Same tool. Different question.'",
+      "severity": "LOW",
+      "explanation": "The story's success is partly credited to the tool, and the closing line moves credit from the person to the product. This is not an endorsement, and the vendor is not named, but the brand's honesty rule says the story belongs to the person and must not be used to sell a technology. The line is a risk to watch rather than a violation.",
+      "sourceRef": "skill/human-first-ai-brand/references/voice.md, 'Honesty rules — non-negotiable': 'Never use someone's story to sell a technology. The story belongs to them.'"
+    },
+    {
+      "passage": "Closing lines 125 to 127: 'And if you're the curious one, reading this at 11 p.m. and wondering if you're the problem: You're not. You're just the only adult in the room who still remembers how to be a child.'",
+      "severity": "MEDIUM",
+      "explanation": "Partly earned. The piece's one worked case supports the sentiment: the question was legitimate, since two of four sign-offs had never rejected anything (lines 72 and 110), and the metaphor places the curious person as healthy tissue under attack (lines 102 and 120). For that case the assurance is honest. As a general assurance to any 'curious one', it outruns the evidence: the article never considers that a question can be asked badly or at the wrong moment, and it offers the reader no test for telling a useful question from a disruptive one. The second half, childhood as the adult's ideal, will land for some readers and sound patronising to others who have been called 'immature' at work.",
+      "recommendation": "Keep 'You're not.' Tie it to the case by giving the reader a test drawn from the article itself (for example, whether the question is about a process nobody has checked). Consider whether the childhood line adds to the sentence or repeats it.",
+      "sourceRef": "Brief: 'The closing line tells the reader you're not the problem; judge whether it has been earned' (advisory)"
+    },
+    {
+      "passage": "Whole article: the reader is corporate leaders and the curious people they manage (publishing_metadata.json, 'audience').",
+      "severity": "LOW",
+      "explanation": "Relevance to the brand's stated purpose is weak. The four audiences in the brand foundation are first-time learners, volunteer educators, partners and funders, and policy and press. This piece is a publication pitch, so 'policy and press' is the closest fit. Its reader is a manager in an enterprise AI rollout, and the people 'locked out' of the technology have no place in the article. The register is a provocative columnist's, closer to the doom and overclaiming the brand's foundation warns against than to the patient teacher the brand describes. Whether to publish under the brand is a governance decision; this is advisory.",
+      "ruleId": "CL-001",
+      "recommendation": "Decide whether this piece belongs under the brand, or whether it is a press piece for an outside publication. If it stays, consider one line that connects the 'curious person' to people who have been kept away from AI tools.",
+      "sourceRef": "docs/01-foundation.md, 'The four people we speak to'"
+    },
+    {
+      "passage": "Line 42: 'Love the energy! Let's park this for Q3.'",
+      "severity": "LOW",
+      "explanation": "The deterministic exclamation-mark check fails on this line. VC-004 applies to 'our own voice'. This exclamation is inside a quoted meeting remark, so it is not in the author's voice and is not a voice failure. The checker's scope may be wider than the rule. The quote should not be edited to satisfy the checker.",
+      "ruleId": "VC-004",
+      "recommendation": "Do not edit the quoted speech. Note for the orchestrator that this deterministic failure concerns quoted text, not the author's voice."
+    }
+  ]
+}

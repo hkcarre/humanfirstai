@@ -1,0 +1,194 @@
+{
+  "agent": "fact-checker",
+  "score": 40,
+  "researchAvailable": true,
+  "claims": [
+    {
+      "claim": "In a 2024 US survey, 32% of adults said they had been bullied at work",
+      "status": "VERIFIED",
+      "evidenceSource": "Workplace Bullying Institute, 2024 WBI U.S. Workplace Bullying Survey (web page)",
+      "url": "https://workplacebullying.org/2024-wbi-us-survey/",
+      "publicationDate": "2025-04-19 (page date as returned by fetch; survey fielded 2024)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page states 'Directly bullied - 32.3% of adult Americans'. 32% is a fair rounding. A WBI search snippet also gives 32% for the full report, but the PDF could not be machine-read.",
+      "confidenceRationale": "Primary source retrieved. Rounding of 32.3% to 32% is acceptable.",
+      "recommendedAction": "Keep. Name the source in the text (the Workplace Bullying Institute's 2024 survey) and add a link, since G2 flags no source."
+    },
+    {
+      "claim": "...and another 14% had witnessed it",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Workplace Bullying Institute 2024 survey page; 2024 Complete Report PDF",
+      "url": "https://workplacebullying.org/2024-wbi-us-survey/",
+      "publicationDate": "2025-04-19 (page date as returned by fetch)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "The fetched survey page gives witnesses only as a count ('Indirect experience (witnesses) - 22.6 million'), not 14%. A web search result summary attributed 14% witnessed and 46% affected to the WBI full report and flyer, but I could not read the PDF (compressed, unreadable via fetch), so I did not see it myself.",
+      "confidenceRationale": "Plausible and reported by a search summary, but not confirmed against a text I retrieved.",
+      "recommendedAction": "Qualify or confirm: a human should open the 2024 Complete Report PDF at https://workplacebullying.org/wp-content/uploads/2024/10/2024-Complete-Report.pdf and confirm the 14% before publication. If it cannot be confirmed, remove the clause."
+    },
+    {
+      "claim": "Targets face a 62% chance of losing their jobs.",
+      "status": "VERIFIED",
+      "evidenceSource": "Workplace Bullying Institute, 2024 WBI U.S. Workplace Bullying Survey (web page)",
+      "url": "https://workplacebullying.org/2024-wbi-us-survey/",
+      "publicationDate": "2025-04-19 (page date as returned by fetch)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page text: 'Targets have a 62% of losing their jobs after targeting', with job loss attributed to constructive discharge (18%) and termination, transfer or voluntary resignation (25.6%). Those components do not obviously sum to 62%; I did not reconcile them.",
+      "confidenceRationale": "Number matches WBI's own wording. It is a self-reported survey figure and 'losing their jobs' includes voluntary resignation, which the article does not say.",
+      "recommendedAction": "Qualify: attribute to WBI ('by WBI's survey estimate') and note it includes people who resign. Link the source."
+    },
+    {
+      "claim": "In MIT Sloan's analysis of employee reviews, toxic culture predicted attrition 10.4 times more strongly than compensation.",
+      "status": "VERIFIED",
+      "evidenceSource": "MIT Sloan Management Review, 'Toxic Culture Is Driving the Great Resignation'",
+      "url": "https://sloanreview.mit.edu/article/toxic-culture-is-driving-the-great-resignation/",
+      "publicationDate": "2022-01-11",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Article says toxic corporate culture is '10.4 times more powerful than compensation in predicting' industry-adjusted attrition. Method: SHAP values from an XGBoost model on Glassdoor-derived Culture 500 data, relative to compensation as 1x; compensation ranks 16th among topics. A figure caption words it as '10.4 times more likely', which secondary outlets misread as a probability.",
+      "confidenceRationale": "Primary source retrieved; the wording 'predicted ... more strongly' matches. Data is from 2021, so it is not evidence of 2026 conditions.",
+      "recommendedAction": "Keep, but date it (a 2021 analysis, published 2022), name MIT Sloan Management Review and link. Do not let an edit change it to 'more likely to quit'."
+    },
+    {
+      "claim": "Global engagement fell to 20% in 2025, the lowest since 2020",
+      "status": "VERIFIED",
+      "evidenceSource": "Gallup, State of the Global Workplace 2026",
+      "url": "https://www.gallup.com/workplace/697904/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04 (report published April 2026, data Jan-Dec 2025)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Gallup pages state 20% engaged in 2025, down from 21% in 2024 and 23% in 2023; the trend table shows 20% in 2020 as well. So 2025 equals the 2020 level rather than being below it. 'Lowest since 2020' is accurate in the sense of 'matches the 2020 low'.",
+      "confidenceRationale": "Gallup page text retrieved. Gallup URL slugs returned by search are inconsistent; the 20% figure appeared on more than one retrieved Gallup URL.",
+      "recommendedAction": "Keep. Optionally say 'equal to the lowest level since 2020'. Link the Gallup report."
+    },
+    {
+      "claim": "...a drag Gallup prices at around $10 trillion in lost productivity.",
+      "status": "VERIFIED",
+      "evidenceSource": "Gallup, State of the Global Workplace 2026 (page retrieved at the URL below)",
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04 (report published April 2026)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page text: low engagement cost the world economy 'an estimated $10 trillion in lost productivity', about 9% of GDP. A secondary summary (MangoApps) words it as 'more than $10 trillion ... in 2024 alone'; I could not retrieve a primary page that fixes the year. The page https://www.gallup.com/workplace/697904/state-of-the-global-workplace.aspx did not contain the $10 trillion figure.",
+      "confidenceRationale": "Retrieved a Gallup page with the figure, but the URL slug is not clearly the canonical report URL and the reference year (2024 vs 2025) is unresolved. The article's 'around' hedge fits.",
+      "recommendedAction": "Keep with the 'around' hedge; a human should confirm the canonical Gallup URL and the reference year before linking."
+    },
+    {
+      "claim": "Manager engagement just fell from 27% to 22% in a single year.",
+      "status": "VERIFIED",
+      "evidenceSource": "Gallup, State of the Global Workplace 2026",
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04 (report published April 2026)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page text: manager engagement fell from 27% to 22% in 2025 and is down nine points since 2022. A different Gallup page (697904) confirms 22% for managers but not the 27% prior value.",
+      "confidenceRationale": "Retrieved text matches. Same URL-slug caveat as the $10 trillion row.",
+      "recommendedAction": "Keep. Link Gallup. Say 'global' managers, since the article's list item does not."
+    },
+    {
+      "claim": "Gallup's 2026 workplace report puts it plainly: the technology works, but the bottom-line gains aren't arriving at scale.",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Gallup, State of the Global Workplace 2026 (retrieved page text); MangoApps secondary summary",
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "What I retrieved is narrower: in US organisations using AI, 65% of workers report a positive personal productivity impact but only 12% strongly agree AI has transformed how work gets done. A secondary source paraphrases Gallup CEO Jon Clifton as saying results are not showing up in the bottom line. I found no Gallup sentence saying the technology works and gains are not arriving at scale.",
+      "confidenceRationale": "Direction is roughly consistent, but 'puts it plainly' presents a paraphrase as Gallup's own statement, and the retrieved AI figures are US-only.",
+      "recommendedAction": "Qualify and attribute: rewrite as 'Gallup found that most US workers using AI report personal productivity gains, but few say it has transformed how work gets done', with the 65% and 12% figures sourced. Remove 'puts it plainly'."
+    },
+    {
+      "claim": "Top-quartile engagement is linked to 23% higher profitability",
+      "status": "VERIFIED",
+      "evidenceSource": "Gallup Q12 Meta-Analysis, 11th edition",
+      "url": "https://www.gallup.com/workplace/321725/gallup-q12-meta-analysis.aspx",
+      "publicationDate": "2024-05 (updated 2024-07)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page text: the median percent difference between top-quartile and bottom-quartile business or work units was 23% in profitability. A search summary of the same page gives the dataset as 736 studies, 347 organisations, 183,806 units. The author's own source table marked this 'not re-checked'; it is now checked. I read only the first 100,000 of 128,439 characters of the fetched page, but the 23% figure was in the portion read.",
+      "confidenceRationale": "Primary source retrieved and number matches. The article's wording drops the comparison group: it is a median gap between top and bottom quartile units, an association, not a causal effect.",
+      "recommendedAction": "Qualify wording: 'business units in the top quartile of engagement had a median 23% higher profitability than those in the bottom quartile, per Gallup's 2024 meta-analysis'. Link the source."
+    },
+    {
+      "claim": "the \"100 Best Companies to Work For\" beat their peers by 2.3% to 3.8% a year over 28 years.",
+      "status": "CONTRADICTED",
+      "evidenceSource": "Great Place To Work press release on the FTSE Russell analysis of the Fortune 100 Best Companies to Work For, 2026 list",
+      "url": "https://www.greatplacetowork.com/en/press-releases/fortune-100-best-companies-to-work-for-outperform-the-market-2026-list-press-release",
+      "publicationDate": "2026-04-01",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "The only 28-year figure I found: 'annualized stock return of 13.4% over the past 28 years, compared to 9.2% for the Russell 3000 Index', a 4.2 percentage point gap. Neither 2.3% nor 3.8% appears on the page. A separate search for the two figures together found no source. The author's source table has no source for this row. Other published figures differ again (a 2018 Fortune piece: 11.66% annualised; Dec 1997 to Dec 2024: 3,174% vs 907% for the Russell 1000).",
+      "confidenceRationale": "The claimed range has no source and does not match the one 28-year figure I retrieved. The source is the list's own producer (Great Place To Work with FTSE Russell), so it is not independent, and the benchmark is a broad index rather than 'peers'. I am not replacing the number myself.",
+      "recommendedAction": "Block: remove the 2.3% to 3.8% claim. If the author wants a stock-performance point, a human editor may substitute the sourced figure attributed to Great Place To Work and FTSE Russell (13.4% vs 9.2% for the Russell 3000, 28 years to 2026), or drop the sentence. Do not publish the current figures."
+    },
+    {
+      "claim": "Reference to the author's earlier piece, 'The Great Corporate Unmasking', in which she wrote about the masks we wear at work.",
+      "status": "UNVERIFIED",
+      "evidenceSource": "None retrieved",
+      "url": "",
+      "publicationDate": "",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "I did not search for or retrieve this piece.",
+      "confidenceRationale": "Self-reference to a prior publication; existence and topic not checked.",
+      "recommendedAction": "Qualify: author to confirm the title and topic, and add a link, or remove the reference."
+    },
+    {
+      "claim": "The opening anecdote: fourteen professionals, a six-year approval process (four sign-offs, three spreadsheets), a colleague named Richard, a prototype that did in an afternoon what took eleven days, and the manager quote 'Keep asking. I'll take the heat.'",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Author's first-person account; article states 'Names and some details have been changed.'",
+      "url": "",
+      "publicationDate": "",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "No independent check is possible. The article discloses that details are changed.",
+      "confidenceRationale": "Personal narrative. Quotations are the author's recollection. The 'eleven days' and 'two of the four sign-offs never rejected anything' details are specific and rest on her word alone.",
+      "recommendedAction": "Attribute: keep as the author's account, with the existing disclosure. Author to confirm the figures are as she recalls them, or reword with 'about'. Separate matter: CL-009 requires consent on file for any person named; confirm Richard is a changed name."
+    },
+    {
+      "claim": "An autoimmune disease is an immune system that attacks something healthy.",
+      "status": "UNVERIFIED",
+      "evidenceSource": "None retrieved (general definition)",
+      "url": "",
+      "publicationDate": "",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Standard textbook definition; I did not retrieve a source for it.",
+      "confidenceRationale": "Low risk and used as a metaphor, but I did not confirm it against a source.",
+      "recommendedAction": "Qualify: keep as an analogy, no change needed; optionally cite a medical body such as NIH."
+    },
+    {
+      "claim": "The person who gets attacked is usually the one who leaves.",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Workplace Bullying Institute 2024 survey page (partial support)",
+      "url": "https://workplacebullying.org/2024-wbi-us-survey/",
+      "publicationDate": "2025-04-19",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "WBI reports high rates of job loss among targets (62%), including voluntary resignation (25.6%) and constructive discharge (18%), but I did not verify 'usually the one who leaves' as a distinct finding.",
+      "confidenceRationale": "Broadly consistent with WBI, but it is a generalisation stated as fact.",
+      "recommendedAction": "Qualify: tie to the WBI 62% figure or soften to 'often'."
+    },
+    {
+      "claim": "Answers are now close to free; AI gives confident answers in seconds; AI can't notice redundant sign-offs; certainty has been commoditised; most companies bought tools and pointed them at unquestioned processes.",
+      "status": "OPINION",
+      "evidenceSource": "Author's argument",
+      "url": "",
+      "publicationDate": "",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Argument and rhetoric. 'Most companies are in this trap' is a sweeping generalisation with no data offered.",
+      "confidenceRationale": "Interpretive. Only the Gallup AI claim above is checkable.",
+      "recommendedAction": "Keep as opinion. Consider 'many companies' in place of 'most companies'."
+    },
+    {
+      "claim": "I can't prove that any single Diva tanked any single share price. But I keep seeing the same pattern.",
+      "status": "OPINION",
+      "evidenceSource": "Author's observation",
+      "url": "",
+      "publicationDate": "",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Self-hedged by the author.",
+      "confidenceRationale": "Explicit disclaimer of causal proof.",
+      "recommendedAction": "Keep. No change."
+    },
+    {
+      "claim": "Children ask why because the world is fascinating; Divas were curious once; being right gets you promoted and being curious gets you questioned.",
+      "status": "OPINION",
+      "evidenceSource": "Author's argument",
+      "url": "",
+      "publicationDate": "",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Generalisations about psychology and careers with no research cited.",
+      "confidenceRationale": "Rhetorical. No study is cited or implied.",
+      "recommendedAction": "Keep as opinion. Do not add a research reference without a retrieved source."
+    }
+  ]
+}
