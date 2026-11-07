@@ -3,7 +3,7 @@ title: Give Yourself the Grace to Be Bad at It
 subtitle: What happens when a room full of AI people can't ask AI for help?
 kicker: Learning
 date: 2026-11-05
-readingTime: 6
+readingTime: 4
 theme: cream
 author: Andrés Sepulveda Morales
 authorPhoto: human-first-ai-assets/andres-headshot.jpg
@@ -20,14 +20,14 @@ For me it was September, and I was the one teaching. (Yes, at an AI conference. 
 
 I ran it with Christina Pruneski, who taught me to crochet and is still much better at it than I am. Everyone made Clawd, a little crab (say it out loud), from a free pattern by Lizette at Chrisette Designs. Go [buy her a coffee](https://ko-fi.com/chrisettedesigns).
 
-Then came the magic ring. It's how you start anything round, and every beginner pattern warns you about it. Beginners hold the yarn in a death grip, the ring slips, and the whole thing comes apart. Ours came apart a lot.
+Then came the magic ring. It's a common way to start anything round, and it's famously fiddly for beginners. Beginners hold the yarn in a death grip, the ring slips, and the whole thing comes apart. Ours came apart a lot.
 
 ```figure
 magic-ring
 ```
 
-![Andrés holding up a crocheted Clawd the Crab in front of the room at the Claude Community House](human-first-ai-assets/andres-with-clawd.jpg)
-*Holding up a finished Clawd at the Claude Community House, Barcelona. Photo: [credit]*
+![Andrés, arm outstretched, holding a small crocheted Clawd the Crab up toward the camera in a bright white room at the Claude Community House](human-first-ai-assets/andres-holding-clawd.jpg)
+*Holding up a finished Clawd at the Claude Community House, Barcelona. Photo: [Pol Ducamp Sabates](https://www.linkedin.com/in/polducampsabates/)*
 
 Nobody could ask an AI to fix a dropped stitch. So people did one of two things: they kept fumbling with their own hands, or they turned to the stranger next to them and asked for help, out loud, in a room full of people who build AI for a living. Being bad at something and asking for help: those are the two moves most of us avoid with AI, and both take a little grace.
 
@@ -46,6 +46,9 @@ The fear is simple: if I'm bad at this, people will think less of me. The resear
 One of my slides for the session said: "There is no prompt for this. The minutes you spend being bad at it are the skill."
 
 Elizabeth and Robert Bjork have a name for that: "[desirable difficulty](https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/04/EBjork_RBjork_2011.pdf)." Practice that feels slow and clumsy in the moment tends to stick longer than practice that feels easy. All that fumbling with the magic ring? Probably learning, the whole time.
+
+![A row of crocheted crabs on a dark workshop table, one red and the rest orange, each a slightly different shape, with a ball of orange yarn behind them and blurred hands still crocheting in the foreground](human-first-ai-assets/clawds-side-by-side.jpg)
+*Same pattern, same two hours, and no two Clawds came out alike. Photo: [Pol Ducamp Sabates](https://www.linkedin.com/in/polducampsabates/)*
 
 You don't need a study to know you can be bad at something in front of an audience and keep going. Julia Child [did it on TV in 1963](https://saturdayeveningpost.com/2012/08/11/archives/then-and-now/julia-child.html). She tried to flip a potato pancake, it fell apart in the pan, and she scooped it back together, said more or less that you need the courage of your convictions when you flip, and carried on.
 
