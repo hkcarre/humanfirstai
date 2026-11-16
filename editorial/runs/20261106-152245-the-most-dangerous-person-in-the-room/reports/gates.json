@@ -1,0 +1,183 @@
+{
+  "file": "editorial/runs/20261106-152245-the-most-dangerous-person-in-the-room/final_article.md",
+  "ran": "2026-11-06T15:51:13.665Z",
+  "status": "warn",
+  "blockers": [],
+  "checks": [
+    {
+      "id": "G1",
+      "name": "Voice and terminology",
+      "rule": "VC-001..004, CL Voice",
+      "status": "pass",
+      "detail": "6/6 checks pass.",
+      "guest": false,
+      "rows": [
+        {
+          "check": "paragraph shape",
+          "status": "pass",
+          "detail": "21.8 words a paragraph  (target 15-35)"
+        },
+        {
+          "check": "sentence length",
+          "status": "pass",
+          "detail": "7.9 words a sentence  (target under 22)"
+        },
+        {
+          "check": "long sentences",
+          "status": "pass",
+          "detail": "none over 25 words"
+        },
+        {
+          "check": "exclamation marks",
+          "status": "pass",
+          "detail": "none"
+        },
+        {
+          "check": "banned terms",
+          "status": "pass",
+          "detail": "none in our own voice"
+        },
+        {
+          "check": "intensifiers",
+          "status": "pass",
+          "detail": "none"
+        }
+      ],
+      "exitCode": 0
+    },
+    {
+      "id": "G2",
+      "name": "Numeric claims carry a source",
+      "rule": "CL Voice — \"Any number stated has a source. If estimated, it says about.\"",
+      "status": "warn",
+      "detail": "3 paragraph(s) state a figure with no source link and no hedge. The Fact Checker must resolve each.",
+      "claims": [
+        {
+          "line": 22,
+          "figures": [
+            "2019"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "Maya, two months in, arrives early. Not to impress anyone. She just wants to read the onboarding wiki before the coffee runs out. She finds a page, last updated in 2019, explaining how the monthly report works. She reads"
+        },
+        {
+          "line": 56,
+          "figures": [
+            "2017"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "Graham stops by her desk, smiling. \"Love the fresh eyes! But we tried changing the report in 2017. Didn't stick.\" He leaves before she can ask why."
+        },
+        {
+          "line": 118,
+          "figures": [
+            "100%"
+          ],
+          "hasSourceLink": false,
+          "hedged": false,
+          "needsVerification": true,
+          "text": "Then he pulls up the AI rollout dashboard. Licences: 100% deployed. Measurable impact: a rounding error. He'd blamed the tool."
+        },
+        {
+          "line": 162,
+          "figures": [
+            "2024"
+          ],
+          "hasSourceLink": true,
+          "hedged": true,
+          "needsVerification": false,
+          "text": "For the person on the receiving end, the immune response is not invisible. About a third of American adults say they have been bullied at work, according to the Workplace Bullying Institute's [2024 survey](https://workpl"
+        },
+        {
+          "line": 164,
+          "figures": [
+            "2022",
+            "10.4",
+            "20%",
+            "2025",
+            "22%"
+          ],
+          "hasSourceLink": true,
+          "hedged": false,
+          "needsVerification": false,
+          "text": "Companies pay too. MIT Sloan Management Review's [2022 analysis of employee reviews](https://sloanreview.mit.edu/article/toxic-culture-is-driving-the-great-resignation/) found that a toxic culture predicted attrition 10."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Prompt injection in submitted text",
+      "rule": "Spec §10 — defend against prompt injection",
+      "status": "pass",
+      "detail": "None found.",
+      "hits": []
+    },
+    {
+      "id": "G4",
+      "name": "Publishing metadata complete",
+      "rule": "site builder contract",
+      "status": "pass",
+      "detail": "All required fields present.",
+      "missing": [],
+      "notes": [],
+      "frontmatter": {
+        "title": "The Most Dangerous Person in the Room",
+        "subtitle": "AI made answers free. Nobody told the org chart.",
+        "kicker": "Leadership",
+        "date": "2026-11-06",
+        "readingTime": "9",
+        "theme": "cream",
+        "author": "Helena Carre",
+        "authorPhoto": "people/helena-carre.jpg",
+        "channel": "LinkedIn and Substack",
+        "tags": "[Artificial Intelligence, AI Leadership, Corporate Culture, Future Of Work, Leadership]"
+      }
+    },
+    {
+      "id": "G6",
+      "name": "Authorship preserved",
+      "rule": "docs/02-voice.md — Guest bylines; a byline means the voice is theirs",
+      "status": "pass",
+      "detail": "First person 11→11, length +6%.",
+      "introduced": [],
+      "wordsBefore": 1425,
+      "wordsAfter": 1517,
+      "growthPercent": 6
+    },
+    {
+      "id": "G5",
+      "name": "External links resolve",
+      "rule": "CL Reach",
+      "status": "pass",
+      "detail": "3 checked; 0 bot-blocked but live.",
+      "links": [
+        {
+          "url": "https://workplacebullying.org/2024-wbi-us-survey/",
+          "code": 200,
+          "attempts": 1,
+          "ok": true,
+          "blocked": false
+        },
+        {
+          "url": "https://sloanreview.mit.edu/article/toxic-culture-is-driving-the-great-resignation/",
+          "code": 200,
+          "attempts": 1,
+          "ok": true,
+          "blocked": false
+        },
+        {
+          "url": "https://www.gallup.com/workplace/697904/state-of-the-global-workplace.aspx",
+          "code": 200,
+          "attempts": 1,
+          "ok": true,
+          "blocked": false
+        }
+      ]
+    }
+  ],
+  "finalArticleSha": "fcbf3b29133a"
+}

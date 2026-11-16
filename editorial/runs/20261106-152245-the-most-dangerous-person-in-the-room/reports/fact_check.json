@@ -1,0 +1,129 @@
+{
+  "agent": "fact_checker",
+  "score": 40,
+  "researchAvailable": true,
+  "claims": [
+    {
+      "claim": "Global engagement fell to 20% in 2025 (Gallup State of the Global Workplace 2026)",
+      "status": "VERIFIED",
+      "evidenceSource": "Gallup, State of the Global Workplace 2026 (primary page)",
+      "url": "https://www.gallup.com/workplace/697904/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page states: \"In 2025, 20% of employees worldwide were engaged at work.\" Page notes published April 2026, data collected Jan-Dec 2025. The word 'fell' (year-on-year) was not confirmed on the primary page I retrieved; secondary coverage says it fell from a 2022-23 peak of 23%.",
+      "confidenceRationale": "Level of 20% and the year are confirmed on the primary Gallup page. 'Fell' rests on secondary coverage only.",
+      "recommendedAction": "No change to the 20% figure. Optionally link the Gallup report."
+    },
+    {
+      "claim": "Gallup puts the loss from low engagement at about $10 trillion",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Gallup page fetched (figure not found); secondary search summary only",
+      "url": "https://www.gallup.com/workplace/697904/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "The Gallup page text I retrieved did not contain '$10 trillion' or '9% of GDP'. A web search summary (secondary; the Haiilo page returned HTTP 403 so I could not open it) says Gallup reports about $10 trillion in lost productivity. Not confirmed against an authoritative page I read.",
+      "confidenceRationale": "Plausible and reported by secondary sources, but I did not read it in the primary report. The hedge 'about' is already present.",
+      "recommendedAction": "Qualify: keep 'about' and confirm the exact wording and framing (lost productivity, share of global GDP) in the full Gallup report before publishing; otherwise attribute to coverage or remove."
+    },
+    {
+      "claim": "Manager engagement dropped from 27% to 22% in a single year",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Gallup page fetched (22% only); secondary search summary for 27%",
+      "url": "https://www.gallup.com/workplace/697904/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Primary page shows managers at 22% engaged in 2025 (individual contributors 19%). The 27% prior-year figure and the 5-point drop did not appear in the text I retrieved. A search summary reports 27% to 22% (2024 to 2025), not verified at source.",
+      "confidenceRationale": "Half confirmed (22%). The 27% start point is not verified from a primary page I read.",
+      "recommendedAction": "Qualify or remove: either confirm 27% in the full Gallup report and cite it, or reword to 'manager engagement is down to 22%'. Do not publish 27% as established fact until checked."
+    },
+    {
+      "claim": "Gallup's 2026 workplace report makes the same point: the technology works, but the bottom-line gains aren't arriving at scale",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Gallup State of the Global Workplace 2026 page; Gallup AI-adoption pieces (search results only, not opened)",
+      "url": "https://www.gallup.com/workplace/697904/state-of-the-global-workplace.aspx",
+      "publicationDate": "2026-04",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "The State of the Global Workplace page I retrieved does not address AI gains or bottom-line results ('AI Adoption' appears only as a menu link). Separate Gallup AI pieces (for example https://www.gallup.com/workplace/704225/rising-ai-adoption-spurs-workforce-changes.aspx, not opened) are reported to say gains are mostly task-level and rarely transform how work is organised, while 65% of employees in AI-implementing organisations report a productivity benefit. That is not the same as 'the technology works, but bottom-line gains aren't arriving at scale', and it is not from the cited report.",
+      "confidenceRationale": "Attribution to the workplace report is unsupported and the paraphrase is stronger than what Gallup's AI pieces appear to say. Possible misattribution.",
+      "recommendedAction": "Remove or rewrite: attribute only to a specific Gallup AI-workplace publication the author has read, in its own terms, with link and date. Otherwise cut the sentence."
+    },
+    {
+      "claim": "Toxic culture predicted attrition 10.4 times more strongly than pay (MIT Sloan analysis of employee reviews)",
+      "status": "VERIFIED",
+      "evidenceSource": "MIT Sloan Management Review, Sull, Sull and Zweig, 'Toxic Culture Is Driving the Great Resignation'",
+      "url": "https://sloanreview.mit.edu/article/toxic-culture-is-driving-the-great-resignation/",
+      "publicationDate": "2022-01-11",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Body text: \"A toxic corporate culture... is 10.4 times more powerful than compensation in predicting a company's attrition rate compared with its industry.\" The figure caption uses looser 'more likely to contribute' wording. It is a relative-importance ratio, not a likelihood ratio. Data is from 2021 Glassdoor reviews.",
+      "confidenceRationale": "Number and 'predicting' framing match the primary source. The article's 'predicted ... more strongly' wording is the accurate one.",
+      "recommendedAction": "Keep. Consider adding the year (2022 analysis of 2021 data) so readers do not take it as current."
+    },
+    {
+      "claim": "Nearly half of American adults have been bullied at work or watched it happen (2024 WBI survey)",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Workplace Bullying Institute, 2024 WBI U.S. Workplace Bullying Survey",
+      "url": "https://workplacebullying.org/2024-wbi-us-survey/",
+      "publicationDate": "2025-04-19 (page timestamp; survey fielded Sept 2024)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page gives 32.3% of adult Americans directly bullied (52.2 million), 22.6 million witnesses, 74.8 million 'affected'. It states no combined 'nearly half' share. A share near 46% could be derived (74.8m over about 162m workers), but that is my arithmetic, not WBI's statement, and the base is workers, not all adults. The page's only 'nearly half' wording is a quote about employees being 'miserable', not bullying.",
+      "confidenceRationale": "Order of magnitude is consistent with WBI data but the exact claim is not stated by the source. WBI describes its sample as self-selected.",
+      "recommendedAction": "Qualify: reword to WBI's own figures, e.g. 'WBI's 2024 survey estimates about 75 million American workers have been bullied or witnessed it', attributed to WBI, or use the 32.3% directly bullied figure."
+    },
+    {
+      "claim": "Those targeted face a 62% chance of losing their job",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Workplace Bullying Institute, 2024 WBI U.S. Workplace Bullying Survey",
+      "url": "https://workplacebullying.org/2024-wbi-us-survey/",
+      "publicationDate": "2025-04-19 (page timestamp)",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Page contains the garbled sentence \"Targets have a 62% of losing their jobs after targeting.\" A later bullet contrasts perpetrators and targets as '(27% vs. 62%)', suggesting 62% may be a negative-consequence rate for targets. The metric is ambiguous in what I retrieved; I did not read the full report PDF (https://workplacebullying.org/wp-content/uploads/2024/10/2024-Complete-Report.pdf).",
+      "confidenceRationale": "The number appears on the WBI page, but the wording is unclear and a 'chance' (probability) framing is stronger than the source supports.",
+      "recommendedAction": "Qualify and attribute: say 'WBI's 2024 survey found 62% of targets lost their jobs' only after confirming the definition in the full report; otherwise remove. Do not present as a general probability."
+    },
+    {
+      "claim": "So many companies have rolled out the tools and are still waiting for the returns",
+      "status": "UNVERIFIED",
+      "evidenceSource": "None cited in article",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "General claim with no source. Search coverage shows mixed evidence (Gallup employee self-reports are positive; an NBER executive survey is reported to show most firms seeing no productivity gain). Not verified.",
+      "confidenceRationale": "Plausible and widely discussed, but unsourced, and 'so many' is vague.",
+      "recommendedAction": "Hedge: change to 'some companies' or attribute to a named, linked study."
+    },
+    {
+      "claim": "In The Great Corporate Unmasking, I wrote about the masks we wear at work",
+      "status": "UNVERIFIED",
+      "evidenceSource": "Author self-reference; no public publication confirmed",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "A file editorial/inbox/unmasking-short-draft.md exists in the repo, but I did not confirm a published piece with this title.",
+      "confidenceRationale": "Author's own prior work; low risk but publication not confirmed.",
+      "recommendedAction": "Attribute: author to confirm the title and add a link to the published piece, or remove the reference."
+    },
+    {
+      "claim": "There's a medical name for an immune system that attacks something healthy: autoimmune disease",
+      "status": "OPINION",
+      "evidenceSource": "Not retrieved",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Standard definition used as a metaphor for workplace culture. I did not retrieve a source.",
+      "confidenceRationale": "Treated as metaphorical framing, not a material factual claim.",
+      "recommendedAction": "No change."
+    },
+    {
+      "claim": "Narrative details: wiki last updated 2019; report change tried in 2017; PDF opened by two people in six months; dashboard 'Licences: 100% deployed'; 'forty times more readable'; Maya, Graham, Dev, the VP",
+      "status": "OPINION",
+      "evidenceSource": "Article's own fictional scenario",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "These are story elements (the G2 flags on lines 20, 54 and 116). Nothing in the text marks the piece as fiction or a composite.",
+      "confidenceRationale": "Not external factual claims if read as illustration, but a reader could take them as a real case.",
+      "recommendedAction": "Advisory (not a policy rule): add a one-line note that Maya's day is an illustrative composite, or confirm it is true and anonymised. The in-story numbers need no sourcing."
+    },
+    {
+      "claim": "AI made answers free; answers are now close to free; 'Answers are a commodity now. Questions are the moat'; the Diva and immune-system thesis; managers 'running on empty'",
+      "status": "OPINION",
+      "evidenceSource": "Author argument",
+      "retrievedOn": "2026-11-06",
+      "supportingEvidence": "Rhetorical and interpretive framing. 'Last year' is a loose time reference.",
+      "confidenceRationale": "Argument, not a testable fact.",
+      "recommendedAction": "No change."
+    }
+  ]
+}

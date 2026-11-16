@@ -1,0 +1,85 @@
+{
+  "agent": "compliance",
+  "score": 64,
+  "blockers": 0,
+  "findings": [
+    {
+      "passage": "Maya... Graham... Dev... the VP (whole narrative, 7:52 a.m. to 11:47 p.m.)",
+      "severity": "HIGH",
+      "ruleId": "CL-009",
+      "explanation": "Named characters are presented with no signal that they are invented. The author writes in the first person elsewhere (\"I call them Divas\", \"In The Great Corporate Unmasking, I wrote\"), and the scene is a precise, day-long workplace account: fourteen years' tenure, a 2017 failed change, a 2019 wiki page, HR copied on a calendar invite, a predecessor pushed out after eight months. A reader, or a former colleague of the author, can plausibly take this as a real company and real people. Graham is shown acting in bad faith (an HR-copied invite to a newcomer, laughing at her in chat, present when curious people left). If any real person is identifiable, that is defamation and privacy exposure, and there is no consent on file. Nothing in the submission or policy snapshot says the characters are fictional or composite; the author must confirm that. Version B carries 'Names and some details have been changed.' (editorial/inbox/most-dangerous-person-b.md line 129).",
+      "recommendation": "Yes, it needs a note, and the note must be true. Ask the author to confirm in writing which applies: (a) wholly invented, (b) composite of several people, (c) based on one real workplace. For (a) or (b) use accurate wording such as 'Maya, Graham, Dev and the company are composites. Any resemblance to real people is coincidental.' Do not use 'names have been changed' unless that literally happened, because it asserts a real underlying event. For (c), do not publish until a human decides on identifiability and consent. Put the note before the scene on both LinkedIn and Substack, not only in a footer. Human judgment required; this is not legal clearance."
+    },
+    {
+      "passage": "Nearly half of American adults have been bullied at work or watched it happen, and those targeted face a 62% chance of losing their job.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Unsourced statistic on a sensitive subject, worded as a probability that a bullied person loses their job. That is a strong claim for readers who may be in that situation. Gate G2 marks it as needing verification. I could not verify it and have not assumed a source. If the figure comes from a survey of reported outcomes, the wording may mislead. It is also US-only in a piece with international readers.",
+      "recommendation": "Do not publish until the Fact Checker confirms the source, year and exact definition and a link is added. Reword to what the source says, with 'about' where it is an estimate. If unconfirmed, cut the 62% figure."
+    },
+    {
+      "passage": "In MIT Sloan's analysis of employee reviews, toxic culture predicted attrition 10.4 times more strongly than pay. Global engagement fell to 20% in 2025, a loss Gallup puts at about $10 trillion... manager engagement dropped from 27% to 22% in a single year.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Several third-party research figures attributed to named organisations (MIT Sloan, Gallup) with no links. Misattributing a study to a named institution is an accuracy and reputational risk to both parties. The '10.4 times more strongly' claim is a precise relative-effect figure that is easily misquoted. Flagged by gate G2 and left to the Fact Checker. I have not verified any of them.",
+      "recommendation": "Each figure needs a primary-source link and a check that the wording matches it. Remove any that cannot be traced."
+    },
+    {
+      "passage": "Gallup's 2026 workplace report makes the same point: the technology works, but the bottom-line gains aren't arriving at scale.",
+      "severity": "MEDIUM",
+      "ruleId": "CL-010",
+      "explanation": "Attributes a specific conclusion to a named report, unsourced. The paraphrase ('the technology works') may overstate what the report says. Also contains the banned term 'at scale' (VC-001, already flagged by gate G1).",
+      "recommendation": "Link the report and paraphrase closely what it says. Replace 'at scale'."
+    },
+    {
+      "passage": "What's the \"why\" question that got you uninvited from a meeting? Tell me below.",
+      "severity": "MEDIUM",
+      "explanation": "Invites readers on public platforms to describe workplace conflict. Replies may name employers or colleagues, creating third-party defamation and personal-data exposure, and may expose the commenter to retaliation. Advisory; not a rule in the policy snapshot.",
+      "recommendation": "Add a short line such as 'Please don't name people or companies.' Assign a human to watch the replies."
+    },
+    {
+      "passage": "The organization is reacting to Maya the way a body reacts... It isolates her. It sends small, deniable signals... / For the person on the receiving end, the immune response is not invisible.",
+      "severity": "MEDIUM",
+      "explanation": "The piece describes the mechanics and effects of exclusion and bullying (left out of lunch, HR copied, shaky hands, sleeplessness, a drafted apology) and cites job-loss statistics. Readers who recognise their own situation get a diagnosis and a 'protect her' instruction aimed at bystanders, but nothing for the target. The closing 'Be patient with him' and Maya's decision to keep asking could be read as advice to a target to stay and endure. Nothing suggests documenting events or finding support. I found no duty-of-care rule in the policy snapshot, so this is advisory, but readers in this situation are owed more than a diagnosis.",
+      "recommendation": "Author's decision. Consider a short, plain closing note: if this is happening to you, write down what happened and when, and talk to someone you trust. Name support routes for the reader's country (a union, an employee assistance programme, a national workplace-rights body) only after a human has checked they are real and current. Do not frame the piece as advice on legal rights and do not promise outcomes. Reword or limit 'be patient with him' so it is addressed to colleagues and leaders, not to people being targeted."
+    },
+    {
+      "passage": "Every organization has a Graham. Sometimes it's a Grace. I call them Divas, and they come in every gender, every level, every department.",
+      "severity": "MEDIUM",
+      "explanation": "'Diva' is a label for a real archetype of colleague. The term is gendered in origin, and the piece introduces a male Graham, then offers 'Grace' as the female example, which pairs the label with a female name. Readers will apply the label to real colleagues, and doing so publicly is a statement about an identifiable person. The author states it covers every gender, and the description is of behaviour (finishes your sentences, never says 'I don't know'), which is fair comment on a pattern. I see no defamation on its face about an identifiable person. This is reputational and tone sensitivity, not a legal finding.",
+      "recommendation": "Author's call. If kept, the 'every gender' line helps. Consider a neutral example instead of 'Grace', and consider framing the behaviour (certainty and gatekeeping) rather than a type of person."
+    },
+    {
+      "passage": "Licences: 100% deployed. Measurable impact: a rounding error. / It's also four days faster and roughly forty times more readable.",
+      "severity": "LOW",
+      "ruleId": "CL-010",
+      "explanation": "Figures inside the scene. If the piece is declared fiction or composite they are illustrative, but 'forty times more readable' reads as a measured result and could be quoted as an AI performance claim. Gate G2 flagged '100%' as unsourced.",
+      "recommendation": "Once the fictional frame is declared, leave as plainly illustrative or soften ('far more readable'). Do not present as a benchmark."
+    },
+    {
+      "passage": "There's a medical name for an immune system that attacks something healthy... It's autoimmune disease.",
+      "severity": "LOW",
+      "explanation": "Medical metaphor. Not medical advice and not presented as such. Noted only because readers living with autoimmune conditions may find the comparison trivialising.",
+      "recommendation": "Optional. No required action."
+    },
+    {
+      "passage": "authorPhoto: people/helena-carre.jpg",
+      "severity": "MEDIUM",
+      "ruleId": "CL-027",
+      "explanation": "A photograph of a real person. brand/photography/credits.json has a row (slug helena-carre) with clearedForPublication true and consent recorded as supplied by the subject for her own byline. But photographer is 'UNKNOWN — confirm', licence is 'UNKNOWN — confirm', and dateTaken is null. Consent looks adequate for a self-supplied byline portrait; provenance and copyright in the image are incomplete.",
+      "recommendation": "Confirm with the author who took the photo and on what terms, and complete the credits.json row before publication. Not a blocker, since the subject supplied it herself."
+    },
+    {
+      "passage": "In The Great Corporate Unmasking, I wrote about the masks we wear at work.",
+      "severity": "LOW",
+      "explanation": "Reference to a prior work. No copyright concern if it is the author's own, but I cannot confirm it exists or that the title is accurate.",
+      "recommendation": "Author to confirm the title and consider adding a link."
+    },
+    {
+      "passage": "Submission as a whole",
+      "severity": "LOW",
+      "explanation": "No text addressed to a reviewer or agent was found, and gate G3 also passed, so nothing was treated as an instruction. No translation, audio or testimony block is present, so the machine-translation notice and synthetic-voice rules do not apply. I found no confidential information, regulated advice or product promise; the 'enterprise AI licence' is generic and names no vendor. I did not check jurisdiction-specific employment law. This is a risk review for a human to judge; it is not legal clearance and I am not counsel.",
+      "recommendation": "A human reviewer decides, and counsel should be consulted if the author says the story is based on a real workplace."
+    }
+  ]
+}

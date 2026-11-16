@@ -1,0 +1,60 @@
+{
+  "agent": "seo-geo-specialist",
+  "score": 63,
+  "measured": false,
+  "seoTitle": "The Most Dangerous Person in the Room Asks Why",
+  "metaDescription": "AI made answers free. One new hire's question exposes a report nobody reads, and a culture that punishes asking why. A story for leaders.",
+  "slug": "the-most-dangerous-person-in-the-room",
+  "primaryTopic": "Why AI adoption stalls in cultures that punish curiosity: the employee who asks 'why' and the colleague whose authority rests on sounding certain",
+  "relatedTopics": [
+    "AI licences deployed but little measurable impact",
+    "psychological safety and asking questions at work",
+    "curiosity as a leadership skill when answers are cheap",
+    "organisational resistance to change",
+    "what AI does not do: notice a report nobody reads",
+    "saying 'I don't know' as a leader",
+    "retaining curious employees"
+  ],
+  "suggestedHeadings": [
+    "ADVISORY. Keep the timestamp headings (7:52 a.m. to 11:47 p.m.). They are the piece's voice and structure. They carry no topical signal for search or AI extraction, so put findable language in the opening, in 'Why this is now an AI problem', and in the Substack subtitle and SEO title fields instead.",
+    "Keep 'Why this is now an AI problem' as written. It is the best answer-ready section: claim, mechanism and consequence in one place. Do not split it with a story beat.",
+    "'The bill' could become 'What the immune response costs' so the section names its topic when read alone. Editor's call; 'The bill' is better voice and I would not push it.",
+    "LinkedIn shows only the first lines before the 'see more' cut. The opening two one-line paragraphs are a good hook. Whether to add a concrete second hook (the PDF opened by two people in six months) in the first screen is an editorial choice.",
+    "Substack: use the existing subtitle 'AI made answers free. Nobody told the org chart.' and put the seoTitle above in the SEO title field, so the search title and the display title can differ."
+  ],
+  "internalLinks": [
+    "the-great-corporate-unmasking: already named in the prose ('In The Great Corporate Unmasking, I wrote about the masks'). Link that phrase. The file exists in site/content, dated 2026-11-04.",
+    "grace-to-be-bad-at-it: exists in site/content. It may suit the closing 'I don't know' beat. I read only its headings, so an editor should confirm the fit before linking.",
+    "your-company-has-an-autoimmune-disease (companion essay): link only after it is live, with one plain sentence such as 'The argument version of this story ran in [publication].' Do not link a pitch that may not be accepted.",
+    "Practitioner convention, not something I measured: on LinkedIn, links in the article body are often moved to a first comment. Substack has no such issue."
+  ],
+  "externalCitations": [
+    "CANDIDATES ONLY. I did not browse or verify anything in this run. The Fact Checker owns verification. Where a figure cannot be traced to a primary source, cut or hedge it (CL-010).",
+    "Gallup 2026 workplace report: named in the text but not titled or linked. Link the exact report. The phrase 'arriving at scale' also trips VC-001 ('at scale'), so rephrase in the same edit.",
+    "Gallup global engagement (20% in 2025, about $10 trillion) and manager engagement (27% to 22%): link the specific Gallup release and check each figure against it before keeping it.",
+    "MIT Sloan Management Review analysis of employee reviews (toxic culture predicting attrition 10.4 times more strongly than pay): confirm title, authors, date and that the wording matches, then link it.",
+    "Workplace bullying statistics ('nearly half of American adults', '62% chance of losing their job'): no source is named in the text. Identify the survey, year and what the 62% actually measures before keeping the sentence.",
+    "Citation-friendly form: name publisher, report title and year in the sentence rather than 'Gallup puts it at'. A reader or a model can then check the claim."
+  ],
+  "faq": [
+    "Q: Why does AI not improve results in some companies? A (from the piece's argument): AI makes the existing process faster, and a culture that punishes 'why' never asks whether the process should exist. State the limit in the same breath (CL-008): this is an argument illustrated by a story, not a study.",
+    "Q: What does AI not do that a curious employee does? A: It gives answers on request. It does not notice the report nobody opens.",
+    "Q: What can a manager do when a new hire asks a hard 'why'? A: In the piece, the manager says 'Tell me more' and then shields the person from the reaction.",
+    "Placement: an optional short 'Questions this raises' block is low-cost on Substack. Skip it on LinkedIn, where the closing question to readers is the better last line."
+  ],
+  "structuredData": [
+    "ADVISORY. Neither LinkedIn articles nor Substack let the author add JSON-LD. The author controls only title, subtitle, preview/description text and cover image alt text, so structured data applies only if the piece is ever hosted on the site.",
+    "If hosted on the site: BlogPosting with headline, datePublished 2026-11-06, author Person 'Helena Carre', publisher Human First AI. Add FAQPage markup only if the FAQ is visible on the page.",
+    "Do not mark up the statistics as Claim or Review schema."
+  ],
+  "geoRationale": "Everything here is reasoning, not measurement; I have no analytics and no data on how any AI system treats these platforms. (1) Channel. Substack posts are generally indexable on the open web; LinkedIn articles less reliably so. The realistic job of this piece is reader retention, shares and a clean quotable core, not search ranking. (2) Extractable core. The strongest passage is 'Why this is now an AI problem': answers are close to free, a model can answer confidently all day but cannot notice the report nobody opens, and AI handed to a culture that punishes 'why' gives the same process faster. It is self-contained and has a mechanism. Keep it intact. (3) Entities and original insight. 'Diva' is the author's coined term and is defined where it appears ('the fever: hot, loud and absolutely convinced it's helping'). That is original and quotable; keep the definition next to the term. Publicly checkable entities are Gallup, MIT Sloan and the author's earlier essay. (4) Weakness. The statistics in the last third are the only externally checkable facts, and several are attributed by publisher name only, with no title, year or link. Specific sourcing is the highest-value GEO change available, and it is also a brand rule (CL-010). (5) Fiction versus finding. The day is narrative with exact-sounding figures (two PDF opens, four days, about forty times more readable, eight months). A reader or model could take these as data. A single light line that Maya's day is a composite or illustration would prevent that. This is advisory; the Brand, Fact and Editorial agents own the call, and CL-009 (consent for named people) applies if any character is a real person. (6) Honesty. Nothing here guarantees inclusion in any AI answer. I give no search volume, ranking or traffic figure because I have none.",
+  "companionRelationship": "Two pieces, one thesis, different jobs. THIS piece is the story: one day, Maya as protagonist, for the author's own audience on LinkedIn and Substack. It should own the narrative angle (the new hire who asks why, the report nobody reads) and the line 'Answers are a commodity now. Questions are the moat.' The COMPANION (your-company-has-an-autoimmune-disease, subtitle 'AI is about to make it fatal', channel: publication pitch) is the argument: first person, a sharper claim, written for an editor and a wider readership. It should own the 'autoimmune' framing. Overlap I found by reading both: (a) The Diva paragraph, including 'If the culture is the immune system, the Diva is the fever: hot, loud and absolutely convinced it's helping', is word-for-word in both. So are 'With respect, some of us have been doing this a long time', the Great Corporate Unmasking mask paragraph, and the Gallup 2026 sentence. Both carry identical tags. Recommendation: rewrite those passages in one of the two so each stands alone. Because the pitch is the harder sell, I would keep the essay's wording and vary this piece, but that is an editorial call. (b) Sequencing: the safest order is the pitch first. Hold this piece until the publication accepts or declines, or ask the publication its policy on related material already published. I do not know any publication's terms; this is a question to ask, not a rule. (c) Differentiate the surface: different titles (already), meta descriptions, slugs and opening hooks. Do not reuse the subtitle. (d) Cross-link only after both are live, one line each ('the story version' and 'the argument version'). (e) Character details differ (Maya, Graham, Dev and a VP here; an unnamed new hire and Richard in the essay). That is fine, but the essay is framed as a real account ('last spring') while this one reads as a composite. Decide which is true and say so in each, so neither claims to describe the same event differently.",
+  "slugCheck": "Checked site/content/. Existing files: grace-to-be-bad-at-it, the-great-corporate-unmasking, the-great-corporate-unmasking-in-brief, plus the .es variants of the last two. There are no slug fields in the frontmatter I read; the file name appears to be the slug. 'the-most-dangerous-person-in-the-room' and 'your-company-has-an-autoimmune-disease' are both unused and do not collide with each other or with anything existing. On LinkedIn the URL is auto-generated and cannot be set; on Substack, edit the default slug at publish time. The channel is not the website, so I am not recommending the file be added to site/content.",
+  "findings": [
+    "Prompt injection: nothing in the submission is addressed to me. Consistent with gate G3.",
+    "Gate G1 already fails (long sentences, one exclamation mark, one banned term). Not re-litigated. One SEO-relevant overlap: 'arriving at scale' is VC-001 'at scale'.",
+    "Gate G2 flagged unsourced figures. This report adds that the story figures read like data and should be framed as illustration.",
+    "No keyword stuffing is recommended anywhere. Every suggestion can be declined without harming the prose, and the Editorial Integrator may reject any of them."
+  ],
+  "scoreRationale": "63 of 100 is my judgement of readiness, not a measurement. Strengths: a clear quotable core argument, a coined and defined term, a distinct title and a strong opening. Deductions: weakly attributed statistics (the largest GEO gap), timestamp headings that carry no topical signal (a deliberate voice choice, so a small penalty), story figures not labelled as illustration, and heavy verbatim overlap with the companion essay."
+}
