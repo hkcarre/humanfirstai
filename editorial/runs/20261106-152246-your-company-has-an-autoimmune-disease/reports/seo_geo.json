@@ -1,0 +1,50 @@
+{
+  "agent": "seo_geo",
+  "score": 66,
+  "measured": false,
+  "seoTitle": "Your Company Has an Autoimmune Disease",
+  "metaDescription": "AI made answers cheap. The person who asks why is now your most valuable hire, and your culture may be trained to remove them. A leader's field notes.",
+  "slug": "your-company-has-an-autoimmune-disease",
+  "primaryTopic": "How organisational culture rejects curious employees, and why that matters more once AI makes answers cheap",
+  "relatedTopics": [
+    "psychological safety and asking questions at work",
+    "AI adoption failing because of unexamined processes",
+    "toxic culture and employee attrition",
+    "employee engagement and productivity",
+    "workplace exclusion and subtle bullying",
+    "curiosity and intellectual humility in leadership",
+    "the role of the middle manager as protector"
+  ],
+  "suggestedHeadings": [
+    "PITCH CHANNEL: keep the current headings. They are short, voiced and editor-friendly. The descriptive rewrites below apply only to a self-published site version, and only if the Integrator judges they do not flatten the voice.",
+    "The antibodies -> How a culture rejects the person who asks why (site version only)",
+    "The Diva -> The Diva: the loudest cell in the immune system (keeps the coined term, adds the metaphor for scanners)",
+    "Why AI changes everything -> Why cheap answers make certainty worth less (avoids a vague, hype-adjacent H2)",
+    "The wound -> What exclusion looks like from the inside",
+    "The bill -> What a culture that bites costs",
+    "What I've learned since -> Six things I would tell a leader now",
+    "Pitch email only: lead with a one-sentence thesis and a one-line 'why now' ahead of the draft. Editors read that before the article."
+  ],
+  "internalLinks": [
+    "/the-great-corporate-unmasking: the article already names it, so link the phrase 'The Great Corporate Unmasking'. Slug verified present in site/content/. The Diva's mask of certainty extends its masks theme.",
+    "/the-great-corporate-unmasking-in-brief: shorter entry point. Optional second link, not in the same paragraph.",
+    "/grace-to-be-bad-at-it: natural link from the Diva section (people stop asking, grace to be a beginner). Slug verified present. Fit is my judgement from the title and headings only.",
+    "/the-most-dangerous-person-in-the-room: the companion piece, only after BOTH are live, as one line near the end. Slug is inferred from the companion's title; confirm when that run's slug is fixed."
+  ],
+  "externalCitations": [
+    "CANDIDATES ONLY. I had no browsing in this run, so none of these is verified. The Fact Checker must confirm each figure against the primary document before any link is added.",
+    "Gallup, State of the Global Workplace: the 20% global engagement in 2025, the roughly $10 trillion productivity drag, and manager engagement 27% to 22% should all trace here. Also confirm that the 'Gallup 2026 workplace report' line (technology works, gains not arriving) is a real, named publication. The article does not name it and gate G2 flagged it.",
+    "MIT Sloan Management Review, Sull, Sull and Zweig on toxic culture and attrition: probable origin of the '10.4 times' figure. Verify the exact wording (predicted attrition vs a stronger predictor) and the date.",
+    "Workplace Bullying Institute survey: probable origin of the 32% bullied and 14% witnessed figures. The 62% 'chance of losing their job' needs a primary source and an exact definition before it stays in; it reads as a loose paraphrase.",
+    "Engagement and profitability (23% higher) and the '100 Best Companies' 2.3% to 3.8% a year over 28 years likely come from two different bodies. They must not end up under one citation by accident.",
+    "Rules CL-010 and CL-042 require a source for every number. In an external pitch, inline attribution in the prose ('according to Gallup's 2025 report') is more useful to an editor than a hyperlink, and is also the most extractable form for AI answer systems."
+  ],
+  "faq": [
+    "NOT RECOMMENDED for the pitch. An FAQ block on a guest column reads as SEO furniture. If a site version is published, an optional FAQ could cover: 'Why do organisations reject curious employees?', 'Why does AI make asking why more valuable?', 'What can a manager do to protect a curious colleague?'. Answers must reuse the article's own claims, with the same sourcing and no new statistics."
+  ],
+  "structuredData": [
+    "Site version only: Article (headline, datePublished 2026-11-06, author as Person Helena Carre, publisher Human First AI, keywords from tags). No FAQPage markup unless a visible FAQ exists on the page. Nothing in markup that the page text does not say.",
+    "Pitch channel: no structured data applies. The publication owns its own markup."
+  ],
+  "geoRationale": "Weighted for a pitch, not a search engine. The headline and first 150 words must pass an editor, so I changed neither. The opening ('For twenty years, I knew exactly who to fear in a meeting') is the strongest asset in the piece and I would not trade it for keyword placement.\n\nWhat helps both editors and AI answer systems: (1) A plain statement of the central claim early. The piece has one ('Answers are now close to free... Certainty... has been commoditized'), but it sits about 45% of the way in, so the pitch email should carry it up front. (2) Named, attributed figures. Gallup, MIT Sloan and a bullying survey are named in prose, but several figures are unsourced per gate G2. Unverifiable numbers reduce citation-worthiness for people and machines alike, so fixing sourcing is the highest-value SEO/GEO action and is also a brand rule (CL-010). (3) A coined, ownable frame (the Diva, the immune system) is distinctive and quotable, which can help an idea be attributed. I cannot say it will be cited.\n\nRisks I flag rather than optimise away. The subtitle 'AI is about to make it fatal' states a forecast as fact, and the metaphor stretches (a company does not die of an autoimmune disease in a quarter). An editor will likely push back or rewrite it. Offer one calmer alternative in the pitch, for example 'AI is about to make it expensive'. That is my suggestion, not a rule. The named colleague 'Richard' and the 'little auditor' nickname need consent on file under CL-009; 'Names and some details have been changed' is not the same as consent. Gate G1 already fails on a banned term, an exclamation mark (inside quoted dialogue, so the Integrator should judge it) and 5 long sentences. I do not re-litigate those.\n\nRELATIONSHIP TO THE COMPANION (run 20261106-152245, 'The Most Dangerous Person in the Room', LinkedIn/Substack). Same thesis: AI made answers free, and the person who asks why is threatened by the culture. Different angle and format. The companion is a timestamped one-day scene about one new hire (Maya, 'Why?' in a notebook). This piece is an argument built on a medical metaphor (immune system, antibodies, Diva as fever), with a cost section and six takeaways. Scene versus diagnosis is what keeps their primary topics apart. Practical guidance: (a) Many outlets want first publication or exclusivity. I do not know this publication's terms, so check before the companion goes live, and say in the pitch if it already has. (b) The column must be materially different from the companion, not a rewrite. (c) If this is later republished on the site after the outlet runs it, add a visible 'first published in X' line and a canonical link where the outlet allows. (d) Keep titles, slugs and meta descriptions distinct, which they already are. (e) The two pieces tell the same story with inconsistent details: a new hire two months in, a six-year process, four sign-offs, three spreadsheets, eleven days here; a 2019 wiki page, three departments, four days and an analyst named Dev there. If both are presented as true accounts by one author, editors and readers will notice. Either say once that they are composites, or reconcile them. This is a factual-integrity matter for the Fact Checker, not an SEO one.\n\nSLUG CHECK. site/content/ currently holds: grace-to-be-bad-at-it, the-great-corporate-unmasking, the-great-corporate-unmasking-in-brief, and the .es versions of the last two. 'your-company-has-an-autoimmune-disease' collides with none of them, and neither does the companion's likely slug 'the-most-dangerous-person-in-the-room'. The slug only matters if the piece is hosted on the brand site.\n\nIRRELEVANT IF A PUBLICATION APPLIES ITS HOUSE STYLE: seoTitle, metaDescription, slug, suggestedHeadings (apart from the pitch-email advice), FAQ, structuredData and internal links. The outlet will rewrite or discard headline, standfirst, subheads, URL and markup, and add its own links. What survives is the opening and thesis, sourcing quality (named, attributed, verifiable figures), the coined terms, and the answer-ready passages. Those are the only parts worth Integrator effort for this channel.\n\nHonesty: measured is false. I have no analytics, no search-volume or ranking data, and no browsing in this run. Nothing here is a measurement, no technique here can guarantee inclusion in search results or AI answers, and the citation candidates are unverified. The score of 66 reflects strong voice and a distinctive frame offset by unsourced figures, an overreaching subtitle, and unresolved cross-piece consistency; it is a judgement, not a measurement."
+}

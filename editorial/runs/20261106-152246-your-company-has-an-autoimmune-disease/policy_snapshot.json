@@ -1,0 +1,968 @@
+{
+  "revision": {
+    "sha": "403ed925d40cdd8d30bc90422bfaa51a521d91ce",
+    "dirty": false,
+    "repo": "hkcarre/humanfirstai"
+  },
+  "generated": "2026-11-06T15:22:47.008Z",
+  "precedence": [
+    "Mandatory legal and compliance requirements",
+    "Approved brand governance policies",
+    "Mandatory tone-of-voice and terminology rules",
+    "Channel-specific editorial standards",
+    "Article-specific instructions",
+    "General editorial best practice"
+  ],
+  "counts": {
+    "rules": 51,
+    "mandatory": 51,
+    "deterministic": 8
+  },
+  "conflicts": [],
+  "rules": [
+    {
+      "id": "CL-001",
+      "category": "Voice",
+      "description": "Sounds like a patient teacher, not a tech company",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 7,
+      "sourceText": "- [ ] Sounds like a patient teacher, not a tech company",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-002",
+      "category": "Voice",
+      "description": "A twelve-year-old could read the main message and act on it",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 8,
+      "sourceText": "- [ ] A twelve-year-old could read the main message and act on it",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-003",
+      "category": "Voice",
+      "description": "Paragraphs are 15-35 words — not a column of one-line paragraphs",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 9,
+      "sourceText": "- [ ] Paragraphs are 15-35 words — not a column of one-line paragraphs",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-004",
+      "category": "Voice",
+      "description": "No banned words (AI-powered, unlock, seamless, revolutionise, leverage, empower…)",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 10,
+      "sourceText": "- [ ] No banned words (`AI-powered`, `unlock`, `seamless`, `revolutionise`, `leverage`, `empower`…)",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-005",
+      "category": "Voice",
+      "description": "node scripts/voice-check.mjs <file> passes all six checks",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 11,
+      "sourceText": "- [ ] `node scripts/voice-check.mjs <file>` passes all six checks",
+      "priority": 2,
+      "validation": "deterministic"
+    },
+    {
+      "id": "CL-006",
+      "category": "Voice",
+      "description": "guest: true only for writers outside the movement — a byline alone keeps the rules on",
+      "mandatory": true,
+      "appliesTo": "guest-pieces",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 12,
+      "sourceText": "- [ ] `guest: true` only for writers outside the movement — a byline alone keeps the rules on",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-007",
+      "category": "Voice",
+      "description": "AI described by what it helps someone *do*, never as a mind or as magic",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 13,
+      "sourceText": "- [ ] AI described by what it helps someone *do*, never as a mind or as magic",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-008",
+      "category": "Voice",
+      "description": "The limit is stated — what it does not do, in the same breath",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 14,
+      "sourceText": "- [ ] The limit is stated — what it does not do, in the same breath",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-009",
+      "category": "Voice",
+      "description": "Any person named has consent on file",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 15,
+      "sourceText": "- [ ] Any person named has consent on file",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-010",
+      "category": "Voice",
+      "description": "Any number stated has a source. If estimated, it says \"about\".",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 16,
+      "sourceText": "- [ ] Any number stated has a source. If estimated, it says \"about\".",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-011",
+      "category": "Voice",
+      "description": "Translations: voice-check scales word targets by language. Shape must still match the original.",
+      "mandatory": true,
+      "appliesTo": "translations",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 17,
+      "sourceText": "- [ ] Translations: `voice-check` scales word targets by language. Shape must still match the original.",
+      "priority": 2,
+      "validation": "deterministic"
+    },
+    {
+      "id": "CL-012",
+      "category": "Identity",
+      "description": "\"Human First AI\" — unhyphenated, correct order, not translated",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 21,
+      "sourceText": "- [ ] \"Human First AI\" — unhyphenated, correct order, not translated",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-013",
+      "category": "Identity",
+      "description": "\"AI\" is smaller and quieter than \"Human\", and not in Sunrise",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 22,
+      "sourceText": "- [ ] \"AI\" is smaller and quieter than \"Human\", and not in Sunrise",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-014",
+      "category": "Identity",
+      "description": "Correct logo build for the background (full / reversed / mono / micro)",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 23,
+      "sourceText": "- [ ] Correct logo build for the background (full / reversed / mono / micro)",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-015",
+      "category": "Identity",
+      "description": "Clear space of one cap-height \"H\" on all four sides",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 24,
+      "sourceText": "- [ ] Clear space of one cap-height \"H\" on all four sides",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-016",
+      "category": "Identity",
+      "description": "At or above minimum size; micro build used at 24px and below",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 25,
+      "sourceText": "- [ ] At or above minimum size; micro build used at 24px and below",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-017",
+      "category": "Identity",
+      "description": "No rotation, stretch, gradient, shadow, pill or recolour",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 26,
+      "sourceText": "- [ ] No rotation, stretch, gradient, shadow, pill or recolour",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-018",
+      "category": "Colour and type",
+      "description": "Every text/background pair clears 4.5:1 — checked, not assumed",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 30,
+      "sourceText": "- [ ] Every text/background pair clears 4.5:1 — checked, not assumed",
+      "priority": 2,
+      "validation": "deterministic"
+    },
+    {
+      "id": "CL-019",
+      "category": "Colour and type",
+      "description": "Icons, logo parts and input borders clear 3:1",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 31,
+      "sourceText": "- [ ] Icons, logo parts and input borders clear 3:1",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-020",
+      "category": "Colour and type",
+      "description": "No white text on Sunrise anywhere",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 32,
+      "sourceText": "- [ ] No white text on Sunrise anywhere",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-021",
+      "category": "Colour and type",
+      "description": "No Sunrise or Sky used as type or a hairline on a light surface",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 33,
+      "sourceText": "- [ ] No Sunrise or Sky used as type or a hairline on a light surface",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-022",
+      "category": "Colour and type",
+      "description": "Muted text is #68728A, not an opacity",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 34,
+      "sourceText": "- [ ] Muted text is `#68728A`, not an opacity",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-023",
+      "category": "Colour and type",
+      "description": "Nothing below 14px; body copy 17px or above",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 35,
+      "sourceText": "- [ ] Nothing below 14px; body copy 17px or above",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-024",
+      "category": "Colour and type",
+      "description": "Body copy is Atkinson Hyperlegible, ragged right, 60–70 characters a line",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 36,
+      "sourceText": "- [ ] Body copy is Atkinson Hyperlegible, ragged right, 60–70 characters a line",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-025",
+      "category": "Colour and type",
+      "description": "No all-caps headings",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 37,
+      "sourceText": "- [ ] No all-caps headings",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-026",
+      "category": "Images",
+      "description": "Real people in real light — no robots, circuits, brains, glow",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 41,
+      "sourceText": "- [ ] Real people in real light — no robots, circuits, brains, glow",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-027",
+      "category": "Images",
+      "description": "Provenance and consent recorded in credits.json",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 42,
+      "sourceText": "- [ ] Provenance and consent recorded in `credits.json`",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-028",
+      "category": "Images",
+      "description": "**Not an AI-generated image of a person** — never approved for public material",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 43,
+      "sourceText": "- [ ] **Not an AI-generated image of a person** — never approved for public material",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-029",
+      "category": "Images",
+      "description": "Scrim behind any type on a photograph, measured not eyeballed",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 44,
+      "sourceText": "- [ ] Scrim behind any type on a photograph, measured not eyeballed",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-030",
+      "category": "Images",
+      "description": "Alt text written to the formula: who + what they are doing + where and how it feels",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 45,
+      "sourceText": "- [ ] Alt text written to the formula: who + what they are doing + where and how it feels",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-031",
+      "category": "Images",
+      "description": "Decorative images carry alt=\"\"",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 46,
+      "sourceText": "- [ ] Decorative images carry `alt=\"\"`",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-032",
+      "category": "Images",
+      "description": "A language switcher is only offered when the other version actually exists",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 47,
+      "sourceText": "- [ ] A language switcher is only offered when the other version actually exists",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-033",
+      "category": "Images",
+      "description": "A photograph we do not have renders as a labelled slot, never a broken image or a generated face",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 48,
+      "sourceText": "- [ ] A photograph we do not have renders as a labelled slot, never a broken image or a generated face",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-034",
+      "category": "Reach",
+      "description": "Passes the photocopy test if it will ever be printed",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 52,
+      "sourceText": "- [ ] Passes the photocopy test if it will ever be printed",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-035",
+      "category": "Reach",
+      "description": "Readable at 200% zoom with no clipping or horizontal scroll",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 53,
+      "sourceText": "- [ ] Readable at 200% zoom with no clipping or horizontal scroll",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-036",
+      "category": "Reach",
+      "description": "Still makes sense in greyscale",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 54,
+      "sourceText": "- [ ] Still makes sense in greyscale",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-037",
+      "category": "Reach",
+      "description": "Keyboard reachable with a visible focus ring, if interactive",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 55,
+      "sourceText": "- [ ] Keyboard reachable with a visible focus ring, if interactive",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-038",
+      "category": "Reach",
+      "description": "Captions on video, transcripts on audio",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 56,
+      "sourceText": "- [ ] Captions on video, transcripts on audio",
+      "priority": 1,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-039",
+      "category": "Figures and audio",
+      "description": "The figure shows something the sentence beside it cannot. If decorative, cut it.",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 60,
+      "sourceText": "- [ ] The figure shows something the sentence beside it cannot. If decorative, cut it.",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-040",
+      "category": "Figures and audio",
+      "description": "Figures in one piece are variations on one idea, not unrelated chart types",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 61,
+      "sourceText": "- [ ] Figures in one piece are variations on one idea, not unrelated chart types",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-041",
+      "category": "Figures and audio",
+      "description": "Two quantities sit on two radii, never stacked on the same one",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 62,
+      "sourceText": "- [ ] Two quantities sit on two radii, never stacked on the same one",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-042",
+      "category": "Figures and audio",
+      "description": "Every number carries its source in the caption. Estimates say \"about\".",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 63,
+      "sourceText": "- [ ] Every number carries its source in the caption. Estimates say \"about\".",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-043",
+      "category": "Figures and audio",
+      "description": "Renders complete with JavaScript off and under prefers-reduced-motion",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 64,
+      "sourceText": "- [ ] Renders complete with JavaScript off and under `prefers-reduced-motion`",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-044",
+      "category": "Figures and audio",
+      "description": "role=\"img\" with a label describing the finding, not the drawing",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 65,
+      "sourceText": "- [ ] `role=\"img\"` with a label describing the finding, not the drawing",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-045",
+      "category": "Figures and audio",
+      "description": "Narration: cd tools && npm run phonemes:check passes before generating audio",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 66,
+      "sourceText": "- [ ] Narration: `cd tools && npm run phonemes:check` passes before generating audio",
+      "priority": 2,
+      "validation": "deterministic"
+    },
+    {
+      "id": "CL-046",
+      "category": "Figures and audio",
+      "description": "**Somebody has listened to the audio end to end.** Nothing else catches a mis-encoded voice.",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 67,
+      "sourceText": "- [ ] **Somebody has listened to the audio end to end.** Nothing else catches a mis-encoded voice.",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "CL-047",
+      "category": "Figures and audio",
+      "description": "Anyone else's words are in a  testimony  block, not a > blockquote — the synthetic",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/references/checklist.md",
+      "sourceLine": 68,
+      "sourceText": "- [ ] Anyone else's words are in a ` ```testimony ` block, not a `>` blockquote — the synthetic",
+      "priority": 2,
+      "validation": "agent"
+    },
+    {
+      "id": "VC-001",
+      "category": "Voice",
+      "description": "Banned terms, when used in our own voice: AI-powered, AI-first, unlock, unlocking, supercharge, revolutionise, revolutionize, revolutionary, disrupt, disruptive, seamless, cutting-edge, best-in-class, robust, leverage, leveraging, democratise, democratize, empower, empowering, game-changing, next-generation, paradigm, ecosystem, synergy, synergies, holistic, transformation, transformative, hallucinate, hallucination, prompt engineering, thought leader, deep dive, move the needle, low-hanging fruit, double down, at scale, frictionless. Quoted jargon is allowed — naming a word to puncture it is the point.",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/scripts/voice-check.mjs",
+      "sourceLine": 16,
+      "sourceText": "const BANNED = [39 terms]",
+      "priority": 1,
+      "validation": "deterministic",
+      "terms": [
+        "AI-powered",
+        "AI-first",
+        "unlock",
+        "unlocking",
+        "supercharge",
+        "revolutionise",
+        "revolutionize",
+        "revolutionary",
+        "disrupt",
+        "disruptive",
+        "seamless",
+        "cutting-edge",
+        "best-in-class",
+        "robust",
+        "leverage",
+        "leveraging",
+        "democratise",
+        "democratize",
+        "empower",
+        "empowering",
+        "game-changing",
+        "next-generation",
+        "paradigm",
+        "ecosystem",
+        "synergy",
+        "synergies",
+        "holistic",
+        "transformation",
+        "transformative",
+        "hallucinate",
+        "hallucination",
+        "prompt engineering",
+        "thought leader",
+        "deep dive",
+        "move the needle",
+        "low-hanging fruit",
+        "double down",
+        "at scale",
+        "frictionless"
+      ],
+      "compliantExample": "They will start AI committees and publish strategies explaining why the organisation is now \"AI-first\".",
+      "nonCompliantExample": "Our AI-powered platform unlocks seamless, revolutionary synergies."
+    },
+    {
+      "id": "VC-002",
+      "category": "Voice",
+      "description": "Intensifiers to avoid (more than two is a failure): very, really, incredibly, extremely, truly, literally, absolutely.",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/scripts/voice-check.mjs",
+      "sourceLine": 24,
+      "sourceText": "const HEDGE = [7 terms]",
+      "priority": 2,
+      "validation": "deterministic",
+      "terms": [
+        "very",
+        "really",
+        "incredibly",
+        "extremely",
+        "truly",
+        "literally",
+        "absolutely"
+      ]
+    },
+    {
+      "id": "VC-003",
+      "category": "Voice",
+      "description": "Paragraph shape 15–35 words, sentences under 22, none over 25. Word targets scale by language; shape must still match the original.",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/scripts/voice-check.mjs",
+      "sourceLine": 52,
+      "sourceText": "EXPANSION / T thresholds",
+      "priority": 2,
+      "validation": "deterministic"
+    },
+    {
+      "id": "VC-004",
+      "category": "Voice",
+      "description": "No exclamation marks in our own voice.",
+      "mandatory": true,
+      "appliesTo": "all",
+      "sourcePath": "skill/human-first-ai-brand/scripts/voice-check.mjs",
+      "sourceLine": 98,
+      "sourceText": "bangs === 0",
+      "priority": 2,
+      "validation": "deterministic"
+    }
+  ],
+  "documents": [
+    {
+      "path": "docs/00-start-here.md",
+      "title": "Start here",
+      "headings": [
+        "What we are",
+        "The five-second rules",
+        "The kit",
+        "Four checks before anything goes out",
+        "The whole book"
+      ],
+      "words": 468
+    },
+    {
+      "path": "docs/01-foundation.md",
+      "title": "01 · Foundation",
+      "headings": [
+        "The problem we exist for",
+        "What we actually do",
+        "The four people we speak to",
+        "Why there is no hyphen",
+        "Naming and descriptors",
+        "What we are not"
+      ],
+      "words": 567
+    },
+    {
+      "path": "docs/02-voice.md",
+      "title": "02 · Voice",
+      "headings": [
+        "Who is speaking",
+        "Four principles",
+        "Do and don't",
+        "The jargon list",
+        "Honesty rules",
+        "Headlines that work",
+        "The voice applied to a real piece",
+        "Translation",
+        "The voice checker and other languages",
+        "Guest bylines"
+      ],
+      "words": 1972
+    },
+    {
+      "path": "docs/03-logo.md",
+      "title": "03 · Logo",
+      "headings": [
+        "The Open Door",
+        "Construction",
+        "Lockups",
+        "Colourways",
+        "Clear space",
+        "Minimum sizes",
+        "Misuse",
+        "Right-to-left layouts"
+      ],
+      "words": 984
+    },
+    {
+      "path": "docs/04-colour.md",
+      "title": "04 · Colour",
+      "headings": [
+        "The palette",
+        "The two rules that catch most mistakes",
+        "Distribution",
+        "Semantic tokens",
+        "Colour never carries meaning alone",
+        "Print"
+      ],
+      "words": 638
+    },
+    {
+      "path": "docs/05-typography.md",
+      "title": "05 · Typography",
+      "headings": [
+        "Two typefaces",
+        "The scale",
+        "Rules",
+        "Across scripts",
+        "Performance"
+      ],
+      "words": 594
+    },
+    {
+      "path": "docs/06-iconography.md",
+      "title": "06 · Icons",
+      "headings": [
+        "Using them",
+        "Drawing a new one"
+      ],
+      "words": 476
+    },
+    {
+      "path": "docs/07-photography.md",
+      "title": "07 · Photography",
+      "headings": [
+        "What a Human First AI photograph looks like",
+        "The provenance rule",
+        "The set",
+        "Type on a photograph",
+        "Alt text",
+        "Synthetic voice",
+        "Illustration"
+      ],
+      "words": 1924
+    },
+    {
+      "path": "docs/08-graphic-devices.md",
+      "title": "08 · Graphic devices",
+      "headings": [
+        "The Open Threshold",
+        "Rules",
+        "Proportion",
+        "What we do not have, on purpose",
+        "Figures in articles",
+        "Missing photographs"
+      ],
+      "words": 601
+    },
+    {
+      "path": "docs/09-social-playbook.md",
+      "title": "09 · Social playbook",
+      "headings": [
+        "Sizes we keep",
+        "The four card types",
+        "Writing the post itself",
+        "Things that are not our voice",
+        "Accessibility, every time"
+      ],
+      "words": 691
+    },
+    {
+      "path": "docs/10-applications.md",
+      "title": "10 · Applications",
+      "headings": [
+        "The photocopy test",
+        "Flyers and posters",
+        "Slide decks",
+        "Volunteer kit",
+        "Certificate of completion",
+        "Web",
+        "Email"
+      ],
+      "words": 600
+    },
+    {
+      "path": "docs/11-accessibility.md",
+      "title": "11 · Accessibility",
+      "headings": [
+        "The numbers",
+        "Things that are not negotiable",
+        "Plain language is an accessibility feature",
+        "Checking it",
+        "Where we will not pretend"
+      ],
+      "words": 501
+    },
+    {
+      "path": "docs/12-chapters-and-partners.md",
+      "title": "12 · Chapters and partners",
+      "headings": [
+        "Chapter lockup",
+        "Co-branding with partners",
+        "What a chapter may change",
+        "Funders and sponsors"
+      ],
+      "words": 453
+    },
+    {
+      "path": "docs/13-governance.md",
+      "title": "13 · Governance",
+      "headings": [
+        "The sign-off checklist",
+        "What success looks like",
+        "Proposing a change",
+        "Versioning",
+        "Licence"
+      ],
+      "words": 412
+    },
+    {
+      "path": "docs/audit-v1-to-v2.md",
+      "title": "Audit: v1 to v2",
+      "headings": [
+        "What v1 got right",
+        "1 · The mark did not read as a door",
+        "2 · The published contrast figures were wrong, in the dangerous direction",
+        "3 · The wordmark contradicted the strategy it was supposed to express",
+        "4 · The icon set did not match its own descriptions",
+        "5 · Gaps between the book and what existed",
+        "6 · Structural problems",
+        "What v2 adds",
+        "What is still open",
+        "Round three — 5 November 2026"
+      ],
+      "words": 2452
+    },
+    {
+      "path": "docs/source-grace-to-be-bad-at-it.md",
+      "title": "Give Yourself the Grace to Be Bad at It",
+      "headings": [
+        "So Why Do We Avoid Them?",
+        "What If Being Bad at It Is the Point?",
+        "And What About Asking for Help?",
+        "So Where Do We Go From Here?",
+        "About the author"
+      ],
+      "words": 905
+    },
+    {
+      "path": "skill/human-first-ai-brand/references/checklist.md",
+      "title": "Review checklist",
+      "headings": [
+        "Voice",
+        "Identity",
+        "Colour and type",
+        "Images",
+        "Reach",
+        "Figures and audio",
+        "Then"
+      ],
+      "words": 702
+    },
+    {
+      "path": "skill/human-first-ai-brand/references/colour.md",
+      "title": "Colour",
+      "headings": [
+        "Palette",
+        "Thresholds",
+        "Approved pairings",
+        "Forbidden pairings",
+        "Rules",
+        "In code",
+        "Print"
+      ],
+      "words": 609
+    },
+    {
+      "path": "skill/human-first-ai-brand/references/logo.md",
+      "title": "Logo",
+      "headings": [
+        "The mark",
+        "Which file",
+        "The wordmark",
+        "Clear space and minimum size",
+        "Nine misuses",
+        "On photography",
+        "Right to left",
+        "Co-branding"
+      ],
+      "words": 595
+    },
+    {
+      "path": "skill/human-first-ai-brand/references/social.md",
+      "title": "Social and templates",
+      "headings": [
+        "Sizes",
+        "Four card types",
+        "The post itself",
+        "Not our voice",
+        "Accessibility, every post"
+      ],
+      "words": 534
+    },
+    {
+      "path": "skill/human-first-ai-brand/references/voice.md",
+      "title": "Voice",
+      "headings": [
+        "Who is speaking",
+        "Four principles",
+        "Do and don't",
+        "Banned words and phrases",
+        "Honesty rules — non-negotiable",
+        "Approved headlines",
+        "Naming",
+        "Translation"
+      ],
+      "words": 591
+    }
+  ]
+}

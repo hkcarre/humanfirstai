@@ -1,0 +1,129 @@
+{
+  "agent": "brand_compliance",
+  "score": 66,
+  "policyRevision": "hkcarre/humanfirstai@403ed925d40cdd8d30bc90422bfaa51a521d91ce",
+  "mandatoryViolations": 8,
+  "findings": [
+    {
+      "passage": "the technology works, but the bottom-line gains aren't arriving at scale.",
+      "severity": "HIGH",
+      "ruleId": "VC-001",
+      "explanation": "'at scale' is on the banned list and is not in quotation marks, so it is the author's own voice, not a puncture. It is on line 74 of the original file (the checker reports line 62 because it counts after stripping). Author byline with guest false, so the rule applies in full.",
+      "recommendation": "Delete the phrase. For example: '...but the bottom-line gains aren't arriving for most companies.'",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:16; docs/02-voice.md 'The jargon list'"
+    },
+    {
+      "passage": "The one whose silence could end a project, whose raised eyebrow could rewrite a quarter, whose \"let's take this offline\" meant your idea had just been taken out back.",
+      "severity": "MEDIUM",
+      "ruleId": "VC-003",
+      "explanation": "29 words; the rule allows none over 25. The three 'whose' clauses are a deliberate list, so the fix is to cut at the joints and keep the rhythm.",
+      "recommendation": "Split at each 'whose': 'The one whose silence could end a project. Whose raised eyebrow could rewrite a quarter. Whose \"let's take this offline\" meant your idea had just been taken out back.' Each part is under 25.",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:52 (T.long = 25)"
+    },
+    {
+      "passage": "Flip it around: top-quartile engagement is linked to 23% higher profitability, and the \"100 Best Companies to Work For\" beat their peers by 2.3% to 3.8% a year over 28 years.",
+      "severity": "MEDIUM",
+      "ruleId": "VC-003",
+      "explanation": "31 words, over the 25-word ceiling. Two separate statistics are packed into one sentence.",
+      "recommendation": "Make it two sentences, one per statistic. That also makes it easier to attach a source to each (see the CL-010 finding).",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:52"
+    },
+    {
+      "passage": "Within a month, she had mapped the whole process, found that two of the four sign-offs had never once rejected anything, and, with the same AI tool we'd been using to fill in spreadsheets, built a prototype that did in an afternoon what used to take us eleven days.",
+      "severity": "MEDIUM",
+      "ruleId": "VC-003",
+      "explanation": "About 49 words, nearly double the ceiling, and it carries the payoff of the story. The reader has to hold three achievements in one breath. The intake gate counts 5 long sentences, but two of those are splitter artifacts (sentences welded across a closing quotation mark). The true count I can reproduce is 3: this one, the 29-word opening and the 31-word Gallup sentence.",
+      "recommendation": "Three sentences, one per achievement: 'Within a month, she had mapped the whole process. She found that two of the four sign-offs had never once rejected anything. And with the same AI tool we'd been using to fill in spreadsheets, she built a prototype that did in an afternoon what used to take us eleven days.'",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:52"
+    },
+    {
+      "passage": "It never looks like an attack. / It looks like a meeting invite titled \"Quick Alignment.\" / It looks like \"Love the energy! Let's park this for Q3.\" / It looks like her name quietly disappearing from the next project kickoff.",
+      "severity": "MEDIUM",
+      "ruleId": "CL-003",
+      "explanation": "Four consecutive one-line paragraphs (roughly 6 to 12 words each) under 'The antibodies': the 'column of one-line paragraphs' the checklist rules out. The piece passes on the mean (25.5 words a paragraph), but the checklist wording is about the column, not the mean. docs/02-voice.md calls this staccato a house style that is 'not ours' and says to keep the short sentences and join them into paragraphs. The opening (lines 14 to 18) is milder, and the isolated single lines at 84, 90 and 112 read as beats; I leave those alone.",
+      "recommendation": "Join the four into one paragraph. The 'It looks like' run survives as a run. That comes to about 39 words, so trim or merge one item to land at 35 or under.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md:9; docs/02-voice.md 'The voice applied to a real piece'"
+    },
+    {
+      "passage": "In a 2024 US survey, 32% of adults said they had been bullied at work and another 14% had witnessed it. Targets face a 62% chance of losing their job.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Three figures with no named source anywhere in the text ('a 2024 US survey' names nothing). 'Never state an impact number we cannot source.' Counted as unresolved until a source is named. If the Fact Checker finds none, the figures must come out.",
+      "recommendation": "Name the survey and the body running it in the sentence, or cut the numbers.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md:16; docs/02-voice.md 'Honesty rules'"
+    },
+    {
+      "passage": "the \"100 Best Companies to Work For\" beat their peers by 2.3% to 3.8% a year over 28 years.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "Specific returns figures with no named publisher or study and no 'about'. The surrounding Gallup figures at least name Gallup; these do not. '23% higher profitability' is also unattributed unless it is meant to be Gallup's. This figure is in the essay only, not the companion.",
+      "recommendation": "Name who measured it and over what period, or remove it. If it is an estimate, say 'about'.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md:16"
+    },
+    {
+      "passage": "manager engagement just fell from 27% to 22% in a single year.",
+      "severity": "HIGH",
+      "ruleId": "CL-010",
+      "explanation": "No source or year named. It sits in a numbered list, so a reader will not connect it to the Gallup report mentioned earlier. The same figure is unsourced in the companion piece, so this is a shared finding.",
+      "recommendation": "Add the source and year in the clause once the Fact Checker confirms it, or cut the figure.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md:16"
+    },
+    {
+      "passage": "Gallup's 2026 workplace report ... MIT Sloan's analysis of employee reviews ... a drag Gallup prices at around $10 trillion",
+      "severity": "LOW",
+      "ruleId": "CL-010",
+      "explanation": "These figures name a source, so I do not count them as breaches. They carry no link or title. The $10 trillion figure correctly says 'around'. Verification is for the Fact Checker.",
+      "recommendation": "Advisory: add links or report titles where the page allows.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md:16"
+    },
+    {
+      "passage": "It looks like \"Love the energy! Let's park this for Q3.\"",
+      "severity": "LOW",
+      "ruleId": "VC-004",
+      "explanation": "The gate's one exclamation mark. It sits inside quoted corporate speech that the author is mocking, and the rule is scoped to 'our own voice', so I do not count it. The gate will still fail mechanically unless a human rules the quotation is outside the rule. Same situation in the companion piece (Graham's 'Love the fresh eyes!').",
+      "recommendation": "No change needed on brand grounds. If the decision is to keep the gate green, swap to a full stop: 'Love the energy. Let's park this for Q3.'",
+      "sourceRef": "skill/human-first-ai-brand/scripts/voice-check.mjs:98; docs/02-voice.md 'The jargon list' on puncturing quoted words"
+    },
+    {
+      "passage": "Yes, I chose the word on purpose, and no, it has no gender. Divas come in every gender, level and department.",
+      "severity": "MEDIUM",
+      "explanation": "Advisory; no rule in the snapshot governs archetype names and I am not creating one. On the two questions asked. (1) Does a reader hear it as gendered? Yes. In ordinary use 'diva' is a woman, an opera star and then a demanding woman, and the author felt she had to rule that reading out in the text, which is evidence it is heard. The essay also undercuts its own defence: the person excluded is 'she', the only Diva given a face is a man, and no female Diva appears. (2) Is defending it a sign of damage? I think so here. The defence is the one place the essay stops teaching to manage the reader's reaction. And the word does what the essay condemns: 'The nickname, the missing invite' is listed as a tool of exclusion ('our little auditor', 'not quite a culture fit'), and 'Diva' is a nickname, with 'the fever' and 'the infection' imagery attached. The house voice 'explains hard things without making anyone feel small'. The essay does humanise the Diva (they were curious once), but gives no way back: the advice list protects the curious and the protectors and says nothing to the Diva. The companion piece does ('Find your Graham. Be patient with him. He was five once too.') and does not make the 'no, it has no gender' defence, so both are essay-only. This is a brand-director call, not a violation. The word is vivid and the voice allows a sharp joke.",
+      "recommendation": "Options for the author: (a) keep 'Diva' and delete the defensive sentence, letting 'come in every gender' stand alone; (b) choose a label that names the behaviour rather than the person; (c) add one line of grace for the Diva in the closing advice, as the companion does. If the label stays, prefer (a) plus (c). I do not recommend leaving the defence in.",
+      "sourceRef": "docs/02-voice.md 'Who is speaking'; essay point 5 of 'What I've learned since'; companion piece closing"
+    },
+    {
+      "passage": "AI is about to make it fatal / Why AI changes everything",
+      "severity": "MEDIUM",
+      "explanation": "Advisory, from the voice principle 'quietly confident: if a sentence needs a superlative to land, it is not true yet' and the Unmasking worked example, where 'AI Is Coming for the Politicians' was replaced because 'coming for' is a threat and the house is 'quietly confident, not combative'. The subtitle 'AI is about to make it fatal' is the same move, and is essay-only (the companion's subtitle is plainer). 'Why AI changes everything' is a big claim of the 'revolutionary' kind. The superlatives in the body ('most dangerous', 'cruelest trick', 'most expensive sentence') are the author's personality and are mostly earned by a detail, so I leave them.",
+      "recommendation": "Change the subtitle to state the argument without the threat, for example 'AI made answers free. Your culture decides what happens next.' Make the heading specific, for example 'Why AI makes the question valuable'. Leave the body alone.",
+      "sourceRef": "docs/02-voice.md 'Four principles' (3) and 'The voice applied to a real piece' (subtitle row)"
+    },
+    {
+      "passage": "A model will give you a confident, well-formatted answer to almost anything in seconds.",
+      "severity": "LOW",
+      "explanation": "Advisory. 'Model' is in the banned column of the jargon list ('The tool'), but it is not one of the 39 terms in VC-001, so I do not count it. The sentence also presents AI answers as free and confident without the house line that tools are often useful and sometimes confidently wrong. CL-008 itself is met a sentence later ('What AI can't do is notice...'). The companion has the same wording.",
+      "recommendation": "'A tool will give you...' and, optionally, add that it is sometimes confidently wrong.",
+      "sourceRef": "docs/02-voice.md 'The jargon list' and 'Honesty rules'"
+    },
+    {
+      "passage": "Ours was Richard. Eleven years in. ... Names and some details have been changed.",
+      "severity": "LOW",
+      "ruleId": "CL-009",
+      "explanation": "Advisory; I cannot see a consent record from here. The closing note says names were changed, which handles the named person if 'Richard' is a pseudonym. The new hire's private distress is also told in detail, and the honesty rules say a story belongs to its owner. 'She told me later' implies she knows, but nothing on file shows it.",
+      "recommendation": "Confirm that the new hire has agreed to the account and that Richard is a pseudonym. No change to the text if so.",
+      "sourceRef": "skill/human-first-ai-brand/references/checklist.md:15; docs/02-voice.md 'Honesty rules'"
+    }
+  ],
+  "compliantNotes": [
+    "Guest status: publishing_metadata.json says guest false and the article is Helena Carre's own, so the voice rules apply in full and nothing is downgraded as guest advisory. The channel label 'Publication pitch, guest column' does not change that; per CL-006 a byline or label alone does not turn the rules off.",
+    "mandatoryViolations = 8: one banned term (VC-001), three sentences over 25 words (VC-003), one column of one-line paragraphs (CL-003), three unsourced figures (CL-010). The three CL-010 items fall away if the author names sources the Fact Checker confirms. Not counted: the quoted exclamation mark, the 'model' wording, the Diva and subtitle advice, the consent check.",
+    "Spelling: the policy snapshot has no rule on American or British spelling. The prose docs use British forms (neighbourhood, organisation) and the banned list carries both spellings of revolutionise and democratise, but that is usage, not a rule. The essay's American spelling is therefore not a finding, and it is internally consistent. The companion mixes 'licence' with 'organization'; this essay does not.",
+    "Quoted jargon is used as the house style allows: 'Quick Alignment', 'Love the energy!', 'not quite a culture fit', 'just banter', 'tone', 'FINAL_v7_REAL_final'. None counted. The only banned term in the author's own voice is 'at scale'.",
+    "Intensifiers: one ('absolutely'), under the limit of two. VC-002 passes.",
+    "CL-007 and CL-008 are met: AI is described by what it does ('fill in those three spreadsheets faster', 'Same tool. Different question.') and its limit sits in the same paragraph ('What AI can't do is notice...').",
+    "CL-012: the article does not name Human First AI, so the naming rules do not arise.",
+    "Distinctive and compliant, leave alone: the opening ('I knew exactly who to fear'), 'emails from your bank', 'FINAL_v7_REAL_final', 'Nobody shouts. Nobody has to.', 'Same tool. Different question.', 'Humility is the door curiosity walks through', and the warm ending.",
+    "Differences from the companion (editorial/runs/20261106-152245-the-most-dangerous-person-in-the-room). Essay only: the 'no, it has no gender' defence, the 'make it fatal' subtitle, no grace line for the Diva, the unsourced '100 Best Companies' and '32% / 14%' figures, the 29-, 31- and 49-word sentences, and the four-line one-liner column. Both: 'at scale', the quoted exclamation mark, the unsourced 27% to 22% and 62% figures, 'A model', the 'Divas' label. I read the companion article but did not review it fully, so treat this list as a guide.",
+    "Tooling: I read the policy snapshot, the voice docs, the intake gates and the schema, and re-ran the repository's voice-check.mjs on the essay. I did not verify any external statistic; that is the Fact Checker's job. Gate counts reproduced for banned terms (1) and exclamation marks (1). Long sentences: 3 by my count against 5 by the gate."
+  ]
+}

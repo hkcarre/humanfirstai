@@ -1,0 +1,235 @@
+{
+  "agent": "integration",
+  "score": 62,
+  "finalArticlePath": "editorial/runs/20261106-152246-your-company-has-an-autoimmune-disease/final_article.md",
+  "publishable": false,
+  "verdict": "BLOCKED — two unresolved CRITICAL compliance findings (CL-009) that only the author, and on one of them probably counsel, can clear. The article itself is now in the best shape I can put it in, and every deterministic gate passes.",
+  "changes": [
+    {
+      "what": "Removed the clause 'and the \"100 Best Companies to Work For\" beat their peers by 2.3% to 3.8% a year over 28 years.' No number substituted. The remaining sentence now stands on the Gallup figure alone.",
+      "why": "Fact Checker status CONTRADICTED, recommended action 'remove'. Neither 2.3% nor 3.8% appears in any source it retrieved; the only 28-year figure it found is Great Place To Work / FTSE Russell's 13.4% versus 9.2% for the Russell 3000, a 4.2-point gap. The author's own source table has no source for this row. I deliberately did not substitute the 13.4%/9.2% pair, which the Fact Checker left open to a human editor: it comes from the list's own producer, it benchmarks against a broad index rather than 'their peers', and the paragraph's work is already done by the sourced Gallup figure. If the author wants a stock-performance point she should write it with her own source.",
+      "ruleId": "CL-010",
+      "severity": "CRITICAL"
+    },
+    {
+      "what": "Rewrote the profitability clause as 'In Gallup's 2024 meta-analysis, business units in the top quartile of engagement showed a median 23% higher profitability than those in the bottom quartile', with a link to the Q12 meta-analysis. 'Flip it around:' became its own sentence, 'Flip it around.'",
+      "why": "The 23% figure is VERIFIED against Gallup's Q12 meta-analysis, 11th edition (May 2024) — the row the author herself marked 'not re-checked' in her source table is now checked and holds. The article had dropped the comparison group, which turns a median top-versus-bottom-quartile gap into a bare uplift. Adding 'than those in the bottom quartile' and 'median' restores what was measured. CL-010 needs the source named.",
+      "ruleId": "CL-010",
+      "severity": "HIGH"
+    },
+    {
+      "what": "Replaced 'Gallup's 2026 workplace report puts it plainly: the technology works, but the bottom-line gains aren't arriving at scale.' with 'Gallup's 2026 global workplace report shows the gap. In US organizations using AI, 65% of workers report a personal productivity gain. Only 12% strongly agree it has changed how work gets done.' Source linked.",
+      "why": "Three findings land on this one sentence. (1) Fact Checker: UNVERIFIED — it found no Gallup sentence saying this, and 'puts it plainly' presents the author's paraphrase as Gallup's own words. The 65% and 12% figures are what it actually retrieved from the Gallup page. (2) VC-001: 'at scale' is on the banned list and sits in the author's own voice, not inside quotation marks — this was the single banned term failing G1. (3) CL-010: the report carried no link. Note for the author: the replacement is narrower than her paraphrase — it is US-only and measures whether work has changed rather than bottom-line gains. Her argument in the paragraph ('they bought the tools and pointed them at processes nobody had questioned') is unchanged and now rests on figures that exist, but she should confirm she is content with the narrower claim.",
+      "ruleId": "VC-001",
+      "severity": "HIGH"
+    },
+    {
+      "what": "Split the 29-word second sentence of the piece at its two 'whose' joints: 'The one whose silence could end a project. Whose raised eyebrow could rewrite a quarter. Whose \"let's take this offline\" meant your idea had just been taken out back.' Not one word changed or cut.",
+      "why": "VC-003, deterministic, none over 25 words. This was one of the three real long sentences (the gate's other two were splitter artefacts, now fixed upstream). The Brand Guardian's cut points keep the anaphora, which is the reason the sentence works. The fragments read as deliberate, which they are.",
+      "ruleId": "VC-003",
+      "severity": "MEDIUM"
+    },
+    {
+      "what": "Split the 49-word payoff sentence into four: '...she had mapped the whole process. She found that two of the four sign-offs had never once rejected anything. Then, with the same AI tool we'd been using to fill in spreadsheets, she built a prototype. In our case, it did in an afternoon what used to take us eleven days.'",
+      "why": "VC-003 (49 words, nearly double the ceiling, and it carries the story's payoff). 'In our case' answers the CL-008 finding by scoping the performance claim to her own account. I did not add what the prototype did not do — Compliance asked for that, but I would have had to invent a fact (for example that a person still checked the output). The author should add the limit in her own words.",
+      "ruleId": "VC-003",
+      "severity": "MEDIUM"
+    },
+    {
+      "what": "Bullying paragraph: named and linked the Workplace Bullying Institute's 2024 US survey; removed 'and another 14% had witnessed it'; changed 'Targets face a 62% chance of losing their job' to 'By the same survey's estimate, 62% of targets lose their job, counting those who resign.'",
+      "why": "CL-010 and the honesty rule 'never state an impact number we cannot source'. The 32% is VERIFIED (WBI reports 32.3%). The 14% is UNVERIFIED — it appears only in a search summary of a PDF the Fact Checker could not read, and its recommended action was to confirm it or remove it; I removed it rather than publish a number nobody has seen in the source. The 62% is VERIFIED but WBI's own breakdown includes voluntary resignation, which 'face a 62% chance' hid, and the original phrasing turned a survey share into a forecast about the individual reader. If the author opens the 2024 Complete Report PDF and confirms the 14%, she can restore the clause with the citation.",
+      "ruleId": "CL-010",
+      "severity": "HIGH"
+    },
+    {
+      "what": "Added one sentence to the same paragraph: 'Bullying is the extreme case of the same reflex.'",
+      "why": "Editorial's finding, and the only place where the piece leans on data that measures something slightly different from its subject: WBI measures workplace bullying, the essay is about the expulsion of curious people. One half-sentence makes the bridge explicit instead of leaving the reader to assume the figures are about curiosity. It is an interpretive claim, in the author's register, and consistent with her argument — but it is a sentence she did not write, so it is flagged here for her approval.",
+      "ruleId": "CL-010",
+      "severity": "MEDIUM"
+    },
+    {
+      "what": "MIT Sloan: 'In MIT Sloan Management Review's 2022 analysis of employee reviews...', linked. 'Predicted attrition 10.4 times more strongly than compensation' kept verbatim.",
+      "why": "VERIFIED against the primary article, which says toxic culture is '10.4 times more powerful than compensation in predicting' industry-adjusted attrition. CL-010 needs the publisher named and sourced. The date matters: the data is from 2021, so it is not evidence about 2026. The Fact Checker warned specifically against any edit that turns 'predicted ... more strongly' into 'more likely to quit'; the association wording is untouched.",
+      "ruleId": "CL-010",
+      "severity": "HIGH"
+    },
+    {
+      "what": "'the lowest since 2020' became 'matching the lowest level since 2020'.",
+      "why": "Gallup's trend table shows 20% in 2020 as well as 2025, so 2025 equals the 2020 low rather than falling below it. Three words, and the sentence is now exactly true.",
+      "ruleId": "CL-010",
+      "severity": "LOW"
+    },
+    {
+      "what": "Linked Gallup on the '$10 trillion' clause; kept the author's 'around'.",
+      "why": "CL-010 and CL-042 — an estimate must say 'about' or equivalent, and it did. The hedge was already right; only the source was missing.",
+      "ruleId": "CL-010",
+      "severity": "MEDIUM"
+    },
+    {
+      "what": "Takeaway 6: 'manager engagement just fell from 27% to 22%' became 'global manager engagement fell from 27% to 22%', linked to Gallup.",
+      "why": "VERIFIED by the Fact Checker, which asked for 'global' because the figure is Gallup's global measure and the list item did not say so. Dropped 'just' because the data year is 2025 and the report is 2026. CL-010: this figure was the premise for the piece's most actionable advice and carried no source anywhere.",
+      "ruleId": "CL-010",
+      "severity": "HIGH"
+    },
+    {
+      "what": "'A model will give you a confident, well-formatted answer' became 'A tool will give you...'.",
+      "why": "docs/02-voice.md, the jargon list: 'Model, LLM, foundation model' → 'The tool'. The Brand Guardian correctly declined to count this as a VC-001 breach ('model' is not one of the 39 deterministic terms), but the approved replacement is in the policy document, the swap costs one word and changes no meaning.",
+      "ruleId": "VC-001",
+      "severity": "LOW"
+    },
+    {
+      "what": "Linked 'The Great Corporate Unmasking' to /the-great-corporate-unmasking.",
+      "why": "The Fact Checker could not verify the self-reference; the SEO/GEO agent reported the slug present in site/content/ and I confirmed the file exists. A reader who cannot place the reference now can, and the sentence stops being an unsourced aside. Kept the sentence itself — Editorial wanted it cut as an interruption, but it is the hinge between two of the author's pieces and one word of linking solves the reader problem the cut was meant to solve.",
+      "severity": "LOW"
+    }
+  ],
+  "rejectedRecommendations": [
+    {
+      "recommendation": "Brand Guardian (CL-003, MEDIUM): merge the four one-line paragraphs under 'The antibodies' ('It never looks like an attack. / Quick Alignment / Love the energy / her name quietly disappearing') into one paragraph.",
+      "why": "Two specialists conflict and I side with Editorial, which listed this run in 'preserved' as deliberate anaphora that shows the immune response arriving in small steps. CL-003's own deterministic companion check passes at 26.1 words a paragraph. The rule's target is paragraph shape; reading its 'not a column of one-line paragraphs' clause as a ban on a four-beat anaphoric run would cost the section its best device to satisfy a wording, not a defect. Recorded as a live disagreement, not a cleared finding: a brand director may overrule me."
+    },
+    {
+      "recommendation": "Editorial (MEDIUM, its highest-severity finding): cut 'What I've learned since' from six items to four, dropping 1 and 4.",
+      "why": "Rejected on three grounds. Item 1 is the clearest one-sentence statement of the thesis anywhere in the piece, and the SEO/GEO agent's strongest point is that the central claim sits 45% of the way in and needs to be stated plainly for editors and answer engines. Item 4 ('Humility is the door curiosity walks through') is named by the Brand Guardian among the lines to leave alone, and by the Audience agent as the nearest thing the piece offers to a concrete move. Editorial concedes the genre expects takeaways; restating a thesis in a takeaway list is the form working, not redundancy. Editorial scored this piece 88 and I am not going to cut an author's content on a stylistic preference that two other specialists contradict."
+    },
+    {
+      "recommendation": "Audience (HIGH), Brand Guardian (MEDIUM), SEO/GEO and Editorial (LOW): change the subtitle 'AI is about to make it fatal'.",
+      "why": "The criticism is fair — the body never shows a company dying, and line 100 ('I can't prove that any single Diva tanked any single share price') undercuts it. But no rule in the snapshot governs it; the objection rests on the voice principle 'quietly confident', which is advisory. The subtitle completes the title's metaphor, and the title is the frame of the whole essay. Rewriting an author's headline on advisory grounds is a rewrite, not an edit. Passed to the author with all four agents' concurrence and one calmer alternative on record ('AI is about to make it expensive'). Her call. Note: the Audience agent cited CL-007 here; CL-007 is about describing AI as a mind or as magic and does not reach a subtitle about cost."
+    },
+    {
+      "recommendation": "Brand Guardian, Editorial, SEO/GEO: rename the heading 'Why AI changes everything'.",
+      "why": "Advisory in all three reports, and the stock-heading criticism is true. It is also the author's structure in a piece whose headings are short and voiced, and the SEO/GEO agent's own conclusion for this channel is to keep them. An outlet will rewrite subheads anyway."
+    },
+    {
+      "recommendation": "SEO/GEO: descriptive heading rewrites, FAQ block, Article structured data, seoTitle/metaDescription/slug work, internal links to /grace-to-be-bad-at-it and the companion piece.",
+      "why": "The agent flagged these itself as site-version-only and irrelevant to a publication pitch, and advised against the FAQ ('reads as SEO furniture on a guest column'). The companion-piece link is premature — that piece is not live and its slug is not fixed. The /grace-to-be-bad-at-it fit was judged from a title alone. I took the one internal link the article already earns, and nothing else. No SEO change was allowed to touch the prose."
+    },
+    {
+      "recommendation": "Brand Guardian option (a): delete 'Yes, I chose the word on purpose, and no, it has no gender.'",
+      "why": "The analysis is sharp and the observation that the author felt she had to rule the reading out is evidence it is heard. But Editorial lists this sentence in 'preserved' precisely because it keeps a risky label from becoming a smear, and the sentence sits a paragraph above a named, identifiable male colleague. With the CL-009 finding unresolved, removing the one line that disclaims a gendered reading makes the compliance position worse, not better. Keep it for now; revisit if the author recasts the Richard passage."
+    },
+    {
+      "recommendation": "Brand Guardian option (c) and Audience (MEDIUM): add a line of grace for the Diva, or a short passage addressed to the leader who recognises himself (for example, saying 'I don't know yet' once in a meeting).",
+      "why": "Both agents identify a real gap: the piece diagnoses a type and offers it no route back, and the companion piece does. But writing that passage means writing new argument in the author's voice on the most delicate judgement in the essay. That is authorship, not integration. Passed to the author as the single highest-value addition she could make."
+    },
+    {
+      "recommendation": "Audience (CL-002, MEDIUM): gloss 'moat', 'compute' and 'commoditized' in the same sentence, and replace 'like sediment, or emails from your bank' with something readers in any country recognise.",
+      "why": "Scoped wrongly for this channel. This is a pitch to a business publication, audience 'business leaders and the curious people they manage'. Glossing 'moat' for that reader patronises them, and the glosses would add clauses to sentences the piece keeps short on purpose. The bank simile is listed by Editorial among the lines that carry the author's register; it is also the funniest line in the first third."
+    },
+    {
+      "recommendation": "Audience (MEDIUM): add a specific step the excluded reader can take alone, with a pointer to a support resource.",
+      "why": "The gap is real — a reader whose manager is part of the problem has no route in the piece. I cannot fill it: naming a support resource means naming an organisation I have not verified and the author has not chosen, and 'keep a dated record' edges into advice with legal consequences. Flagged for the author, who may want it and should source it herself."
+    },
+    {
+      "recommendation": "Fact Checker (OPINION row): consider 'many companies' for 'most companies are in this trap'.",
+      "why": "It is a sweeping generalisation, but it is openly the author's view in a first-person essay, marked OPINION, and 'consider' is the strength of the recommendation. Softening a rhetorical 'most' to 'many' trades a small honesty gain for a flatter line. Left alone."
+    },
+    {
+      "recommendation": "Compliance (HIGH): move a precise disclosure note to the opening, stating that the account is a composite or that names, roles and identifying details have been changed.",
+      "why": "I cannot write it. Compliance itself says 'the author must confirm which statement is true', and I do not know whether the piece is a composite — asserting either version would be inventing a fact about the article's provenance. A disclaimer above 'For twenty years, I knew exactly who to fear in a meeting' would also blunt the opening Editorial names as the piece's strongest asset, and Compliance is explicit that no note cures the CRITICAL findings. The author's existing note stays where she put it, and the placement decision goes to her and to counsel with the consent question it belongs to."
+    },
+    {
+      "recommendation": "Compliance (HIGH, CL-047): move the third-party quotations (Richard, the boss, the manager) into testimony blocks so a synthetic narrator cannot voice them.",
+      "why": "CL-047's concern is pull-quotes and testimony in a narrated piece. These are inline dialogue inside a narrative essay; lifting four lines of speech into fenced blocks would destroy the scenes they sit in and make the prose unreadable. Compliance says itself it could not tell whether narration is planned, and no narration is planned for a pitch. Recorded as an open item: if this piece is ever narrated, a human must confirm no third-party words are voiced, and the fix is to the narration script, not the article."
+    },
+    {
+      "recommendation": "Fact Checker: soften 'The person who gets attacked is usually the one who leaves' to 'often'.",
+      "why": "'Usually' now sits immediately after a sourced WBI figure of 62%, which supports 'usually' on its face. Softening it would make the sentence weaker than its own evidence."
+    },
+    {
+      "recommendation": "Audience (MEDIUM, three findings): add a sentence on the narrator's own role in the room, and say what happened to the new hire and to Richard.",
+      "why": "All three are good questions an editor will ask, and all three can only be answered by the author. I will not invent what she did or did not say in that meeting. Passed to her."
+    },
+    {
+      "recommendation": "Compliance (CRITICAL, in part): cut or soften 'It was the most expensive sentence anyone said that year' unless a cost can be substantiated.",
+      "why": "Left in, deliberately. Trimming it would not cure the CL-009 finding it belongs to — Richard stays identifiable from the first name, the eleven years and the fourteen-person team — and it would quietly edit the author's judgement of the event while leaving the actual exposure in place. The Brand Guardian reads the piece's superlatives as the author's personality, earned by detail. This phrase goes to the author and to counsel as part of the whole passage, not as a word to soften so a report looks tidier."
+    },
+    {
+      "recommendation": "Audience (MEDIUM): define 'engagement' in one clause in 'The bill'.",
+      "why": "A fair point for a general reader, but the paragraph already carries a linked meta-analysis and a linked Gallup report, and a definition clause in the densest paragraph in the piece makes the skim-risk worse, not better. Business-leader audience; the term is theirs."
+    },
+    {
+      "recommendation": "Editorial (LOW): drop the fever line, or drop 'the loudest cell', to fix the metaphor slip.",
+      "why": "The observation is correct — a fever is a symptom, not a cell. The orchestrator's standing instruction is not to rewrite the Diva/fever line, and I agree: 'hot, loud and absolutely convinced it's helping' is one of the best clauses in the essay and few readers will stop on the taxonomy."
+    },
+    {
+      "recommendation": "VOID, acted on by nobody: the exclamation-mark finding (Brand LOW, Editorial LOW, Audience LOW), the gate's count of five long sentences, and the SEO/GEO duplication concern.",
+      "why": "Per the orchestrator's corrections, which I verified by re-running the fixed checkers: the exclamation mark is inside quoted speech and the fixed checker now reports none, so 'Love the energy!' stays exactly as written; two of the five long sentences were splitter artefacts and only three were real, all three now fixed; and real overlap with the companion piece is three sentences, about 4%, so the Diva/fever line and the Unmasking callback were not touched."
+    }
+  ],
+  "meaningPreserved": true,
+  "meaningNote": "The thesis, structure, voice, every scene, all six takeaways and the two closes are the author's and are intact; G6 reports first person 14 to 14 and length +2%. Nothing was removed except one statistic the Fact Checker contradicted and one clause whose number does not appear in any retrieved source, and one misattributed paraphrase was replaced with the figures the source actually carries. The single judgement a reader could call material is that the Gallup AI claim is now narrower than the author's paraphrase ('65% report a personal productivity gain, only 12% say work has changed' rather than 'the bottom-line gains aren't arriving'); her surrounding argument carries the point unchanged, and it is flagged above for her confirmation. I added one sentence she did not write ('Bullying is the extreme case of the same reflex'), also flagged. This run blocks on compliance, not on meaning drift.",
+  "blockedItems": [
+    {
+      "item": "Richard is identifiable. First name, exact tenure ('Eleven years in'), a verbatim quote, the label 'the Diva' with 'the fever' and 'the loudest cell' attached, and 'the most expensive sentence anyone said that year' — in a team the piece states is fourteen people. No consent is on file anywhere in this run.",
+      "ruleId": "CL-009",
+      "severity": "CRITICAL",
+      "status": "NOT FIXED — passage unchanged, deliberately",
+      "owner": "author, then counsel",
+      "why": "I am not counsel and make no legal determination. I did not de-identify him, because the only person who knows whether 'Richard' is already a pseudonym, whether consent exists off-file, and which details are hers to change is the author — and quietly stripping the name, the tenure and the quote would rewrite the strongest section of a piece that presents itself as a true first-hand account. Note that changing the name alone does not fix this: colleagues who were in the room can identify him from eleven years of service and the meeting. Compliance's options stand: record written consent to the name, quote and characterisation; or remove name, tenure and verbatim quote and recast him as an explicitly labelled composite. A person with legal competence should review the final wording."
+    },
+    {
+      "item": "The new hire's private disclosure: sleep loss, self-doubt, two drafted resignation emails, sourced to 'She told me later.' Plus the exclusion allegations against unnamed colleagues ('our little auditor', dropped from a kickoff, 'not quite a culture fit'). She is identifiable — two months into the job, in a team of fourteen. No consent recorded.",
+      "ruleId": "CL-009",
+      "severity": "CRITICAL",
+      "status": "NOT FIXED — passage unchanged, deliberately",
+      "owner": "author",
+      "why": "Information about an identifiable person's wellbeing is sensitive personal data in several jurisdictions; that is a flag for a human, not legal advice. The brand honesty rule is plainer and is not about jurisdictions: 'Never use someone's story to sell a technology. The story belongs to them.' This is the emotional centre of the essay, it reads as true, and it is the part I have least right to edit on her behalf. Needs her written, informed consent to this specific text, or removal of the health details and exclusion specifics, or an openly labelled composite. Editorial also notes the narrator states her private states as fact a section before saying she was told them — if the author is reworking the passage anyway, moving the 'She told me later' attribution up is a one-phrase improvement."
+    },
+    {
+      "item": "'Names and some details have been changed.' is not sufficient and is in the wrong place.",
+      "ruleId": "CL-009",
+      "severity": "HIGH",
+      "status": "NOT FIXED — note left where the author put it",
+      "owner": "author",
+      "why": "It arrives after the reader has taken the whole piece as literal; it does not say which details; and it does not de-identify a man his colleagues can name from the tenure alone. A disclaimer is not consent and does not cure the two CRITICAL findings. See my rejection of 'move it to the opening' above: I cannot write a precise note without knowing which version of it is true."
+    },
+    {
+      "item": "The sentence 'With respect, some of us have been doing this a long time.' appears in BOTH this piece and the companion ('The Most Dangerous Person in the Room', run 20261106-152245) — spoken there by Graham at one company, here by Richard at a different one. The companion reads as a composite. This piece claims to be true.",
+      "severity": "HIGH",
+      "status": "NOT FIXED — flagged, not changed",
+      "owner": "author",
+      "why": "No specialist report raised this; it came from the orchestrator and I confirmed the line appears in both. It matters more than the 4% textual overlap the SEO agent measured, because a reader who sees both pieces will conclude that one of the two is invented, and this essay's whole authority rests on being a first-hand account. I did not quietly change either instance: which one moves, and whether one of them should carry a composite label, is the author's decision and affects both runs. The SEO/GEO agent independently flagged the wider inconsistency between the two accounts (two months in, six-year process, four sign-offs, eleven days here; a 2019 wiki page, three departments, four days, an analyst named Dev there) and reached the same conclusion: reconcile them, or say once that they are composites."
+    },
+    {
+      "item": "authorPhoto provenance: brand/photography/credits.json marks the row clearedForPublication true while photographer is 'UNKNOWN — confirm', licence is 'UNKNOWN — confirm', and dateTaken and location are null.",
+      "ruleId": "CL-027",
+      "severity": "MEDIUM",
+      "status": "NOT FIXABLE BY ME — no text change available",
+      "owner": "whoever owns the credits file",
+      "why": "docs/07-photography.md requires photographer, origin, consent, licence, date and location. The clearance is not supported by the record, and copyright may sit with a photographer who has not licensed the image. Complete the row or withdraw the cleared flag before release. Byline use only, as the row states."
+    },
+    {
+      "item": "Employer confidentiality: the piece describes an internal approval workflow, an enterprise AI rollout and a result (eleven days to an afternoon).",
+      "ruleId": "CL-009",
+      "severity": "MEDIUM",
+      "status": "OPEN — author to confirm",
+      "owner": "author",
+      "why": "Compliance could not tell from the run whether her employment terms allow this. Neither can I. Also unconfirmed: whether any commercial relationship needs disclosing."
+    },
+    {
+      "item": "Two Gallup links point to /workplace/349484/state-of-the-global-workplace.aspx, which is where the Fact Checker retrieved the $10 trillion figure, the 27%-to-22% manager figure and the AI figures — but it flagged that Gallup's URL slugs were inconsistent across searches and that the reference year for the $10 trillion (2024 versus 2025) is unresolved.",
+      "ruleId": "CL-010",
+      "severity": "LOW",
+      "status": "OPEN — human to confirm before publication",
+      "owner": "fact desk",
+      "why": "The figures are verified; the canonical URL is not. Every link in the article is one the Fact Checker retrieved. I invented no URL and ran no search of my own."
+    },
+    {
+      "item": "'and another 14% had witnessed it' was removed, not corrected.",
+      "severity": "LOW",
+      "status": "FIXED by removal, restorable",
+      "owner": "author",
+      "why": "Recorded here so the author knows the clause is recoverable: if she or a colleague opens the WBI 2024 Complete Report PDF and finds the 14%, she can restore it with the citation."
+    }
+  ],
+  "toolsAndLimits": [
+    "Read in full: original_article.md, policy_snapshot.json, publishing_metadata.json, and all six specialist reports (intake_gates, compliance, brand_compliance, fact_check, editorial, seo_geo, audience).",
+    "Re-ran the repository's own checkers on my output: skill/human-first-ai-brand/scripts/voice-check.mjs (6/6 pass: 26.1 words a paragraph, 9.7 a sentence, no sentence over 25 words, no exclamation marks, no banned terms in our own voice, 1 intensifier) and tools/editorial/gates.mjs --no-links (G1 ok 6/6, G2 ok — 5 paragraphs with figures, all sourced or hedged, G3 ok, G4 ok, G6 ok — first person 14 to 14, length +2%).",
+    "Confirmed /the-great-corporate-unmasking exists in site/content/ before linking it. Confirmed the 'Model, LLM, foundation model → The tool' row in docs/02-voice.md before swapping 'model' for 'tool'.",
+    "I did no independent research. Every statistic, source and URL in the final article comes from the Fact Checker's retrieved evidence; where it marked something unverified, I removed or requalified rather than go looking for a better number. External link reachability was not checked (--no-links).",
+    "I am not counsel. The two CRITICAL findings are recorded as risks for a human to judge, not as legal determinations.",
+    "Author is Helena Carre, guest false, so the voice rules applied in full. The frontmatter label 'Publication pitch, guest column' does not change that (CL-006) and the frontmatter is unchanged."
+  ],
+  "scoreRationale": "62. The article is in the best state I can put it in: all five deterministic gates green, the contradicted statistic gone with no number invented in its place, a misattribution replaced with figures that exist, five verified figures now carrying their sources, three real over-long sentences split without losing a word, and the author's voice, structure and judgement left alone — thirteen substantive changes, not thirty. What the score reflects is that it still cannot ship. Two CRITICAL CL-009 findings about identifiable people are untouched and untouchable from here, a third HIGH disclosure finding depends on a fact only the author knows, and a verbatim quote shared with a companion piece threatens the first-hand authority this essay is built on. A clean-looking integration report over an unresolved consent problem would be the most expensive sentence in this run."
+}

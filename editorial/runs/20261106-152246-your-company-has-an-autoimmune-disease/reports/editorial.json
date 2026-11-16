@@ -1,0 +1,80 @@
+{
+  "agent": "editorial",
+  "score": 88,
+  "findings": [
+    {
+      "passage": "What I've learned since: the numbered list of six lessons (lines 114-121)",
+      "severity": "MEDIUM",
+      "explanation": "Verdict on the structural question: the narrative earns its ending at 'Same tool. Different question.' The list then partly deflates it. Lessons 1 and 2 restate 'Why AI changes everything' almost word for word ('Automating a process nobody has questioned just makes it fail faster' echoes 'It will run your broken process beautifully, at machine speed'). Lesson 3 restates the closing metaphor. Lesson 4 is an aphorism that adds nothing the Diva/four-year-old passage has not already said. Lessons 5 and 6 are different: 5 names a behaviour readers can spot, and 6 introduces a new idea (the protector) with the one fresh statistic. HBR.org and Fast Company readers expect takeaways, so removing the list entirely would cost the piece its genre fit. The problem is length and recap, not the list as a form.",
+      "recommendation": "Keep the list, cut it to four. Drop 1 and 4. Keep 2, 3, 5, 6, and phrase 2 and 3 as things a reader can do on Monday rather than restated theses (for example, before automating a process, ask what it is for). Do not rewrite 5 or 6. The paragraph that follows ('So here's my advice...') is the real call to action and should stay as the close."
+    },
+    {
+      "passage": "So here's my advice... / And if you're the curious one, reading this at 11 p.m.... You're not. You're just the only adult in the room who still remembers how to be a child.",
+      "severity": "LOW",
+      "explanation": "Two closes in a row, a manager-facing advice line and a reader-facing coda. They work because they address two different audiences and the coda returns to the child image planted in the Diva section. Noted so the integrator does not trim the pair as a repeated conclusion. It is not one.",
+      "recommendation": "No change."
+    },
+    {
+      "passage": "Gallup's 2026 workplace report puts it plainly: the technology works, but the bottom-line gains aren't arriving at scale.",
+      "severity": "MEDIUM",
+      "explanation": "'at scale' is the banned term the G1 voice check found (VC-001). It is in the author's own voice here (a paraphrase of Gallup), not a quotation. It is also the one place the argument leans on a source for its central AI claim, so the paraphrase should be exact. The Fact Checker must confirm the report says this.",
+      "ruleId": "VC-001",
+      "recommendation": "Replace 'at scale' with plain wording such as 'across the business' or 'for most companies'. Keep the sentence otherwise intact. Confirm wording against the source before attributing it as Gallup's."
+    },
+    {
+      "passage": "It looks like \"Love the energy! Let's park this for Q3.\"",
+      "severity": "LOW",
+      "explanation": "G1 flags one exclamation mark. It sits inside a quoted line of office euphemism and is the joke: the cheerfulness is the tell. VC-004 applies to 'our own voice', and this is reported speech. Cutting the mark would blunt the line. I leave the call to Brand Compliance, but from an editorial view I would keep it.",
+      "ruleId": "VC-004",
+      "recommendation": "Keep as quoted speech, or accept a brand ruling. Do not change the sentence for the checker's sake alone."
+    },
+    {
+      "passage": "AI is about to make it fatal (subtitle) / Why AI changes everything (heading)",
+      "severity": "LOW",
+      "explanation": "The body argues that AI makes expelling curious people more costly, because answers are cheap and good questions are scarce. It never argues that the company dies. 'Fatal' promises more than the piece delivers. For a pitch, an editor may read it as a hook and forgive it. 'Why AI changes everything' is a stock heading in a piece whose prose is otherwise specific. Both are advisory, not rules.",
+      "recommendation": "Optional. Keep the title. Consider a subtitle closer to the argument ('AI is about to make it expensive') and a heading such as 'Why AI raises the price'. If the author wants the harder claim, leave it."
+    },
+    {
+      "passage": "If the culture is the immune system, the Diva is the fever: hot, loud and absolutely convinced it's helping.",
+      "severity": "LOW",
+      "explanation": "The metaphor holds across the piece (antibodies, wound, host, symptom, autoimmune) with one slip. Earlier the Diva is 'the loudest cell' of the immune system, then a fever, and in the Turn a manager acts 'less like an antibody'. A fever is a symptom, not a cell. Few readers will stop on it, but it is the only place the conceit wobbles.",
+      "recommendation": "Optional. Keep 'cell' and 'antibody' and drop the fever line, or keep the fever and drop 'loudest cell'. Leave the rest."
+    },
+    {
+      "passage": "In The Great Corporate Unmasking, I wrote about the masks we wear at work.",
+      "severity": "LOW",
+      "explanation": "A reference to the author's earlier work that a first-time reader at Fast Company, Forbes or HBR.org cannot place. It also interrupts the Diva passage just as it gains momentum. The 'mask' point is clear without it.",
+      "recommendation": "Link it with a short descriptor, or cut the sentence and begin 'The Diva's mask is certainty.'"
+    },
+    {
+      "passage": "She started rehearsing meetings in the shower. She stopped asking questions, then stopped sleeping properly, then started wondering whether the problem was her.",
+      "severity": "LOW",
+      "explanation": "The narrator gives the new hire's private states as fact before the piece says she told them to the narrator ('She told me later...' appears one section on). The wound section also slides between what happened to her and what happens generally ('Someone starts calling her...'), so the reader cannot tell which is reported and which is typical. This is the emotional centre and it reads as true. The only risk is a sceptical editor asking how the author knows.",
+      "recommendation": "Add 'She told me she' before the rehearsing sentence, or move the 'told me later' attribution up. One phrase, no rewrite."
+    },
+    {
+      "passage": "If you've been there, you're far from alone. In a 2024 US survey, 32% of adults said they had been bullied at work... Targets face a 62% chance of losing their job.",
+      "severity": "LOW",
+      "explanation": "The bullying statistics measure workplace bullying in general, not the expulsion of curious or questioning people. The piece bridges the gap by saying so plainly later ('I can't prove that any single Diva tanked any single share price'), which is the right kind of candour and should stay. Sourcing is the Fact Checker's job (G2 flagged every figure as unsourced). I add only that the paragraph reads as a claim about curious people while the data are about bullying.",
+      "ruleId": "CL-010",
+      "recommendation": "Keep. Make the link honest with a half-sentence such as 'Bullying is the extreme case of the same reflex.' Add sources once the Fact Checker has verified them."
+    },
+    {
+      "passage": "Five sentences over 25 words (G1 long-sentences check)",
+      "severity": "LOW",
+      "explanation": "The checker found five over the hard limit (VC-003) without locating them in its output. Average sentence length is 11.1 words, so the piece's rhythm is short and deliberate; this is five isolated cases, not a style problem. I did not locate them one by one because the fix is mechanical.",
+      "ruleId": "VC-003",
+      "recommendation": "Split each at its natural conjunction. Do not touch the short-sentence runs that give the piece its rhythm."
+    }
+  ],
+  "preserved": [
+    "The opening ('For twenty years, I knew exactly who to fear in a meeting' through 'the wrong chair'). A scene, a reversal and a stake in under 100 words. No throat-clearing. Do not add a thesis paragraph.",
+    "The 'Quick Alignment' / 'Love the energy' / disappearing-name run of one-line paragraphs. This is deliberate anaphora that shows the immune response arriving in small steps. Paragraph average is 25.5 words and passes CL-003. Do not merge them to satisfy the 'column of one-liners' wording.",
+    "The humour ('FINAL_v7_REAL_final', 'like sediment, or emails from your bank', 'our little auditor'). It is specific, and it is the author's distinctive register. It also lets the harder middle sections land without sermonising.",
+    "'I can't prove that any single Diva tanked any single share price.' Honest limit on the argument, matches CL-008, and is what makes the data section credible to an HBR audience.",
+    "'Same tool. Different question.' The best line in the piece and the right end of the narrative. Do not add anything after it inside that section.",
+    "The note that the Diva is not gendered and was once curious. It keeps a risky label from becoming a smear and gives the piece its one moment of sympathy for the antagonist.",
+    "The disclosure 'Names and some details have been changed.' Covers CL-009 only if consent for 'Richard' and the unnamed colleagues is in fact on file. That is a Compliance question, not an editorial one.",
+    "The central thesis (curious people are the scarce asset once answers are cheap, and the immune response removes them) and the first-person, practitioner point of view. The piece needs no restructuring. Total editorial intervention: cut two list items, one wording swap, a few optional phrases."
+  ]
+}
