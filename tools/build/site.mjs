@@ -764,7 +764,7 @@ function indexPage(articles) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Writing — ${esc(BRAND.name)}</title>
+<title>Blog — ${esc(BRAND.name)}</title>
 <meta name="description" content="${esc(BRAND.oneLiner)}">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="${C.ink}">
@@ -780,7 +780,7 @@ function indexPage(articles) {
 </style>
 </head>
 <body>
-<a class="skip" href="#list">Skip to the writing</a>
+<a class="skip" href="#list">Skip to the posts</a>
 <header class="masthead">
   <div class="wide">
     <a href="index.html" aria-label="Human First AI — home">${inlineLockup('horizontal', 'full', 'only-light')}${inlineLockup('horizontal', 'reversed', 'only-dark')}</a>
@@ -789,10 +789,9 @@ function indexPage(articles) {
 </header>
 <div class="hero">
   <div class="wrap">
-    <p class="kicker">Writing</p>
+    <p class="kicker">Blog</p>
     <h1>${esc(BRAND.oneLiner)}</h1>
-    <p class="standfirst">Longer pieces from the movement. Every page on this site is built from the
-      brand system in the repository &mdash; same tokens, same type scale, same accessibility floor.</p>
+    <p class="standfirst">Articles by the Human First AI team.</p>
   </div>
 </div>
 <div class="colonnade" aria-hidden="true">${colonnadeSvg}</div>
@@ -801,16 +800,16 @@ function indexPage(articles) {
     <a class="entry" href="voices.html">
       <p class="kicker">Narration</p>
       <h2>Choosing a narrator</h2>
-      <p>Seven candidate voices reading the same three lines, so you can pick with your ears
-         instead of from a table. Generated locally with Kokoro, Apache-2.0.</p>
+      <p>Seven computer-generated voices reading the same three lines, so we can choose one for our
+         audio articles. Made on our own machine with Kokoro, Apache-2.0.</p>
       <p class="meta"><span>Audio</span><span class="dot">&middot;</span><span>13 samples, 4 accents</span></p>
     </a>
     <a class="entry" href="showcase.html">
       <p class="kicker">Showcase</p>
-      <h2>An open door, in three dimensions</h2>
-      <p>Walk through the mark itself, then find the thirty-eight chapters on a halftone globe.
-         Spatial depth and physical craft, built from the same tokens as everything else.</p>
-      <p class="meta"><span>Interactive</span><span class="dot">&middot;</span><span>Best with sound off and a scroll wheel</span></p>
+      <h2>Our logo in 3D</h2>
+      <p>An interactive demo of the logo and brand graphics, built from the same colours and type
+         as the rest of the site.</p>
+      <p class="meta"><span>Interactive</span><span class="dot">&middot;</span><span>Best with sound off. Scroll to move through it.</span></p>
     </a>
     ${articles.map(a => `<a class="entry" href="articles/${a.slug}.html">
       <p class="kicker">${esc(a.meta.kicker)}</p>
